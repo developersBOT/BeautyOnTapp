@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:beautyontapp/widgets/asset_icon.dart';
 
 class BrandMarquee extends StatelessWidget {
   final List<String> logos;
@@ -7,20 +8,20 @@ class BrandMarquee extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
-    final pad = w * 0.04;
+    final pad = w * 0.08;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: pad, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: pad, vertical: 14),
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
-        runSpacing: 12,
+        runSpacing: 16,
         children: logos.map((p) {
           return Opacity(
-            opacity: 0.35,
+            opacity: 0.35, 
             child: SizedBox(
-              width: (w - pad * 2) / 3 - 8, // 3 per row
-              height: 34,
-              child: Image.asset(p, fit: BoxFit.contain),
+              width: (w - pad * 2) / 3.2, 
+              height: 28,
+              child: AssetIcon(p, fit: BoxFit.contain),
             ),
           );
         }).toList(),

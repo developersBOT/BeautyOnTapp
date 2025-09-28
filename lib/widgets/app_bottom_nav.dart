@@ -1,18 +1,56 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-/// Reusable Bottom Navigation (simple, no GetX)
-/// - Pass currentIndex and onTap callback
-/// - Labels: Home, Shop, Exclusive, Wishlist, Stores
-/// - Black/white minimal styling like your Figma
+class NavItem {
+  final String label;
+  final String icon;       // outline/regular state
+  final String activeIcon; // selected state
+  const NavItem({
+    required this.label,
+    required this.icon,
+    required this.activeIcon,
+  });
+}
+
+/// Change these asset paths to your own SVGs
+const List<NavItem> defaultNavItems = [
+  NavItem(  
+    label: 'Home',
+    icon: 'assets/images/home.svg',
+    activeIcon: 'assets/icons/home.svg',
+  ),
+  NavItem(
+    label: 'Shop',
+    icon: 'assets/images/shop.svg',
+    activeIcon: 'assets/icons/bag.svg',
+  ),
+  NavItem(
+    label: 'Exclusive',
+    icon: 'assets/images/exclusive.svg',
+    activeIcon: 'assets/icons/gift.svg',
+  ),
+  NavItem(
+    label: 'Me',
+    icon: 'assets/images/me.svg',
+    activeIcon: 'assets/icons/heart.svg',
+  ),
+  NavItem(
+    label: 'Stores',
+    icon: 'assets/images/stores.svg',
+    activeIcon: 'assets/icons/store.svg',
+  ),
+];
+
 class AppBottomNav extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
+  final List<NavItem> items;
 
   const AppBottomNav({
     super.key,
     required this.currentIndex,
     required this.onTap,
+    this.items = defaultNavItems,
   });
 
   @override
@@ -25,6 +63,7 @@ class AppBottomNav extends StatelessWidget {
       backgroundColor: Colors.white,
       currentIndex: currentIndex,
       onTap: onTap,
+      showUnselectedLabels: true,
       selectedItemColor: selectedColor,
       unselectedItemColor: unselectedColor,
       selectedLabelStyle: const TextStyle(
@@ -37,34 +76,36 @@ class AppBottomNav extends StatelessWidget {
         fontWeight: FontWeight.w500,
         color: unselectedColor,
       ),
-      showUnselectedLabels: true,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.house),
-          activeIcon: Icon(CupertinoIcons.house_fill),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.bag),
-          activeIcon: Icon(CupertinoIcons.bag_fill),
-          label: 'Shop',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.gift),
-          activeIcon: Icon(CupertinoIcons.gift_fill),
-          label: 'Exclusive',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.heart),
-          activeIcon: Icon(CupertinoIcons.heart_solid),
-          label: 'Wishlist',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.location),
-          activeIcon: Icon(CupertinoIcons.location_solid),
-          label: 'Stores',
-        ),
-      ],
+      selectedIconTheme: const IconThemeData(size: 24, color: selectedColor),
+      unselectedIconTheme: const IconThemeData(size: 24, color: unselectedColor),
+      items: items
+          .map(
+            (it) => BottomNavigationBarItem(
+              icon: _SvgIcon(asset: it.icon, color: unselectedColor),
+              activeIcon: _SvgIcon(asset: it.activeIcon, color: selectedColor),
+              label: it.label,
+            ),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _SvgIcon extends StatelessWidget {
+  final String asset;
+  final Color color;
+  const _SvgIcon({required this.asset, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      asset,
+      width: 24,
+      height: 24,
+      // This recolors the SVG (works if your SVG uses fills/strokes, not images)
+      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      // Avoid layout jumps in M3
+      fit: BoxFit.contain,
     );
   }
 }

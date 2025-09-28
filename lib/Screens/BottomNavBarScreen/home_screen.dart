@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:beautyontapp/Screens/catalog_screen.dart';
 
-import 'package:beautyontapp/widgets/offer_row.dart';
+import 'package:beautyontapp/product_detail_screen_brand.dart'; // ← use API-backed detail
+
 import '../../data/static_data.dart';
+import '../../models/product.dart';
+import '../../services/product_service.dart';
+
 import '../../widgets/home_header.dart';
 import '../../widgets/category_chips.dart';
 import '../../widgets/section_title.dart';
 import '../../widgets/promo_row.dart';
 import '../../widgets/product_scroller.dart';
-import '../../widgets/brand_marquee.dart';
 import '../../widgets/footer_section.dart';
-import '../../widgets/popular_now_scroller.dart';
 import '../../widgets/app_drawer.dart';
-import '../../widgets/search_header.dart'; // <-- NEW
+import '../../widgets/search_header.dart';
+import '../../widgets/brand_logo_grid.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -25,12 +29,21 @@ class _HomeScreenState extends State<HomeScreen> {
   final _searchCtl = TextEditingController();
   bool _showSearch = false;
 
+  late Future<List<Product>> _newArrivalsFuture;
+  late Future<List<Product>> _chosenForYouFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _newArrivalsFuture = ProductService.fetchNewArrivals(limit: 20);
+    _chosenForYouFuture = ProductService.fetchSkincareProducts(limit: 100);
+  }
+
   void _doSearch() {
     final q = _searchCtl.text.trim();
     if (q.isEmpty) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Searching for "$q"...')),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Searching for "$q"...')));
   }
 
   @override
@@ -43,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: SizedBox(width: w * 0.74, child: const AppSideDrawer()),
       body: CustomScrollView(
         slivers: [
-          // 🔁 Swap the header
+          // header / search
           SliverToBoxAdapter(
             child: _showSearch
                 ? SearchHeader(
@@ -57,37 +70,158 @@ class _HomeScreenState extends State<HomeScreen> {
                 : HomeHeader(
                     onMenu: () => _scaffoldKey.currentState?.openDrawer(),
                     onSearch: () => setState(() => _showSearch = true),
-                    onCart: () {},
+                    onCart: () => Get.toNamed('/cart'),
                   ),
           ),
 
-          // content …
+          // chips
           SliverToBoxAdapter(
             child: CategoryChips(
               categories: topCategories,
               margin: const EdgeInsets.only(top: 10),
+              onTap: (String category) {
+                if (category == 'Brands') {
+                  Get.toNamed('/brands');
+                } else if (category == 'Skin Care') {
+                  Get.toNamed('/skin-care');
+                } else if (category == 'Hair') {
+                  Get.toNamed('/hair');
+                } else if (category == 'Make Up') {
+                  Get.toNamed('/make-up');
+                } else if (category == 'Men') {
+                  Get.toNamed('/men');
+                } else if (category == 'Bath & Body') {
+                  Get.toNamed('/bath-body');
+                } else if (category == 'Korean SkinCare') {
+                  Get.toNamed('/korean-skin-care');
+                } else if (category == 'Suncare') {
+                  Get.toNamed('/suncare');
+                } else if (category == 'Sale & Offer') {
+                  Get.toNamed('/sale-offer');
+                } else if (category == 'Beauty Under R200') {
+                  Get.toNamed('/beauty-under-200');
+                } else if (category == 'Mini Size') {
+                  Get.toNamed('/mini-size');
+                } else if (category == 'Book Skin Analysis') {
+                  Get.toNamed('/book-skin-analysis');
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Coming soon: $category')),
+                  );
+                }
+              },
             ),
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
-          SliverToBoxAdapter(child: PromoRow(items: promosTop)),
-          const SliverToBoxAdapter(child: SizedBox(height: 16)),
-          SliverToBoxAdapter(child: SectionTitle(title: 'Chosen For you', onShowMore: () {})),
-          SliverToBoxAdapter(child: ProductScroller(products: productsChosenForYou)),
-          SliverToBoxAdapter(child: SectionTitle(title: 'New Arrivals', onShowMore: () {})),
-          SliverToBoxAdapter(child: ProductScroller(products: productsNewArrivals)),
-          const SliverToBoxAdapter(child: SectionTitle(title: 'Beauty Offers')),
-          SliverToBoxAdapter(child: OfferRow(items: offersBeauty)),
-          const SliverToBoxAdapter(child: SizedBox(height: 18)),
+
+          // promos (scrollable row; taps route to Catalog with apiUrl if present)
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: w * 0.04),
-              child: const Text("Check out What's popular Now!",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
+            child: PromoRow(
+              items: promosTop,
+              onTap: (i) {
+                final promo = promosTop[i];
+                if (promo.apiUrl != null) {
+                  Get.toNamed(
+                    '/catalog',
+                    arguments: CatalogArgs(
+                      title: promo.title,
+                      apiUrl: promo.apiUrl!,
+                      brand: promo.brand ?? '',
+                      products: const [], // grid will fetch from apiUrl
+                    ),
+                  );
+                }
+              },
             ),
           ),
-          SliverToBoxAdapter(child: PopularNowScroller(items: popularNow)),
-          SliverToBoxAdapter(child: BrandMarquee(logos: brandLogos)),
+
+          const SliverToBoxAdapter(child: SizedBox(height: 16)),
+
+          // Chosen For You (API)
+          const SliverToBoxAdapter(
+            child: SectionTitle(title: 'Chosen For You', onShowMore: null),
+          ),
+          SliverToBoxAdapter(
+            child: FutureBuilder<List<Product>>(
+              future: _chosenForYouFuture,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Center(child: CircularProgressIndicator()),
+                  );
+                }
+                if (snapshot.hasError) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text("Failed to load chosen products"),
+                  );
+                }
+                final products = snapshot.data ?? [];
+                if (products.isEmpty) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text("No products found"),
+                  );
+                }
+                return ProductScroller(
+                  products: products,
+                  // ⬇ open API-backed detail so HTML description/ingredients render
+                  onTap: (p) => Get.to(() => ProductDetailScreenBrand(id: p.id)),
+                );
+              },
+            ),
+          ),
+
+          // New Arrivals (API)
+          const SliverToBoxAdapter(
+            child: SectionTitle(title: 'New Arrivals', onShowMore: null),
+          ),
+          SliverToBoxAdapter(
+            child: FutureBuilder<List<Product>>(
+              future: _newArrivalsFuture,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Center(child: CircularProgressIndicator()),
+                  );
+                }
+                if (snapshot.hasError) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text("Failed to load new arrivals"),
+                  );
+                }
+                final products = snapshot.data ?? [];
+                if (products.isEmpty) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text("No products found"),
+                  );
+                }
+                return ProductScroller(
+                  products: products,
+                  // ⬇ open API-backed detail so HTML description/ingredients render
+                  onTap: (p) => Get.to(() => ProductDetailScreenBrand(id: p.id)),
+                );
+              },
+            ),
+          ),
+
+          // POPULAR NOW — brand logos
+          const SliverToBoxAdapter(child: SizedBox(height: 6)),
+          SliverToBoxAdapter(
+            child: BrandLogoGrid(
+              logos: brandLogos.take(6).toList(),
+              onLogoTap: (brand) {
+                Get.toNamed('/logo-explain', arguments: {'brand': brand});
+              },
+            ),
+          ),
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
+
+          // footer
           SliverToBoxAdapter(
             child: FooterSection(
               stats: footerStats,

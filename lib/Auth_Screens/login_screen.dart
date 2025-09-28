@@ -1,5 +1,8 @@
+import 'package:beautyontapp/Helper/session_helper.dart';
+import 'package:beautyontapp/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,6 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _obscure = true;
   bool _remember = false;
+  bool _loading = false;
 
   @override
   void dispose() {
@@ -27,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
       labelText: label,
       labelStyle: const TextStyle(color: Colors.black54),
       contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-      // light grey outline like figma
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: Colors.black.withOpacity(0.15), width: 1),
@@ -39,13 +42,42 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  Future<void> _submit() async {
+    if (_loading) return;
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() => _loading = true);
+    try {
+      print('🚀 Baber Qureshi: Calling login API...');
+
+      final res = await AuthService.login(
+        email: _emailCtrl.text.trim(),
+        password: _passwordCtrl.text.trim(),
+      );
+
+      final msg = res['message'] ?? 'Login successful';
+      print('🎉 Baber Qureshi: Login success message: $msg');
+      Get.snackbar('Success', msg, snackPosition: SnackPosition.BOTTOM);
+
+      // 🔑 Save session
+      await SessionHelper.setLoggedIn(true);
+
+      await Future.delayed(const Duration(milliseconds: 600));
+      Get.offAllNamed('/home');
+    } catch (e) {
+      print('🔥 Baber Qureshi: Login failed: $e');
+      Get.snackbar('Login failed', e.toString(),
+          snackPosition: SnackPosition.BOTTOM);
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-
-    // Figma width 245, device width ~390 -> ~0.63 of screen width
     final double logoWidth = size.width * 0.63;
-    final double logoHeight = logoWidth * (138 / 245); // keep aspect ratio
+    final double logoHeight = logoWidth * (138 / 245);
     final double gap = size.height * 0.018;
 
     return Scaffold(
@@ -61,21 +93,19 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // ===== Logo (exact 245x138 ratio, responsive) =====
                 SizedBox(height: gap * 1.2),
                 Center(
                   child: SizedBox(
                     width: logoWidth,
                     height: logoHeight,
                     child: Image.asset(
-                      'assets/images/logo.png', // <-- aapka logo path
+                      'assets/images/logo.png',
                       fit: BoxFit.contain,
                     ),
                   ),
                 ),
                 SizedBox(height: gap * 1.2),
 
-                // ===== Headings =====
                 const Text(
                   'Log In',
                   style: TextStyle(
@@ -95,7 +125,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: gap * 1.3),
 
-                // ===== Email =====
                 TextFormField(
                   controller: _emailCtrl,
                   keyboardType: TextInputType.emailAddress,
@@ -105,7 +134,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: gap),
 
-                // ===== Password =====
                 TextFormField(
                   controller: _passwordCtrl,
                   obscureText: _obscure,
@@ -118,21 +146,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  validator: (v) => (v == null || v.length < 4)
-                      ? 'Minimum 4 characters'
-                      : null,
+                  validator: (v) =>
+                      (v == null || v.length < 4) ? 'Minimum 4 characters' : null,
                 ),
                 SizedBox(height: gap * 0.7),
 
-                // ===== Remember + Forgot =====
                 Row(
                   children: [
                     Transform.scale(
                       scale: 0.95,
                       child: Checkbox(
                         value: _remember,
-                        onChanged: (v) =>
-                            setState(() => _remember = v ?? false),
+                        onChanged: (v) => setState(() => _remember = v ?? false),
                         shape: const CircleBorder(),
                         side: BorderSide(color: Colors.black.withOpacity(0.5)),
                         activeColor: Colors.black,
@@ -140,15 +165,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                     ),
-                    const Text(
-                      'Remember Me',
-                      style: TextStyle(fontSize: 12.5, color: Colors.black87),
-                    ),
+                    const Text('Remember Me',
+                        style: TextStyle(fontSize: 12.5, color: Colors.black87)),
                     const Spacer(),
                     TextButton(
-                      onPressed: () {
-                        // TODO: Forgot password
-                      },
+                      onPressed: () => Get.toNamed('/reset-password'),
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                         minimumSize: const Size(0, 0),
@@ -168,46 +189,43 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: gap),
 
-                // ===== Sign In button (black pill) =====
                 SizedBox(
                   height: 54,
                   child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        // Success -> navigate to Home
-                        Get.offAllNamed(
-                          '/home',
-                        ); // replaces current route with Home
-                      }
-                    },
+                    onPressed: _loading ? null : _submit,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       foregroundColor: Colors.white,
-                      shape: const StadiumBorder(), // pill shape like Figma
+                      shape: const StadiumBorder(),
                       textStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    child: const Text('Sign In'),
+                    child: _loading
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text('Sign In'),
                   ),
                 ),
 
                 SizedBox(height: size.height * 0.12),
 
-                // ===== Bottom sign up text =====
                 Center(
                   child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      const Text(
-                        "Don't have an account? ",
-                        style: TextStyle(color: Colors.black87, fontSize: 13.5),
-                      ),
+                      const Text("Don't have an account? ",
+                          style:
+                              TextStyle(color: Colors.black87, fontSize: 13.5)),
                       GestureDetector(
-                        onTap: () {
-                          Get.toNamed('/signup'); // <-- navigate to Sign Up
-                        },
+                        onTap: () => Get.toNamed('/signup'),
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(

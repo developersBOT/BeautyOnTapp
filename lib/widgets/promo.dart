@@ -1,13 +1,19 @@
 class Promo {
-  final String imageAsset; // asset path
+  final String imageAsset;
   final String title;
   final String subtitle;
-  final String cta; // button text
+  final String cta;
+
+  // NEW:
+  final String? apiUrl;
+  final String? brand;
 
   const Promo({
     required this.imageAsset,
     required this.title,
     required this.subtitle,
-    this.cta = 'SHOP NOW',
+    required this.cta,
+    this.apiUrl,
+    this.brand,
   });
 }

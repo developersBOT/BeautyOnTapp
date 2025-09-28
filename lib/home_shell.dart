@@ -1,6 +1,8 @@
 import 'package:beautyontapp/Screens/BottomNavBarScreen/exclusive_screen.dart';
 import 'package:beautyontapp/Screens/BottomNavBarScreen/home_screen.dart';
+import 'package:beautyontapp/Screens/BottomNavBarScreen/me_screen.dart';
 import 'package:beautyontapp/Screens/BottomNavBarScreen/shop_screen.dart';
+import 'package:beautyontapp/Screens/BottomNavBarScreen/stores_screen.dart';
 import 'package:flutter/material.dart';
 import 'widgets/app_bottom_nav.dart';
 
@@ -18,8 +20,8 @@ class _HomeShellState extends State<HomeShell> {
     HomeScreen(), 
     ShopScreen(),    // index 1
     ExclusiveScreen(),                   // index 2
-    Center(child: Text('Wishlist Page')),   // index 3
-    Center(child: Text('Stores Page')),     // index 4
+    MeScreen(),   // index 3
+    StoresScreen(),     // index 4
   ];
 
   @override

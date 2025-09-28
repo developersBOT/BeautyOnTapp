@@ -1,46 +1,111 @@
 import 'package:flutter/material.dart';
 import '../widgets/promo.dart';
-import 'promo_card.dart';
 
 class PromoRow extends StatelessWidget {
   final List<Promo> items;
   final void Function(int index)? onTap;
-  // optional custom colors for panels (cycle if fewer than items)
-  final List<Color> panelColors;
+
+  // Card size (slightly taller for image + text balance)
+  static const double _cardW = 240;
+  static const double _cardH = 280;
 
   const PromoRow({
     super.key,
     required this.items,
     this.onTap,
-    this.panelColors = const [Color(0xFFECA5BE), Color(0xFFDEC28A)],
   });
 
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
     final pad = w * 0.04;
-    final gap = 10.0;
-
-    // two-column width but scrollable
-    final cardW = (w - pad * 2 - gap) / 2;
-    final imageH = cardW * 0.75;
+    const gap = 14.0;
 
     return SizedBox(
-      height: imageH + 140, // image + content panel approx
+      height: _cardH,
       child: ListView.separated(
         padding: EdgeInsets.symmetric(horizontal: pad),
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
-        separatorBuilder: (_, __) => SizedBox(width: gap),
-        itemBuilder: (_, i) => SizedBox(
-          width: cardW,
-          child: PromoCard(
-            promo: items[i],
-            imageHeight: imageH,
-            contentColor: panelColors[i % panelColors.length],
+        separatorBuilder: (_, __) => const SizedBox(width: gap),
+        itemBuilder: (_, i) {
+          final p = items[i];
+
+          // Background colors based on index (match Shopify style)
+          final bgColors = [
+            const Color(0xFFFBE4EB), // light pink
+            const Color(0xFFFFF1D6), // light yellow
+            const Color(0xFFEFF5F4), // light grey-green
+            const Color(0xFFE8EAFD), // light lavender (extra 4th card)
+          ];
+
+          return GestureDetector(
             onTap: onTap == null ? null : () => onTap!(i),
-          ),
-        ),
+            child: Container(
+              width: _cardW,
+              height: _cardH,
+              decoration: BoxDecoration(
+                color: bgColors[i % bgColors.length],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.all(14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Image section (top, ~60%)
+                  Expanded(
+                    child: Center(
+                      child: Image.asset(
+                        p.imageAsset,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Title
+                  Text(
+                    p.title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+
+                  // Subtitle
+                  Text(
+                    p.subtitle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: Colors.black87,
+                      height: 1.3,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+
+                  // CTA Button
+                  TextButton(
+                    onPressed: onTap == null ? null : () => onTap!(i),
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      textStyle: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: Text(p.cta.toUpperCase()),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
