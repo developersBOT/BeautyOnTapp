@@ -19,4 +19,15 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 brew install cocoapods
 
 cd ios
-pod install
+pod_install_attempt=1
+while ! pod install; do
+  if [ "$pod_install_attempt" -ge 3 ]; then
+    echo "pod install failed after 3 attempts" >&2
+    exit 1
+  fi
+
+  retry_delay=$((pod_install_attempt * 15))
+  echo "pod install failed (attempt $pod_install_attempt/3); retrying in ${retry_delay}s..." >&2
+  sleep "$retry_delay"
+  pod_install_attempt=$((pod_install_attempt + 1))
+done
