@@ -1,4 +1,3 @@
-// lib/Screens/make_up_screen.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,41 +10,89 @@ class MakeUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
 
+    // Group makeUpEntries by first letter
+    Map<String, List<String>> makeUpByLetter = {};
+    for (var entry in makeUpEntries) {
+      if (entry.isNotEmpty) {
+        String firstLetter = entry[0].toLowerCase();
+        makeUpByLetter.putIfAbsent(firstLetter, () => []).add(entry);
+      }
+    }
+
+    // Sort the entries within each letter group
+    makeUpByLetter.forEach((key, value) {
+      value.sort();
+    });
+
+    List<String> letters = makeUpByLetter.keys.toList()..sort();
+    List<Widget> sections = [];
+
+    for (var l in letters) {
+      final letter = l.toUpperCase();
+      final items = makeUpByLetter[l] ?? [];
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.only(left: w * 0.04, top: 16, bottom: 8),
+          child: Text(
+            letter,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),
+      );
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: w * 0.04),
+          child: Wrap(
+            spacing: w * 0.05,
+            runSpacing: 8,
+            children: items.map((item) {
+              return GestureDetector(
+                onTap: () {
+                  Get.toNamed(
+                    '/products',
+                    arguments: {
+                      'title': item,
+                      'keyword': item, // Pass category keyword for product search
+                    },
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  child: Text(
+                    item,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Make Up', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Make Up',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
         leading: IconButton(
           icon: const Icon(CupertinoIcons.back),
           onPressed: () => Get.back(),
         ),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: w * 0.04, vertical: 16),
-        itemCount: makeUpEntries.length,  // Use makeUpEntries list
-        itemBuilder: (context, index) {
-          final item = makeUpEntries[index]; // Directly use makeUpEntries
-          return Card(
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 8),
-            child: ListTile(
-              leading: const Icon(Icons.category, size: 24),
-              title: Text(item),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {
-                // ✅ Navigate to ProductListScreenUpdated with the selected item
-                Get.toNamed(
-                  '/products',
-                  arguments: {
-                    'title': item,
-                    'keyword': item, // Pass category keyword for product search
-                  },
-                );
-              },
-            ),
-          );
-        },
+      body: ListView(
+        padding: const EdgeInsets.only(bottom: 16),
+        children: sections,
       ),
     );
   }

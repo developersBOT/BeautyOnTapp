@@ -11,6 +11,52 @@ class BrandsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
 
+    List<String> letters = brandsByLetter.keys.toList()..sort();
+    List<Widget> sections = [];
+
+    for (var l in letters) {
+      final letter = l.toUpperCase();
+      final brands = brandsByLetter[l] ?? [];
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.only(left: w * 0.04, top: 16, bottom: 8),
+          child: Text(
+            letter,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),
+      );
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: w * 0.04),
+          child: Wrap(
+            spacing: w * 0.05,
+            runSpacing: 8,
+            children: brands.map((brand) {
+              return GestureDetector(
+                onTap: () {
+                  Get.to(() => BrandProductsScreen(brandName: brand));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  child: Text(
+                    brand,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,38 +71,9 @@ class BrandsScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: w * 0.04, vertical: 16),
-        itemCount: brandsByLetter.keys.length,
-        itemBuilder: (context, index) {
-          final letter = brandsByLetter.keys.elementAt(index).toUpperCase();
-          final brands = brandsByLetter[letter] ?? [];
-
-          return Card(
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 8),
-            child: ExpansionTile(
-              title: Text(
-                letter,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              children: brands
-                  .map((brand) => ListTile(
-                        leading:
-                            const Icon(Icons.branding_watermark, size: 24),
-                        title: Text(brand),
-                        trailing:
-                            const Icon(Icons.arrow_forward_ios, size: 16),
-                        onTap: () {
-                          // 🔥 Navigate to API-driven BrandProductsScreen
-                          Get.to(() => BrandProductsScreen(brandName: brand));
-                        },
-                      ))
-                  .toList(),
-            ),
-          );
-        },
+      body: ListView(
+        padding: const EdgeInsets.only(bottom: 16),
+        children: sections,
       ),
     );
   }

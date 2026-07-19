@@ -13,7 +13,7 @@ const topCategories = [
 /// Top promo cards (scrollable row, now 4 items)
 const promosTop = [
   Promo(
-    imageAsset: 'assets/images/promo1.png',
+    imageAsset: 'assets/images/pastry1.png',
     title: 'A Handbag Must Have',
     subtitle: 'Keep Your Lips Soft And Supple All Day Long',
     cta: 'SHOP NOW',
@@ -21,7 +21,7 @@ const promosTop = [
     brand: 'Make Up - Lips',
   ),
   Promo(
-    imageAsset: 'assets/images/promo2.png',
+    imageAsset: 'assets/images/pastry2.png',
     title: 'Must Have Pastry Products',
     subtitle: 'Keep Your Hands Supple And Hydrated With Our Hand Creams & More',
     cta: 'SHOP NOW',
@@ -29,7 +29,7 @@ const promosTop = [
     brand: 'Pastry Skincare',
   ),
   Promo(
-    imageAsset: 'assets/images/promo2.png',
+    imageAsset: 'assets/images/pastry3.png',
     title: 'Soothe And Calm Your Skin',
     subtitle: 'The Cosrx Propolis Range',
     cta: 'SHOP NOW',
@@ -37,7 +37,7 @@ const promosTop = [
     brand: 'Cosrx',
   ),
   Promo(
-    imageAsset: 'assets/images/promo2.png',
+    imageAsset: 'assets/images/pastry4.png',
     title: 'Your Skins Extra Glow',
     subtitle: 'Deep nourishment with our body oils',
     cta: 'SHOP NOW',

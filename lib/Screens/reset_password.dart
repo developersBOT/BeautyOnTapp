@@ -120,7 +120,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                 ),
                 child: _isLoading
-                    ? CircularProgressIndicator(color: Colors.white) // Show loader if loading
+                    ? Image.asset(
+                        'assets/images/flow.gif',
+                        width: 40,
+                        height: 40,
+                      )
                     : const Text('Submit'),
               ),
             ),

@@ -66,8 +66,14 @@ class _LogoDetailExplainState extends State<LogoDetailExplain> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: Center(
+          child: Image.asset(
+            'assets/images/flow.gif',
+            width: 100,
+            height: 100,
+          ),
+        ),
       );
     }
     if (hasError || product == null) {
@@ -86,6 +92,7 @@ class _LogoDetailExplainState extends State<LogoDetailExplain> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(product!['vendor'] ?? "",
         style: TextStyle(
@@ -111,7 +118,13 @@ class _LogoDetailExplainState extends State<LogoDetailExplain> {
                   },
                   loadingBuilder: (context, child, progress) {
                     if (progress == null) return child;
-                    return const Center(child: CircularProgressIndicator());
+                    return Center(
+                      child: Image.asset(
+                        'assets/images/flow.gif',
+                        width: 100,
+                        height: 100,
+                      ),
+                    );
                   },
                 ),
               ),

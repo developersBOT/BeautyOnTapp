@@ -1,4 +1,3 @@
-// lib/Screens/skin_care_screen.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +9,57 @@ class SkinCareScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
+
+    List<String> categoriesList = skinCareCategories.keys.toList()..sort();
+    List<Widget> sections = [];
+
+    for (var cat in categoriesList) {
+      final items = skinCareCategories[cat] ?? [];
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.only(left: w * 0.04, top: 16, bottom: 8),
+          child: Text(
+            cat,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),
+      );
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: w * 0.04),
+          child: Wrap(
+            spacing: w * 0.05,
+            runSpacing: 8,
+            children: items.map((item) {
+              return GestureDetector(
+                onTap: () {
+                  Get.toNamed(
+                    '/products',
+                    arguments: {
+                      'title': item,
+                      'keyword': item, // API call ke liye
+                    },
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  child: Text(
+                    item,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      );
+    }
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -25,40 +75,9 @@ class SkinCareScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: w * 0.04, vertical: 16),
-        itemCount: skinCareCategories.keys.length,
-        itemBuilder: (context, index) {
-          final category = skinCareCategories.keys.elementAt(index);
-          final items = skinCareCategories[category] ?? [];
-          return Card(
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 8),
-            child: ExpansionTile(
-              title: Text(
-                category,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              children: items.map((item) {
-                return ListTile(
-                  leading: const Icon(Icons.category, size: 24),
-                  title: Text(item),
-                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                  onTap: () {
-                    // ✅ Navigate to ProductListScreenUpdated with keyword
-                    Get.toNamed(
-                      '/products',
-                      arguments: {
-                        'title': item,
-                        'keyword': item, // API call ke liye
-                      },
-                    );
-                  },
-                );
-              }).toList(),
-            ),
-          );
-        },
+      body: ListView(
+        padding: const EdgeInsets.only(bottom: 16),
+        children: sections,
       ),
     );
   }

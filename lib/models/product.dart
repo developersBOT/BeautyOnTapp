@@ -41,8 +41,22 @@ class Product {
       subtitle: json['vendor'] ?? '',
       imageUrl: parsedImageUrl,
       price: parsedPrice,
-      rating: 4.8,
-      reviews: 0,
+      rating: 4.8, // Set default rating or use the one from the API if available
+      reviews: 0, // You can extract reviews if available in the API response
     );
+  }
+
+  // `toJson` method to convert Product object to JSON map
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'subtitle': subtitle,
+      'imageAsset': imageAsset,
+      'imageUrl': imageUrl,
+      'price': price,
+      'rating': rating,
+      'reviews': reviews,
+    };
   }
 }

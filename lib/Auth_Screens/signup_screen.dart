@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart'; // Import the package
 import '../../services/auth/signup_service.dart'; // Adjust path if needed
 
+import 'dart:ui'; // ← Added for ImageFilter
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
   @override
@@ -99,189 +101,201 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.07,
-            vertical: size.height * 0.03,
-          ),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(height: gap * 1.2),
-                Center(
-                  child: SizedBox(
-                    width: logoWidth,
-                    height: logoHeight,
-                    child: Image.asset('assets/images/logo.png', fit: BoxFit.contain),
-                  ),
-                ),
-                SizedBox(height: gap * 1.2),
-
-                const Text('Sign Up',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black)),
-                const SizedBox(height: 6),
-                const Text(
-                  'Welcome Back! Enter Your Account Details',
-                  style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w400, color: Colors.black87),
-                ),
-                SizedBox(height: gap * 1.3),
-
-                // First Name field
-                TextFormField(
-                  controller: _firstNameCtrl,
-                  textInputAction: TextInputAction.next,
-                  decoration: _fieldDecoration('First Name'),
-                  validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
-                ),
-                SizedBox(height: gap),
-
-                // Last Name field
-                TextFormField(
-                  controller: _lastNameCtrl,
-                  textInputAction: TextInputAction.next,
-                  decoration: _fieldDecoration('Last Name'),
-                  validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
-                ),
-                SizedBox(height: gap),
-
-                // Email field
-                TextFormField(
-                  controller: _emailCtrl,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  decoration: _fieldDecoration('Email Address'),
-                  validator: _emailValidator,
-                ),
-                SizedBox(height: gap),
-
-                // Password field
-                TextFormField(
-                  controller: _passwordCtrl,
-                  obscureText: _obscure,
-                  textInputAction: TextInputAction.done,
-                  decoration: _fieldDecoration('Password').copyWith(
-                    suffixIcon: IconButton(
-                      onPressed: () => setState(() => _obscure = !_obscure),
-                      icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off, color: Colors.black54),
-                    ),
-                  ),
-                  validator: (v) {
-                    if (v == null || v.isEmpty) return 'Required';
-                    if (v.length < 6) return 'Minimum 6 characters';
-                    return null;
-                  },
-                ),
-                SizedBox(height: gap),
-
-                // Phone Number field with country code picker
-                InternationalPhoneNumberInput(
-                  onInputChanged: (PhoneNumber number) {
-                    setState(() {
-                      _phoneNumber = number;
-                    });
-                  },
-                  onInputValidated: (isValid) {
-                    // You can add validation here if needed
-                  },
-                  selectorConfig: SelectorConfig(
-                    selectorType: PhoneInputSelectorType.BOTTOM_SHEET, // Use bottom sheet for country code selection
-                  ),
-                  ignoreBlank: false,
-                  autoValidateMode: AutovalidateMode.onUserInteraction,
-                  initialValue: _phoneNumber,
-                  textFieldController: _phoneCtrl,
-                  formatInput: false,
-                  inputDecoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    labelStyle: const TextStyle(color: Colors.black54),
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.black.withOpacity(0.15), width: 1),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(color: Colors.black, width: 1),
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: gap),
-
-                // Terms and conditions agreement
-                Row(
+      body: Stack(
+        children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.07,
+                vertical: size.height * 0.03,
+              ),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Transform.scale(
-                      scale: 0.95,
-                      child: Checkbox(
-                        value: _agree,
-                        onChanged: (v) => setState(() => _agree = v ?? false),
-                        shape: const CircleBorder(),
-                        side: BorderSide(color: Colors.black.withOpacity(0.5)),
-                        activeColor: Colors.black,
-                        checkColor: Colors.white,
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    SizedBox(height: gap * 1.2),
+                    Center(
+                      child: SizedBox(
+                        width: logoWidth,
+                        height: logoHeight,
+                        child: Image.asset('assets/images/logo.png', fit: BoxFit.contain),
                       ),
                     ),
-                    const Expanded(
-                      child: Text(
-                        'I Agree with Terms & Conditions And Privacy Policy',
-                        style: TextStyle(fontSize: 12.5, color: Colors.black87),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: gap),
+                    SizedBox(height: gap * 1.2),
 
-                // Submit button
-                SizedBox(
-                  height: 54,
-                  child: ElevatedButton(
-                    onPressed: _loading ? null : _submit,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
-                      shape: const StadiumBorder(),
-                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                    const Text('Sign Up',
+                        style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black)),
+                    const SizedBox(height: 6),
+                    const Text(
+                      'Welcome Back! Enter Your Account Details',
+                      style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w400, color: Colors.black87),
                     ),
-                    child: _loading
-                        ? const SizedBox(
-                            width: 20, height: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
-                        : const Text('Sign Up'),
-                  ),
-                ),
+                    SizedBox(height: gap * 1.3),
 
-                SizedBox(height: size.height * 0.12),
-                Center(
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      const Text('Already have an account? ',
-                          style: TextStyle(color: Colors.black87, fontSize: 13.5)),
-                      GestureDetector(
-                        onTap: () => Get.offAllNamed('/login'),
-                        child: const Text(
-                          'Sign In',
-                          style: TextStyle(
-                            fontSize: 13.5,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                            color: Colors.black,
-                          ),
+                    // First Name field
+                    TextFormField(
+                      controller: _firstNameCtrl,
+                      textInputAction: TextInputAction.next,
+                      decoration: _fieldDecoration('First Name'),
+                      validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
+                    ),
+                    SizedBox(height: gap),
+
+                    // Last Name field
+                    TextFormField(
+                      controller: _lastNameCtrl,
+                      textInputAction: TextInputAction.next,
+                      decoration: _fieldDecoration('Last Name'),
+                      validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
+                    ),
+                    SizedBox(height: gap),
+
+                    // Email field
+                    TextFormField(
+                      controller: _emailCtrl,
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      decoration: _fieldDecoration('Email Address'),
+                      validator: _emailValidator,
+                    ),
+                    SizedBox(height: gap),
+
+                    // Password field
+                    TextFormField(
+                      controller: _passwordCtrl,
+                      obscureText: _obscure,
+                      textInputAction: TextInputAction.done,
+                      decoration: _fieldDecoration('Password').copyWith(
+                        suffixIcon: IconButton(
+                          onPressed: () => setState(() => _obscure = !_obscure),
+                          icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off, color: Colors.black54),
                         ),
                       ),
-                    ],
-                  ),
+                      validator: (v) {
+                        if (v == null || v.isEmpty) return 'Required';
+                        if (v.length < 6) return 'Minimum 6 characters';
+                        return null;
+                      },
+                    ),
+                    SizedBox(height: gap),
+
+                    // Phone Number field with country code picker
+                    InternationalPhoneNumberInput(
+                      onInputChanged: (PhoneNumber number) {
+                        setState(() {
+                          _phoneNumber = number;
+                        });
+                      },
+                      onInputValidated: (isValid) {
+                        // You can add validation here if needed
+                      },
+                      selectorConfig: SelectorConfig(
+                        selectorType: PhoneInputSelectorType.BOTTOM_SHEET, // Use bottom sheet for country code selection
+                      ),
+                      ignoreBlank: false,
+                      autoValidateMode: AutovalidateMode.onUserInteraction,
+                      initialValue: _phoneNumber,
+                      textFieldController: _phoneCtrl,
+                      formatInput: false,
+                      inputDecoration: InputDecoration(
+                        labelText: 'Phone Number',
+                        labelStyle: const TextStyle(color: Colors.black54),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: Colors.black.withOpacity(0.15), width: 1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(color: Colors.black, width: 1),
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(height: gap),
+
+                    // Terms and conditions agreement
+                    Row(
+                      children: [
+                        Transform.scale(
+                          scale: 0.95,
+                          child: Checkbox(
+                            value: _agree,
+                            onChanged: (v) => setState(() => _agree = v ?? false),
+                            shape: const CircleBorder(),
+                            side: BorderSide(color: Colors.black.withOpacity(0.5)),
+                            activeColor: Colors.black,
+                            checkColor: Colors.white,
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                        ),
+                        const Expanded(
+                          child: Text(
+                            'I Agree with Terms & Conditions And Privacy Policy',
+                            style: TextStyle(fontSize: 12.5, color: Colors.black87),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: gap),
+
+                    // Submit button
+                    SizedBox(
+                      height: 54,
+                      child: ElevatedButton(
+                        onPressed: _loading ? null : _submit,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Colors.white,
+                          shape: const StadiumBorder(),
+                          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                        ),
+                        child: const Text('Sign Up'),
+                      ),
+                    ),
+
+                    SizedBox(height: size.height * 0.12),
+                    Center(
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          const Text('Already have an account? ',
+                              style: TextStyle(color: Colors.black87, fontSize: 13.5)),
+                          GestureDetector(
+                            onTap: () => Get.offAllNamed('/login'),
+                            child: const Text(
+                              'Sign In',
+                              style: TextStyle(
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.w700,
+                                decoration: TextDecoration.underline,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: gap),
+                  ],
                 ),
-                SizedBox(height: gap),
-              ],
+              ),
             ),
           ),
-        ),
+          if (_loading)
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                child: Container(
+                  color: Colors.black.withOpacity(0.3), // Semi-transparent dim for better blur effect
+                  child: Center(
+                    child: Image.asset('assets/images/flow.gif'),
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

@@ -135,26 +135,26 @@ class _ExclusiveScreenState extends State<ExclusiveScreen> {
           const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
           // B'Air Collection
-          SliverToBoxAdapter(
-            child: _SectionHeader(
-              title: "B'Air Collection",
-              actionText: 'View All',
-              onActionFuture: _bairF,
-              onViewAll: (items) {
-                print('[Exclusive] View All – B\'Air (${items.length} items)');
-                Get.toNamed(
-                  '/catalog',
-                  arguments: CatalogArgs(
-                    title: "B'Air Collection",
-                    products: items,
-                    brand: "B'AIR",
-                  ),
-                );
-              },
-              horizontalPadding: pad,
-            ),
-          ),
-          SliverToBoxAdapter(child: _ScrollerFuture(future: _bairF)),
+          // SliverToBoxAdapter(
+          //   child: _SectionHeader(
+          //     title: "B'Air Collection",
+          //     actionText: 'View All',
+          //     onActionFuture: _bairF,
+          //     onViewAll: (items) {
+          //       print('[Exclusive] View All – B\'Air (${items.length} items)');
+          //       Get.toNamed(
+          //         '/catalog',
+          //         arguments: CatalogArgs(
+          //           title: "B'Air Collection",
+          //           products: items,
+          //           brand: "B’AiR SKINCARE",
+          //         ),
+          //       );
+          //     },
+          //     horizontalPadding: pad,
+          //   ),
+          // ),
+          // SliverToBoxAdapter(child: _ScrollerFuture(future: _bairF)),
 
           const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
@@ -198,9 +198,18 @@ class _ScrollerFuture extends StatelessWidget {
       future: future,
       builder: (context, snap) {
         if (snap.connectionState == ConnectionState.waiting) {
-          return const Padding(
+          return  Padding(
             padding: EdgeInsets.all(16),
-            child: Center(child: CircularProgressIndicator()),
+            child: Center(
+              child: SizedBox(
+                height: 40,
+                width: 40,
+                child: Image.asset(
+                  'assets/images/flow.gif',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
           );
         }
         if (snap.hasError) {
@@ -225,7 +234,8 @@ class _ScrollerFuture extends StatelessWidget {
             Get.to(() => ProductDetailScreenBrand(id: p.id));
           },
         );
-    });
+      },
+    );
   }
 }
 

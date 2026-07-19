@@ -13,24 +13,47 @@ class HomeShell extends StatefulWidget {
   State<HomeShell> createState() => _HomeShellState();
 }
 
-class _HomeShellState extends State<HomeShell> {
+class _HomeShellState extends State<HomeShell>
+    with AutomaticKeepAliveClientMixin {
   int _index = 0;
 
   final _pages = const [
-    HomeScreen(), 
-    ShopScreen(),    // index 1
-    ExclusiveScreen(),                   // index 2
-    MeScreen(),   // index 3
-    StoresScreen(),     // index 4
+    HomeScreen(),
+    ShopScreen(),
+    ExclusiveScreen(),
+    MeScreen(),
+    StoresScreen(),
   ];
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // ✅ Workaround for Flutter 3.24 BottomNavigationBar bug
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(milliseconds: 50), () {
+        if (mounted) setState(() {});
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
-      body: _pages[_index],
+      backgroundColor: Colors.white,
+      body: IndexedStack(
+        index: _index,
+        children: _pages,
+      ),
       bottomNavigationBar: AppBottomNav(
         currentIndex: _index,
-        onTap: (i) => setState(() => _index = i),
+        onTap: (i) {
+          if (mounted) setState(() => _index = i);
+        },
       ),
     );
   }

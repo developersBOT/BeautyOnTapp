@@ -11,40 +11,85 @@ class SaleAndOfferScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
 
+    // Group saleAndOfferCategories by first letter
+    Map<String, List<String>> saleByLetter = {};
+    for (var entry in saleAndOfferCategories) {
+      if (entry.isNotEmpty) {
+        String firstLetter = entry[0].toLowerCase();
+        saleByLetter.putIfAbsent(firstLetter, () => []).add(entry);
+      }
+    }
+
+    // Sort the entries within each letter group
+    saleByLetter.forEach((key, value) {
+      value.sort();
+    });
+
+    List<String> letters = saleByLetter.keys.toList()..sort();
+    List<Widget> sections = [];
+
+    for (var l in letters) {
+      final letter = l.toUpperCase();
+      final items = saleByLetter[l] ?? [];
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.only(left: w * 0.04, top: 16, bottom: 8),
+          child: Text(
+            letter,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),
+      );
+
+      sections.add(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: w * 0.04),
+          child: Wrap(
+            spacing: w * 0.05,
+            runSpacing: 8,
+            children: items.map((item) {
+              return GestureDetector(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Selected: $item – Coming soon!')),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  child: Text(
+                    item,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Sale & Offer',
-        style: TextStyle(
-          fontWeight: FontWeight.bold
-        ),),
+        title: const Text(
+          'Sale & Offer',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
         leading: IconButton(
-          icon:  Icon(CupertinoIcons.back),
+          icon: const Icon(CupertinoIcons.back),
           onPressed: () => Get.back(),
         ),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: w * 0.04, vertical: 16),
-        itemCount: saleAndOfferCategories.length,  // Changed to length of List
-        itemBuilder: (context, index) {
-          final item = saleAndOfferCategories[index];  // Direct access to list item
-          return Card(
-            color: Colors.white,
-            margin: const EdgeInsets.only(bottom: 8),
-            child: ListTile(
-              leading: const Icon(Icons.local_offer, size: 24),
-              title: Text(item),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {
-                // Placeholder: Baad mein yahan specific product list ya detail navigate karna
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Selected: $item – Coming soon!')),
-                );
-              },
-            ),
-          );
-        },
+      body: ListView(
+        padding: const EdgeInsets.only(bottom: 16),
+        children: sections,
       ),
     );
   }

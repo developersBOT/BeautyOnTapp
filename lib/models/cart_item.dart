@@ -2,10 +2,27 @@ import '../models/product.dart';
 
 class CartItem {
   final Product product;
-  final String? variant; // e.g. "30ml"
-  int qty;
+  final String variant;
+  final String? variantTitle;
+  int qty;  // Removed 'final' so it can be modified
+  final String? lineId;
 
-  CartItem({required this.product, this.variant, this.qty = 1});
+  CartItem({
+    required this.product,
+    required this.variant,
+    this.variantTitle,
+    required this.qty,
+    this.lineId,
+  });
 
-  double get subTotal => product.price * qty;
+  // Add the fromJson method
+  factory CartItem.fromJson(Map<String, dynamic> json) {
+    return CartItem(
+      product: Product.fromJson(json['product']),
+      variant: json['variant'] ?? '',
+      variantTitle: json['variant_title'] ?? '',
+      qty: json['qty'] ?? 1,
+      lineId: json['line_id'],
+    );
+  }
 }

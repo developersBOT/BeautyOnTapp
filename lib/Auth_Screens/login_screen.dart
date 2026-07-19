@@ -1,8 +1,9 @@
 import 'package:beautyontapp/Helper/session_helper.dart';
 import 'package:beautyontapp/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/Get.dart';
 
+import 'dart:ui'; // ← Added for ImageFilter
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -82,168 +83,175 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.07,
-            vertical: size.height * 0.03,
-          ),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(height: gap * 1.2),
-                Center(
-                  child: SizedBox(
-                    width: logoWidth,
-                    height: logoHeight,
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                SizedBox(height: gap * 1.2),
-
-                const Text(
-                  'Log In',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                const Text(
-                  'Welcome Back! Enter Your Account Details',
-                  style: TextStyle(
-                    fontSize: 13.5,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black87,
-                  ),
-                ),
-                SizedBox(height: gap * 1.3),
-
-                TextFormField(
-                  controller: _emailCtrl,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: _fieldDecoration('Email Address'),
-                  validator: (v) =>
-                      (v == null || v.trim().isEmpty) ? 'Required' : null,
-                ),
-                SizedBox(height: gap),
-
-                TextFormField(
-                  controller: _passwordCtrl,
-                  obscureText: _obscure,
-                  decoration: _fieldDecoration('Password').copyWith(
-                    suffixIcon: IconButton(
-                      onPressed: () => setState(() => _obscure = !_obscure),
-                      icon: Icon(
-                        _obscure ? Icons.visibility : Icons.visibility_off,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ),
-                  validator: (v) =>
-                      (v == null || v.length < 4) ? 'Minimum 4 characters' : null,
-                ),
-                SizedBox(height: gap * 0.7),
-
-                Row(
+      body: Stack(
+        children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.07,
+                vertical: size.height * 0.03,
+              ),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Transform.scale(
-                      scale: 0.95,
-                      child: Checkbox(
-                        value: _remember,
-                        onChanged: (v) => setState(() => _remember = v ?? false),
-                        shape: const CircleBorder(),
-                        side: BorderSide(color: Colors.black.withOpacity(0.5)),
-                        activeColor: Colors.black,
-                        checkColor: Colors.white,
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                    ),
-                    const Text('Remember Me',
-                        style: TextStyle(fontSize: 12.5, color: Colors.black87)),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: () => Get.toNamed('/reset-password'),
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        minimumSize: const Size(0, 0),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: const Text(
-                        'Forget Password?',
-                        style: TextStyle(
-                          fontSize: 12.5,
-                          fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.underline,
-                          color: Colors.black,
+                    SizedBox(height: gap * 1.2),
+                    Center(
+                      child: SizedBox(
+                        width: logoWidth,
+                        height: logoHeight,
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(height: gap),
+                    SizedBox(height: gap * 1.2),
 
-                SizedBox(
-                  height: 54,
-                  child: ElevatedButton(
-                    onPressed: _loading ? null : _submit,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
-                      shape: const StadiumBorder(),
-                      textStyle: const TextStyle(
-                        fontSize: 16,
+                    const Text(
+                      'Log In',
+                      style: TextStyle(
+                        fontSize: 24,
                         fontWeight: FontWeight.w700,
+                        color: Colors.black,
                       ),
                     ),
-                    child: _loading
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.white,
-                            ),
-                          )
-                        : const Text('Sign In'),
-                  ),
-                ),
+                    const SizedBox(height: 6),
+                    const Text(
+                      'Welcome Back! Enter Your Account Details',
+                      style: TextStyle(
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: gap * 1.3),
 
-                SizedBox(height: size.height * 0.12),
+                    TextFormField(
+                      controller: _emailCtrl,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: _fieldDecoration('Email Address'),
+                      validator: (v) =>
+                          (v == null || v.trim().isEmpty) ? 'Required' : null,
+                    ),
+                    SizedBox(height: gap),
 
-                Center(
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      const Text("Don't have an account? ",
-                          style:
-                              TextStyle(color: Colors.black87, fontSize: 13.5)),
-                      GestureDetector(
-                        onTap: () => Get.toNamed('/signup'),
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontSize: 13.5,
-                            fontWeight: FontWeight.w700,
-                            decoration: TextDecoration.underline,
-                            color: Colors.black,
+                    TextFormField(
+                      controller: _passwordCtrl,
+                      obscureText: _obscure,
+                      decoration: _fieldDecoration('Password').copyWith(
+                        suffixIcon: IconButton(
+                          onPressed: () => setState(() => _obscure = !_obscure),
+                          icon: Icon(
+                            _obscure ? Icons.visibility : Icons.visibility_off,
+                            color: Colors.black54,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                      validator: (v) =>
+                          (v == null || v.length < 4) ? 'Minimum 4 characters' : null,
+                    ),
+                    SizedBox(height: gap * 0.7),
+
+                    Row(
+                      children: [
+                        Transform.scale(
+                          scale: 0.95,
+                          child: Checkbox(
+                            value: _remember,
+                            onChanged: (v) => setState(() => _remember = v ?? false),
+                            shape: const CircleBorder(),
+                            side: BorderSide(color: Colors.black.withOpacity(0.5)),
+                            activeColor: Colors.black,
+                            checkColor: Colors.white,
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                        ),
+                        const Text('Remember Me',
+                            style: TextStyle(fontSize: 12.5, color: Colors.black87)),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () => Get.toNamed('/reset-password'),
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: const Size(0, 0),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          child: const Text(
+                            'Forget Password?',
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600,
+                              decoration: TextDecoration.underline,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: gap),
+
+                    SizedBox(
+                      height: 54,
+                      child: ElevatedButton(
+                        onPressed: _loading ? null : _submit,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Colors.white,
+                          shape: const StadiumBorder(),
+                          textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        child: const Text('Sign In'),
+                      ),
+                    ),
+
+                    SizedBox(height: size.height * 0.12),
+
+                    Center(
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          const Text("Don't have an account? ",
+                              style:
+                                  TextStyle(color: Colors.black87, fontSize: 13.5)),
+                          GestureDetector(
+                            onTap: () => Get.toNamed('/signup'),
+                            child: const Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.w700,
+                                decoration: TextDecoration.underline,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: gap),
+                  ],
                 ),
-                SizedBox(height: gap),
-              ],
+              ),
             ),
           ),
-        ),
+          if (_loading)
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                child: Container(
+                  color: Colors.black.withOpacity(0.3), // Semi-transparent dim for better blur effect
+                  child: Center(
+                    child: Image.asset('assets/images/flow.gif'),
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
