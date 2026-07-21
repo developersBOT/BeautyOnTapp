@@ -1,0 +1,130 @@
+{
+ "generated": "2026-07-21T16:46:44Z",
+ "scope": "planning only \u2014 zero Shopify/theme/metafield/collection/menu/skill/live-site changes",
+ "artifacts": {
+  "proposal_csv": {
+   "path": "BOT_BRAND_PILL_PROPOSAL.csv",
+   "rows": 93,
+   "columns": 13,
+   "sha256": "c297cc98afdce6f809cb0acf6406b4ca25203fd09847b236f95d21c3770db4d6"
+  },
+  "destinations_csv": {
+   "path": "BOT_BRAND_PILL_DESTINATIONS.csv",
+   "rows": 333,
+   "columns": 22,
+   "sha256": "309d0227ac9810c9dd65054a1d16f285f70294e58279f580dcd5142961f8fad0"
+  },
+  "collection_snapshot": {
+   "path": "audit/collections_all_fresh.json",
+   "count": 272,
+   "sha256": "2c79645d961f8db519bfc62927e2d929f6d24261baa1d9ce7f0a98fd7e8e7e3d",
+   "captured": "2026-07-21T16:46:44Z",
+   "diff_vs_session_start": {
+    "added": [],
+    "removed": []
+   }
+  },
+  "adjudication_log": "audit/adjudication_log.json",
+  "candidate_rejection_log": "audit/candidate_rejection_log.json"
+ },
+ "gates": {
+  "1_adjudicate_questionables": {
+   "status": "PASS",
+   "flags_adjudicated": 136,
+   "rows_affected": 52,
+   "note": "brief said 51 rows; verified count of rows carrying questionable flags in the final review round was 52 \u2014 all adjudicated",
+   "verdicts": {
+    "KEEP": 106,
+    "REMOVE": 3,
+    "HOLD": 28,
+    "DROP_PILL": 16
+   },
+   "evidence": "audit/adjudication_log.json (per-flag verdict + cited title/type evidence)"
+  },
+  "2_unresolved_on_hold": {
+   "status": "PASS",
+   "hold_items_quarantined": 28,
+   "rows_with_holds": 15,
+   "invariant_checked": "no row with on_hold_items carries High confidence",
+   "invariant_holds": true
+  },
+  "3_misleading_labels": {
+   "status": "PASS",
+   "renames": {
+    "fundamentals-1": "Body Butters\u2192Body Yoghurts",
+    "mzuri-skin": "Body Wash\u2192Soap Bars",
+    "pastry-skincare": "Body Scrubs\u2192Body Exfoliants",
+    "swiitchbeauty": "Treatments\u2192Lip Treatments",
+    "forme": "Hair Styling\u2192Hair Sprays",
+    "bree-probiotics": "Intimate Care\u2192Accessories"
+   },
+   "drops": {
+    "naturally-africa": "Hair Oils (dup of Scalp Care)",
+    "some-by-mi": "Treatments (redundant set)"
+   },
+   "member_removals": {
+    "skin-functional 8929396883715": "removed from Exfoliators+Toners (no signal)"
+   }
+  },
+  "4_display_vs_taxonomy": {
+   "status": "PASS",
+   "column": "display_eligibility (both CSVs)",
+   "pills_hidden_zero_stock": 72,
+   "rule": "taxonomy eligibility = published ACTIVE assortment; display HIDE when 0 qualifying in stock; reinstate on restock"
+  },
+  "5_identical_sets": {
+   "status": "PASS",
+   "method": "frozenset dedupe post-correction + reviewer-noted redundancies",
+   "removed": [
+    "biodance:Hydration",
+    "l-oreal-elvive:Hydration",
+    "naturally-africa:Hair Oils",
+    "serene:Hydration",
+    "some-by-mi:Treatments"
+   ]
+  },
+  "6_no_manual_default": {
+   "status": "PASS",
+   "automated": 48,
+   "manual": 283,
+   "on_hold": 2,
+   "rule": "automated proposed wherever a vendor+type or vendor+title rule reproduces the exact ID set over a provably complete (VENDOR-ruled) assortment; every manual row carries its reason in destination_blocker"
+  },
+  "7_filter_exact_equality": {
+   "status": "PASS (no filter destination passes)",
+   "reason": "returned-ID equality unverifiable: storefront HTTP 403 (Cloudflare) + theme show_filters:false + Search & Discovery config unverified; all filter candidates marked FAIL and none recommended"
+  },
+  "8_fresh_snapshot": {
+   "status": "PASS",
+   "sha256": "2c79645d961f8db519bfc62927e2d929f6d24261baa1d9ce7f0a98fd7e8e7e3d",
+   "captured": "2026-07-21T16:46:44Z",
+   "count": 272,
+   "rejection_log_entries": 7
+  },
+  "9_tiam_alpha5": {
+   "status": "PARTIAL \u2014 live facts applied; Business Facts doc unavailable",
+   "live_admin_facts": "2026-07-21T16:41Z: TIAM collection 447001198851 published, 18 products, 7 DRAFT, 2 units sellable; Alpha - 5 Mela Care Cream (9205991342339) vendor=TIAM ACTIVE published 0-stock \u2014 TIAM product line, not a separate brand",
+   "not_verified": "removal/redirect decision \u2014 source needed: 03_PNCapital_Business_Facts (not accessible in this session)"
+  },
+  "10_hidden_unicode": {
+   "status": "PASS",
+   "scrubbed": "zero-width/control/BOM/NBSP/U+FFFC removed from every cell of both CSVs at write time; visible accented store data preserved"
+  },
+  "11_destination_columns": {
+   "status": "PASS",
+   "columns_added": [
+    "display_eligibility",
+    "canonical_indexability",
+    "destination_confidence",
+    "destination_blocker",
+    "validation_status",
+    "validation_evidence"
+   ]
+  }
+ },
+ "pr": {
+  "number": 1,
+  "state": "draft \u2014 unchanged",
+  "skills_updated": false
+ }
+}

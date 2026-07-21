@@ -1,0 +1,4350 @@
+[
+  {
+    "id": "gid://shopify/Collection/442057294083",
+    "title": "Skincare",
+    "handle": "skincare",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 1644
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/442057523459",
+    "title": "Bair Skincare",
+    "handle": "bair-skincare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 15
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/442297909507",
+    "title": "Amazi",
+    "handle": "afrosundae",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "AMAZI BEAUTY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442297975043",
+    "title": "Anasa",
+    "handle": "anasa",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "ANASA SKIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298007811",
+    "title": "Pastry Skincare",
+    "handle": "pastry-skincare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "PASTRY SKINCARE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298302723",
+    "title": "Barulab",
+    "handle": "barulab",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 17
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BARULAB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298466563",
+    "title": "Beauty of Joseon",
+    "handle": "beauty-of-joseon",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BEAUTY OF JOSEON"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298499331",
+    "title": "BIODERMA",
+    "handle": "bioderma",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 31
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BIODERMA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298564867",
+    "title": "Black Girl Sunscreen",
+    "handle": "black-girl-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BLACK GIRL SUNSCREEN"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298630403",
+    "title": "Breast Tape by Si",
+    "handle": "bree-probiotics",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "Breast Tape by Si"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298892547",
+    "title": "Curl Chemistry",
+    "handle": "curl-chemistry",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "CURL CHEMISTRY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442298990851",
+    "title": "Dermopal",
+    "handle": "dermopal",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:07Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "DERMOPAL"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299023619",
+    "title": "Essie",
+    "handle": "essie",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "ESSIE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299220227",
+    "title": "First Seed",
+    "handle": "first-seed",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T11:21:53Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "FIRST SEED"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299318531",
+    "title": "Garnier",
+    "handle": "garnier",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 18
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "GARNIER"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299482371",
+    "title": "Isntree",
+    "handle": "isntree",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "ISNTREE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299515139",
+    "title": "Kiko Vitals",
+    "handle": "kiko-vitals",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:24Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "KIKO VITALS"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299580675",
+    "title": "Kudu Cosmetica",
+    "handle": "kudu-cosmetica",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "KUDU COSMETICA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299646211",
+    "title": "Lanolab",
+    "handle": "l-oreal-elvive",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:09Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LANOLAB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299678979",
+    "title": "La Roche-Posay",
+    "handle": "la-roche-posay",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:20Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LA ROCHE-POSAY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299711747",
+    "title": "Lelapa La Bakoena",
+    "handle": "lelapa-la-bakoena",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 7
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "Lelapa La Bakoena"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299777283",
+    "title": "Lelive",
+    "handle": "lelive",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 20
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LELIVE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299810051",
+    "title": "Lumi Glo",
+    "handle": "love-kinks",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LUMI GLO"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442299941123",
+    "title": "Mzuri Skin",
+    "handle": "mzuri-skin",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:11Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "MZURI SKIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300006659",
+    "title": "Nakolwethu",
+    "handle": "nakolwethu",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NAKOLWETHU"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300039427",
+    "title": "Native Child",
+    "handle": "native-child",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NATIVE CHILD"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300072195",
+    "title": "Naturally Africa",
+    "handle": "naturally-africa",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 10
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NATURALLY AFRICA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300104963",
+    "title": "Naturals Beauty",
+    "handle": "naturals-beauty",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NATURALS BEAUTY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300137731",
+    "title": "Ndanaka",
+    "handle": "ndanaka",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NDANAKA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300203267",
+    "title": "Neutriherb",
+    "handle": "neutriherb",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NEUTRIHERBS"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300268803",
+    "title": "Ostibel",
+    "handle": "ostibel",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "OSTIBEL"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300498179",
+    "title": "REN Clear Skin",
+    "handle": "ren",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:25Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "STARTS_WITH",
+          "condition": "REN"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "REN Clear Skin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300530947",
+    "title": "Sheba Feminine",
+    "handle": "sheba-feminine",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:26Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SHEBA FEMININE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300596483",
+    "title": "Skin Creamery",
+    "handle": "skin-creamery",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:26Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SKIN CREAMERY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300629251",
+    "title": "Skin Republic",
+    "handle": "skin-republic",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 40
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SKIN REPUBLIC"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300793091",
+    "title": "Skinny Colour",
+    "handle": "skinny-colour",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:26Z",
+    "productsCount": {
+      "count": 1
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SKINNY COLOUR"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300858627",
+    "title": "Standard Beauty",
+    "handle": "standard-beauty",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 60
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "STANDARD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442300891395",
+    "title": "Swiitchbeauty",
+    "handle": "swiitchbeauty",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 40
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SWIITCHBEAUTY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442301055235",
+    "title": "Uso Skincare",
+    "handle": "uso-skincare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:26Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "USO"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442301120771",
+    "title": "Vichy",
+    "handle": "vichy",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:26Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "VICHY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/442301284611",
+    "title": "Yearn Skin",
+    "handle": "yearn",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:14Z",
+    "productsCount": {
+      "count": 29
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "YEARN SKIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443121205507",
+    "title": "Beauty Under R200",
+    "handle": "smart-collection",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T13:32:39Z",
+    "productsCount": {
+      "count": 549
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VARIANT_PRICE",
+          "relation": "LESS_THAN",
+          "condition": "200"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443510030595",
+    "title": "Korean Skincare",
+    "handle": "korean-skincare",
+    "templateSuffix": "makeup",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 495
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443938144515",
+    "title": "Scrubs",
+    "handle": "scrubs",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443938668803",
+    "title": "Shower Gel",
+    "handle": "shower-gel",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 24
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443938963715",
+    "title": "Cleanser",
+    "handle": "cleanser",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 95
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443939029251",
+    "title": "Cleansing Oil",
+    "handle": "cleansing-oil",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T22:02:03Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443939913987",
+    "title": "Make Up Remover",
+    "handle": "make-up-remover",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:55Z",
+    "productsCount": {
+      "count": 30
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443940143363",
+    "title": "Exfoliator",
+    "handle": "exfoliator",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 126
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443941224707",
+    "title": "Moisturisers & Balms",
+    "handle": "moisturisers-balms",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 82
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443941519619",
+    "title": "Serums",
+    "handle": "serums",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 221
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443941814531",
+    "title": "Eye Cream",
+    "handle": "eye-cream",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 30
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443942338819",
+    "title": "Skincare Combos/Kits",
+    "handle": "skincare-combos-kits",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 62
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443942469891",
+    "title": "Supplement Powders & Caps",
+    "handle": "smoothie-powders-and-vitamins",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:27Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443942568195",
+    "title": "Sunscreen",
+    "handle": "sunscreen",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 85
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443942633731",
+    "title": "Teen Skincare",
+    "handle": "teen-skincare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 24
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443942732035",
+    "title": "Toners",
+    "handle": "toners",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 85
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443943321859",
+    "title": "Collagen",
+    "handle": "collagen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 89
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443943649539",
+    "title": "Face-Masks",
+    "handle": "face-masks",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 99
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443960393987",
+    "title": "Glutathione",
+    "handle": "glutathione",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 44
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443960721667",
+    "title": "Mandelic Acid",
+    "handle": "mandelic-acid",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961016579",
+    "title": "Squalane",
+    "handle": "squalane",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Squalane"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443961082115",
+    "title": "Vitamin C",
+    "handle": "vitamin-c",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 42
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Vitamin C"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443961213187",
+    "title": "Tranexamic Acid",
+    "handle": "tranexamic-acid",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 15
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961442563",
+    "title": "Anti-Aging",
+    "handle": "anti-aging",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 186
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961540867",
+    "title": "Acne",
+    "handle": "acne",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 359
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961770243",
+    "title": "Blemishes",
+    "handle": "blemishes",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 452
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961868547",
+    "title": "Dark Marks",
+    "handle": "dark-marks",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 257
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443961901315",
+    "title": "Dull Skin",
+    "handle": "dull-skin",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 378
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "dull skin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443961966851",
+    "title": "Dry Skin",
+    "handle": "dry-skin",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 438
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "Dry Skin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443961999619",
+    "title": "Hyperpigmentation",
+    "handle": "hyperpigmentation",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T12:31:35Z",
+    "productsCount": {
+      "count": 258
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "hyperpigmentation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443962032387",
+    "title": "Large Pores",
+    "handle": "large-pores",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 97
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "Large Pores"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443962065155",
+    "title": "Oily Skin",
+    "handle": "oily-skin",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T12:19:55Z",
+    "productsCount": {
+      "count": 200
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "oily skin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443962097923",
+    "title": "Texture",
+    "handle": "texture",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 172
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "texture"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443962294531",
+    "title": "Deodorants and Anti-Perspirants",
+    "handle": "deodorants-and-anti-perspirants",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962360067",
+    "title": "Body Butters",
+    "handle": "body-butters",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 45
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962458371",
+    "title": "Body Oil",
+    "handle": "body-oil",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962491139",
+    "title": "Body Wash",
+    "handle": "body-wash-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 43
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "Body Wash"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "glow edit"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Pastry Glow Body Brightening Bundle"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Body wash"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/443962589443",
+    "title": "Shampoos",
+    "handle": "shampoos",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T09:37:54Z",
+    "productsCount": {
+      "count": 22
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962654979",
+    "title": "Conditioners",
+    "handle": "conditioners",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:29Z",
+    "productsCount": {
+      "count": 24
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962687747",
+    "title": "Hair Accessories",
+    "handle": "hair-accessories",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962720515",
+    "title": "Hair Care Combos",
+    "handle": "hair-care-combos",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:29Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962753283",
+    "title": "Hair Mists",
+    "handle": "hair-mists",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:29Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962818819",
+    "title": "Hair Oils",
+    "handle": "hair-oils",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:29Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962851587",
+    "title": "Edge and Styling Gels",
+    "handle": "edge-and-styling-gels",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:29Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962917123",
+    "title": "Leave Ins",
+    "handle": "leave-ins",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T11:21:53Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/443962982659",
+    "title": "Hair Butters",
+    "handle": "hair-butters",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:52Z",
+    "productsCount": {
+      "count": 32
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444066627843",
+    "title": "Beard Serums & Oils",
+    "handle": "beard-serums-oils",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444068036867",
+    "title": "Hand Cream & Foot Cream",
+    "handle": "hand-cream-foot-cream",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444069347587",
+    "title": "Mini Size",
+    "handle": "mini-size",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 23
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444069871875",
+    "title": "Mist",
+    "handle": "mist",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 38
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444217262339",
+    "title": "ANUA",
+    "handle": "anua",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T22:02:55Z",
+    "productsCount": {
+      "count": 20
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "ANUA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444241641731",
+    "title": "Haruharu Wonder",
+    "handle": "haruharu-wonder",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:09Z",
+    "productsCount": {
+      "count": 29
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "HARUHARU WONDER"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444307833091",
+    "title": "Suncare",
+    "handle": "sunscreens",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 88
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444347187459",
+    "title": "Black African Organics",
+    "handle": "black-african-organics",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BLACK AFRICAN ORGANICS"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444347646211",
+    "title": "Nilotiqa",
+    "handle": "nilotiqa-nilotiqa",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 10
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NILOTIQA"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444348629251",
+    "title": "L’Oréal",
+    "handle": "l-oreal",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444350890243",
+    "title": "Brightening",
+    "handle": "brightening",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 159
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444351119619",
+    "title": "Aveeno",
+    "handle": "aveeno",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444352921859",
+    "title": "Skin functional",
+    "handle": "skin-functional",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 74
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444378480899",
+    "title": "Cerave",
+    "handle": "cerave",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:20Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444379103491",
+    "title": "COSRX",
+    "handle": "cosrx",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 95
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444380741891",
+    "title": "Fundamentals",
+    "handle": "fundamentals-1",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 46
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444382052611",
+    "title": "Some by Mi",
+    "handle": "some-by-mi",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444382576899",
+    "title": "AXIS-Y",
+    "handle": "axis-y",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 31
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444382773507",
+    "title": "Eucerin",
+    "handle": "eucerin",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:30Z",
+    "productsCount": {
+      "count": 18
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444383068419",
+    "title": "Afrobotanics",
+    "handle": "afrobotanics",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444383166723",
+    "title": "Hermosa Flor",
+    "handle": "hermosa-flor",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 62
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444383396099",
+    "title": "Koosh Kream",
+    "handle": "koosh-kream",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 1
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444383658243",
+    "title": "Avène",
+    "handle": "avene",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:42Z",
+    "productsCount": {
+      "count": 33
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444384018691",
+    "title": "MILLFORD",
+    "handle": "millford",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444463972611",
+    "title": "Teaology",
+    "handle": "teaology",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444464103683",
+    "title": "T444Z",
+    "handle": "t444z",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444464300291",
+    "title": "Dermalogica",
+    "handle": "dermalogica",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 35
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444464464131",
+    "title": "Manetain",
+    "handle": "manetain",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444464595203",
+    "title": "Neutrogena",
+    "handle": "neutrogena",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444465021187",
+    "title": "Purpul Hair",
+    "handle": "purpul-hair",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 15
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444471410947",
+    "title": "HÓM",
+    "handle": "hom",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444471738627",
+    "title": "SKIN1004",
+    "handle": "skin1004",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:31Z",
+    "productsCount": {
+      "count": 19
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444589932803",
+    "title": "Olio",
+    "handle": "olio",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "OLIŌ"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444590063875",
+    "title": "Bonak Beauty",
+    "handle": "bonak-beauty",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 1
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "BONAK BEAUTY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444590096643",
+    "title": "Make up Eye",
+    "handle": "make-up-eye",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 22
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "eyes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444590326019",
+    "title": "Make up face",
+    "handle": "make-up-face",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 41
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444590457091",
+    "title": "Make up Lips",
+    "handle": "make-up-lips",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 82
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444656845059",
+    "title": "Brothers Beard",
+    "handle": "brothers-beard",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444657008899",
+    "title": "Glamour Beauty",
+    "handle": "glamour-beauty",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "GLAMOUR BEAUTY"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444672835843",
+    "title": "Make up Brushes & Applicators",
+    "handle": "make-up-brushes-applicators",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444686303491",
+    "title": "Face Mask",
+    "handle": "face-mask",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T13:32:39Z",
+    "productsCount": {
+      "count": 129
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Mask"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444686434563",
+    "title": "Eye Masks",
+    "handle": "eye-masks",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 7
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444687122691",
+    "title": "Only at BeautyonTApp",
+    "handle": "only-at-beautyontapp",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 44
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444699377923",
+    "title": "Lele Feminine",
+    "handle": "lele-feminine",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444703080707",
+    "title": "serene",
+    "handle": "serene",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:32Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SERENE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444703146243",
+    "title": "Laneige",
+    "handle": "laneige",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LANEIGE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444711796995",
+    "title": "Benton",
+    "handle": "benton",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:33Z",
+    "productsCount": {
+      "count": 1
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444711895299",
+    "title": "Biodance",
+    "handle": "biodance",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:43Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444712583427",
+    "title": "Huegah",
+    "handle": "huegah",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:33Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "HUEGAH"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444712943875",
+    "title": "Mielle",
+    "handle": "mielle",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:33Z",
+    "productsCount": {
+      "count": 7
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "MIELLE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444723593475",
+    "title": "Combination & Normal Skin Type",
+    "handle": "combination-normal",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:48Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444723888387",
+    "title": "Sensitive Skin",
+    "handle": "sensitive-skin",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 82
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444724707587",
+    "title": "Makeup Palettes",
+    "handle": "makeup-palettes",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444724936963",
+    "title": "Korean Cleansers/Oil",
+    "handle": "korean-cleansers-oil",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 54
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444724969731",
+    "title": "Korean Serums & Ampoules",
+    "handle": "korean-serums",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 91
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725035267",
+    "title": "Korean Sunscreen",
+    "handle": "korean-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 45
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725166339",
+    "title": "Korean Moisturizers & Creams",
+    "handle": "korean-moisturizers",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 74
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725297411",
+    "title": "Korean Essences & Toners",
+    "handle": "korean-essences-and-toners",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:37:10Z",
+    "productsCount": {
+      "count": 86
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725461251",
+    "title": "Hair",
+    "handle": "hair",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 134
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725494019",
+    "title": "Beard",
+    "handle": "beard",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 17
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725657859",
+    "title": "Make up",
+    "handle": "make-up",
+    "templateSuffix": "makeup",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 120
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444725920003",
+    "title": "Body Acne",
+    "handle": "body-acne",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 33
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444726149379",
+    "title": "Brightening Body",
+    "handle": "brightening-body",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 20
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444726444291",
+    "title": "Anti-Dandruff",
+    "handle": "anti-dandruff",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:34Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444726509827",
+    "title": "Damaged Hair",
+    "handle": "damaged-hair",
+    "templateSuffix": "hair",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 22
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444804235523",
+    "title": "Body Wash and Lotions",
+    "handle": "body-wash-and-lotions",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 151
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "body-butters"
+        },
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "body-care"
+        },
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "body-wash"
+        },
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "body-lotion"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/444965060867",
+    "title": "Mineral Sunscreens",
+    "handle": "mineral-sunscreens",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:56Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444965323011",
+    "title": "Chemical Sunscreen",
+    "handle": "chemical-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 64
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444965421315",
+    "title": "White-Cast Free Sunscreen",
+    "handle": "white-cast-free-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 59
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444965552387",
+    "title": "Gel Sunscreen",
+    "handle": "gel-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444965617923",
+    "title": "Cream Sunscreen",
+    "handle": "cream-sunscreen",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 71
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966076675",
+    "title": "Citrus Scent",
+    "handle": "citrus",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966338819",
+    "title": "Floral Scent",
+    "handle": "floral",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966502659",
+    "title": "Fresh Scent",
+    "handle": "fresh",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966568195",
+    "title": "Fruity Scents",
+    "handle": "fruity-scents",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 17
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966666499",
+    "title": "Woody Scent",
+    "handle": "woody-scent",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:35Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966699267",
+    "title": "Green Scents",
+    "handle": "green-scents",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:35Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966732035",
+    "title": "Sweet Scents",
+    "handle": "sweet-scents",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 13
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444966830339",
+    "title": "Fragrance Free Scent",
+    "handle": "fragrance-free-scent",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/444990521603",
+    "title": "Active Bodycare",
+    "handle": "active-bodycare",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 66
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/445060579587",
+    "title": "serums under 200",
+    "handle": "serums-under-200",
+    "templateSuffix": "makeup",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "serum"
+        },
+        {
+          "column": "VARIANT_PRICE",
+          "relation": "LESS_THAN",
+          "condition": "200"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/445060907267",
+    "title": "Toners and Mists Under R200",
+    "handle": "toners-and-mists-under-r200",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 18
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/445060940035",
+    "title": "Moisturisers under R200",
+    "handle": "moisturisers-under-r200",
+    "templateSuffix": "makeup-2",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/445060972803",
+    "title": "Cleansers under R200",
+    "handle": "cleansers-under-r200",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:04Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/445061005571",
+    "title": "Sunscreens under R200",
+    "handle": "sunscreens-under-r200",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:02:02Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/445522411779",
+    "title": "Moisturisers / Creams under R200",
+    "handle": "moisturisers-under-r2007",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:35Z",
+    "productsCount": {
+      "count": 12
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VARIANT_PRICE",
+          "relation": "LESS_THAN",
+          "condition": "200"
+        },
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "body-lotion"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/445774135555",
+    "title": "Cellulite",
+    "handle": "cellulite",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:20Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447001198851",
+    "title": "TIAM",
+    "handle": "tiam",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:35Z",
+    "productsCount": {
+      "count": 18
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "TIAM"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/447027577091",
+    "title": "New Arrivals",
+    "handle": "new-arrivals",
+    "templateSuffix": "",
+    "sortOrder": "CREATED_DESC",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 54
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447315214595",
+    "title": "Medicube",
+    "handle": "medicube",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 51
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "MEDICUBE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/447445598467",
+    "title": "Clearance Sale",
+    "handle": "clearance-sale",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 101
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447992365315",
+    "title": "Winter Week 20% off",
+    "handle": "winter-week-20-off",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 217
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447992529155",
+    "title": "Winter Week 10% off",
+    "handle": "winter-week-10-off",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 15
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447992627459",
+    "title": "Winter Week 5% off",
+    "handle": "winter-week-5-off",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 46
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447992824067",
+    "title": "Winter Week 15% off",
+    "handle": "winter-week-15-off",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/447992889603",
+    "title": "Winter Week 25% off",
+    "handle": "winter-week-25-off",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:36Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/449007616259",
+    "title": "Beauty Offer - Yearn Skincare",
+    "handle": "beauty-offer-yearn-skincare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:36Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/449007976707",
+    "title": "Centella Asiatica",
+    "handle": "centella-asiatica",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T12:31:35Z",
+    "productsCount": {
+      "count": 41
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/449062895875",
+    "title": "Forme",
+    "handle": "forme",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 10
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/449066238211",
+    "title": "Hair Spritz",
+    "handle": "hair-spritz",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 1
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/450318172419",
+    "title": "BoT Sale",
+    "handle": "bot-sale",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 34
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/451342860547",
+    "title": "Smooch",
+    "handle": "smooch",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:36Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/453592645891",
+    "title": "Scented Candles",
+    "handle": "scented-candles",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:36Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/454727532803",
+    "title": "Juce",
+    "handle": "juce-fragrances",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/454728024323",
+    "title": "Amber Scent",
+    "handle": "amber-scent",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T22:01:41Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/454728057091",
+    "title": "Perfume",
+    "handle": "perfume",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/454728089859",
+    "title": "Cologne",
+    "handle": "cologne",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/454758826243",
+    "title": "Parfum",
+    "handle": "parfum",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:37Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/455095353603",
+    "title": "Luna Hair+ Body",
+    "handle": "luna-hair-body",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:37Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/455487848707",
+    "title": "MIXSOON",
+    "handle": "mixsoon",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:37Z",
+    "productsCount": {
+      "count": 26
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "MIXSOON"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/456615756035",
+    "title": "Seoul1988",
+    "handle": "seoul1988",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 10
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/456744501507",
+    "title": "hair thickening",
+    "handle": "hair-thickening",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 13
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/456744567043",
+    "title": "Scalpcare",
+    "handle": "scalpcare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/456744632579",
+    "title": "Wigcare",
+    "handle": "wigcare",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:37Z",
+    "productsCount": {
+      "count": 14
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/456744927491",
+    "title": "Hair dryness",
+    "handle": "hair-dryness",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 28
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/458899194115",
+    "title": "Bundle Deals",
+    "handle": "bundle-deals",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 31
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/459209769219",
+    "title": "All Products",
+    "handle": "all-products",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 718
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/461832454403",
+    "title": "Youth O'clock",
+    "handle": "youth-oclock",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:38Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/461857980675",
+    "title": "rated 4,5-5 stars",
+    "handle": "best-seller-1",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 360
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "PRODUCT_METAFIELD_DEFINITION",
+          "relation": "GREATER_THAN",
+          "condition": "4.5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/461858767107",
+    "title": "Top 30",
+    "handle": "top-30",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 36
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462145323267",
+    "title": "Anua Oil + Axis-Y Serum + Pastry Wash & Lotion",
+    "handle": "anua-oil-axis-y-serum-pastry-wash-lotion",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462145913091",
+    "title": "Dark Spot Fade",
+    "handle": "the-glass-skin-starter",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 92
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462146109699",
+    "title": "Extreme Brightening Kit",
+    "handle": "the-extreme-brightening-kit",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 77
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462146142467",
+    "title": "Strawberry Legs & Body Acne Fix",
+    "handle": "the-strawberry-legs-body-acne-fix",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462146339075",
+    "title": "Glass Skin Hydration AM",
+    "handle": "the-melanin-barrier-repair",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 63
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462146535683",
+    "title": "Clear Pores + Calm AM",
+    "handle": "clear-pores-calm-am",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 60
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147125507",
+    "title": "Sensitive Barrier Rescue PM",
+    "handle": "sensitive-barrier-rescue-pm",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 75
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147191043",
+    "title": "Retinol Renewal PM",
+    "handle": "retinol-renewal-pm",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147322115",
+    "title": "Weekly Glow Peel PM",
+    "handle": "weekly-glow-peel-pm",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T13:12:38Z",
+    "productsCount": {
+      "count": 11
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147420419",
+    "title": "Body Acne + Smooth Skin",
+    "handle": "body-acne-smooth-skin",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 24
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147453187",
+    "title": "Vitamin C Brighten AM",
+    "handle": "vitamin-c-brighten-am",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 35
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147518723",
+    "title": "TXA + Niacinamide “Even Tone” AM",
+    "handle": "txa-niacinamide-even-tone-am",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 35
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462147584259",
+    "title": "Spa Collagen Mask PM",
+    "handle": "spa-collagen-mask-pm",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 45
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462259552515",
+    "title": "Snail Mucin skincare",
+    "handle": "snail-mucin-skincare",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T14:58:15Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Snail"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/462318240003",
+    "title": "Yearnskin",
+    "handle": "yearnskin",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T11:21:53Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462531756291",
+    "title": "Best sellers",
+    "handle": "best-sellers",
+    "templateSuffix": "makeup",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 129
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462547386627",
+    "title": "Pimple patch",
+    "handle": "pimple-patch",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-19T22:03:35Z",
+    "productsCount": {
+      "count": 20
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "pimple patch"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "pimple patch"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "patch"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/462557020419",
+    "title": "Brightening Serums",
+    "handle": "brightening-serums",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 265
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Brightening"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Serum"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/462792065283",
+    "title": "the-strawberry-legs-body-blemishes-fix",
+    "handle": "the-strawberry-legs-body-blemishes-fix",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 37
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462792098051",
+    "title": "body-blemishes-smooth-skin",
+    "handle": "body-blemishes-smooth-skin",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 24
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/462792229123",
+    "title": "body-blemishes",
+    "handle": "body-blemishes",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 33
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/463185510659",
+    "title": "face wash & Cleansers",
+    "handle": "face-wash-cleansers",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "face wash"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/464051339523",
+    "title": "South-african-brands",
+    "handle": "south-african-brands",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 474
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "B'AIR SKINCARE"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "FORME"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "FUNDAMENTALS"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "HERMOSA FLOR"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LELIVE"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "HÓM"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "JUCE"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "KIKO VITALS"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LUNA"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SKIN FUNCTIONAL"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "LELE FEMININE"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "MZURI SKIN"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "NATIVE CHILD"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "PASTRY SKINCARE"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "SWIITCHBEAUTY"
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "STANDARD."
+        },
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "YEARN SKIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/464128344323",
+    "title": "Smart Analysis",
+    "handle": "smart-analysis",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Analysis"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/464772366595",
+    "title": "Purito Seoul",
+    "handle": "purito-seoul",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-18T22:01:57Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/465340367107",
+    "title": "Pastry Sell",
+    "handle": "pastry-sell",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/465656905987",
+    "title": "PDRN",
+    "handle": "pdrn",
+    "templateSuffix": "",
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T08:30:42Z",
+    "productsCount": {
+      "count": 5
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/467210207491",
+    "title": "Torriden",
+    "handle": "torriden",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:40Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VENDOR",
+          "relation": "EQUALS",
+          "condition": "Torriden"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469314339075",
+    "title": "Lip Tints & Lip Stains",
+    "handle": "lip-tints-lip-stains",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T12:43:23Z",
+    "productsCount": {
+      "count": 75
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "lip"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "stain"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469314437379",
+    "title": "Skincare Sets & Bundles",
+    "handle": "skincare-sets-bundles-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "bundle"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "body glow"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "3-Step Body"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469358117123",
+    "title": "Mzuri Skin Glow Essentials Bundle",
+    "handle": "mzuri-skin-glow-essentials",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 6
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/469359001859",
+    "title": "Skin Functional Clear-Skin Three Steps",
+    "handle": "clear-skin-three-steps",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/469380727043",
+    "title": "Dr. Althea",
+    "handle": "dr-althea",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:18Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/469472477443",
+    "title": "Erborian",
+    "handle": "erborian",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T04:17:45Z",
+    "productsCount": {
+      "count": 23
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/469511635203",
+    "title": "All Brands",
+    "handle": "all-brands",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T15:45:35Z",
+    "productsCount": {
+      "count": 812
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "VARIANT_INVENTORY",
+          "relation": "GREATER_THAN",
+          "condition": "1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469565538563",
+    "title": "Turmeric Soap",
+    "handle": "turmeric-soap",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/469803073795",
+    "title": "Retinol serum",
+    "handle": "retinol-serum",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 38
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Retinol"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469803106563",
+    "title": "Niacinamide serum",
+    "handle": "niacinamide-serum",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 8
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Niacinamide serum"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469803172099",
+    "title": "Body scrub",
+    "handle": "body-scrub",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Body scrub"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "scrub"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469803630851",
+    "title": "Hyaluronic acid serum",
+    "handle": "hyaluronic-acid-serum",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 7
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Hyaluronic acid serum"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Hyaluronic acid %"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/469967339779",
+    "title": "Licorice Root",
+    "handle": "licorice-root",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/470480748803",
+    "title": "ARENCIA",
+    "handle": "arencia",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-18T13:12:41Z",
+    "productsCount": {
+      "count": 10
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/471670849795",
+    "title": "Anti-ageing",
+    "handle": "anti-ageing",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 54
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "age"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471670980867",
+    "title": "Moisturisers",
+    "handle": "moisturisers",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 40
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "Moisturiser"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759126787",
+    "title": "Niacinamide",
+    "handle": "niacinamide-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:32:02Z",
+    "productsCount": {
+      "count": 62
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "niacinamide"
+        },
+        {
+          "column": "VARIANT_TITLE",
+          "relation": "CONTAINS",
+          "condition": "niacinamide"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759257859",
+    "title": "Azelaic-acid",
+    "handle": "azelaic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 7
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "azelaic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759323395",
+    "title": "Hyaluronic-acid",
+    "handle": "hyaluronic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:32:02Z",
+    "productsCount": {
+      "count": 48
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "hyaluronic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759388931",
+    "title": "Salicylic acid",
+    "handle": "salicylic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 27
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "salicylic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759520003",
+    "title": "glycolic-acid",
+    "handle": "glycolic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 9
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "glycolic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759552771",
+    "title": "ceramide",
+    "handle": "ceramide-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T09:37:54Z",
+    "productsCount": {
+      "count": 20
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "ceramide"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759618307",
+    "title": "Kojic acid",
+    "handle": "kojic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "kojic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/471759651075",
+    "title": "lactic-acid",
+    "handle": "lactic-acid-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T11:20:20Z",
+    "productsCount": {
+      "count": 4
+    },
+    "ruleSet": {
+      "appliedDisjunctively": true,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "lactic acid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/472501747971",
+    "title": "Niacinamide",
+    "handle": "niacinamide",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:32:02Z",
+    "productsCount": {
+      "count": 369
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "niacinamide"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/472501813507",
+    "title": "Alpha Arbutin",
+    "handle": "alpha-arbutin",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 57
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "alpha-arbutin"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/472501879043",
+    "title": "Centella",
+    "handle": "centella",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T12:43:23Z",
+    "productsCount": {
+      "count": 106
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "centella-asiatica"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/472501911811",
+    "title": "Cleansers",
+    "handle": "cleansers",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 186
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "cleansers"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/472789352707",
+    "title": "Pastry Bundles",
+    "handle": "pastry-bundles",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 2
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "Pastry Skincare"
+        },
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "bundle"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/473110774019",
+    "title": "Kojic Acid",
+    "handle": "kojic-acid",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 18
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "kojic"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/473120375043",
+    "title": "Retinol",
+    "handle": "retinol",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T13:17:20Z",
+    "productsCount": {
+      "count": 38
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "retinol"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/473120407811",
+    "title": "Hyaluronic Acid",
+    "handle": "hyaluronic-acid",
+    "templateSuffix": null,
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 75
+    },
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TITLE",
+          "relation": "CONTAINS",
+          "condition": "hyaluronic"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Collection/473368330499",
+    "title": "Men's Skincare",
+    "handle": "mens-skincare",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 65
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/473672319235",
+    "title": "Body Glow Routine",
+    "handle": "body-glow-routine",
+    "templateSuffix": null,
+    "sortOrder": "MANUAL",
+    "updatedAt": "2026-07-21T11:21:41Z",
+    "productsCount": {
+      "count": 3
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/474313031939",
+    "title": "Winter Week 2026",
+    "handle": "winter-week-2026",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-21T11:21:42Z",
+    "productsCount": {
+      "count": 165
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/474647789827",
+    "title": "Erborian",
+    "handle": "erborian-1",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-20T04:19:47Z",
+    "productsCount": {
+      "count": 21
+    },
+    "ruleSet": null
+  },
+  {
+    "id": "gid://shopify/Collection/474657030403",
+    "title": "Innisfree",
+    "handle": "innisfree",
+    "templateSuffix": "",
+    "sortOrder": "BEST_SELLING",
+    "updatedAt": "2026-07-19T13:41:15Z",
+    "productsCount": {
+      "count": 16
+    },
+    "ruleSet": null
+  }
+]

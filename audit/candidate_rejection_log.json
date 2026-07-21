@@ -1,0 +1,58 @@
+[
+ {
+  "brand": "pastry-skincare",
+  "pill": "Body Wash",
+  "candidate": "anua-oil-axis-y-serum-pastry-wash-lotion",
+  "candidate_title": "Anua Oil + Axis-Y Serum + Pastry Wash & Lotion",
+  "reason": "multi-brand routine bundle (Anua + AXIS-Y + Pastry) \u2014 products do not all match brand+label",
+  "phase": "final scan (post-correction pill sets)"
+ },
+ {
+  "brand": "yearn",
+  "pill": "Acne Care",
+  "candidate": "beauty-offer-yearn-skincare",
+  "candidate_title": "Beauty Offer - Yearn Skincare",
+  "reason": "promotional offer collection (2 products) \u2014 not a category collection",
+  "phase": "final scan (post-correction pill sets)"
+ },
+ {
+  "brand": "brothers-beard",
+  "pill": "Beard Care",
+  "candidate": "beard-serums-oils",
+  "candidate_title": "Beard Serums & Oils",
+  "reason": "generic Men>Beard category collection \u2014 distinctive brand token 'brothers' absent from title; membership unverified",
+  "phase": "loose title scan (earlier pass) \u2014 rejected"
+ },
+ {
+  "brand": "luna-hair-body",
+  "pill": "Hair Care",
+  "candidate": "active-bodycare",
+  "candidate_title": "Active Bodycare",
+  "reason": "substring accident ('body' matched inside 'bodycare'); generic 66-product collection",
+  "phase": "loose title scan (earlier pass) \u2014 rejected"
+ },
+ {
+  "brand": "love-kinks",
+  "pill": "Sets & Bundles",
+  "candidate": "mzuri-skin-glow-essentials",
+  "candidate_title": "Mzuri Skin Glow Essentials Bundle",
+  "reason": "substring accident ('glo' matched inside 'glow'); different brand's bundle collection",
+  "phase": "loose title scan (earlier pass) \u2014 rejected"
+ },
+ {
+  "brand": "purpul-hair",
+  "pill": "Hair Care",
+  "candidate": "hair-accessories",
+  "candidate_title": "Hair Accessories",
+  "reason": "generic accessories collection \u2014 distinctive brand token 'purpul' absent",
+  "phase": "loose title scan (earlier pass) \u2014 rejected"
+ },
+ {
+  "brand": "purpul-hair",
+  "pill": "Hair Styling",
+  "candidate": "hair-accessories",
+  "candidate_title": "Hair Accessories",
+  "reason": "generic accessories collection \u2014 distinctive brand token 'purpul' absent",
+  "phase": "loose title scan (earlier pass) \u2014 rejected"
+ }
+]
