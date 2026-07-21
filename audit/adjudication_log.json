@@ -1,0 +1,1226 @@
+[
+ {
+  "handle": "anasa",
+  "pill": "Bath Soaks",
+  "product_id": "8929364410627",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Bath Soaks' evidence (title='Bath Milk Powder', type='Exfoliator')",
+  "reviewer_reason": "Product type is 'Exfoliator' while title 'Bath Milk Powder' supports the Bath Soaks pill \u2014 type/title conflict, title wins but fit is uncert"
+ },
+ {
+  "handle": "anua",
+  "pill": "Exfoliators",
+  "product_id": "8929404092675",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='BHA 2% Gentle Exfoliating Toner', type='Toner')",
+  "reviewer_reason": "Product_type is 'Toner' while pill is 'Exfoliators'; the title 'BHA 2% Gentle Exfoliating Toner' supports the pill, so it is a type/title co"
+ },
+ {
+  "handle": "avene",
+  "pill": "Sunscreen",
+  "product_id": "8929403339011",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Sunscreen' evidence (title='Hydrance UV Light Emulsion', type='')",
+  "reviewer_reason": "Hydrance UV Light Emulsion has empty product_type and the title reads primarily as a hydrating emulsion; 'UV' supports the Sunscreen pill bu"
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Face Serums",
+  "product_id": "8929392099587",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Dark Spot Correcting Glow Serum', type='Face Mask')",
+  "reviewer_reason": "Title 'Glow Serum' supports the pill but product_type is 'Face Mask' \u2014 type/title conflict."
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Face Serums",
+  "product_id": "8929406583043",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Vegan Collagen Eye Serum', type='Eye Care')",
+  "reviewer_reason": "'Vegan Collagen Eye Serum' (type Eye Care) is an eye-area serum; serum fit supported by title but eye-care placement is uncertain under a fa"
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Face Serums",
+  "product_id": "8929392066819",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Artichoke Intensive Skin Barrier Ampoule', type='Face Mask')",
+  "reviewer_reason": "'Ampoule' in title is serum-adjacent, but product_type 'Face Mask' conflicts."
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Cleansers",
+  "product_id": "8929392034051",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Cleansers' evidence (title='Quinoa One-Step Balanced Gel Cleanser', type='Face Mask')",
+  "reviewer_reason": "Title 'Gel Cleanser' supports the pill but product_type is 'Face Mask' \u2014 type/title conflict."
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Exfoliators",
+  "product_id": "8929392230659",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='PHA Resurfacing Glow Peel', type='Cleanser')",
+  "reviewer_reason": "Title 'Resurfacing Glow Peel' supports exfoliation but product_type 'Cleanser' conflicts."
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Exfoliators",
+  "product_id": "8929395245315",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='LHA Peel & Fill Pore Balancing Cream', type='Moisturiser')",
+  "reviewer_reason": "'LHA Peel & Fill Pore Balancing Cream' (type Moisturiser) is a cream hybrid; 'Peel' in title gives partial exfoliator support but fit is unc"
+ },
+ {
+  "handle": "axis-y",
+  "pill": "Essences",
+  "product_id": "8929404289283",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Essences' evidence (title='Biome Radiating Intensified Essence', type='Serum')",
+  "reviewer_reason": "Title 'Intensified Essence' supports the pill but product_type is 'Serum' \u2014 type/title conflict."
+ },
+ {
+  "handle": "beauty-of-joseon",
+  "pill": "Face Serums",
+  "product_id": "8929402552579",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Revive Eye Serum : Ginseng + Retinal', type='Eye Care')",
+  "reviewer_reason": "Title says 'Eye Serum' but product_type is 'Eye Care'; it is an eye-area serum rather than a face serum \u2014 hybrid fit, title supports the pil"
+ },
+ {
+  "handle": "beauty-of-joseon",
+  "pill": "Face Serums",
+  "product_id": "8929402028291",
+  "verdict": "REMOVE",
+  "evidence": "sun-primary: title 'Ginseng Moist Sun Serum SPF 50+' matches Sunscreen \u2014 excluded from Face Serums",
+  "reviewer_reason": "'Ginseng Moist Sun Serum SPF 50+' is an SPF/sunscreen-serum hybrid; the title supports 'Serum' but the SPF 50+ suggests it is primarily sun "
+ },
+ {
+  "handle": "biodance",
+  "pill": "Toners",
+  "product_id": "9179612774659",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Toners' evidence (title='Cera-nol Gel Toner Pads \u2013 Hydrating & Calming', type='Moisturiser')",
+  "reviewer_reason": "Title 'Cera-nol Gel Toner Pads' supports the Toners pill (toner pads allowed), but product_type is 'Moisturiser' \u2014 a type/title conflict whe"
+ },
+ {
+  "handle": "bioderma",
+  "pill": "Face Serums",
+  "product_id": "8929385611523",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='S\u00e9bium Kerato+', type='') \u2014 quarantined",
+  "reviewer_reason": "Title 'S\u00e9bium Kerato+' has no serum indication and empty product_type; could be a cream/treatment rather than a serum."
+ },
+ {
+  "handle": "bioderma",
+  "pill": "Face Serums",
+  "product_id": "8929385677059",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='S\u00e9bium Pore Refiner', type='') \u2014 quarantined",
+  "reviewer_reason": "Title 'S\u00e9bium Pore Refiner' has no serum indication and empty product_type; product form is unclear from text alone."
+ },
+ {
+  "handle": "black-african-organics",
+  "pill": "Body Care",
+  "product_id": "8965612208387",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='SPF 30 Sunscreen', type='Hand Care')",
+  "reviewer_reason": "SPF 30 Sunscreen is sun care, not clearly a body-care product; only the product_type 'Hand Care' (a body-domain type) ties it to this generi"
+ },
+ {
+  "handle": "bree-probiotics",
+  "pill": "Intimate Care",
+  "product_id": "8929372242179",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Breast Tape - Brown', type='Accessory')",
+  "reviewer_reason": "Title 'Breast Tape - Brown' with type 'Accessory' is an apparel accessory, not a care/hygiene product; fits the generic 'Accessories' domain"
+ },
+ {
+  "handle": "bree-probiotics",
+  "pill": "Intimate Care",
+  "product_id": "8929372274947",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Breast Tape - Black', type='Accessory')",
+  "reviewer_reason": "'Breast Tape - Black' typed 'Accessory' is an apparel accessory rather than an intimate care product; better suited to 'Accessories'."
+ },
+ {
+  "handle": "bree-probiotics",
+  "pill": "Intimate Care",
+  "product_id": "8929372176643",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Breast Tape - Beige', type='Accessory')",
+  "reviewer_reason": "'Breast Tape - Beige' typed 'Accessory' is an apparel accessory rather than an intimate care product; better suited to 'Accessories'."
+ },
+ {
+  "handle": "bree-probiotics",
+  "pill": "Intimate Care",
+  "product_id": "8929389379843",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Nipple Covers', type='')",
+  "reviewer_reason": "'Nipple Covers' (no type) is an apparel accessory, not a care/hygiene product; 'Accessories' would be a cleaner fit."
+ },
+ {
+  "handle": "cerave",
+  "pill": "Moisturisers",
+  "product_id": "8929388462339",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Facial Moisturising Lotion SPF50', type='Moisturiser')",
+  "reviewer_reason": "Title 'Facial Moisturising Lotion SPF50' is a moisturiser/sunscreen hybrid; title supports the pill but SPF50 suggests it could belong under"
+ },
+ {
+  "handle": "cerave",
+  "pill": "Moisturisers",
+  "product_id": "8929377943811",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Facial Moisturising Lotion SPF30', type='Moisturiser')",
+  "reviewer_reason": "Title 'Facial Moisturising Lotion SPF30' is a moisturiser/sunscreen hybrid; title supports the pill but SPF30 suggests possible sun-protecti"
+ },
+ {
+  "handle": "cerave",
+  "pill": "Moisturisers",
+  "product_id": "8929385840899",
+  "verdict": "KEEP",
+  "evidence": "productType 'Moisturiser' supports 'Moisturisers' (title='Blemish Control Gel', type='Moisturiser')",
+  "reviewer_reason": "'Blemish Control Gel' reads more like an acne treatment gel than a moisturiser, though product_type says Moisturiser."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Moisturisers",
+  "product_id": "9344237338883",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='The Ceramide Skin Barrier Moisturizing Mist', type='Facial Mist')",
+  "reviewer_reason": "Title says 'Moisturizing Mist' and type is 'Facial Mist' \u2014 a mist format, not a cream/lotion moisturiser; hybrid fit."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "8929396064515",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Clear Fit Master Patch', type='')",
+  "reviewer_reason": "'Clear Fit Master Patch' is a spot patch, not a mask; often merchandised near masks but format differs."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "9290270343427",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Master Patch Intensive [36ea]', type='Acne Treatment')",
+  "reviewer_reason": "'Master Patch Intensive' typed 'Acne Treatment' \u2014 pimple patch, not a face mask format."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "9290257236227",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Master Patch Basic [36ea]', type='Acne Treatment')",
+  "reviewer_reason": "'Master Patch Basic' typed 'Acne Treatment' \u2014 pimple patch, not a face mask format."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "9290264871171",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Master Patch Intensive [90ea]', type='Acne Treatment')",
+  "reviewer_reason": "'Master Patch Intensive [90ea]' typed 'Acne Treatment' \u2014 pimple patch, not a face mask format."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "9290249994499",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Master Patch X-Large', type='Acne Treatment')",
+  "reviewer_reason": "'Master Patch X-Large' typed 'Acne Treatment' \u2014 pimple patch, not a face mask format."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Masks",
+  "product_id": "9290091626755",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Master Patch Basic [90ea]', type='Acne Treatment')",
+  "reviewer_reason": "'Master Patch Basic [90ea]' typed 'Acne Treatment' \u2014 pimple patch, not a face mask format."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Serums",
+  "product_id": "8929393443075",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='The 6 Peptide Skin Booster Serum', type='Toner')",
+  "reviewer_reason": "Type is 'Toner' but title says 'Skin Booster Serum' \u2014 title supports the pill, type conflicts."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Face Serums",
+  "product_id": "9292817629443",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='The AHA 2 BHA 2 Blemish Treatment Serum', type='Acne Treatment')",
+  "reviewer_reason": "Type 'Acne Treatment' vs pill Face Serums; title 'Treatment Serum' supports the pill."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Cleansers",
+  "product_id": "8929396162819",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Cleansers' evidence (title='Low pH Niacinamide Micellar Cleansing Water', type='Toner')",
+  "reviewer_reason": "Type 'Toner' but title 'Micellar Cleansing Water' supports Cleansers \u2014 type/title conflict."
+ },
+ {
+  "handle": "cosrx",
+  "pill": "Sunscreen",
+  "product_id": "8929362772227",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Sunscreen' evidence (title='Aloe Soothing Sun Cream SPF50+', type='Moisturiser')",
+  "reviewer_reason": "Type 'Moisturiser' but title 'Sun Cream SPF50+' supports Sunscreen \u2014 type/title conflict."
+ },
+ {
+  "handle": "dermalogica",
+  "pill": "Exfoliators",
+  "product_id": "8965610144003",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Liquid Peelfoliant 59ml \u2013 Exfoliating Peel', type='Serum')",
+  "reviewer_reason": "Title 'Liquid Peelfoliant \u2013 Exfoliating Peel' supports the pill but product_type is 'Serum' \u2014 type/title conflict."
+ },
+ {
+  "handle": "dermalogica",
+  "pill": "Exfoliators",
+  "product_id": "8965609554179",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Skin Smoothing Cream 50 ml \u2013 Exfoliating Moisturiser', type='Moisturiser')",
+  "reviewer_reason": "'Skin Smoothing Cream \u2013 Exfoliating Moisturiser' is a moisturiser/exfoliator hybrid (type 'Moisturiser'); title supports the pill but the pr"
+ },
+ {
+  "handle": "dermalogica",
+  "pill": "Exfoliators",
+  "product_id": "8965609390339",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Daily Glycolic Cleanser 150 ml \u2013 Exfoliating Facial Cleanser', type='Cleanser')",
+  "reviewer_reason": "'Daily Glycolic Cleanser \u2013 Exfoliating Facial Cleanser' is a cleanser/exfoliator hybrid (type 'Cleanser'); exfoliating claim supports the pi"
+ },
+ {
+  "handle": "dermalogica",
+  "pill": "Face Serums",
+  "product_id": "8965610045699",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Awaken Peptide Eye Gel 15 ml \u2013 Firming & Hydrating Eye Serum', type='Eye Care')",
+  "reviewer_reason": "'Awaken Peptide Eye Gel \u2013 Eye Serum' (type 'Eye Care') is an eye-area product; serum in title supports the pill but eye care is arguably a d"
+ },
+ {
+  "handle": "dermalogica",
+  "pill": "Face Mists",
+  "product_id": "8965609423107",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Mists' evidence (title='Multi Active Toner 250 ml \u2013 Refreshing Face Mist', type='Toner')",
+  "reviewer_reason": "'Multi Active Toner \u2013 Refreshing Face Mist' has product_type 'Toner'; title supports the pill but the type conflicts (toner vs mist)."
+ },
+ {
+  "handle": "eucerin",
+  "pill": "Sunscreen",
+  "product_id": "8929379451139",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Sunscreen' (title='Even Pigment Perfector Moisturiser Day SPF30', type='') \u2014 quarantined",
+  "reviewer_reason": "Title 'Even Pigment Perfector Moisturiser Day SPF30' is primarily a day moisturiser with SPF \u2014 a moisturiser/sunscreen hybrid, uncertain fit"
+ },
+ {
+  "handle": "eucerin",
+  "pill": "Treatments",
+  "product_id": "8929379320067",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='DermoPurifyer Skin Renewal Treatment', type='Exfoliator')",
+  "reviewer_reason": "Type is 'Exfoliator' but title 'Skin Renewal Treatment' supports the pill \u2014 type/title conflict, not clearly wrong."
+ },
+ {
+  "handle": "erborian",
+  "pill": "Face Serums",
+  "product_id": "9542791725315",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='Skin Therapy Light', type='') \u2014 quarantined",
+  "reviewer_reason": "Title 'Skin Therapy Light' has no serum indicator and empty product_type; sibling 'Skin Therapy Multi-Perfecting' is typed Serum so a serum "
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Exfoliators",
+  "product_id": "8929364607235",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='5% Lactic Acid Water Exfoliator', type='Toner')",
+  "reviewer_reason": "product_type says 'Toner' but title '5% Lactic Acid Water Exfoliator' supports the pill \u2014 type/title conflict"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Exfoliators",
+  "product_id": "8929378107651",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Exfoliators' (title='Polyhydroxy Tonic', type='') \u2014 quarantined",
+  "reviewer_reason": "Title 'Polyhydroxy Tonic' reads as a toner; polyhydroxy (PHA) is an exfoliating acid, so hybrid fit is uncertain but not clearly wrong (also"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Body Butters",
+  "product_id": "8929407009027",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Butters' (title='Hydrating Body Yoghurt- 2% Hyaluronic Acid + 1% Ceramide', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "Title says 'Body Yoghurt', not a body butter; same body-moisturiser domain so not a contradiction"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Body Butters",
+  "product_id": "8929406976259",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Butters' (title='5% Caffeine + 1% Retinol \u2013 Pro-ageing Body Yoghurt', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "Title says 'Body Yoghurt', not a body butter"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Body Butters",
+  "product_id": "8929381187843",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Butters' (title='2% Niacinamide Nourishing Body Yoghurt', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "Title says 'Body Yoghurt', not a body butter"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Body Butters",
+  "product_id": "8929407041795",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Butters' (title='Brightening Body Yoghurt- 2% Alpha Arbutin + 5% Ascorbic Acid + 1% Kojic Acid', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "Title says 'Body Yoghurt', not a body butter"
+ },
+ {
+  "handle": "forme",
+  "pill": "Hair Styling",
+  "product_id": "9033065005315",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Wig Removal Spray', type='')",
+  "reviewer_reason": "Wig Removal Spray is a removal/maintenance product, not a styling product; blank product_type gives no support. Same hair domain, so uncerta"
+ },
+ {
+  "handle": "forme",
+  "pill": "Hair Styling",
+  "product_id": "9033051177219",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Hair Styling' (title='Hyaluronic Acid Hair Spritz', type='Hair Care') \u2014 quarantined",
+  "reviewer_reason": "Hyaluronic Acid Hair Spritz reads as a hydrating/refresh product rather than a styling product; spritz format loosely supports styling, so f"
+ },
+ {
+  "handle": "garnier",
+  "pill": "Face Masks",
+  "product_id": "8929383383299",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Pure Active 3-in-1 Charcoal Anti-Blackhead Wash, Scrub, Mask', type='Exfoliator')",
+  "reviewer_reason": "Product type is 'Exfoliator' but title ('3-in-1 Wash, Scrub, Mask') includes Mask, supporting the pill; hybrid wash/scrub/mask fit is uncert"
+ },
+ {
+  "handle": "garnier",
+  "pill": "Exfoliators",
+  "product_id": "8929383186691",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Pure Active Anti Blackhead Charcoal Mask Peel Off', type='')",
+  "reviewer_reason": "Title is a peel-off charcoal mask with no scrub/exfoliation wording and empty product_type; fit under Exfoliators is uncertain, not clearly "
+ },
+ {
+  "handle": "glamour-beauty",
+  "pill": "Hair Styling",
+  "product_id": "8929407500547",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Detangling Spray', type='Hair Care')",
+  "reviewer_reason": "Detangling Spray (type Hair Care) is a care/maintenance product rather than a styling product; fit under Hair Styling is uncertain but not c"
+ },
+ {
+  "handle": "hermosa-flor",
+  "pill": "Makeup",
+  "product_id": "8929387905283",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Matte Goddess Setting Spray', type='Facial Mist')",
+  "reviewer_reason": "'Matte Goddess Setting Spray' has product_type 'Facial Mist' (a skincare-leaning type) but the title 'Setting Spray' is a makeup product, so"
+ },
+ {
+  "handle": "hermosa-flor",
+  "pill": "Makeup",
+  "product_id": "8929387872515",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Dewy Goddess Setting Spray', type='Facial Mist')",
+  "reviewer_reason": "'Dewy Goddess Setting Spray' typed 'Facial Mist' conflicts with the Makeup pill, but the title indicates a makeup setting spray, so the fit "
+ },
+ {
+  "handle": "haruharu-wonder",
+  "pill": "Cleansers",
+  "product_id": "8929392689411",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Cleansers' (title='Ultra Fit Facial Pads', type='') \u2014 quarantined",
+  "reviewer_reason": "'Ultra Fit Facial Pads' has no type and the title indicates pads, not clearly a cleanser; uncertain fit."
+ },
+ {
+  "handle": "haruharu-wonder",
+  "pill": "Exfoliators",
+  "product_id": "8929392689411",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Exfoliators' (title='Ultra Fit Facial Pads', type='') \u2014 quarantined",
+  "reviewer_reason": "'Ultra Fit Facial Pads' title/type gives no exfoliating signal; uncertain fit."
+ },
+ {
+  "handle": "haruharu-wonder",
+  "pill": "Moisturisers",
+  "product_id": "8929392558339",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Black Rice Hyaluronic Cream', type='Exfoliator')",
+  "reviewer_reason": "Title 'Black Rice Hyaluronic Cream' supports Moisturisers but product_type is 'Exfoliator' \u2014 type/title conflict."
+ },
+ {
+  "handle": "haruharu-wonder",
+  "pill": "Moisturisers",
+  "product_id": "8929392427267",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Black Rice Hyaluronic Cream', type='Exfoliator')",
+  "reviewer_reason": "Title 'Black Rice Hyaluronic Cream' supports Moisturisers but product_type is 'Exfoliator' \u2014 type/title conflict."
+ },
+ {
+  "handle": "kudu-cosmetica",
+  "pill": "Face Serums",
+  "product_id": "8929119731971",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='Squalane', type='') \u2014 quarantined",
+  "reviewer_reason": "'Squalane' with no type is typically a pure oil-texture product, not a serum; it would fit the sibling 'Oils' pill (pure oil products) bette"
+ },
+ {
+  "handle": "laneige",
+  "pill": "Face Masks",
+  "product_id": "9381278187779",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Bouncy and Firm Sleeping Mask', type='Makeup')",
+  "reviewer_reason": "Title 'Bouncy and Firm Sleeping Mask' supports the pill but product_type is 'Makeup', a conflicting type."
+ },
+ {
+  "handle": "laneige",
+  "pill": "Face Masks",
+  "product_id": "9380941791491",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Water Sleeping Mask', type='Lip Care')",
+  "reviewer_reason": "Title 'Water Sleeping Mask' supports the pill but product_type is 'Lip Care', a conflicting type."
+ },
+ {
+  "handle": "l-oreal-elvive",
+  "pill": "Lip Makeup",
+  "product_id": "8929402880259",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Lip Makeup' evidence (title='Sheer Tinted Lip Glow', type='Moisturiser')",
+  "reviewer_reason": "Title 'Sheer Tinted Lip Glow' supports the pill, but product_type is 'Moisturiser', a skincare type conflicting with a makeup pill."
+ },
+ {
+  "handle": "l-oreal-elvive",
+  "pill": "Lip Makeup",
+  "product_id": "9521807327491",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Lip Makeup' evidence (title='Multi-Use Balm + Tinted Lip Glow', type='')",
+  "reviewer_reason": "Hybrid bundle 'Multi-Use Balm + Tinted Lip Glow' \u2014 the tinted lip glow fits Lip Makeup, but the multi-use balm component is not clearly make"
+ },
+ {
+  "handle": "l-oreal-elvive",
+  "pill": "Body Lotions",
+  "product_id": "9521803755779",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Body Lotions' evidence (title='Hydrating Body Cream + Multi-Use Balm', type='')",
+  "reviewer_reason": "Hybrid bundle 'Hydrating Body Cream + Multi-Use Balm' \u2014 body cream fits, but the multi-use balm component is not clearly a body lotion."
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Sunscreen",
+  "product_id": "8929378042115",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Sunscreen' evidence (title='Effaclar Duo+ SPF 30', type='')",
+  "reviewer_reason": "Effaclar Duo+ SPF 30 is primarily an acne treatment/moisturiser with SPF; title supports SPF but it is a hybrid, not a pure sunscreen."
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Sunscreen",
+  "product_id": "8929389019395",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Sunscreen' evidence (title='Cicaplast Balm B5 SPF 50+', type='')",
+  "reviewer_reason": "Cicaplast Balm B5 SPF 50+ is a repair balm with SPF; hybrid fit, title supports SPF but the product is balm-first."
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Face Serums",
+  "product_id": "9371841265923",
+  "verdict": "REMOVE",
+  "evidence": "sun-primary: title 'Anthelios UVAIR spf50+ Serum Sunscreen' matches Sunscreen \u2014 excluded from Face Serums",
+  "reviewer_reason": "Anthelios UVAIR spf50+ Serum Sunscreen has product_type Sunscreen; title contains 'Serum' so it supports the pill, but it is a sunscreen hyb"
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Moisturisers",
+  "product_id": "9049414009091",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Effaclar K (+) Renovating cream', type='Acne Treatment')",
+  "reviewer_reason": "Effaclar K (+) Renovating cream has product_type 'Acne Treatment'; title's 'cream' supports Moisturisers but the type conflicts."
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Exfoliators",
+  "product_id": "8929377878275",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='MELA B3 Clarifying Micro Peeling Gel Cleanser', type='Cleanser')",
+  "reviewer_reason": "MELA B3 Clarifying Micro Peeling Gel Cleanser is typed 'Cleanser'; title's 'Micro Peeling' supports Exfoliators but it is a cleanser hybrid."
+ },
+ {
+  "handle": "la-roche-posay",
+  "pill": "Exfoliators",
+  "product_id": "8929377976579",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Effaclar Micro-Peeling Purifying Gel', type='Cleanser')",
+  "reviewer_reason": "Effaclar Micro-Peeling Purifying Gel is typed 'Cleanser'; title's 'Micro-Peeling' supports Exfoliators but it is a cleanser hybrid."
+ },
+ {
+  "handle": "lelive",
+  "pill": "Cleansers",
+  "product_id": "8929405075715",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Cleansers' (title='3-step routine | clarify, brighten + glow', type='') \u2014 quarantined",
+  "reviewer_reason": "Title '3-step routine | clarify, brighten + glow' is a multi-step routine kit with no explicit cleanser in title/type; likely contains one b"
+ },
+ {
+  "handle": "lelive",
+  "pill": "Face Serums",
+  "product_id": "8929405075715",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='3-step routine | clarify, brighten + glow', type='') \u2014 quarantined",
+  "reviewer_reason": "Same routine kit with empty product_type; title does not confirm a serum, so serum-pill fit is uncertain (also listed under Cleansers)."
+ },
+ {
+  "handle": "lelive",
+  "pill": "Body Scrubs",
+  "product_id": "8965612077315",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Scrubs' (title='Body Glow Up: Mini Edition', type='') \u2014 quarantined",
+  "reviewer_reason": "'Body Glow Up: Mini Edition' has empty type and no scrub/exfoliator wording in title; a body set may not be a scrub."
+ },
+ {
+  "handle": "l-oreal",
+  "pill": "Face Serums",
+  "product_id": "8929383645443",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Revitalift Filler 2.5% Hyaluronic Acid + Caffeine Eye Serum', type='Eye Care')",
+  "reviewer_reason": "Title/type say Eye Serum / Eye Care, an eye-area product rather than a face serum; serum format supports the pill but the eye designation ma"
+ },
+ {
+  "handle": "lelapa-la-bakoena",
+  "pill": "Beard Care",
+  "product_id": "8929386004739",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Beard Butter', type='Body Care')",
+  "reviewer_reason": "Title 'Beard Butter' supports the Beard Care pill but product_type is 'Body Care', a type/title conflict rather than a clear domain mismatch"
+ },
+ {
+  "handle": "luna-hair-body",
+  "pill": "Hair Care",
+  "product_id": "9129705079043",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Moon Drops', type='Hair Care')",
+  "reviewer_reason": "Title 'Moon Drops' is ambiguous, but product_type 'Hair Care' supports the pill, so fit is acceptable though the title alone gives no domain"
+ },
+ {
+  "handle": "love-kinks",
+  "pill": "Face Masks",
+  "product_id": "8929390788867",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Masks' (title='The Essential Dewy Glo Box', type='') \u2014 quarantined",
+  "reviewer_reason": "'The Essential Dewy Glo Box' is a box/set by title with no mask signal; belongs under Sets & Bundles, uncertain fit as a mask."
+ },
+ {
+  "handle": "love-kinks",
+  "pill": "Face Mists",
+  "product_id": "8929390788867",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Mists' (title='The Essential Dewy Glo Box', type='') \u2014 quarantined",
+  "reviewer_reason": "'The Essential Dewy Glo Box' is a box/set by title; 'Dewy' hints at mist content but the product itself is a bundle, not a mist."
+ },
+ {
+  "handle": "mzuri-skin",
+  "pill": "Body Wash",
+  "product_id": "8929405600003",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Wash' (title='Brightening Serum- Kojic Acid & Glutathione', type='Serum') \u2014 quarantined",
+  "reviewer_reason": "No flag on this product itself; placeholder removed"
+ },
+ {
+  "handle": "medicube",
+  "pill": "Cleansers",
+  "product_id": "8997564842243",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Cleansers' evidence (title='Super Cica Deep Cleansing Balm', type='Makeup Remover')",
+  "reviewer_reason": "Title 'Super Cica Deep Cleansing Balm' supports Cleansers but product_type is 'Makeup Remover' \u2014 type/title conflict, hybrid cleansing balm."
+ },
+ {
+  "handle": "medicube",
+  "pill": "Exfoliators",
+  "product_id": "8998457901315",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Red Succinic Peeling Pads', type='Toner')",
+  "reviewer_reason": "'Red Succinic Peeling Pads' title supports exfoliation but product_type is 'Toner' \u2014 type/title conflict."
+ },
+ {
+  "handle": "medicube",
+  "pill": "Exfoliators",
+  "product_id": "9410186871043",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Exfoliators' (title='Kojic Acid Turmeric Pad', type='') \u2014 quarantined",
+  "reviewer_reason": "'Kojic Acid Turmeric Pad' has no exfoliating signal in title or type (empty), and it is also listed under Toners \u2014 exfoliator fit is uncerta"
+ },
+ {
+  "handle": "medicube",
+  "pill": "Face Serums",
+  "product_id": "8998493389059",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='PDRN Pink Glutathione Serum Mist', type='')",
+  "reviewer_reason": "'PDRN Pink Glutathione Serum Mist' is a serum/mist hybrid (also listed under Face Mists); title partially supports the pill."
+ },
+ {
+  "handle": "medicube",
+  "pill": "Face Serums",
+  "product_id": "9413097160963",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Kojic Acid Turmeric Vita Jelly Mist Serum', type='')",
+  "reviewer_reason": "'Kojic Acid Turmeric Vita Jelly Mist Serum' is a mist/serum hybrid (also listed under Face Mists)."
+ },
+ {
+  "handle": "millford",
+  "pill": "Moisturisers",
+  "product_id": "8929373225219",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='On Spot Cream', type='Moisturiser')",
+  "reviewer_reason": "Title 'On Spot Cream' reads as a targeted spot treatment rather than a general moisturiser, though the product_type 'Moisturiser' supports t"
+ },
+ {
+  "handle": "mixsoon",
+  "pill": "Essences",
+  "product_id": "9031450001667",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Essences' evidence (title='Galactomyces Ferment Essence', type='Toner')",
+  "reviewer_reason": "Title says 'Ferment Essence' which supports the Essences pill, but product_type is 'Toner', creating a type/title conflict."
+ },
+ {
+  "handle": "naturally-africa",
+  "pill": "Hair Styling",
+  "product_id": "8929335836931",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Vegetable Protein Detangling Spray', type='Hair Care')",
+  "reviewer_reason": "Detangling spray is a hair treatment/prep product rather than a styling product; same hair-care domain so not a contradiction, but styling f"
+ },
+ {
+  "handle": "naturally-africa",
+  "pill": "Hair Styling",
+  "product_id": "8929335935235",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Tea Tree Oil & Vegetable Protein Braids Moisturizing Spray', type='Hair Care')",
+  "reviewer_reason": "Braids moisturizing spray is primarily a moisturizer/maintenance product; hair-domain fit is right but 'styling' is uncertain."
+ },
+ {
+  "handle": "neutriherb",
+  "pill": "Face Serums",
+  "product_id": "8929375486211",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='AHA Exfoliating Serum', type='Exfoliator')",
+  "reviewer_reason": "Title 'AHA Exfoliating Serum' supports the pill but product_type is 'Exfoliator' \u2014 type/title conflict where the title fits the pill."
+ },
+ {
+  "handle": "neutriherb",
+  "pill": "Moisturisers",
+  "product_id": "8929375453443",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Moisturizing Niacinamide Serum', type='')",
+  "reviewer_reason": "'Moisturizing Niacinamide Serum' is a serum, not a moisturiser; the 'Moisturizing' word in the title gives partial support, making it a hybr"
+ },
+ {
+  "handle": "neutrogena",
+  "pill": "Cleansers",
+  "product_id": "8929376600323",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Cleansers' evidence (title='Blackhead Eliminating Cleansing Toner', type='')",
+  "reviewer_reason": "'Blackhead Eliminating Cleansing Toner' is a toner (belongs under a Toners pill); title says 'Cleansing' so fit is uncertain rather than cle"
+ },
+ {
+  "handle": "neutrogena",
+  "pill": "Sunscreen",
+  "product_id": "8929380466947",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Sunscreen' (title='Retinol Boost Day Cream SPF15', type='') \u2014 quarantined",
+  "reviewer_reason": "'Retinol Boost Day Cream SPF15' is a day cream/moisturiser hybrid with SPF15; primary identity is a retinol day cream, so Sunscreen fit is u"
+ },
+ {
+  "handle": "nilotiqa-nilotiqa",
+  "pill": "Hair Styling",
+  "product_id": "8929391935747",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Shea & Coco Anti-itch Hair & Scalp Spray', type='Hair Care')",
+  "reviewer_reason": "'Anti-itch Hair & Scalp Spray' is a scalp treatment product, not a styling product; still hair domain so not a contradiction, but styling fi"
+ },
+ {
+  "handle": "nilotiqa-nilotiqa",
+  "pill": "Leave-Ins",
+  "product_id": "8929391575299",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Leave-Ins' (title='Shea & Coco Moisturising Curling Cream', type='Hair Care') \u2014 quarantined",
+  "reviewer_reason": "'Moisturising Curling Cream' is a styling cream; leave-in fit is plausible for a curl cream but not stated in title, so uncertain."
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Care",
+  "product_id": "8929385906435",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Niacinamide Body Mist', type='Facial Mist')",
+  "reviewer_reason": "Title 'Niacinamide Body Mist' fits Body Care but product_type is 'Facial Mist' \u2014 type/title conflict where the title supports the pill."
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Scrubs",
+  "product_id": "8929475232003",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Body Scrubs' evidence (title='Salicylic Acid Body Wash \u2013 Exfoliating & Acne Control', type='Exfoliator')",
+  "reviewer_reason": "'Salicylic Acid Body Wash' is a wash, not a scrub; exfoliating claim and 'Exfoliator' type make it a hybrid fit rather than a clear scrub."
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Scrubs",
+  "product_id": "8929475756291",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Body Scrubs' evidence (title='Lactic Acid Body Wash \u2013 Exfoliating Body Cleanser', type='Cleanser')",
+  "reviewer_reason": "'Lactic Acid Body Wash \u2013 Exfoliating Body Cleanser' typed 'Cleanser' is a wash/cleanser, not a scrub; exfoliating title makes fit uncertain "
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Scrubs",
+  "product_id": "8929365426435",
+  "verdict": "KEEP",
+  "evidence": "productType 'Exfoliator' supports 'Body Scrubs' (title='BHA Body Gel', type='Exfoliator')",
+  "reviewer_reason": "'BHA Body Gel' typed 'Exfoliator' is an exfoliant but a gel, not a scrub format; uncertain fit."
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Lotions",
+  "product_id": "8929395015939",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Lotions' (title='BHA Overnight Body Balm', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "'BHA Overnight Body Balm' is a balm, not a lotion; related leave-on format but not clearly a lotion."
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Butters",
+  "product_id": "8929395015939",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Body Butters' (title='BHA Overnight Body Balm', type='Body Care') \u2014 quarantined",
+  "reviewer_reason": "'BHA Overnight Body Balm' is a balm, not a butter; adjacent rich-texture format but the title does not say butter."
+ },
+ {
+  "handle": "purpul-hair",
+  "pill": "Hair Care",
+  "product_id": "8929474609411",
+  "verdict": "KEEP",
+  "evidence": "domain pill accepts any product of its domain (domain was title/type-derived) (title='Hair Mist Bottle \u2013 Styling Spray Bottle', type='')",
+  "reviewer_reason": "'Hair Mist Bottle \u2013 Styling Spray Bottle' reads as an empty spray-bottle accessory (empty product_type), not a hair care formulation; hair-a"
+ },
+ {
+  "handle": "purpul-hair",
+  "pill": "Hair Styling",
+  "product_id": "8929474609411",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Hair Mist Bottle \u2013 Styling Spray Bottle', type='')",
+  "reviewer_reason": "An empty styling spray bottle is a tool/accessory rather than a styling product; title supports styling use so uncertain rather than clearly"
+ },
+ {
+  "handle": "purpul-hair",
+  "pill": "Hair Styling",
+  "product_id": "8929335279875",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Hair Styling' evidence (title='Aloe Vera Gel', type='Hair Care')",
+  "reviewer_reason": "'Aloe Vera Gel' (type Hair Care) could be a styling gel or a general-purpose aloe gel; title does not clearly confirm styling."
+ },
+ {
+  "handle": "seoul1988",
+  "pill": "Moisturisers",
+  "product_id": "9159291633923",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='SEOUL 1988 Cream : Retinal Liposome 1% + Fermented Rice', type='Serum')",
+  "reviewer_reason": "Title says 'Cream' (fits Moisturisers) but product_type is 'Serum' \u2014 type/title conflict where the title supports the pill."
+ },
+ {
+  "handle": "some-by-mi",
+  "pill": "Moisturisers",
+  "product_id": "8929366475011",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='AHA-BHA-PHA 14 Days Super Miracle Spot All Kill Cream', type='Moisturiser')",
+  "reviewer_reason": "Title 'AHA-BHA-PHA 14 Days Super Miracle Spot All Kill Cream' reads as a spot treatment; product_type 'Moisturiser' and 'Cream' in title sup"
+ },
+ {
+  "handle": "some-by-mi",
+  "pill": "Treatments",
+  "product_id": "8929379909891",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='Red Teatree Cicassoside Final Solution Cream', type='Moisturiser')",
+  "reviewer_reason": "Product_type is 'Moisturiser' and title is a cream, not a concentrate/booster/corrector/spot treatment; only the 'Final Solution' phrasing l"
+ },
+ {
+  "handle": "some-by-mi",
+  "pill": "Treatments",
+  "product_id": "8929379844355",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='Red Teatree Cicassoside Final Solution Toner', type='Toner')",
+  "reviewer_reason": "Product_type is 'Toner'; a toner under 'Treatments' is uncertain \u2014 belongs more naturally under the Toners pill where it already appears."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Face Makeup",
+  "product_id": "9032000340227",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Makeup' evidence (title='Sunkiss Primer SPF50 - For a protective finish', type='Sunscreen')",
+  "reviewer_reason": "Title 'Sunkiss Primer SPF50' supports the makeup/primer pill but product_type is 'Sunscreen' \u2014 title/type conflict, hybrid SPF primer."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Exfoliators",
+  "product_id": "8929396883715",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Exfoliators' (title='Regulate Ageing & Skin Microbiota', type='') \u2014 quarantined",
+  "reviewer_reason": "'Regulate Ageing & Skin Microbiota' has no exfoliation signal in title or type (type empty); fit is uncertain."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Toners",
+  "product_id": "8929396883715",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Toners' (title='Regulate Ageing & Skin Microbiota', type='') \u2014 quarantined",
+  "reviewer_reason": "'Regulate Ageing & Skin Microbiota' has no toner/tonic signal in title and empty type; also duplicated under Exfoliators."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Treatments",
+  "product_id": "8929388822787",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='Ultimate Uneven Skin Tone Treatment Tonic', type='Toner')",
+  "reviewer_reason": "Title 'Ultimate Uneven Skin Tone Treatment Tonic' supports Treatments but product_type 'Toner' conflicts; could belong under Toners."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Treatments",
+  "product_id": "8929388855555",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='Ultimate Breakouts Treatment Tonic', type='Toner')",
+  "reviewer_reason": "Title 'Ultimate Breakouts Treatment Tonic' supports Treatments but product_type 'Toner' conflicts; could belong under Toners."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Face Serums",
+  "product_id": "8929328464131",
+  "verdict": "HOLD",
+  "evidence": "no title/type evidence for 'Face Serums' (title='Smoothing Gel', type='') \u2014 quarantined",
+  "reviewer_reason": "'Smoothing Gel' with empty type gives no serum signal; could be a moisturiser/gel product \u2014 uncertain fit."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Face Serums",
+  "product_id": "8929395114243",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='1% Bakuchiol + 1% Vitamin A,C,E Oil Serum', type='')",
+  "reviewer_reason": "'1% Bakuchiol + 1% Vitamin A,C,E Oil Serum' is an oil-serum hybrid; title still says Serum so not clearly wrong."
+ },
+ {
+  "handle": "skin-republic",
+  "pill": "Face Serums",
+  "product_id": "8929386430723",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Glycolic Acid 10% Serum', type='Exfoliator')",
+  "reviewer_reason": "Title 'Glycolic Acid 10% Serum' supports the pill but product_type 'Exfoliator' conflicts; hybrid serum/exfoliant."
+ },
+ {
+  "handle": "skin-republic",
+  "pill": "Face Serums",
+  "product_id": "8929386463491",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Collagen 2% + SPF15 Serum', type='Sunscreen')",
+  "reviewer_reason": "Title 'Collagen 2% + SPF15 Serum' supports the pill but product_type 'Sunscreen' conflicts; SPF-serum hybrid."
+ },
+ {
+  "handle": "skin-republic",
+  "pill": "Face Masks",
+  "product_id": "8929363919107",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Masks' evidence (title='Spot Clear Salicylic Acid Patch', type='Face Mask')",
+  "reviewer_reason": "'Spot Clear Salicylic Acid Patch' is a spot/pimple patch, not a face mask by title, though its type is 'Face Mask'; belongs with the Pimple "
+ },
+ {
+  "handle": "skin-republic",
+  "pill": "Moisturisers",
+  "product_id": "9179660583171",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Ceramide 10% Serum Stick \u2013 Moisturizing & Barrier Repair', type='Serum')",
+  "reviewer_reason": "Title 'Ceramide 10% Serum Stick' with type 'Serum' under Moisturisers; the 'Moisturizing & Barrier Repair' subtitle partially supports the p"
+ },
+ {
+  "handle": "skin-republic",
+  "pill": "Exfoliators",
+  "product_id": "8929336492291",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Charcoal Peel-Off Face Mask', type='')",
+  "reviewer_reason": "'Charcoal Peel-Off Face Mask' is a mask by title; peel-off action is only loosely exfoliating, so the fit is uncertain."
+ },
+ {
+  "handle": "skin1004",
+  "pill": "Face Serums",
+  "product_id": "9228256575747",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Retinol 0.2 Boosting Shot Ampoule', type='Acne Treatment')",
+  "reviewer_reason": "product_type is 'Acne Treatment' but title 'Boosting Shot Ampoule' supports serum/ampoule placement \u2014 type/title conflict, not clearly wrong"
+ },
+ {
+  "handle": "skin1004",
+  "pill": "Face Serums",
+  "product_id": "9228249628931",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Niacinamide 10 Boosting Shot Ampoule', type='Acne Treatment')",
+  "reviewer_reason": "product_type is 'Acne Treatment' but title 'Boosting Shot Ampoule' supports serum placement \u2014 type/title conflict, not clearly wrong."
+ },
+ {
+  "handle": "skin1004",
+  "pill": "Face Serums",
+  "product_id": "8998938607875",
+  "verdict": "REMOVE",
+  "evidence": "sun-primary: title 'Madagascar Hyalu-Cica Water-Fit Sun Serum' matches Sunscreen \u2014 excluded from Face Serums",
+  "reviewer_reason": "'Water-Fit Sun Serum' is a sunscreen/serum hybrid; also correctly listed under Sunscreen. Title contains 'Serum' so not a clear contradictio"
+ },
+ {
+  "handle": "smooch",
+  "pill": "Face Serums",
+  "product_id": "9053738172675",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Face Serums' evidence (title='Smooch Eye Firming Serum', type='Eye Care')",
+  "reviewer_reason": "Smooch Eye Firming Serum (type: Eye Care) is an eye-area product rather than a face serum; the title supports 'serum' but the type conflicts"
+ },
+ {
+  "handle": "standard-beauty",
+  "pill": "Exfoliators",
+  "product_id": "8929366180099",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Pigmentation Buster Mask: 10% Aha Fruit Acid Peel & 2% Alpha Arbutin', type='Face Mask')",
+  "reviewer_reason": "Product type is 'Face Mask' (title: Pigmentation Buster Mask), conflicting with the Exfoliators pill; the title's '10% AHA Fruit Acid Peel' "
+ },
+ {
+  "handle": "swiitchbeauty",
+  "pill": "Treatments",
+  "product_id": "8929393148163",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='LipSlick Lip Treatment Oil - Dream Berry', type='Makeup')",
+  "reviewer_reason": "Lip Treatment Oil (type Makeup) is a lip product; title contains 'Treatment' so it loosely supports the pill, but Treatments normally covers"
+ },
+ {
+  "handle": "swiitchbeauty",
+  "pill": "Treatments",
+  "product_id": "8929393180931",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='LipSlick Lip Treatment Oil - Dream Nude', type='Makeup')",
+  "reviewer_reason": "Lip Treatment Oil (type Makeup) \u2014 hybrid lip/treatment product; title supports pill but domain fit uncertain."
+ },
+ {
+  "handle": "swiitchbeauty",
+  "pill": "Treatments",
+  "product_id": "8929393246467",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='LipSlick Lip Treatment Oil - Dream Red', type='Makeup')",
+  "reviewer_reason": "Lip Treatment Oil (type Makeup) \u2014 hybrid lip/treatment product; title supports pill but domain fit uncertain."
+ },
+ {
+  "handle": "swiitchbeauty",
+  "pill": "Treatments",
+  "product_id": "8929393115395",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='LipSlick Lip Treatment Oil - Dream Pink', type='Makeup')",
+  "reviewer_reason": "Lip Treatment Oil (type Makeup) \u2014 hybrid lip/treatment product; title supports pill but domain fit uncertain."
+ },
+ {
+  "handle": "swiitchbeauty",
+  "pill": "Treatments",
+  "product_id": "8929393213699",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Treatments' evidence (title='LipSlick Lip Treatment Oil - Dream Girl', type='Makeup')",
+  "reviewer_reason": "Lip Treatment Oil (type Makeup) \u2014 hybrid lip/treatment product; title supports pill but domain fit uncertain."
+ },
+ {
+  "handle": "tiam",
+  "pill": "Moisturisers",
+  "product_id": "9205991342339",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='Alpha - 5 Mela Care Cream', type='')",
+  "reviewer_reason": "Title 'Alpha - 5 Mela Care Cream' reads as a pigmentation-treatment cream; 'Cream' supports Moisturisers but the mela-care focus makes it a "
+ },
+ {
+  "handle": "vichy",
+  "pill": "Moisturisers",
+  "product_id": "8929376731395",
+  "verdict": "KEEP",
+  "evidence": "productType 'Moisturiser' supports 'Moisturisers' (title='Normaderm Anti Spot Sulphar Paste', type='Moisturiser')",
+  "reviewer_reason": "Title 'Normaderm Anti Spot Sulphar Paste' reads as a spot treatment paste rather than a moisturiser; only the product_type ('Moisturiser') s"
+ },
+ {
+  "handle": "yearn",
+  "pill": "Exfoliators",
+  "product_id": "8929394065667",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='8% Glycolic Cleansing Gel - Exfoliating Cleanser', type='Cleanser')",
+  "reviewer_reason": "Product type is Cleanser; title says Exfoliating Cleanser, so it is a hybrid that also sits under Cleansers \u2014 fit is plausible but type conf"
+ },
+ {
+  "handle": "yearn",
+  "pill": "Exfoliators",
+  "product_id": "8929394032899",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Exfoliators' evidence (title='Brightening and Exfoliating Mask', type='Face Mask')",
+  "reviewer_reason": "Product type is Face Mask; title says Exfoliating Mask, a hybrid also listed under Face Masks \u2014 title supports the pill but type conflicts."
+ },
+ {
+  "handle": "dr-althea",
+  "pill": "Moisturisers",
+  "product_id": "9367704043779",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Moisturisers' evidence (title='345 Relief Cream Mist', type='Facial Mist')",
+  "reviewer_reason": "Title '345 Relief Cream Mist' with product_type 'Facial Mist' is primarily a mist, not a moisturiser cream; it also appears under the Face M"
+ },
+ {
+  "handle": "arencia",
+  "pill": "Cleansers",
+  "product_id": "9394981830915",
+  "verdict": "KEEP",
+  "evidence": "title contains 'Cleansers' evidence (title='Arencia Fresh Green Rice Mochi Cleanser', type='Exfoliator')",
+  "reviewer_reason": "Title says 'Cleanser' supporting the pill, but product_type is 'Exfoliator' \u2014 a type/title conflict where the title supports the pill."
+ },
+ {
+  "handle": "skin-functional",
+  "pill": "Exfoliators+Toners",
+  "product_id": "8929396883715",
+  "verdict": "HOLD",
+  "evidence": "reviewer label-issue: 'Regulate Ageing & Skin Microbiota' shows no signal for either category",
+  "reviewer_reason": "label_issues"
+ },
+ {
+  "handle": "biodance",
+  "pill": "Hydration",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "identical product set to pill 'Toners' \u2014 no distinct intent proven (gate 5)",
+  "reviewer_reason": "gate 5"
+ },
+ {
+  "handle": "bioderma",
+  "pill": "Face Serums",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "fundamentals-1",
+  "pill": "Body Butters",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (0)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "forme",
+  "pill": "Hair Styling",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "kudu-cosmetica",
+  "pill": "Face Serums",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "l-oreal-elvive",
+  "pill": "Hydration",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "identical product set to pill 'Body Lotions' \u2014 no distinct intent proven (gate 5)",
+  "reviewer_reason": "gate 5"
+ },
+ {
+  "handle": "lelive",
+  "pill": "Face Serums",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "lelive",
+  "pill": "Body Scrubs",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "love-kinks",
+  "pill": "Face Mists",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "medicube",
+  "pill": "Exfoliators",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "naturally-africa",
+  "pill": "Hair Oils",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "identical set to Scalp Care (both titles contain 'scalp'; one product is not an oil) \u2014 gate 5",
+  "reviewer_reason": "label_issues"
+ },
+ {
+  "handle": "neutrogena",
+  "pill": "Sunscreen",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "nilotiqa-nilotiqa",
+  "pill": "Leave-Ins",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "pastry-skincare",
+  "pill": "Body Butters",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "fewer than 2 members after adjudication (1)",
+  "reviewer_reason": "gate 1 consequence"
+ },
+ {
+  "handle": "serene",
+  "pill": "Hydration",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "identical product set to pill 'Body Lotions' \u2014 no distinct intent proven (gate 5)",
+  "reviewer_reason": "gate 5"
+ },
+ {
+  "handle": "some-by-mi",
+  "pill": "Treatments",
+  "product_id": "*",
+  "verdict": "DROP_PILL",
+  "evidence": "reviewer note: set duplicates the three 'Final Solution' products already present in their own category pills \u2014 no distinct intent proven (gate 5)",
+  "reviewer_reason": "label_issues"
+ }
+]
