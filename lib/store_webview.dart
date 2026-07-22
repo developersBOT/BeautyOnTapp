@@ -12,6 +12,30 @@ import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 // API dependencies — do not replace this with a remote lookup of any kind.
 const String kStoreUrl = 'https://beautyontapp.com';
 
+/// Store root with app-attribution UTMs. The spoofed browser user agent
+/// (required for Google OAuth) makes app sessions indistinguishable from
+/// mobile web in Shopify/GA4 — these parameters are the only signal that a
+/// session came from the app. Applied to the initial load and recovery
+/// reloads only; in-page navigation keeps the session's first-touch UTMs.
+Uri storeRootUri() => Uri.parse(kStoreUrl).replace(
+  queryParameters: {
+    'utm_source': 'beautyontapp_app',
+    'utm_medium': 'app',
+    'utm_campaign': defaultTargetPlatform == TargetPlatform.iOS
+        ? 'app_ios'
+        : 'app_android',
+  },
+);
+
+/// Browser-like user agent shared by every WebView in the app so first-party
+/// analytics cookies stay consistent across the storefront and checkout.
+String get kBrowserUserAgent => defaultTargetPlatform == TargetPlatform.iOS
+    ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) '
+          'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 '
+          'Mobile/15E148 Safari/604.1'
+    : 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 '
+          '(KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36';
+
 class StoreWebView extends StatefulWidget {
   const StoreWebView({super.key});
 
@@ -54,12 +78,7 @@ class StoreWebView extends StatefulWidget {
 
   // Google blocks OAuth inside embedded WebViews it can detect. A browser-like
   // user agent lets "Sign in with Google" on the store work inside the app.
-  static String get _userAgent => defaultTargetPlatform == TargetPlatform.iOS
-      ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) '
-            'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 '
-            'Mobile/15E148 Safari/604.1'
-      : 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 '
-            '(KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36';
+  static String get _userAgent => kBrowserUserAgent;
 
   static WebViewController _buildController() {
     late final WebViewController controller;
@@ -142,7 +161,7 @@ class StoreWebView extends StatefulWidget {
     _navigationGeneration++;
     _armLoadTimeout();
     try {
-      await controller.loadRequest(Uri.parse(kStoreUrl));
+      await controller.loadRequest(storeRootUri());
     } catch (_) {
       _showLoadFailure();
     }
@@ -278,7 +297,7 @@ class StoreWebView extends StatefulWidget {
       await controller.reload();
     } catch (_) {
       try {
-        await controller.loadRequest(Uri.parse(kStoreUrl));
+        await controller.loadRequest(storeRootUri());
       } catch (_) {
         _showLoadFailure();
       }
