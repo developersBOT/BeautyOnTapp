@@ -92,6 +92,84 @@ void main() {
       );
     });
 
+    test('identifies hosted customer accounts and Google sign-in', () {
+      expect(
+        StoreNavigationPolicy.isHostedCustomerAccount(
+          'https://account.beautyontapp.com/authentication/login',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isGoogleSignInDestination(
+          'https://account.beautyontapp.com/authentication/social/google',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isHostedSocialSignInDestination(
+          'https://account.beautyontapp.com/authentication/social/facebook',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isHostedSocialSignInDestination(
+          'https://account.beautyontapp.com/authentication/login',
+        ),
+        isFalse,
+      );
+      expect(
+        StoreNavigationPolicy.isGoogleSignInDestination(
+          'https://accounts.google.com/signin',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isGoogleSignInDestination(
+          'https://beautyontapp.com/account/login',
+        ),
+        isFalse,
+      );
+      expect(
+        StoreNavigationPolicy.isHostedCustomerLogin(
+          'https://account.beautyontapp.com/authentication/login?locale=en',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isHostedCustomerLogin(
+          'https://account.beautyontapp.com/account',
+        ),
+        isFalse,
+      );
+    });
+
+    test('identifies only the first-party permanent deletion page', () {
+      expect(
+        StoreNavigationPolicy.isAccountDeletionPage(
+          'https://beautyontapp.com/pages/delete-account',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isAccountDeletionPage(
+          'https://beautyontapp.com/pages/delete-account/?submitted=1',
+        ),
+        isTrue,
+      );
+      expect(
+        StoreNavigationPolicy.isAccountDeletionPage(
+          'https://beautyontapp.com/pages/delete-account-help',
+        ),
+        isFalse,
+      );
+      expect(
+        StoreNavigationPolicy.isAccountDeletionPage(
+          'https://evil.example/pages/delete-account',
+        ),
+        isFalse,
+      );
+    });
+
     test('rejects insecure and lookalike storefront hosts', () {
       for (final String url in <String>[
         'http://beautyontapp.com/',

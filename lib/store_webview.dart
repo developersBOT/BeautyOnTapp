@@ -40,6 +40,9 @@ String get kBrowserUserAgent => defaultTargetPlatform == TargetPlatform.iOS
 class StoreWebView extends StatefulWidget {
   const StoreWebView({super.key});
 
+  static const MethodChannel _iosWebViewPolicyChannel = MethodChannel(
+    'beautyontapp/webview_policy',
+  );
   static WebViewController? _preloaded;
   static final ValueNotifier<bool> _loadFailed = ValueNotifier<bool>(false);
   // True after a BeautyOnTApp page has been prepared to use the iPhone's
@@ -51,8 +54,14 @@ class StoreWebView extends StatefulWidget {
   // brand cover hides the WebView so the user never sees a white screen
   // between the splash and the store.
   static final ValueNotifier<bool> _firstPageReady = ValueNotifier<bool>(false);
+  // Keep Apple-review-sensitive pages covered until their app-only compliance
+  // state is verified: first-party email-only sign-in (Guideline 4.8) and the
+  // dedicated permanent-deletion request (Guideline 5.1.1(v)).
+  static final ValueNotifier<bool> _iosCompliancePageReady =
+      ValueNotifier<bool>(true);
   static Timer? _loadTimeout;
   static int _navigationGeneration = 0;
+  static String? _activeNavigationUrl;
   static int? _paintProbeGeneration;
   static bool _recoveryInFlight = false;
   static int _automaticRecoveryAttempts = 0;
@@ -90,6 +99,12 @@ class StoreWebView extends StatefulWidget {
         NavigationDelegate(
           onNavigationRequest: (NavigationRequest request) {
             if (!request.isMainFrame) return NavigationDecision.navigate;
+            if (defaultTargetPlatform == TargetPlatform.iOS &&
+                StoreNavigationPolicy.isHostedSocialSignInDestination(
+                  request.url,
+                )) {
+              return NavigationDecision.prevent;
+            }
             return StoreNavigationPolicy.shouldAllowMainFrame(
                   request.url,
                   protectedFlowActive: protectedFlowActive,
@@ -98,11 +113,16 @@ class StoreWebView extends StatefulWidget {
                 : NavigationDecision.prevent;
           },
           onPageStarted: (String url) {
+            _navigationGeneration++;
+            _activeNavigationUrl = url;
+            _iosCompliancePageReady.value =
+                defaultTargetPlatform != TargetPlatform.iOS ||
+                (!StoreNavigationPolicy.isHostedCustomerLogin(url) &&
+                    !StoreNavigationPolicy.isAccountDeletionPage(url));
             if (StoreNavigationPolicy.isFirstParty(url)) {
               protectedFlowActive =
                   StoreNavigationPolicy.isProtectedFirstPartyFlow(url);
             }
-            _navigationGeneration++;
             _loadFailed.value = false;
             if (!_firstPageReady.value) {
               _armLoadTimeout();
@@ -115,8 +135,8 @@ class StoreWebView extends StatefulWidget {
           onProgress: (int progress) {
             if (progress >= 80) _schedulePaintConfirmation(controller);
           },
-          onPageFinished: (_) {
-            unawaited(_handlePageFinished(controller));
+          onPageFinished: (String url) {
+            unawaited(_handlePageFinished(controller, url));
           },
           onWebResourceError: (WebResourceError error) {
             // iOS can terminate WKWebView's content process while Flutter
@@ -142,10 +162,30 @@ class StoreWebView extends StatefulWidget {
     // iOS: navigate the WebView back/forward with the native swipe gesture.
     final platform = controller.platform;
     if (platform is WebKitWebViewController) {
-      platform.setAllowsBackForwardNavigationGestures(true);
+      unawaited(_prepareIosWebView(controller, platform));
+    } else {
+      _scheduleInitialLoad(controller);
     }
-    _scheduleInitialLoad(controller);
     return controller;
+  }
+
+  static Future<void> _prepareIosWebView(
+    WebViewController controller,
+    WebKitWebViewController platform,
+  ) async {
+    try {
+      await _iosWebViewPolicyChannel.invokeMethod<void>(
+        'installGeolocationGuard',
+        <String, int>{'webViewIdentifier': platform.webViewIdentifier},
+      );
+      await platform.setAllowsBackForwardNavigationGestures(true);
+      _scheduleInitialLoad(controller);
+    } catch (error) {
+      if (kDebugMode) {
+        debugPrint('Unable to prepare the iOS WebView policy: $error');
+      }
+      _showLoadFailure();
+    }
   }
 
   /// Starts the first page load only AFTER the first Flutter frame, once the
@@ -189,6 +229,7 @@ class StoreWebView extends StatefulWidget {
     _paintProbeGeneration = null;
     _recoveryInFlight = false;
     _firstPageReady.value = false;
+    _iosCompliancePageReady.value = true;
     _loadFailed.value = true;
   }
 
@@ -206,11 +247,373 @@ class StoreWebView extends StatefulWidget {
     unawaited(_confirmMeaningfulPaint(controller, generation));
   }
 
-  static Future<void> _handlePageFinished(WebViewController controller) async {
+  static Future<void> _handlePageFinished(
+    WebViewController controller,
+    String url,
+  ) async {
     final int generation = _navigationGeneration;
+    if (!_isActiveNavigation(generation, url)) return;
+    await _applyAppCompliance(controller, url, generation);
+    if (!_isActiveNavigation(generation, url)) return;
     if (await _healZeroViewport(controller)) return;
-    if (generation != _navigationGeneration || _loadFailed.value) return;
+    if (!_isActiveNavigation(generation, url)) return;
     _schedulePaintConfirmation(controller);
+  }
+
+  static bool _isActiveNavigation(int generation, String url) {
+    return generation == _navigationGeneration &&
+        !_loadFailed.value &&
+        _activeNavigationUrl == url;
+  }
+
+  static const String _storefrontAccountDeletionJs = r'''
+(() => {
+  if (location.hostname !== 'beautyontapp.com' &&
+      !location.hostname.endsWith('.beautyontapp.com')) return true;
+  if (location.hostname === 'account.beautyontapp.com' ||
+      location.hostname.endsWith('.account.beautyontapp.com')) return true;
+
+  const polishDeleteAccountPage = () => {
+    const path = location.pathname.replace(/\/+$/, '');
+    if (path !== '/pages/delete-account') return true;
+
+    const form = document.querySelector(
+      'form.contact-form[action^="/contact"]'
+    );
+    if (!form) return false;
+
+    const search = new URLSearchParams(location.search);
+    const postedByShopify =
+      search.get('contact_posted') === 'true' ||
+      search.get('account_deletion_requested') === '1' ||
+      document.querySelector('[data-contact-success], .form-status--success');
+    const submittedInThisSession =
+      sessionStorage.getItem('__botAccountDeletionSubmitted') === 'true';
+    const requested = postedByShopify && submittedInThisSession;
+    if (requested) {
+      sessionStorage.removeItem('__botAccountDeletionSubmitted');
+      form.dataset.botDeletePolished = 'true';
+      form.removeAttribute('method');
+      form.removeAttribute('action');
+      form.innerHTML = `
+        <div
+          id="botDeleteAccountSuccess"
+          role="status"
+          aria-live="polite"
+          style="
+            padding:24px;
+            border:1px solid rgba(0,0,0,.12);
+            border-radius:20px;
+            background:#fff;
+          "
+        >
+          <h2 style="margin:0 0 12px;">Deletion request received</h2>
+          <p style="margin:0;">
+            We will permanently delete or anonymize your BeautyonTApp account
+            within 7 days and send confirmation to the email address you
+            provided.
+          </p>
+        </div>
+      `;
+      return true;
+    }
+
+    form.setAttribute('aria-label', 'Permanent account deletion request');
+
+    const emailInput = form.querySelector('input[name="contact[email]"]');
+    const button = form.querySelector('button[type="submit"]');
+    if (!emailInput || !button) return false;
+    if (form.dataset.botDeletePolished === 'true') {
+      return Boolean(
+        document.getElementById('botDeleteAccountConfirmation') &&
+        button.dataset.botDeleteHandler === 'true'
+      );
+    }
+
+    const nameInput = form.querySelector('input[name="contact[Name]"]');
+    nameInput?.closest('.form-floating')?.remove();
+
+    emailInput.setAttribute('autocomplete', 'email');
+    emailInput.setAttribute('aria-label', 'Account email address');
+    emailInput.setAttribute('placeholder', 'Account email address');
+    const emailLabel = form.querySelector(`label[for="${emailInput.id}"]`);
+    if (emailLabel) emailLabel.textContent = 'Account email address*';
+
+    const requestBody = form.querySelector('input[name="contact[Comment]"]');
+    if (requestBody) {
+      requestBody.value =
+        'PERMANENT ACCOUNT DELETION REQUEST submitted in the BeautyonTApp app';
+    }
+
+    const ensureHiddenInput = (name, value) => {
+      let input = form.querySelector(`input[name="${name}"]`);
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      input.value = value;
+    };
+    ensureHiddenInput(
+      'contact[Subject]',
+      'PERMANENT ACCOUNT DELETION REQUEST'
+    );
+    ensureHiddenInput(
+      'return_to',
+      '/pages/delete-account?account_deletion_requested=1'
+    );
+
+    const explanation = Array.from(form.querySelectorAll('p')).find((node) =>
+      node.textContent.includes('You are requesting deletion')
+    );
+    if (explanation) {
+      explanation.textContent =
+        'Enter the email address for your account, confirm the permanent ' +
+        'deletion below, then submit the request. No phone call or separate ' +
+        'email is required.';
+    }
+
+    button.textContent = 'Request permanent deletion';
+    button.setAttribute('aria-label', 'Request permanent account deletion');
+
+    if (!document.getElementById('botDeleteAccountConfirmation')) {
+      const confirmation = document.createElement('label');
+      confirmation.id = 'botDeleteAccountConfirmation';
+      confirmation.style.cssText = [
+        'display:flex',
+        'align-items:flex-start',
+        'gap:12px',
+        'padding:16px',
+        'border:1px solid rgba(0,0,0,.12)',
+        'border-radius:16px',
+        'font-size:16px',
+        'line-height:1.35'
+      ].join(';');
+      confirmation.innerHTML = `
+        <input
+          type="checkbox"
+          required
+          aria-label="Confirm permanent account deletion"
+          style="width:20px;height:20px;margin-top:1px;flex:0 0 auto;"
+        >
+        <span>
+          I understand this permanently deletes my account and personal data,
+          except records BeautyonTApp must retain by law.
+        </span>
+      `;
+      const submitContainer = button.parentElement;
+      submitContainer?.parentElement?.insertBefore(
+        confirmation,
+        submitContainer
+      );
+    }
+
+    if (!button.dataset.botDeleteHandler) {
+      button.dataset.botDeleteHandler = 'true';
+      form.addEventListener('submit', () => {
+        sessionStorage.setItem('__botAccountDeletionSubmitted', 'true');
+        button.disabled = true;
+        button.textContent = 'Submitting deletion request…';
+      });
+    }
+
+    const contactSection = form.closest('section');
+    const contactHeading = Array.from(
+      contactSection?.querySelectorAll('p') || []
+    ).find((node) => node.textContent.trim() === 'Contact Us');
+    if (contactHeading) {
+      contactHeading.textContent = 'Confirm permanent deletion';
+    }
+    form.dataset.botDeletePolished = 'true';
+    return Boolean(
+      document.getElementById('botDeleteAccountConfirmation') &&
+      button.dataset.botDeleteHandler === 'true'
+    );
+  };
+
+  const installDeleteAccountLink = () => {
+    const profileRows = document.querySelector(
+      '#shopModal3 .store-locations'
+    );
+    if (!profileRows || document.getElementById('botAppDeleteAccountLink')) {
+      return Boolean(document.getElementById('botAppDeleteAccountLink'));
+    }
+
+    const link = document.createElement('a');
+    link.id = 'botAppDeleteAccountLink';
+    link.href = 'https://beautyontapp.com/pages/delete-account';
+    link.className = 'custom-mackup bot-profile-delete-row';
+    link.setAttribute('aria-label', 'Delete Account');
+    link.innerHTML = `
+      <svg
+        class="custom-login-image-icon"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 7h16"></path>
+        <path d="M9 3h6l1 4H8l1-4Z"></path>
+        <path d="m7 7 1 14h8l1-14"></path>
+        <path d="M10 11v6M14 11v6"></path>
+      </svg>
+      <div class="custom-mackup-content">
+        <h3>Delete Account</h3>
+        <p>Permanently delete your account and personal data</p>
+      </div>
+    `;
+
+    const ordersRow = profileRows.querySelector('.bot-profile-orders-row');
+    if (ordersRow) {
+      ordersRow.insertAdjacentElement('afterend', link);
+    } else {
+      profileRows.appendChild(link);
+    }
+    return true;
+  };
+
+  const deleteAccountPageReady = polishDeleteAccountPage();
+  installDeleteAccountLink();
+  if (!window.__botDeleteAccountObserver && document.body) {
+    window.__botDeleteAccountObserver = new MutationObserver(() => {
+      polishDeleteAccountPage();
+      if (!document.getElementById('botAppDeleteAccountLink')) {
+        installDeleteAccountLink();
+      }
+    });
+    window.__botDeleteAccountObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
+  return deleteAccountPageReady;
+})()
+''';
+
+  static const String _iosFirstPartyLoginOnlyJs = r'''
+(() => {
+  if (location.hostname !== 'account.beautyontapp.com' &&
+      !location.hostname.endsWith('.account.beautyontapp.com')) return true;
+  if (!location.pathname.toLowerCase().startsWith('/authentication/login')) {
+    return true;
+  }
+
+  const removeThirdPartyLogin = () => {
+    document
+      .querySelectorAll('a[href*="/authentication/social/"]')
+      .forEach((link) => {
+        const providerGroup = link.parentElement?.parentElement;
+        (providerGroup || link).remove();
+      });
+  };
+
+  removeThirdPartyLogin();
+  if (!window.__botFirstPartyLoginObserver && document.documentElement) {
+    window.__botFirstPartyLoginObserver = new MutationObserver(
+      removeThirdPartyLogin
+    );
+    window.__botFirstPartyLoginObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
+  const socialLogin = document.querySelector(
+    'a[href*="/authentication/social/"]'
+  );
+  const emailLogin = document.querySelector(
+    'input[type="email"], input[name="email"]'
+  );
+  return !socialLogin && Boolean(emailLogin);
+})()
+''';
+
+  static bool _javascriptResultIsTrue(Object result) {
+    final String normalized = result.toString().replaceAll('"', '').trim();
+    return result == true || normalized == 'true' || normalized == '1';
+  }
+
+  static Future<bool> _waitForJavaScriptSuccess(
+    WebViewController controller,
+    String script,
+    int generation,
+    String url,
+  ) async {
+    for (int attempt = 0; attempt < 40; attempt++) {
+      if (!_isActiveNavigation(generation, url)) return false;
+      final Object result = await controller.runJavaScriptReturningResult(
+        script,
+      );
+      if (_javascriptResultIsTrue(result)) return true;
+      await Future.delayed(const Duration(milliseconds: 100));
+    }
+    return false;
+  }
+
+  static void _showComplianceFailure(int generation, String url) {
+    if (!_isActiveNavigation(generation, url)) return;
+    // Never leave a customer behind an endless preparation spinner. Reveal
+    // the native retry surface while keeping the unverified page inaccessible.
+    _showLoadFailure();
+  }
+
+  static Future<void> _applyAppCompliance(
+    WebViewController controller,
+    String url,
+    int generation,
+  ) async {
+    final bool isSensitiveIosPage =
+        defaultTargetPlatform == TargetPlatform.iOS &&
+        (StoreNavigationPolicy.isHostedCustomerLogin(url) ||
+            StoreNavigationPolicy.isAccountDeletionPage(url));
+    try {
+      final bool deletionReady = await _waitForJavaScriptSuccess(
+        controller,
+        _storefrontAccountDeletionJs,
+        generation,
+        url,
+      );
+      if (!_isActiveNavigation(generation, url)) return;
+      if (defaultTargetPlatform == TargetPlatform.iOS &&
+          StoreNavigationPolicy.isAccountDeletionPage(url)) {
+        if (deletionReady) {
+          _iosCompliancePageReady.value = true;
+        } else {
+          _showComplianceFailure(generation, url);
+        }
+        return;
+      }
+
+      if (defaultTargetPlatform == TargetPlatform.iOS &&
+          StoreNavigationPolicy.isHostedCustomerLogin(url)) {
+        final bool loginReady = await _waitForJavaScriptSuccess(
+          controller,
+          _iosFirstPartyLoginOnlyJs,
+          generation,
+          url,
+        );
+        if (!_isActiveNavigation(generation, url)) return;
+        if (loginReady) {
+          _iosCompliancePageReady.value = true;
+        } else {
+          _showComplianceFailure(generation, url);
+        }
+        return;
+      }
+      _iosCompliancePageReady.value = true;
+    } catch (_) {
+      if (!_isActiveNavigation(generation, url)) return;
+      if (isSensitiveIosPage) {
+        _showComplianceFailure(generation, url);
+      } else {
+        _iosCompliancePageReady.value = true;
+      }
+    }
   }
 
   /// WebView progress 100 and onPageFinished only mean that navigation ended;
@@ -672,6 +1075,25 @@ class _StoreWebViewState extends State<StoreWebView>
                     ),
                   );
                 },
+              ),
+            ),
+            ValueListenableBuilder<bool>(
+              valueListenable: StoreWebView._iosCompliancePageReady,
+              builder: (_, bool ready, __) => Positioned.fill(
+                child: BlockSemantics(
+                  blocking: !ready,
+                  child: IgnorePointer(
+                    ignoring: ready,
+                    child: AnimatedOpacity(
+                      opacity: ready ? 0 : 1,
+                      duration: const Duration(milliseconds: 160),
+                      child: const ColoredBox(
+                        color: Colors.white,
+                        child: Center(child: CupertinoActivityIndicator()),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],

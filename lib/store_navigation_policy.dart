@@ -34,6 +34,43 @@ abstract final class StoreNavigationPolicy {
         path.startsWith('/oauth/');
   }
 
+  static bool isHostedCustomerAccount(String? url) {
+    final Uri? uri = Uri.tryParse(url ?? '');
+    if (uri == null || uri.scheme != 'https') return false;
+    final String host = uri.host.toLowerCase();
+    return host == 'account.beautyontapp.com' ||
+        host.endsWith('.account.beautyontapp.com');
+  }
+
+  static bool isHostedCustomerLogin(String? url) {
+    final Uri? uri = Uri.tryParse(url ?? '');
+    if (uri == null || !isHostedCustomerAccount(url)) return false;
+    return uri.path.toLowerCase().startsWith('/authentication/login');
+  }
+
+  static bool isHostedSocialSignInDestination(String? url) {
+    final Uri? uri = Uri.tryParse(url ?? '');
+    if (uri == null || !isHostedCustomerAccount(url)) return false;
+    return uri.path.toLowerCase().startsWith('/authentication/social/');
+  }
+
+  static bool isGoogleSignInDestination(String? url) {
+    final Uri? uri = Uri.tryParse(url ?? '');
+    if (uri == null || uri.scheme != 'https') return false;
+    final String host = uri.host.toLowerCase();
+    return host == 'accounts.google.com' ||
+        host.endsWith('.accounts.google.com') ||
+        (isHostedSocialSignInDestination(url) &&
+            uri.path.toLowerCase().startsWith('/authentication/social/google'));
+  }
+
+  static bool isAccountDeletionPage(String? url) {
+    final Uri? uri = Uri.tryParse(url ?? '');
+    if (uri == null || !isFirstParty(url)) return false;
+    return uri.path.replaceAll(RegExp(r'/+$'), '').toLowerCase() ==
+        '/pages/delete-account';
+  }
+
   static bool isAppDistributionDestination(String? url) {
     final Uri? uri = Uri.tryParse(url ?? '');
     if (uri == null) return false;
