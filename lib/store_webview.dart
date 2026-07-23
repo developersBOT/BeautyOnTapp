@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:beautyontapp/store_navigation_policy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -80,13 +81,27 @@ class StoreWebView extends StatefulWidget {
 
   static WebViewController _buildController() {
     late final WebViewController controller;
+    bool protectedFlowActive = false;
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setUserAgent(_userAgent)
       ..setBackgroundColor(Colors.white)
       ..setNavigationDelegate(
         NavigationDelegate(
-          onPageStarted: (_) {
+          onNavigationRequest: (NavigationRequest request) {
+            if (!request.isMainFrame) return NavigationDecision.navigate;
+            return StoreNavigationPolicy.shouldAllowMainFrame(
+                  request.url,
+                  protectedFlowActive: protectedFlowActive,
+                )
+                ? NavigationDecision.navigate
+                : NavigationDecision.prevent;
+          },
+          onPageStarted: (String url) {
+            if (StoreNavigationPolicy.isFirstParty(url)) {
+              protectedFlowActive =
+                  StoreNavigationPolicy.isProtectedFirstPartyFlow(url);
+            }
             _navigationGeneration++;
             _loadFailed.value = false;
             if (!_firstPageReady.value) {
