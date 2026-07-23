@@ -40,8 +40,6 @@ class StoreWebView extends StatefulWidget {
   const StoreWebView({super.key});
 
   static WebViewController? _preloaded;
-  // Bumped on every navigation event so the screen can re-check history state.
-  static final ValueNotifier<int> _navTick = ValueNotifier<int>(0);
   static final ValueNotifier<bool> _loadFailed = ValueNotifier<bool>(false);
   // True after a BeautyOnTApp page has been prepared to use the iPhone's
   // bottom safe area. The app always protects the status bar itself, while
@@ -91,7 +89,6 @@ class StoreWebView extends StatefulWidget {
           onPageStarted: (_) {
             _navigationGeneration++;
             _loadFailed.value = false;
-            _navTick.value++;
             if (!_firstPageReady.value) {
               _armLoadTimeout();
               // Shopify's document can paint well before WebKit reports 80%
@@ -100,12 +97,10 @@ class StoreWebView extends StatefulWidget {
               _schedulePaintConfirmation(controller);
             }
           },
-          onUrlChange: (_) => _navTick.value++,
           onProgress: (int progress) {
             if (progress >= 80) _schedulePaintConfirmation(controller);
           },
           onPageFinished: (_) {
-            _navTick.value++;
             unawaited(_handlePageFinished(controller));
           },
           onWebResourceError: (WebResourceError error) {
@@ -234,19 +229,29 @@ class StoreWebView extends StatefulWidget {
 (() => {
   const body = document.body;
   const root = document.documentElement;
-  if (!body || !root) return false;
+  const main = document.querySelector('#MainContent, main');
+  if (!body || !root || !main) return false;
 
-  const text = (body.innerText || '').replace(/\s+/g, ' ').trim();
-  const title = (document.title || '').trim();
+  const mainRect = main.getBoundingClientRect();
   const viewportReady = window.innerWidth > 1 && window.innerHeight > 1;
-  const documentReady = body.childElementCount > 0 && root.scrollHeight > 40;
-  const hasLoadedImage = Array.from(document.images).some(
-    (image) => image.complete && image.naturalWidth > 0
+  const documentReady =
+    body.childElementCount > 0 &&
+    root.scrollHeight > 40 &&
+    mainRect.width > 0 &&
+    mainRect.height > 80;
+  const hasPaintedMainImage = Array.from(main.querySelectorAll('img')).some(
+    (image) => {
+      const rect = image.getBoundingClientRect();
+      return image.complete &&
+        image.naturalWidth > 0 &&
+        rect.width > 40 &&
+        rect.height > 40;
+    }
   );
 
   return viewportReady &&
     documentReady &&
-    (text.length >= 24 || title.length >= 3 || hasLoadedImage);
+    hasPaintedMainImage;
 })()
 ''');
       final String normalized = result.toString().replaceAll('"', '').trim();
@@ -272,7 +277,6 @@ class StoreWebView extends StatefulWidget {
     _recoveryInFlight = false;
     _loadFailed.value = false;
     _firstPageReady.value = true;
-    _navTick.value++;
     _scheduleRevealWatchdog(controller);
   }
 
@@ -548,7 +552,6 @@ class StoreWebView extends StatefulWidget {
 class _StoreWebViewState extends State<StoreWebView>
     with WidgetsBindingObserver {
   late final WebViewController _controller;
-  bool _awayFromHome = false;
 
   bool get _isAndroid => defaultTargetPlatform == TargetPlatform.android;
 
@@ -561,15 +564,12 @@ class _StoreWebViewState extends State<StoreWebView>
     _controller = StoreWebView._preloaded ?? StoreWebView._buildController();
     StoreWebView._preloaded ??= _controller;
     WidgetsBinding.instance.addObserver(this);
-    StoreWebView._navTick.addListener(_refreshBackState);
     StoreWebView._loadFailed.addListener(_onNotifierChanged);
-    _refreshBackState();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    StoreWebView._navTick.removeListener(_refreshBackState);
     StoreWebView._loadFailed.removeListener(_onNotifierChanged);
     super.dispose();
   }
@@ -583,21 +583,6 @@ class _StoreWebViewState extends State<StoreWebView>
 
   void _onNotifierChanged() {
     if (mounted) setState(() {});
-  }
-
-  Future<void> _refreshBackState() async {
-    final bool canGoBack = await _controller.canGoBack();
-    if (!mounted) return;
-    if (canGoBack != _awayFromHome) {
-      setState(() => _awayFromHome = canGoBack);
-    }
-  }
-
-  Future<void> _goBack() async {
-    if (await _controller.canGoBack()) {
-      await _controller.goBack();
-    }
-    _refreshBackState();
   }
 
   void _retry() {
@@ -623,7 +608,6 @@ class _StoreWebViewState extends State<StoreWebView>
         // Android system back walks the web history first, then exits.
         if (await _controller.canGoBack()) {
           await _controller.goBack();
-          _refreshBackState();
         } else {
           SystemNavigator.pop();
         }
@@ -675,15 +659,6 @@ class _StoreWebViewState extends State<StoreWebView>
                 },
               ),
             ),
-            // Android only: floating back button, 34px, top-left.
-            // Homepage-conditional — appears ONLY once the user has
-            // navigated away from home. Hidden on home is intended.
-            if (_isAndroid && _awayFromHome)
-              Positioned(
-                top: insets.top + 8,
-                left: 10,
-                child: _FloatingBackButton(onTap: _goBack),
-              ),
           ],
         ),
       ),
@@ -719,29 +694,6 @@ class _LoadingCover extends StatelessWidget {
             const SizedBox(height: 28),
             const CupertinoActivityIndicator(radius: 11, color: Colors.white),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _FloatingBackButton extends StatelessWidget {
-  const _FloatingBackButton({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.black.withValues(alpha: 0.55),
-      shape: const CircleBorder(),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onTap,
-        child: const SizedBox(
-          width: 34,
-          height: 34,
-          child: Icon(Icons.arrow_back, color: Colors.white, size: 20),
         ),
       ),
     );
