@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  App-level Apple Privacy Manifest.
+
+  NOTE: This file must be added to the "Runner" target in Xcode before it takes
+  effect (Xcode > select the file under Runner > File Inspector > Target
+  Membership > check "Runner"). Creating the file alone does not include it in
+  the built app. See APP_STORE_REVIEW.md > "Privacy manifest".
+
+  It declares:
+   - The app itself performs no tracking and defines no tracking domains.
+   - The app's native shell collects no data via SDKs (commerce data is handled
+     by the web store and disclosed in App Store Connect > App Privacy).
+   - The "required reason" APIs used by linked plugins:
+       * NSUserDefaults  (shared_preferences)              -> reason CA92.1
+       * File timestamp  (get_storage / path_provider I/O) -> reason C617.1
+-->
+<plist version="1.0">
+<dict>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
