@@ -38,6 +38,7 @@ MAX_AGE_DAYS="${MAX_AGE_DAYS:-0}"
 LOG_DIR="${LOG_DIR:-$HOME/Library/Logs/beautyontapp-gads-auditor}"
 CLAUDE_BIN="${CLAUDE_BIN:-claude}"
 CLAUDE_PERMISSION_FLAG="${CLAUDE_PERMISSION_FLAG:---permission-mode acceptEdits}"
+CLAUDE_ALLOWED_TOOLS="${CLAUDE_ALLOWED_TOOLS:-Read,Write,Edit,Glob,Grep,Bash}"
 CLAUDE_MODEL="${CLAUDE_MODEL:-}"
 DRY_RUN="${DRY_RUN:-0}"
 
@@ -50,6 +51,18 @@ log() { printf '%s  %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*" | tee -a "$LOG_FIL
 log "=== BeautyOnTApp local Google Ads auditor — run $RUN_TS ==="
 
 # ---- Preflight ------------------------------------------------------------
+# Refuse to run with permission checks disabled. The exports contain
+# attacker-controllable text — any stranger's search query lands in your
+# search-terms report — so a permissive unattended run is a real risk, not a
+# theoretical one. Checked before any work happens.
+if [[ "$CLAUDE_PERMISSION_FLAG" == *"dangerously-skip-permissions"* ]]; then
+  log "REFUSING TO RUN: CLAUDE_PERMISSION_FLAG disables permission checks."
+  log "Google Ads search terms are written by strangers, so unattended runs must"
+  log "keep permission checks on. Set:"
+  log "  CLAUDE_PERMISSION_FLAG=\"--permission-mode acceptEdits\""
+  exit 1
+fi
+
 if [[ ! -d "$REPO_DIR/.git" ]]; then
   log "ERROR: REPO_DIR '$REPO_DIR' is not a git repository."
   log "Clone it first:  git clone <repo-url> '$REPO_DIR'"
@@ -161,6 +174,7 @@ for dir in $WATCH_DIRS; do
 done
 # shellcheck disable=SC2206
 claude_args+=( $CLAUDE_PERMISSION_FLAG )
+[[ -n "$CLAUDE_ALLOWED_TOOLS" ]] && claude_args+=( --allowedTools "$CLAUDE_ALLOWED_TOOLS" )
 [[ -n "$CLAUDE_MODEL" ]] && claude_args+=( --model "$CLAUDE_MODEL" )
 
 set +e
