@@ -49,25 +49,19 @@ provider) so only email login is offered. Save.
   OAuth-popup problem), so **disabling Google is the cleaner path**.
 
 **5.1.1(v) — account deletion:** `/pages/delete-account` **exists, is published** (since
-2025-11-24), and carries a working deletion-request form. A "Delete my account" link is already on
-the **logged-out** login page (`main-login.liquid`). **The gap:** it is **missing from the
-logged-in account area**. `snippets/account-header.liquid` (the nav a signed-in customer sees)
-shows only **Orders / Addresses / Log out** — no delete option. A reviewer who signs in with the
-demo account finds no way to delete → exactly Apple's finding.
-→ **Fix (small theme edit):** add the delete link into `snippets/account-header.liquid`, next to
-"Log out":
-
-```liquid
-<a
-  href="/pages/delete-account"
-  class="styled-link flex items-center gap-2 md:gap-3 max-md:text-sm"
->
-  Delete my account
-</a>
-```
-
-After this, a signed-in user can reach deletion from their account area — which is what the
-required screen recording must show.
+2025-11-24) with a working deletion-request form. A "Delete my account" link was already on the
+**logged-out** login page, but was **missing from the logged-in account area**
+(`snippets/account-header.liquid` showed only Orders / Addresses / Log out) — exactly why a
+signed-in reviewer couldn't find it.
+→ **DONE (applied 2026-07-24):** the "Delete my account" link was added to
+`snippets/account-header.liquid` in the **unpublished** theme
+`bot-v8.1.1-google-cwv-index-draft-24jul2026` (change verified in that theme). A signed-in customer
+now sees **Orders / Addresses / Log out / Delete my account**, and the link opens the existing
+`/pages/delete-account` form.
+→ **ACTION NEEDED — publish v8.1.1:** this only goes live once you **publish the v8.1.1 theme**
+(theme publishing is blocked via the connector, so you do it in admin: Online Store → Themes →
+v8.1.1 → Publish). Until then the live theme (v8.1.0) still lacks the link. Once v8.1.1 is live,
+this is what the required account-deletion screen recording will show.
 
 > Note: the deletion page is a **request form** ("we usually complete deletion within 7 days"),
 > not instant self-serve. For a non-highly-regulated beauty store this is generally acceptable to
