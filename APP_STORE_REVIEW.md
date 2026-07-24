@@ -32,14 +32,21 @@ Fixes #1 and #3 are the **same feature** (Google sign-in). Path A resolves both 
 Store: **BeautyOnTApp**, `beautyontapp.com`, Advanced plan, South Africa (ZAR). Customer accounts
 are **classic / theme-rendered**. Main theme: `beautyontapp-v8.1.0-funnel-cwv-draft-23jul2026`.
 
-**4.8 + 2.1(a) — the "Google" button:** **NOT present** in the current theme's login
-(`sections/main-login.liquid`), register (`sections/main-register.liquid`), or account
-(`snippets/account-header.liquid`). Login and register are **email + password only**. It looks like
-the third-party Google login was **already removed** from the theme after the review.
-→ **Action:** open `https://beautyontapp.com/account/login` and `/account/register` in Safari and
-confirm no Google button renders. If it's gone, **4.8 and 2.1(a) are resolved for the next build** —
-resubmit + reply. If a Google button still appears, it's injected by an installed app or the hosted
-checkout; find and disable that source.
+**4.8 + 2.1(a) — the "Google" button:** This is **Shopify's built-in "Sign in with Google"**, a
+platform login option toggled in **Settings → Customer accounts** — **not theme code** (confirmed:
+it appears in no theme file; login/register templates are email + password only). The app just
+mirrors the store, so the button shows in-app too.
+→ **Fix (Shopify setting, ~1 min):** Shopify admin → **Settings → Customer accounts** → in the
+sign-in / login options, **turn OFF "Sign in with Google"** (and any other third-party/social
+provider) so only email login is offered. Save.
+- This removes the button **storefront-wide**, which clears **4.8** (no third-party login → the
+  rule no longer applies) **and 2.1(a)** (the unresponsive Google button is gone).
+- It's an **account-level setting**, so it can't be hidden "only in the app" (Shopify serves the
+  button), and I **can't toggle it via the connector** — it must be done in admin.
+- **Alternative (only if you want to keep Google):** if that same settings page offers a **"Sign in
+  with Apple"** toggle, enabling it satisfies 4.8's "equivalent option" rule while keeping Google —
+  **but** you would then still have to fix the unresponsive Google button for 2.1(a) (a WebView
+  OAuth-popup problem), so **disabling Google is the cleaner path**.
 
 **5.1.1(v) — account deletion:** `/pages/delete-account` **exists, is published** (since
 2025-11-24), and carries a working deletion-request form. A "Delete my account" link is already on
