@@ -27,6 +27,49 @@ Fixes #1 and #3 are the **same feature** (Google sign-in). Path A resolves both 
 
 ---
 
+## 0.5 Verified against the live store (checked 2026-07-24 via Shopify Admin)
+
+Store: **BeautyOnTApp**, `beautyontapp.com`, Advanced plan, South Africa (ZAR). Customer accounts
+are **classic / theme-rendered**. Main theme: `beautyontapp-v8.1.0-funnel-cwv-draft-23jul2026`.
+
+**4.8 + 2.1(a) — the "Google" button:** **NOT present** in the current theme's login
+(`sections/main-login.liquid`), register (`sections/main-register.liquid`), or account
+(`snippets/account-header.liquid`). Login and register are **email + password only**. It looks like
+the third-party Google login was **already removed** from the theme after the review.
+→ **Action:** open `https://beautyontapp.com/account/login` and `/account/register` in Safari and
+confirm no Google button renders. If it's gone, **4.8 and 2.1(a) are resolved for the next build** —
+resubmit + reply. If a Google button still appears, it's injected by an installed app or the hosted
+checkout; find and disable that source.
+
+**5.1.1(v) — account deletion:** `/pages/delete-account` **exists, is published** (since
+2025-11-24), and carries a working deletion-request form. A "Delete my account" link is already on
+the **logged-out** login page (`main-login.liquid`). **The gap:** it is **missing from the
+logged-in account area**. `snippets/account-header.liquid` (the nav a signed-in customer sees)
+shows only **Orders / Addresses / Log out** — no delete option. A reviewer who signs in with the
+demo account finds no way to delete → exactly Apple's finding.
+→ **Fix (small theme edit):** add the delete link into `snippets/account-header.liquid`, next to
+"Log out":
+
+```liquid
+<a
+  href="/pages/delete-account"
+  class="styled-link flex items-center gap-2 md:gap-3 max-md:text-sm"
+>
+  Delete my account
+</a>
+```
+
+After this, a signed-in user can reach deletion from their account area — which is what the
+required screen recording must show.
+
+> Note: the deletion page is a **request form** ("we usually complete deletion within 7 days"),
+> not instant self-serve. For a non-highly-regulated beauty store this is generally acceptable to
+> Apple **as long as it is reachable in-app and the recording shows the full initiate → confirm
+> flow**. If Apple pushes back, upgrade the page to complete deletion immediately via an App Proxy
+> calling the Admin API `customerDelete`.
+
+---
+
 ## 1. What Apple said (verbatim)
 
 **Guideline 4.8 – Design – Login Services**
