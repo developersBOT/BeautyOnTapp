@@ -48,20 +48,23 @@ provider) so only email login is offered. Save.
   **but** you would then still have to fix the unresponsive Google button for 2.1(a) (a WebView
   OAuth-popup problem), so **disabling Google is the cleaner path**.
 
-**5.1.1(v) — account deletion:** `/pages/delete-account` **exists, is published** (since
-2025-11-24) with a working deletion-request form. A "Delete my account" link was already on the
-**logged-out** login page, but was **missing from the logged-in account area**
-(`snippets/account-header.liquid` showed only Orders / Addresses / Log out) — exactly why a
-signed-in reviewer couldn't find it.
-→ **DONE (applied 2026-07-24):** the "Delete my account" link was added to
-`snippets/account-header.liquid` in the **unpublished** theme
-`bot-v8.1.1-google-cwv-index-draft-24jul2026` (change verified in that theme). A signed-in customer
-now sees **Orders / Addresses / Log out / Delete my account**, and the link opens the existing
-`/pages/delete-account` form.
-→ **ACTION NEEDED — publish v8.1.1:** this only goes live once you **publish the v8.1.1 theme**
-(theme publishing is blocked via the connector, so you do it in admin: Online Store → Themes →
-v8.1.1 → Publish). Until then the live theme (v8.1.0) still lacks the link. Once v8.1.1 is live,
-this is what the required account-deletion screen recording will show.
+**5.1.1(v) — account deletion (this store uses HOSTED new customer accounts):** The live sign-in
+page is `account.beautyontapp.com` → this store runs Shopify's **new, hosted customer accounts**,
+rendered by Shopify, **not the theme**. Consequences:
+- A "Delete my account" link **cannot** be added by editing theme files. (An earlier edit to
+  `snippets/account-header.liquid` in the v8.1.1 theme is **dormant** — that classic-accounts
+  template is not used by hosted accounts. Harmless, but ineffective; revert if you want it clean.)
+- The `/pages/delete-account` page **exists and works** as the deletion destination.
+→ **Correct fix — a Customer Account UI Extension.** Hosted account pages can only be extended with
+  a **Customer Account UI Extension** (Preact/TSX, scaffolded with Shopify CLI, shipped via a
+  Shopify app: `shopify app deploy`). Add a **profile** or **full-page** extension with a "Delete
+  account" action that links to `/pages/delete-account` (or calls a backend delete endpoint). Docs:
+  https://shopify.dev/docs/api/customer-account-ui-extensions . I can write the extension code, but
+  it must be deployed through your Shopify app + CLI (can't be done from this environment).
+→ **Lighter alternative (riskier):** surface a clearly-labeled "Delete my account" link somewhere
+  the reviewer reaches in the app (store menu/footer) pointing to `/pages/delete-account`, and show
+  it in the required screen recording. Faster, but Apple prefers it inside the account area — the
+  extension is the robust path.
 
 > Note: the deletion page is a **request form** ("we usually complete deletion within 7 days"),
 > not instant self-serve. For a non-highly-regulated beauty store this is generally acceptable to
