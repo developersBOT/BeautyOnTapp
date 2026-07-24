@@ -15,6 +15,7 @@ report. The last agent produces the executive morning digest.
 
 | # | Agent | ~Time (SAST) | What it does | Autonomy |
 |---|-------|--------------|--------------|----------|
+| 07 | **Local Google Ads Auditor** | 07:30 | Runs **on your computer**: sweeps and audits *every* Google Ads export, pushes normalized CSVs into `inbox/` so the cloud agents have real data | Recommend-only |
 | 01 | **PPC Audit** | 08:00 | Audits Google Ads + Meta paid performance; flags bleeders / wasted spend / CPA over ceiling | Meta: auto-acts · Google Ads: recommends |
 | 02 | **SEO Audit** | 09:00 | Semrush site audit, rankings, backlinks, AI-Overview visibility | Recommends |
 | 03 | **Merchant / Feed** | 09:30 | Shopping-feed & product-data health; fixes safe Shopify attributes | Shopify: auto-fixes · Merchant Center: recommends |

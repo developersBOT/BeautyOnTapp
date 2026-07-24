@@ -120,3 +120,8 @@ agents:
   - { nn: "04", id: analyst-solutions,  playbook: agents/04-analyst-solutions.md }
   - { nn: "05", id: keywords-negatives, playbook: agents/05-keywords-negatives.md }
   - { nn: "06", id: revenue-expansion,  playbook: agents/06-revenue-expansion.md }
+  # Agent 07 runs LOCALLY on the operator's computer (not a cloud Routine),
+  # because the Google Ads exports live there. It runs at 07:30 SAST — ahead of
+  # agent 01 — and pushes normalized exports into inbox/ so the cloud agents
+  # finally have real Google Ads data. See local-agent/README.md.
+  - { nn: "07", id: local-gads-audit,   playbook: local-agent/audit-prompt.md, runs_on: operator-machine, schedule_sast: "07:30" }
