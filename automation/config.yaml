@@ -16,17 +16,22 @@ operational_branch: automation/reports   # branch the fleet reads/writes every r
 inbox_dir: automation/inbox          # drop Google Ads CSV exports here
 
 # ----- Brands covered ---------------------------------------------------------
+# Meta ad account IDs and the BoT domain were verified live on 2026-07-24 via
+# ads_get_ad_accounts / get-shop-info. Agents should trust these and skip discovery.
 brands:
   - id: bot
     name: BeautyOnTApp
-    domain: auto                     # resolved at runtime via Shopify get-shop-info; set a value to override
+    domain: beautyontapp.com         # verified via Shopify get-shop-info
     google_ads_account: "820-452-9325"
+    meta_ad_account: "1615943869585748"   # ACTIVE, queryable
+    meta_ad_account_closed: "19511690"    # CLOSED — ignore, kept to prevent re-discovery
     shopify: true
     meta: true
   - id: pastry
     name: Pastry Skincare
-    domain: auto
+    domain: auto                     # resolved at runtime via Shopify switch-shop + get-shop-info
     google_ads_account: "851-084-2703"
+    meta_ad_account: "2972238613000896"   # ACTIVE, queryable
     shopify: true
     meta: true
 
@@ -35,6 +40,11 @@ guardrails:
   google_ads:
     mode: recommend-only             # NO API here — never auto-changes the account
     deliverables: [editor_csv, step_list, google_ads_script]
+    # Automated data bridge. Install automation/google-ads-script/export-search-terms.js
+    # in each account (one-time), publish the Sheet as CSV, and paste the URLs here.
+    # Agents fetch these automatically; if unset they fall back to automation/inbox/.
+    search_terms_csv_url_bot: ""
+    search_terms_csv_url_pastry: ""
   meta:
     auto_apply: true
     allow:
@@ -64,6 +74,25 @@ guardrails:
     log_before_after: true
     require_revert_steps: true
     on_uncertainty: escalate         # when in doubt, recommend — don't act
+
+# ----- Data-source health (update when it changes) ----------------------------
+# Agents must NEVER fabricate data for a degraded source — record it as a data
+# gap in the report and continue with what is available.
+data_sources:
+  shopify:  { status: live,     verified: 2026-07-24 }
+  meta_ads: { status: live,     verified: 2026-07-24 }
+  semrush:
+    status: degraded
+    verified: 2026-07-24
+    note: >-
+      Subscription active but out of API units, so Semrush calls fail. This
+      degrades agent 02 (SEO) and the opportunity half of agent 05. More units:
+      https://www.semrush.com/mcp-access
+  google_ads:
+    status: no-api
+    note: >-
+      No Google Ads API or MCP connector. Account data arrives via the
+      google-ads-script Sheet bridge or a CSV in automation/inbox/.
 
 # ----- Benchmarks the agents enforce (SA beauty; ZAR) -------------------------
 # Sourced from the loaded skills (bleeder-detection, benchmarks-auditor).

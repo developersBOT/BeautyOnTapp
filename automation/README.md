@@ -5,10 +5,11 @@ BeautyOnTApp and Pastry Skincare across Google Ads, SEO, Merchant/Shopping feed,
 and Meta — then hand a single decision digest to T.
 
 Each agent runs as a **Routine** (a persistent scheduled trigger on the Claude
-account). At its scheduled time it spins up a **fresh Claude session** in this
-environment, reads the reports the earlier agents already committed today, does
-its job, commits its own report, and (the last one) pushes a digest to T's phone
-and email.
+account) — **all six are live and enabled**, see `ROUTINES.md`. At its scheduled
+time the Routine resumes the operator's Claude session (which holds the live
+Shopify / Meta / Semrush connectors), reads the reports the earlier agents
+already committed today, does its job via a subagent, and commits its own
+report. The last agent produces the executive morning digest.
 
 ## The daily cascade
 
@@ -66,17 +67,27 @@ report with `before → after` and exact revert steps. See `config.yaml`
 
 ## The Google Ads data bridge
 
-Google Ads has no API in this environment. Agents 01 and 05 do all the *external*
-analysis autonomously via Semrush. For your account's own **search-term / spend**
-data they need one of:
+Google Ads has no API or connector in this environment, so the account's own
+**search-term / spend** data has to reach the fleet another way:
 
-1. **CSV drop** — export from Google Ads (Campaigns → Insights & Reports →
-   Search Terms → Download CSV) and drop it in `automation/inbox/`. The agent
-   picks it up automatically. See `inbox/README.md`.
-2. **Google Ads Script** — the agents emit a ready-to-run script that publishes
-   the search-term report on a schedule; wire it once and the loop closes.
+1. **Google Ads Script (recommended — automates it permanently).** Install
+   `automation/google-ads-script/export-search-terms.js` once per account; it
+   runs daily inside Google Ads and publishes the search-term report to a Google
+   Sheet. Paste the published CSV URL into `config.yaml`
+   (`search_terms_csv_url_bot` / `_pastry`) and agents fetch it automatically
+   every morning. Setup instructions are in the script's header.
+2. **CSV drop (fallback).** Export from Google Ads (Campaigns → Insights &
+   Reports → Search Terms → Download CSV) into `automation/inbox/`.
 
-If neither is present, the agents still run the external half and flag the gap.
+If neither is present, agents 01 and 05 still run everything else and record the
+missing account data as a data gap — they never fabricate it.
+
+## Data-source health
+
+`config.yaml` → `data_sources` is the live status board. As of 2026-07-24:
+Shopify and Meta Ads are verified live; **Semrush is out of API units** (which
+degrades agent 02 and half of agent 05 until topped up at
+https://www.semrush.com/mcp-access); Google Ads uses the bridge above.
 
 ## Managing the fleet
 
