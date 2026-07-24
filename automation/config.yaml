@@ -1,0 +1,93 @@
+# =============================================================================
+# BeautyOnTApp Marketing Automation Fleet — single source of truth
+# =============================================================================
+# Human-editable config for the scheduled agent fleet. The agents read THIS
+# file at the start of every run. To change cadence, brands, or guardrails,
+# edit here — but note: the schedule (cron times) also lives in the Routines
+# on the Claude account. Editing schedule_utc below documents intent; ask
+# Claude to re-sync the Routines to match, or edit them via the Routines UI.
+# -----------------------------------------------------------------------------
+
+fleet: beautyontapp-marketing-automation
+version: 1
+timezone: Africa/Johannesburg        # SAST, UTC+2 — all display times are SAST
+posture: auto-apply-where-safe       # Meta + Shopify act within guardrails; Google Ads is recommend-only
+operational_branch: automation/reports   # branch the fleet reads/writes every run
+inbox_dir: automation/inbox          # drop Google Ads CSV exports here
+
+# ----- Brands covered ---------------------------------------------------------
+brands:
+  - id: bot
+    name: BeautyOnTApp
+    domain: auto                     # resolved at runtime via Shopify get-shop-info; set a value to override
+    google_ads_account: "820-452-9325"
+    shopify: true
+    meta: true
+  - id: pastry
+    name: Pastry Skincare
+    domain: auto
+    google_ads_account: "851-084-2703"
+    shopify: true
+    meta: true
+
+# ----- Guardrails: what agents may do unattended ------------------------------
+guardrails:
+  google_ads:
+    mode: recommend-only             # NO API here — never auto-changes the account
+    deliverables: [editor_csv, step_list, google_ads_script]
+  meta:
+    auto_apply: true
+    allow:
+      - add_negative_keyword
+      - add_placement_exclusion
+      - add_audience_exclusion
+      - pause_zero_conversion_adset  # only if >=7d old AND >=R300 spend AND 0 conversions
+      - adjust_budget                # <= 20% change per run, off proven losers only
+    budget_adjust_max_pct: 20
+    pause_min_age_days: 7
+    pause_min_spend_zar: 300
+    escalate_if_adset_daily_spend_above_zar: 500
+    never: [delete_campaign, delete_adset, delete_ad, change_pixel, change_capi]
+  shopify:
+    auto_apply: true
+    allow:
+      - fix_product_title
+      - fix_product_description
+      - fix_meta_title
+      - fix_meta_description
+      - fix_image_alt
+      - fix_missing_gtin_mpn
+      - fix_google_product_category
+      - fix_product_type
+    never: [change_price, unpublish_product, delete_product, bulk_status_change]
+  universal:
+    log_before_after: true
+    require_revert_steps: true
+    on_uncertainty: escalate         # when in doubt, recommend — don't act
+
+# ----- Benchmarks the agents enforce (SA beauty; ZAR) -------------------------
+# Sourced from the loaded skills (bleeder-detection, benchmarks-auditor).
+benchmarks:
+  mer_floor: 1.82
+  scaling_trigger_roas: 5.0
+  cpa_ceiling_bot_zar: 167
+  cpa_ceiling_general_zar: 300
+
+# ----- Schedule (documented; Routines are the live scheduler) -----------------
+# SAST time -> UTC cron. Minutes nudged off :00 so the fleet doesn't stampede.
+schedule_utc:
+  ppc_audit:          { sast: "08:00", cron: "4 6 * * *" }
+  seo_audit:          { sast: "09:00", cron: "8 7 * * *" }
+  merchant_feed:      { sast: "09:30", cron: "34 7 * * *" }
+  analyst_solutions:  { sast: "10:00", cron: "7 8 * * *" }
+  keywords_negatives: { sast: "10:30", cron: "33 8 * * *" }
+  revenue_expansion:  { sast: "11:00", cron: "9 9 * * *" }
+
+# ----- Agent registry ---------------------------------------------------------
+agents:
+  - { nn: "01", id: ppc-audit,          playbook: agents/01-ppc-audit.md }
+  - { nn: "02", id: seo-audit,          playbook: agents/02-seo-audit.md }
+  - { nn: "03", id: merchant-feed,      playbook: agents/03-merchant-feed.md }
+  - { nn: "04", id: analyst-solutions,  playbook: agents/04-analyst-solutions.md }
+  - { nn: "05", id: keywords-negatives, playbook: agents/05-keywords-negatives.md }
+  - { nn: "06", id: revenue-expansion,  playbook: agents/06-revenue-expansion.md }
