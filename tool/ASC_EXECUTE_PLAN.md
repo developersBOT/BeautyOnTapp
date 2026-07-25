@@ -50,32 +50,28 @@ iPhone-only testing missed.
    Save this recording; it must be attached to the Apple reply. No agent can film it.
 4. Report: is the Google button gone? Does the delete flow complete to confirmation?
 
-## Phase 3 — Reviewer sign-in (CRITICAL — most likely cause of the next rejection)
-The login is **email OTP** (passwordless) and "Sign-In required" is currently OFF with no
-demo account, so the reviewer cannot sign in to reach the delete flow. **Recommended (no
-code, do today):** turn Sign-In required ON, create a dedicated mailbox you control (e.g. a
-Gmail), create/allow a customer account on that email, and hand the reviewer that inbox so
-they read the one-time code themselves — the exact Notes block is in Phase 4 step 3. (Cleaner
-alternative, needs the developer: have the backend accept a fixed reviewer code for one demo
-email.) Do not submit until this is in place; do not invent a password; do **NOT** remove the
-delete link to dodge this — removal re-triggers 5.1.1(v).
-
+## Phase 3 — Reviewer sign-in (email OTP, self-service)
+The app uses passwordless email sign-in with self-service account creation, so the reviewer signs
+in with their **own** email and reads the one-time code from their **own** inbox — no demo
+account, mailbox, or password to create. In App Store Connect, leave the demo username/password
+blank and put the self-registration steps in Notes (Phase 4 step 3). Do **NOT** remove the delete
+link to work around sign-in — removal re-triggers 5.1.1(v).
 ## Phase 4 — App Store Connect (your logged-in browser)
 Attach to my signed-in browser per `tool/ASC_SUBMIT_CHROME.md` (or `_SAFARI`). Then:
 1. Open BeautyOnTApp → iOS 1.1.2 version. Attach build 8 (or 9 per Phase 1).
-2. Set App Review Information per the Phase 3 decision (demo email + how the reviewer gets
-   the code). Do NOT enter a password that does not exist.
-3. **Notes** — turn Sign-In required ON and paste this, filling the placeholders with a demo
-   email and a webmail login you control:
-   > This app uses passwordless email sign-in (a one-time code). To sign in:
-   > 1. Tap Sign in and enter the demo email: <<DEMO_EMAIL>>
-   > 2. Get the 6-digit code from that inbox at <<WEBMAIL_URL>> (login <<DEMO_EMAIL>> / <<MAILBOX_PASSWORD>>).
-   > 3. Enter the code.
+2. Set App Review Information: leave the demo username/password blank (self-service sign-in;
+   the reviewer uses their own email). Do NOT enter a password that does not exist.
+3. **Notes** — leave the demo username/password blank (self-service sign-in) and paste this:
+   > This app uses passwordless email sign-in with self-service account creation. No demo
+   > account is needed. To sign in:
+   > 1. On the Sign-in / Profile screen, enter your own email address (this creates the account).
+   > 2. A 6-digit one-time code is emailed to that address; open your own inbox and read it.
+   > 3. Enter the code to sign in.
    > To verify account deletion: open Profile → tap "Delete my account" → confirm to the
    > confirmation screen. "Sign in with Google" has been removed; the app offers email
    > sign-in only. A screen recording of this flow, captured on a physical iPad, is attached
    > in the Resolution Center reply.
-   The ASC "password" field cannot hold a one-time code — put the mailbox login in Notes, above.
+   No demo credentials are entered; the reviewer signs in with their own email per the Notes above.
 4. **Resolution Center reply** (given this is a repeat rejection, reply — don't submit
    silently). Draft, show me BEFORE sending:
    > Thank you for the review. The issues were in our storefront configuration, and have

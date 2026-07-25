@@ -66,21 +66,15 @@ from repo + Shopify-API access:
   Google button. Not re-verified in the iPad WebView post-toggle — that's the one on-device
   check worth doing.
 
-### ⚠️ The risk that decides the next cycle — reviewer sign-in (from FIELD 6)
+### Reviewer sign-in (FIELD 6) — self-service registration, no demo account needed
 
-On the build-8 submission, **"Sign-In required" is OFF** and no demo account is set; the notes
-claim "no demo account is required — first-party sign-in sends an email OTP." **This is the most
-likely cause of the next rejection.** To verify 5.1.1(v) the reviewer must *sign in* to reach the
-delete flow — but an **email-OTP login has no password to hand over, and the reviewer cannot read
-the code** sent to an inbox they don't control. A screen recording shows the flow but does not let
-the reviewer reproduce it.
-
-Resolve reviewer sign-in before resubmitting, one of:
-- a demo email in App Review Notes whose one-time code the reviewer can retrieve (a shared mailbox
-  with webmail access), **or**
-- a documented fixed reviewer code the backend accepts for a specific demo email, **or**
-- confirm with the app developer how a reviewer is expected to sign in.
-Do **not** rely on "no demo account required" while the reviewer has no way to complete the OTP.
+On the build-8 submission "Sign-In required" is OFF with no demo account, and the notes say the
+first-party sign-in is a passwordless email OTP. Because the app allows **self-service account
+creation** ("Sign in or create account — enter your email"), the reviewer signs in with **their
+own** email and reads the code from **their own** inbox, so no demo account, mailbox, or password
+is required. Make this explicit in App Review Notes (self-registration steps), leave the demo
+username/password blank, and attach the deletion screen recording. A demo account would only be
+needed if sign-in were restricted to pre-existing customers, which it is not.
 
 ### Repeat-rejection posture (from FIELD 5)
 
@@ -356,8 +350,8 @@ Reply to Apple in the Resolution Center thread (App Store Connect) once the new 
 > Thank you for the review. In this build we have removed the third-party "Sign in with Google"
 > option from the app. The app now offers only email-based sign-in, so guideline 4.8's third-party
 > login requirement no longer applies. This also resolves the 2.1(a) report: the unresponsive
-> "Google" button has been removed. A demo account is provided in App Review Information for email
-> sign-in.
+> "Google" button has been removed. The app uses self-service email sign-in (a one-time code sent
+> to the reviewer's own email); reviewer sign-in steps are in App Review Notes.
 
 ### 7.1b — For 4.8 (Path B: Sign in with Apple added)
 

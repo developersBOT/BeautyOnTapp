@@ -16,8 +16,8 @@ Log in again at https://appstoreconnect.apple.com if prompted. The agent connect
 `http://localhost:9222` (e.g. Playwright `chromium.connectOverCDP('http://localhost:9222')`,
 or `chrome-remote-interface`).
 
-Fill in the two placeholders (`<<DEMO_EMAIL>>`, `<<DEMO_PASSWORD>>`) first — a real
-customer account on beautyontapp.com the reviewer can sign in with.
+No demo account or password is needed — the reviewer signs in with their own email
+(self-service email OTP), so there is nothing to pre-fill.
 
 ---
 
@@ -49,16 +49,15 @@ There is no app-code change to make here.
 2. **Build:** confirm build **8** is attached, or attach the newest valid build
    (build **9** if it has finished processing). If none is valid, stop and tell me.
 
-3. **App Review Information — reviewer sign-in (IMPORTANT):** the app login is email OTP
-   (passwordless), so there is NO password to enter — do not invent one. The reviewer must
-   still be able to sign in to verify account deletion. Set up ONE of: a demo customer email
-   whose inbox the reviewer can open (put the webmail login in Notes); a fixed reviewer code
-   the backend accepts for a demo email (documented in Notes); or confirm with the developer
-   how a reviewer completes the OTP. Then in **Notes** state the reviewer sign-in method plus:
-     > This app uses passwordless email sign-in (a one-time code). To sign in:
-     > 1. Tap Sign in and enter the demo email: <<DEMO_EMAIL>>
-     > 2. Get the 6-digit code from that inbox at <<WEBMAIL_URL>> (login <<DEMO_EMAIL>> / <<MAILBOX_PASSWORD>>).
-     > 3. Enter the code.
+3. **App Review Information — reviewer sign-in:** the app uses passwordless email sign-in
+   with self-service account creation, so no demo account and no password are needed. Leave the
+   demo username/password fields blank; the reviewer signs in with their own email. Put this in
+   **Notes**:
+     > This app uses passwordless email sign-in with self-service account creation. No demo
+     > account is needed. To sign in:
+     > 1. On the Sign-in / Profile screen, enter your own email address (this creates the account).
+     > 2. A 6-digit one-time code is emailed to that address; open your own inbox and read it.
+     > 3. Enter the code to sign in.
      > To verify account deletion: open Profile, tap "Delete my account", and confirm to the
      > confirmation screen. "Sign in with Google" has been removed; the app now offers email
      > sign-in only. A screen recording of this flow, captured on a physical device, is
@@ -78,8 +77,8 @@ There is no app-code change to make here.
    >
    > Guideline 5.1.1(v) — Account deletion is available in-app: sign in, open the
    > account Profile, and select "Delete my account", which completes to confirmation.
-   > A screen recording captured on a physical device is attached, and a demo account
-   > is provided in App Review Information.
+   > A screen recording captured on a physical device is attached, and reviewer sign-in
+   > instructions (self-service email OTP) are in App Review Notes.
 
 5. **HUMAN STEP — cannot be automated:** I must attach the **screen recording**
    (open app → sign in → Profile → Delete my account → confirmation, filmed on a
