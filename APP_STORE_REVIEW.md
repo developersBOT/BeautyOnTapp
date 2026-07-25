@@ -46,6 +46,51 @@ Fixes #1 and #3 are the **same feature** (Google sign-in). Path A resolves both 
 
 ---
 
+## 0.45 App Store Connect — authoritative state (reconciled 2026-07-25)
+
+Cross-checked against a read-only ASC + Shopify capture. Filling its "NOT VERIFIED" gaps
+from repo + Shopify-API access:
+
+- **Build 8 provenance (was NOT VERIFIED):** build **1.1.2 (8)** was produced by commit
+  `99f2ea9` "Fix App Review login deletion and camera issues" on branch
+  `claude/google-ads-conversion-issues-7epio6`; `pubspec.yaml` there is `1.1.2+8`. The next
+  upload must be a higher build — **`1.1.2+9`** is staged on `release/1.1.2-build9`.
+- **In-app deletion path DOES exist (capture marked it "NONE / unverified"):** the capture
+  only checked the hosted account, footer, and policies. The deletion affordance lives in the
+  **theme Profile drawer** (`sections/bottom-bar.liquid`, `bot-profile-delete-row`, gated
+  `{% if customer and pages['delete-account'] != blank %}`) and links to the **published
+  `/pages/delete-account`** page. Confirmed rendering in-app, signed in, in the user's own
+  device screenshot (Profile → "Delete my account — Request permanent account deletion").
+- **Google (4.8 / 2.1a):** native "Sign in with Google" is now **Off** (Customer accounts →
+  Authentication). The app mirrors the storefront, so a fresh on-device look should show no
+  Google button. Not re-verified in the iPad WebView post-toggle — that's the one on-device
+  check worth doing.
+
+### ⚠️ The risk that decides the next cycle — reviewer sign-in (from FIELD 6)
+
+On the build-8 submission, **"Sign-In required" is OFF** and no demo account is set; the notes
+claim "no demo account is required — first-party sign-in sends an email OTP." **This is the most
+likely cause of the next rejection.** To verify 5.1.1(v) the reviewer must *sign in* to reach the
+delete flow — but an **email-OTP login has no password to hand over, and the reviewer cannot read
+the code** sent to an inbox they don't control. A screen recording shows the flow but does not let
+the reviewer reproduce it.
+
+Resolve reviewer sign-in before resubmitting, one of:
+- a demo email in App Review Notes whose one-time code the reviewer can retrieve (a shared mailbox
+  with webmail access), **or**
+- a documented fixed reviewer code the backend accepts for a specific demo email, **or**
+- confirm with the app developer how a reviewer is expected to sign in.
+Do **not** rely on "no demo account required" while the reviewer has no way to complete the OTP.
+
+### Repeat-rejection posture (from FIELD 5)
+
+Version 1.1.2 has been rejected ~3× (plus Invalid-Binary events) on a constant 4.8 / 5.1.1(v) set;
+2.1(a) changed between cycles (build 7 = camera crash — fixed in 8; build 8 = Google button).
+Given the history, resolve the issues **and reply in Resolution Center** explaining each fix rather
+than submitting silently again.
+
+---
+
 ## 0.5 Verified against the live store (checked 2026-07-24 via Shopify Admin)
 
 Store: **BeautyOnTApp**, `beautyontapp.com`, Advanced plan, South Africa (ZAR). Customer accounts

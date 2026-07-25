@@ -49,16 +49,17 @@ There is no app-code change to make here.
 2. **Build:** confirm build **8** is attached, or attach the newest valid build
    (build **9** if it has finished processing). If none is valid, stop and tell me.
 
-3. **App Review Information:**
-   - Tick **Sign-In required**.
-   - User Name: `<<DEMO_EMAIL>>`
-   - Password: `<<DEMO_PASSWORD>>`
-   - **Notes:**
+3. **App Review Information — reviewer sign-in (IMPORTANT):** the app login is email OTP
+   (passwordless), so there is NO password to enter — do not invent one. The reviewer must
+   still be able to sign in to verify account deletion. Set up ONE of: a demo customer email
+   whose inbox the reviewer can open (put the webmail login in Notes); a fixed reviewer code
+   the backend accepts for a demo email (documented in Notes); or confirm with the developer
+   how a reviewer completes the OTP. Then in **Notes** state the reviewer sign-in method plus:
      > Account deletion is available in-app: sign in, open the Profile sheet, tap
      > "Delete my account", which opens the deletion request and completes to a
-     > confirmation. Third-party "Sign in with Google" has been removed; the app now
-     > offers email sign-in only. A screen recording of the deletion flow, captured
-     > on a physical device, is attached in the Resolution Center reply.
+     > confirmation. "Sign in with Google" has been removed; the app now offers email
+     > sign-in only. A screen recording captured on a physical device is attached in the
+     > Resolution Center reply.
    - Save.
 
 4. **Resolution Center** (left sidebar → Resolution Center → open thread): paste
