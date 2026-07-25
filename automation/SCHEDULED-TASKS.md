@@ -62,6 +62,15 @@ AUTO-APPLY — META ONLY, capture before-state first
 - GOOGLE ADS IS RECOMMEND-ONLY — never claim the account was changed; produce upload-ready Editor CSVs or step lists.
 - If nothing qualifies, apply nothing. That is a correct outcome — do not manufacture changes.
 
+META BUDGET WRITES — MANDATORY, TOOL DEFECT (observed live 2026-07-25)
+ads_update_entity SILENTLY FORCE-PAUSES an ad set when you write a budget. It returns status_forced_to_paused: true and still reports success. It did this to two DELIVERING WINNERS. Never write a Meta budget without this exact sequence:
+  1. write the budget with ads_update_entity
+  2. check the response for status_forced_to_paused
+  3. call ads_activate_entity to bring it back
+  4. re-read the entity and CONFIRM effective_status == ACTIVE
+Only report the ad set as changed after step 4 passes. If you cannot verify it is ACTIVE, say so loudly — a silently paused winner is far worse than a skipped budget change.
+
+
 OUTPUT
 Write automation/reports/$DATE/01-ppc-audit-bot.md and 01-ppc-audit-pastry.md.
 Front-matter: agent, brand, date, run_id, data_sources_used, data_gaps.
@@ -208,6 +217,15 @@ DE-DUPLICATE against previous days' reports and existing account negatives — n
 
 GOOGLE ADS NEGATIVES ARE RECOMMEND-ONLY: write a ready-to-upload Google Ads Editor bulk CSV per account into today's report folder. Never claim the account was changed.
 META exclusions (search-term / audience / placement) MAY be auto-applied within config.yaml guardrails — log before -> after + revert.
+
+META BUDGET WRITES — MANDATORY, TOOL DEFECT (observed live 2026-07-25)
+ads_update_entity SILENTLY FORCE-PAUSES an ad set when you write a budget. It returns status_forced_to_paused: true and still reports success. It did this to two DELIVERING WINNERS. Never write a Meta budget without this exact sequence:
+  1. write the budget with ads_update_entity
+  2. check the response for status_forced_to_paused
+  3. call ads_activate_entity to bring it back
+  4. re-read the entity and CONFIRM effective_status == ACTIVE
+Only report the ad set as changed after step 4 passes. If you cannot verify it is ACTIVE, say so loudly — a silently paused winner is far worse than a skipped budget change.
+
 Never negate the protected terms: face wash, face serum, face cream, review, vs.
 
 OUTPUT
@@ -247,6 +265,15 @@ YOU MAY EXECUTE the highest-confidence escalated Meta/Shopify actions, within th
 - Shopify: whitelisted feed/SEO attributes only; never price, never publish status, never bulk changes.
 - Log every change with before -> after + exact revert. GOOGLE ADS REMAINS RECOMMEND-ONLY.
 - If nothing qualifies, apply nothing — do not manufacture changes.
+
+META BUDGET WRITES — MANDATORY, TOOL DEFECT (observed live 2026-07-25)
+ads_update_entity SILENTLY FORCE-PAUSES an ad set when you write a budget. It returns status_forced_to_paused: true and still reports success. It did this to two DELIVERING WINNERS. Never write a Meta budget without this exact sequence:
+  1. write the budget with ads_update_entity
+  2. check the response for status_forced_to_paused
+  3. call ads_activate_entity to bring it back
+  4. re-read the entity and CONFIRM effective_status == ACTIVE
+Only report the ad set as changed after step 4 passes. If you cannot verify it is ACTIVE, say so loudly — a silently paused winner is far worse than a skipped budget change.
+
 
 OUTPUT
 Write automation/reports/$DATE/06-revenue-expansion-bot.md and 06-revenue-expansion-pastry.md.
