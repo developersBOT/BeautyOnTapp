@@ -56,11 +56,14 @@ There is no app-code change to make here.
    whose inbox the reviewer can open (put the webmail login in Notes); a fixed reviewer code
    the backend accepts for a demo email (documented in Notes); or confirm with the developer
    how a reviewer completes the OTP. Then in **Notes** state the reviewer sign-in method plus:
-     > Account deletion is available in-app: sign in, open the Profile sheet, tap
-     > "Delete my account", which opens the deletion request and completes to a
-     > confirmation. "Sign in with Google" has been removed; the app now offers email
-     > sign-in only. A screen recording captured on a physical device is attached in the
-     > Resolution Center reply.
+     > This app uses passwordless email sign-in (a one-time code). To sign in:
+     > 1. Tap Sign in and enter the demo email: <<DEMO_EMAIL>>
+     > 2. Get the 6-digit code from that inbox at <<WEBMAIL_URL>> (login <<DEMO_EMAIL>> / <<MAILBOX_PASSWORD>>).
+     > 3. Enter the code.
+     > To verify account deletion: open Profile, tap "Delete my account", and confirm to the
+     > confirmation screen. "Sign in with Google" has been removed; the app now offers email
+     > sign-in only. A screen recording of this flow, captured on a physical device, is
+     > attached in the Resolution Center reply.
    - Save.
 
 4. **Resolution Center** (left sidebar → Resolution Center → open thread): paste
