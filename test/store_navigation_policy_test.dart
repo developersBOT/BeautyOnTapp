@@ -143,33 +143,6 @@ void main() {
       );
     });
 
-    test('identifies only the first-party permanent deletion page', () {
-      expect(
-        StoreNavigationPolicy.isAccountDeletionPage(
-          'https://beautyontapp.com/pages/delete-account',
-        ),
-        isTrue,
-      );
-      expect(
-        StoreNavigationPolicy.isAccountDeletionPage(
-          'https://beautyontapp.com/pages/delete-account/?submitted=1',
-        ),
-        isTrue,
-      );
-      expect(
-        StoreNavigationPolicy.isAccountDeletionPage(
-          'https://beautyontapp.com/pages/delete-account-help',
-        ),
-        isFalse,
-      );
-      expect(
-        StoreNavigationPolicy.isAccountDeletionPage(
-          'https://evil.example/pages/delete-account',
-        ),
-        isFalse,
-      );
-    });
-
     test('rejects insecure and lookalike storefront hosts', () {
       for (final String url in <String>[
         'http://beautyontapp.com/',

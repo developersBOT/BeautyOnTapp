@@ -64,13 +64,6 @@ abstract final class StoreNavigationPolicy {
             uri.path.toLowerCase().startsWith('/authentication/social/google'));
   }
 
-  static bool isAccountDeletionPage(String? url) {
-    final Uri? uri = Uri.tryParse(url ?? '');
-    if (uri == null || !isFirstParty(url)) return false;
-    return uri.path.replaceAll(RegExp(r'/+$'), '').toLowerCase() ==
-        '/pages/delete-account';
-  }
-
   static bool isAppDistributionDestination(String? url) {
     final Uri? uri = Uri.tryParse(url ?? '');
     if (uri == null) return false;
