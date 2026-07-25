@@ -33,16 +33,16 @@ Fixes #1 and #3 are the **same feature** (Google sign-in). Path A resolves both 
   (Settings → Customer accounts → Authentication → Google = **Off**; Shop = off; Facebook not
   connected). Only email sign-in remains, so guideline 4.8 no longer applies and the unresponsive
   Google button is gone.
-- **5.1.1(v) — account deletion lives on the WEBSITE account profile** (hosted customer accounts at
-  `account.beautyontapp.com`), reachable in-app after signing in. The separate "Delete Account" row
-  in the app's Profile drawer is being **removed** as redundant.
-- **Theme state:** the Profile-drawer delete row lives in `sections/bottom-bar.liquid`, in a block
-  starting `{%- assign delete_account_page = pages['delete-account'] -%}` with class
-  `bot-profile-delete-row`. Present in **v8.1.1 (live)** and **v8.1.3 (draft)**; absent from v8.1.2.
-  Remove it via Online Store → Themes → Edit code (the connector cannot write to the live theme).
-- **Before submitting, verify in the app:** sign in → open the account/profile page → confirm the
-  account-deletion option is reachable there. That path is what the required screen recording must
-  show; do not remove the drawer row until that website path is confirmed working in the app.
+- **5.1.1(v) — RESOLVED and visually verified.** The storefront Profile drawer now shows
+  **"Delete my account — Request permanent account deletion"** to signed-in customers, linking to
+  `/pages/delete-account`. Confirmed on device while signed in; correctly hidden when signed out
+  (the row is wrapped in `{% if customer %}` in `sections/bottom-bar.liquid`). This is the path the
+  required screen recording must follow.
+- **App binary:** the rejected build was **1.1.2 (8)** from `99f2ea9` "Fix App Review login deletion
+  and camera issues", which already added `NSCameraUsageDescription` and
+  `NSLocationWhenInUseUsageDescription`. Because all three rejection reasons were storefront-side,
+  the binary needs no functional change — build 8 is resubmittable as-is. Build **1.1.2 (9)** is
+  prepared on `release/1.1.2-build9` if a fresh binary is preferred.
 
 ---
 
