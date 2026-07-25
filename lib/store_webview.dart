@@ -37,6 +37,18 @@ String get kBrowserUserAgent => defaultTargetPlatform == TargetPlatform.iOS
     : 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 '
           '(KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36';
 
+/// A native retry surface is appropriate only when the initial main document
+/// definitely failed. Resource errors with an unknown frame, cancelled
+/// navigations and failures after a page is already visible must not replace
+/// a working Shopify authentication flow.
+bool shouldShowNativeLoadFailure({
+  required bool? isForMainFrame,
+  required int errorCode,
+  required bool hasRenderedPage,
+}) {
+  return isForMainFrame == true && errorCode != -999 && !hasRenderedPage;
+}
+
 class StoreWebView extends StatefulWidget {
   const StoreWebView({super.key});
 
@@ -54,11 +66,6 @@ class StoreWebView extends StatefulWidget {
   // brand cover hides the WebView so the user never sees a white screen
   // between the splash and the store.
   static final ValueNotifier<bool> _firstPageReady = ValueNotifier<bool>(false);
-  // Keep Apple-review-sensitive pages covered until their app-only compliance
-  // state is verified: first-party email-only sign-in (Guideline 4.8) and the
-  // dedicated permanent-deletion request (Guideline 5.1.1(v)).
-  static final ValueNotifier<bool> _iosCompliancePageReady =
-      ValueNotifier<bool>(true);
   static Timer? _loadTimeout;
   static int _navigationGeneration = 0;
   static String? _activeNavigationUrl;
@@ -115,9 +122,6 @@ class StoreWebView extends StatefulWidget {
           onPageStarted: (String url) {
             _navigationGeneration++;
             _activeNavigationUrl = url;
-            _iosCompliancePageReady.value =
-                defaultTargetPlatform != TargetPlatform.iOS ||
-                !StoreNavigationPolicy.isHostedCustomerLogin(url);
             if (StoreNavigationPolicy.isFirstParty(url)) {
               protectedFlowActive =
                   StoreNavigationPolicy.isProtectedFirstPartyFlow(url);
@@ -147,12 +151,24 @@ class StoreWebView extends StatefulWidget {
               return;
             }
 
-            // -999 is iOS "navigation cancelled" — benign, fired on quick
-            // link taps. Every other failed main-frame load gets a native
-            // retry surface instead of exposing WKWebView's white background.
-            final bool cancelled = error.errorCode == -999;
-            if ((error.isForMainFrame ?? true) && !cancelled) {
+            // onWebResourceError is raised for every resource, not just the
+            // main document, and isForMainFrame is nullable. Authentication
+            // redirects commonly produce a resource error with an unknown
+            // frame type even though the destination page is healthy. Never
+            // replace an already-rendered website with a native error screen.
+            // The initial load timeout still catches a genuinely hung launch.
+            if (shouldShowNativeLoadFailure(
+              isForMainFrame: error.isForMainFrame,
+              errorCode: error.errorCode,
+              hasRenderedPage: _firstPageReady.value,
+            )) {
               _showLoadFailure();
+            } else if (kDebugMode) {
+              debugPrint(
+                'Ignored WebView resource error '
+                '${error.errorCode} (${error.errorType}); '
+                'mainFrame=${error.isForMainFrame}',
+              );
             }
           },
         ),
@@ -228,7 +244,6 @@ class StoreWebView extends StatefulWidget {
     _paintProbeGeneration = null;
     _recoveryInFlight = false;
     _firstPageReady.value = false;
-    _iosCompliancePageReady.value = true;
     _loadFailed.value = true;
   }
 
@@ -252,7 +267,7 @@ class StoreWebView extends StatefulWidget {
   ) async {
     final int generation = _navigationGeneration;
     if (!_isActiveNavigation(generation, url)) return;
-    await _applyAppCompliance(controller, url, generation);
+    await _applyAppCompliance(controller, url);
     if (!_isActiveNavigation(generation, url)) return;
     if (await _healZeroViewport(controller)) return;
     if (!_isActiveNavigation(generation, url)) return;
@@ -307,67 +322,21 @@ class StoreWebView extends StatefulWidget {
 })()
 ''';
 
-  static bool _javascriptResultIsTrue(Object result) {
-    final String normalized = result.toString().replaceAll('"', '').trim();
-    return result == true || normalized == 'true' || normalized == '1';
-  }
-
-  static Future<bool> _waitForJavaScriptSuccess(
-    WebViewController controller,
-    String script,
-    int generation,
-    String url,
-  ) async {
-    for (int attempt = 0; attempt < 40; attempt++) {
-      if (!_isActiveNavigation(generation, url)) return false;
-      final Object result = await controller.runJavaScriptReturningResult(
-        script,
-      );
-      if (_javascriptResultIsTrue(result)) return true;
-      await Future.delayed(const Duration(milliseconds: 100));
-    }
-    return false;
-  }
-
-  static void _showComplianceFailure(int generation, String url) {
-    if (!_isActiveNavigation(generation, url)) return;
-    // Never leave a customer behind an endless preparation spinner. Reveal
-    // the native retry surface while keeping the unverified page inaccessible.
-    _showLoadFailure();
-  }
-
   static Future<void> _applyAppCompliance(
     WebViewController controller,
     String url,
-    int generation,
   ) async {
-    final bool isSensitiveIosPage =
-        defaultTargetPlatform == TargetPlatform.iOS &&
-        StoreNavigationPolicy.isHostedCustomerLogin(url);
     try {
       if (defaultTargetPlatform == TargetPlatform.iOS &&
           StoreNavigationPolicy.isHostedCustomerLogin(url)) {
-        final bool loginReady = await _waitForJavaScriptSuccess(
-          controller,
-          _iosFirstPartyLoginOnlyJs,
-          generation,
-          url,
-        );
-        if (!_isActiveNavigation(generation, url)) return;
-        if (loginReady) {
-          _iosCompliancePageReady.value = true;
-        } else {
-          _showComplianceFailure(generation, url);
-        }
-        return;
+        // Best-effort hardening only. The hosted Shopify account page remains
+        // visible and authoritative; a DOM timing difference must never block
+        // login or replace the website with native loading/error UI.
+        await controller.runJavaScript(_iosFirstPartyLoginOnlyJs);
       }
-      _iosCompliancePageReady.value = true;
-    } catch (_) {
-      if (!_isActiveNavigation(generation, url)) return;
-      if (isSensitiveIosPage) {
-        _showComplianceFailure(generation, url);
-      } else {
-        _iosCompliancePageReady.value = true;
+    } catch (error) {
+      if (kDebugMode) {
+        debugPrint('Unable to apply first-party login hardening: $error');
       }
     }
   }
@@ -457,30 +426,6 @@ class StoreWebView extends StatefulWidget {
     }
   }
 
-  /// Checks whether WebKit still has a usable document after the app returns
-  /// from Mail. This intentionally does not require storefront product images:
-  /// the customer-account verification form is a different hosted document.
-  /// Reloading that live form discards its one-time-code state and creates the
-  /// endless loading loop seen when switching back from Mail.
-  static Future<bool> _hasLiveDocument(WebViewController controller) async {
-    try {
-      final Object result = await controller.runJavaScriptReturningResult(r'''
-(() => {
-  const body = document.body;
-  const root = document.documentElement;
-  if (!body || !root) return false;
-  return window.innerWidth > 1 &&
-    window.innerHeight > 1 &&
-    body.childElementCount > 0 &&
-    root.scrollHeight > 40;
-})()
-''');
-      return _javascriptResultIsTrue(result);
-    } catch (_) {
-      return false;
-    }
-  }
-
   static Future<void> _markPageReady(
     WebViewController controller,
     int generation,
@@ -526,49 +471,6 @@ class StoreWebView extends StatefulWidget {
         _showLoadFailure();
       }
     }
-  }
-
-  static Future<void> _validateAfterResume(WebViewController controller) async {
-    if (!_firstPageReady.value || _loadFailed.value || _recoveryInFlight) {
-      return;
-    }
-    final int generation = _navigationGeneration;
-    await Future.delayed(const Duration(milliseconds: 350));
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    bool healthy = await _hasLiveDocument(controller);
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    if (healthy) return;
-
-    // WebKit can need a moment to make its JavaScript context responsive
-    // after foregrounding. A second liveness probe avoids treating that
-    // normal wake-up delay as a terminated process and reloading the OTP form.
-    await Future.delayed(const Duration(milliseconds: 1200));
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    healthy = await _hasLiveDocument(controller);
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight ||
-        healthy) {
-      return;
-    }
-
-    await _recoverWebContent(controller);
   }
 
   static void _retryFromError(WebViewController controller) {
@@ -788,8 +690,7 @@ class StoreWebView extends StatefulWidget {
   State<StoreWebView> createState() => _StoreWebViewState();
 }
 
-class _StoreWebViewState extends State<StoreWebView>
-    with WidgetsBindingObserver {
+class _StoreWebViewState extends State<StoreWebView> {
   late final WebViewController _controller;
 
   bool get _isAndroid => defaultTargetPlatform == TargetPlatform.android;
@@ -802,22 +703,13 @@ class _StoreWebViewState extends State<StoreWebView>
     // the splash, dark icons once the store is revealed).
     _controller = StoreWebView._preloaded ?? StoreWebView._buildController();
     StoreWebView._preloaded ??= _controller;
-    WidgetsBinding.instance.addObserver(this);
     StoreWebView._loadFailed.addListener(_onNotifierChanged);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
     StoreWebView._loadFailed.removeListener(_onNotifierChanged);
     super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      unawaited(StoreWebView._validateAfterResume(_controller));
-    }
   }
 
   void _onNotifierChanged() {
@@ -896,25 +788,6 @@ class _StoreWebViewState extends State<StoreWebView>
                     ),
                   );
                 },
-              ),
-            ),
-            ValueListenableBuilder<bool>(
-              valueListenable: StoreWebView._iosCompliancePageReady,
-              builder: (_, bool ready, __) => Positioned.fill(
-                child: BlockSemantics(
-                  blocking: !ready,
-                  child: IgnorePointer(
-                    ignoring: ready,
-                    child: AnimatedOpacity(
-                      opacity: ready ? 0 : 1,
-                      duration: const Duration(milliseconds: 160),
-                      child: const ColoredBox(
-                        color: Colors.white,
-                        child: Center(child: CupertinoActivityIndicator()),
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ),
           ],

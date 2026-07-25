@@ -48,4 +48,50 @@ void main() {
       'Mobile/15E148 Safari/604.1',
     );
   });
+
+  test('unknown-frame resource errors never replace the website', () {
+    expect(
+      shouldShowNativeLoadFailure(
+        isForMainFrame: null,
+        errorCode: -1005,
+        hasRenderedPage: true,
+      ),
+      isFalse,
+    );
+    expect(
+      shouldShowNativeLoadFailure(
+        isForMainFrame: null,
+        errorCode: -1005,
+        hasRenderedPage: false,
+      ),
+      isFalse,
+    );
+  });
+
+  test('post-login main-frame errors keep the rendered account page', () {
+    expect(
+      shouldShowNativeLoadFailure(
+        isForMainFrame: true,
+        errorCode: -1005,
+        hasRenderedPage: true,
+      ),
+      isFalse,
+    );
+    expect(
+      shouldShowNativeLoadFailure(
+        isForMainFrame: true,
+        errorCode: -1005,
+        hasRenderedPage: false,
+      ),
+      isTrue,
+    );
+    expect(
+      shouldShowNativeLoadFailure(
+        isForMainFrame: true,
+        errorCode: -999,
+        hasRenderedPage: false,
+      ),
+      isFalse,
+    );
+  });
 }
