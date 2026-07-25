@@ -64,6 +64,20 @@ guardrails:
     pause_min_spend_zar: 300
     escalate_if_adset_daily_spend_above_zar: 500
     never: [delete_campaign, delete_adset, delete_ad, change_pixel, change_capi]
+    # ---------------------------------------------------------------------
+    # TOOL DEFECT — MANDATORY PROCEDURE (observed live 2026-07-25)
+    # ads_update_entity SILENTLY FORCE-PAUSES an ad set when you write a
+    # budget. It returns status_forced_to_paused: true and reports success.
+    # It happened on both budget writes that day, on DELIVERING WINNERS.
+    # An agent that does not check will take a converting ad set offline and
+    # report success. Never write a Meta budget without this sequence:
+    #   1. write the budget with ads_update_entity
+    #   2. inspect the response for status_forced_to_paused
+    #   3. call ads_activate_entity to bring it back
+    #   4. re-read the entity and CONFIRM effective_status == ACTIVE
+    # Report the adset as changed only after step 4 passes.
+    # ---------------------------------------------------------------------
+    budget_write_requires_reactivate_and_verify: true
   shopify:
     auto_apply: true
     allow:
