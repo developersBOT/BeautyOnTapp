@@ -29,7 +29,13 @@ brands:
     meta: true
   - id: pastry
     name: Pastry Skincare
-    domain: auto                     # resolved at runtime via Shopify switch-shop + get-shop-info
+    # PINNED DELIBERATELY — do not set back to "auto".
+    # "auto" forces a runtime switch-shop call, and switch-shop is the confirmed
+    # trigger of the Shopify token revocation that blocked agents 01/02/03 on
+    # 2026-07-25. Agent 02 resolved this domain without any Shopify call, which
+    # proves the runtime lookup was never necessary. Pinning it removes the need
+    # to switch shops just to learn the domain.
+    domain: pastryskincare.co.za     # WebSearch-resolved 2026-07-25; confirm via get-shop-info once auth is restored
     google_ads_account: "851-084-2703"
     meta_ad_account: "2972238613000896"   # ACTIVE, queryable
     shopify: true
