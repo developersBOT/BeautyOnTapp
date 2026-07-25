@@ -298,7 +298,12 @@ class StoreWebView extends StatefulWidget {
   const emailLogin = document.querySelector(
     'input[type="email"], input[name="email"]'
   );
-  return !socialLogin && Boolean(emailLogin);
+  const verificationCode = document.querySelector(
+    'input[autocomplete="one-time-code"], ' +
+    'input[inputmode="numeric"], ' +
+    'input[name*="code" i]'
+  );
+  return !socialLogin && Boolean(emailLogin || verificationCode);
 })()
 ''';
 
@@ -398,11 +403,33 @@ class StoreWebView extends StatefulWidget {
 (() => {
   const body = document.body;
   const root = document.documentElement;
-  const main = document.querySelector('#MainContent, main');
-  if (!body || !root || !main) return false;
+  if (!body || !root) return false;
 
-  const mainRect = main.getBoundingClientRect();
   const viewportReady = window.innerWidth > 1 && window.innerHeight > 1;
+  const host = location.hostname.toLowerCase();
+  const isStorefront =
+    host === 'beautyontapp.com' || host === 'www.beautyontapp.com';
+
+  // Hosted customer-account, checkout and payment pages do not share the
+  // theme's #MainContent structure or product imagery. Requiring a storefront
+  // image on those pages leaves the native loading cover up forever after a
+  // WebKit recovery. A visible document or form is sufficient there.
+  if (!isStorefront) {
+    const bodyRect = body.getBoundingClientRect();
+    return viewportReady &&
+      body.childElementCount > 0 &&
+      root.scrollHeight > 40 &&
+      bodyRect.width > 0 &&
+      bodyRect.height > 40 &&
+      (
+        body.innerText.trim().length > 0 ||
+        Boolean(body.querySelector('input, button, form'))
+      );
+  }
+
+  const main = document.querySelector('#MainContent, main');
+  if (!main) return false;
+  const mainRect = main.getBoundingClientRect();
   const documentReady =
     body.childElementCount > 0 &&
     root.scrollHeight > 40 &&
@@ -425,6 +452,30 @@ class StoreWebView extends StatefulWidget {
 ''');
       final String normalized = result.toString().replaceAll('"', '').trim();
       return result == true || normalized == 'true' || normalized == '1';
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Checks whether WebKit still has a usable document after the app returns
+  /// from Mail. This intentionally does not require storefront product images:
+  /// the customer-account verification form is a different hosted document.
+  /// Reloading that live form discards its one-time-code state and creates the
+  /// endless loading loop seen when switching back from Mail.
+  static Future<bool> _hasLiveDocument(WebViewController controller) async {
+    try {
+      final Object result = await controller.runJavaScriptReturningResult(r'''
+(() => {
+  const body = document.body;
+  const root = document.documentElement;
+  if (!body || !root) return false;
+  return window.innerWidth > 1 &&
+    window.innerHeight > 1 &&
+    body.childElementCount > 0 &&
+    root.scrollHeight > 40;
+})()
+''');
+      return _javascriptResultIsTrue(result);
     } catch (_) {
       return false;
     }
@@ -489,16 +540,35 @@ class StoreWebView extends StatefulWidget {
         _recoveryInFlight) {
       return;
     }
-    final bool healthy = await _hasMeaningfulContent(controller);
+    bool healthy = await _hasLiveDocument(controller);
     if (generation != _navigationGeneration ||
         !_firstPageReady.value ||
         _loadFailed.value ||
         _recoveryInFlight) {
       return;
     }
-    if (!healthy) {
-      await _recoverWebContent(controller);
+    if (healthy) return;
+
+    // WebKit can need a moment to make its JavaScript context responsive
+    // after foregrounding. A second liveness probe avoids treating that
+    // normal wake-up delay as a terminated process and reloading the OTP form.
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (generation != _navigationGeneration ||
+        !_firstPageReady.value ||
+        _loadFailed.value ||
+        _recoveryInFlight) {
+      return;
     }
+    healthy = await _hasLiveDocument(controller);
+    if (generation != _navigationGeneration ||
+        !_firstPageReady.value ||
+        _loadFailed.value ||
+        _recoveryInFlight ||
+        healthy) {
+      return;
+    }
+
+    await _recoverWebContent(controller);
   }
 
   static void _retryFromError(WebViewController controller) {
