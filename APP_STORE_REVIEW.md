@@ -27,6 +27,25 @@ Fixes #1 and #3 are the **same feature** (Google sign-in). Path A resolves both 
 
 ---
 
+## 0.4 FINAL STATE (2026-07-24, pre-submission)
+
+- **4.8 + 2.1(a) — RESOLVED.** "Sign in with Google" was disabled in Shopify admin
+  (Settings → Customer accounts → Authentication → Google = **Off**; Shop = off; Facebook not
+  connected). Only email sign-in remains, so guideline 4.8 no longer applies and the unresponsive
+  Google button is gone.
+- **5.1.1(v) — account deletion lives on the WEBSITE account profile** (hosted customer accounts at
+  `account.beautyontapp.com`), reachable in-app after signing in. The separate "Delete Account" row
+  in the app's Profile drawer is being **removed** as redundant.
+- **Theme state:** the Profile-drawer delete row lives in `sections/bottom-bar.liquid`, in a block
+  starting `{%- assign delete_account_page = pages['delete-account'] -%}` with class
+  `bot-profile-delete-row`. Present in **v8.1.1 (live)** and **v8.1.3 (draft)**; absent from v8.1.2.
+  Remove it via Online Store → Themes → Edit code (the connector cannot write to the live theme).
+- **Before submitting, verify in the app:** sign in → open the account/profile page → confirm the
+  account-deletion option is reachable there. That path is what the required screen recording must
+  show; do not remove the drawer row until that website path is confirmed working in the app.
+
+---
+
 ## 0.5 Verified against the live store (checked 2026-07-24 via Shopify Admin)
 
 Store: **BeautyOnTApp**, `beautyontapp.com`, Advanced plan, South Africa (ZAR). Customer accounts
