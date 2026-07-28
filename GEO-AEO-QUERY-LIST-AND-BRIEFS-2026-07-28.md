@@ -24,8 +24,10 @@ Goal: get beautyontapp.com cited in Google AI Overviews (and AI Mode / Perplexit
 | 12 | mineral vs chemical sunscreen | Comparison | Tocobo, Beauty of Joseon, Black Girl Sunscreen, Eucerin stocked |
 | 13 | how often should i exfoliate | Question | AAD guidance sourced (below); COSRX/Some By Mi exfoliant lines |
 | 14 | korean skincare routine order | Question | Full routine coverage across stocked vendors |
-| 15 | skincare store [city] | Local | Store locator + locations page live. **[NEEDS T: confirm store cities before authoring]** |
-| 16 | where to buy korean skincare in [city] | Local | Same. **[NEEDS T: cities]** |
+| 15 | skincare store sandton / johannesburg / pretoria | Local | Verified stores (locations metaobjects, 28 Jul): Sandton City, Fourways Mall (Sandton), Mall of Africa (Midrand), Menlyn Park (Pretoria) |
+| 16 | korean skincare store durban / cape town / east london | Local | Verified stores: Gateway (Umhlanga, Durban), Canal Walk (Century City, Cape Town), Hemingways Mall (East London) |
+
+**Verified store locations (from the live `locations` metaobjects, 28 Jul 2026)** — one local landing page per metro, LocalBusiness schema each: Sandton City (83 Rivonia Rd, Sandhurst) · Fourways Mall (Witkoppen, Sandton) · Mall of Africa (Midrand) · Menlyn Park (Pretoria) · Gateway Theatre of Shopping (Umhlanga Ridge, Durban) · Canal Walk (Century City, Cape Town) · Hemingways Mall (East London). Data-hygiene flag: the Sandton City, Canal Walk and Hemingways metaobjects carry malformed latitude/longitude values (e.g. `-2610868.0`; Canal Walk longitude empty) — the locator's nearest-store geolocation can never select those three stores, and LocalBusiness schema needs correct geo coords.
 
 Priority for the first batch: #1, #3, #6, #10, #13 (briefs below) — one per intent class, maximizing catalog fit and AIO-trigger likelihood. Re-rank after the Semrush volume/AIO baseline.
 
