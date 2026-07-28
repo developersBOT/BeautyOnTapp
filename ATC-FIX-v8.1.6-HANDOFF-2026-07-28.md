@@ -1,5 +1,20 @@
 # v8.1.6 WebKit ATC Fix — Handoff — 28 Jul 2026
 
+> **REBASE NOTE (28 Jul, ~17:00Z) — v8.1.7 supersedes the theme below for publishing.**
+> Live/MAIN changed after the original duplication: `bot-v8.1.6-footer-alignment-draft-27jul2026` (162827305219) was published 11:46Z. Its `assets/main.mjs` is byte-identical to v8.1.5's (`cdbc6ab6…`, verified via Admin API), so the validated patch applies unchanged. The fix was rebased:
+>
+> - **Publish candidate:** `bot-v8.1.7-webkit-atc-fix-28jul2026` — ID **162860105987**, UNPUBLISHED, duplicated from the new live 162827305219.
+>   **Preview:** `https://beautyontapp.com/?preview_theme_id=162860105987`
+> - **Same artifact, no re-patching:** the identical patched `assets/main.mjs` (md5 `7c465b4c6b153a242607f7091e67d3ed`) was staged-uploaded from disk and upserted; Admin API readback confirms the checksum byte-exact.
+> - **Step-3 gate (v8.1.7 vs live 162827305219): PASS** — 662 files on both sides, none missing, none extra, exactly one checksum delta: `assets/main.mjs` (`cdbc6ab6…` → `7c465b4c…`). Verified twice: an initial listing ran while `themeDuplicate`'s async file copy was still materializing (transiently showed 88 files); the final comparison ran after materialization completed. The copier did not overwrite the upserted patch (its created/updated timestamps remain the upsert's, 16:47:34Z).
+> - **Step-4 scope check (live 162827305219 vs v8.1.5 162793554179): two files differ, both characterized from full content diffs.**
+>   1. `sections/footer-bar.liquid` (12,233 → 13,063 B) — footer-scoped CSS/markup polish only (footer-item flex→grid, app-badge sizing wrappers, mobile alignment). No JS, no ATC surface. Expected.
+>   2. `snippets/pagefly-main-js.liquid` (4,540 → 4,560 B) — **flagged per step 4** as the one delta outside footer scope: a 4-line escaping hardening in PageFly's analytics payload (`'{{ product.title }}'` → `{{ product.title | json }}`, same for `pf_product_page_image` / `pf_collection_name` / `pf_collection_page_image`). App-owned analytics loader (PageFly — not Analyzify/Simprosys/BookX), gated behind PageFly metafields, no interaction with any patched main.mjs site or ATC path. v8.1.7 inherits it from live, so publishing reverts nothing.
+> - The stale fix theme `bot-v8.1.6-webkit-atc-fix-28jul2026` (162858270979) is **left in place** per constraints — do not publish it (it would revert today's footer changes); cleanup is T's call.
+> - The validation record below (engine simulation, 21 shipped-bytes unit assertions, WebKit-preview escalation) applies to v8.1.7 verbatim — it is the same bundle on a base whose only deltas are the two characterized files above.
+
+---
+
 **Theme:** `bot-v8.1.6-webkit-atc-fix-28jul2026` — ID `gid://shopify/OnlineStoreTheme/162858270979`, **UNPUBLISHED**. Duplicated server-side from live `bot-v8.1.5` (162793554179) via Admin API `themeDuplicate` (Shopify CLI is not installed in this environment and all storefront/admin hosts are blocked by its network policy — the Admin API duplicate is the CLI-equivalent; the API additionally hard-blocks theme-file writes to the live/MAIN theme, mechanically enforcing constraint 1). Live theme untouched; nothing published.
 
 **Preview URL:** `https://beautyontapp.com/?preview_theme_id=162858270979`
