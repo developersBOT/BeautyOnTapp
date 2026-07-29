@@ -8,6 +8,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
+import 'store_load_policy.dart';
+
 // The store URL is HARDCODED by design. The app must load with zero external
 // API dependencies — do not replace this with a remote lookup of any kind.
 const String kStoreUrl = 'https://beautyontapp.com';
@@ -53,9 +55,15 @@ class StoreWebView extends StatefulWidget {
   // between the splash and the store.
   static final ValueNotifier<bool> _firstPageReady = ValueNotifier<bool>(false);
   static Timer? _loadTimeout;
+  static final StoreLoadPolicy _loadPolicy = StoreLoadPolicy();
   static int _navigationGeneration = 0;
   static int? _paintProbeGeneration;
+  static int _resumeValidationGeneration = 0;
+  static bool _resumeValidationInFlight = false;
+  static bool _mainFrameErrorRecoveryPending = false;
+  static int? _handledMainFrameErrorGeneration;
   static bool _recoveryInFlight = false;
+  static bool _webContentProcessRecoveryPending = false;
   static int _automaticRecoveryAttempts = 0;
   static const int _maxAutomaticRecoveryAttempts = 2;
   // Shopify can keep document.readyState at "loading" while its already
@@ -89,11 +97,27 @@ class StoreWebView extends StatefulWidget {
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (_) {
+            // A tap can start a real navigation while the bounded resume
+            // health check is still probing the previously committed page.
+            // Hand ownership to the new navigation immediately so its
+            // main-frame errors are not suppressed as resume noise.
+            if (_loadPolicy.isResumed && _resumeValidationInFlight) {
+              _resumeValidationGeneration++;
+              _resumeValidationInFlight = false;
+            }
+            if (_loadPolicy.isResumed) {
+              _mainFrameErrorRecoveryPending = false;
+            }
             _navigationGeneration++;
-            _loadFailed.value = false;
+            _handledMainFrameErrorGeneration = null;
             _navTick.value++;
+            if (!_loadPolicy.isResumed) {
+              _deferRecoveryUntilResume(invalidateNavigation: false);
+              return;
+            }
+            _loadFailed.value = false;
             if (!_firstPageReady.value) {
-              _armLoadTimeout();
+              _armLoadTimeout(controller);
               // Shopify's document can paint well before WebKit reports 80%
               // progress. Probe from navigation start so the native cover
               // leaves on the first useful frame, not after deferred scripts.
@@ -102,29 +126,63 @@ class StoreWebView extends StatefulWidget {
           },
           onUrlChange: (_) => _navTick.value++,
           onProgress: (int progress) {
+            if (!_loadPolicy.isResumed) return;
             if (progress >= 80) _schedulePaintConfirmation(controller);
           },
           onPageFinished: (_) {
             _navTick.value++;
+            if (!_loadPolicy.isResumed) {
+              _deferRecoveryUntilResume(invalidateNavigation: false);
+              return;
+            }
             unawaited(_handlePageFinished(controller));
           },
           onWebResourceError: (WebResourceError error) {
             // iOS can terminate WKWebView's content process while Flutter
-            // remains alive. The plugin reports that through this callback;
-            // recover regardless of whether an earlier page was ready.
+            // remains alive. Coalesce that signal into the lifecycle-aware
+            // health check instead of reloading while WebKit is suspended or
+            // still thawing on foreground.
             if (error.errorType ==
                 WebResourceErrorType.webContentProcessTerminated) {
-              unawaited(_recoverWebContent(controller));
+              if (_webContentProcessRecoveryPending) return;
+              _webContentProcessRecoveryPending = true;
+              _deferRecoveryUntilResume();
+              _handledMainFrameErrorGeneration = _navigationGeneration;
+              if (_loadPolicy.isResumed) {
+                unawaited(_validateAfterResume(controller));
+              }
               return;
             }
 
-            // -999 is iOS "navigation cancelled" — benign, fired on quick
-            // link taps. Every other failed main-frame load gets a native
-            // retry surface instead of exposing WKWebView's white background.
-            final bool cancelled = error.errorCode == -999;
-            if ((error.isForMainFrame ?? true) && !cancelled) {
-              _showLoadFailure();
+            final bool isMainFrameFailure =
+                error.isForMainFrame == true && error.errorCode != -999;
+            if (isMainFrameFailure &&
+                !_loadPolicy.shouldHandleMainFrameErrorForNavigation(
+                  isForMainFrame: error.isForMainFrame,
+                  errorCode: error.errorCode,
+                  navigationGeneration: _navigationGeneration,
+                  handledNavigationGeneration: _handledMainFrameErrorGeneration,
+                )) {
+              return;
             }
+            if (isMainFrameFailure) {
+              _handledMainFrameErrorGeneration = _navigationGeneration;
+              _mainFrameErrorRecoveryPending = true;
+            }
+
+            if (!_loadPolicy.shouldSurfaceResourceError(
+              isForMainFrame: error.isForMainFrame,
+              errorCode: error.errorCode,
+              resumeValidationInFlight: _resumeValidationInFlight,
+            )) {
+              if (!_loadPolicy.isResumed && isMainFrameFailure) {
+                _deferRecoveryUntilResume();
+                _handledMainFrameErrorGeneration = _navigationGeneration;
+              }
+              return;
+            }
+
+            unawaited(_handleForegroundNavigationError(controller));
           },
         ),
       );
@@ -159,7 +217,7 @@ class StoreWebView extends StatefulWidget {
     unawaited(controller.setBackgroundColor(Colors.black));
     _showLoadingCover();
     _navigationGeneration++;
-    _armLoadTimeout();
+    _armLoadTimeout(controller);
     try {
       await controller.loadRequest(storeRootUri());
     } catch (_) {
@@ -173,19 +231,62 @@ class StoreWebView extends StatefulWidget {
     _pageExtendsIntoBottomSafeArea.value = false;
   }
 
-  static void _showLoadFailure() {
+  static void _deferRecoveryUntilResume({bool invalidateNavigation = true}) {
     _loadTimeout?.cancel();
+    _loadTimeout = null;
+    _loadPolicy.deferRecovery();
+    _recoveryInFlight = false;
+    _resumeValidationGeneration++;
+    _resumeValidationInFlight = false;
+    if (invalidateNavigation) {
+      _navigationGeneration++;
+      _paintProbeGeneration = null;
+    }
+  }
+
+  static void _showLoadFailure() {
+    if (!_loadPolicy.isResumed) {
+      _deferRecoveryUntilResume();
+      return;
+    }
+    _loadTimeout?.cancel();
+    _loadTimeout = null;
     if (!_loadFailed.value) _navigationGeneration++;
     _paintProbeGeneration = null;
     _recoveryInFlight = false;
+    _mainFrameErrorRecoveryPending = false;
     _firstPageReady.value = false;
     _loadFailed.value = true;
   }
 
-  static void _armLoadTimeout() {
+  static void _armLoadTimeout(WebViewController controller) {
     _loadTimeout?.cancel();
+    if (!_loadPolicy.isResumed) {
+      _loadTimeout = null;
+      _deferRecoveryUntilResume(invalidateNavigation: false);
+      return;
+    }
+    final int navigationGeneration = _navigationGeneration;
+    final int lifecycleEpoch = _loadPolicy.lifecycleEpoch;
     _loadTimeout = Timer(_loadTimeoutDuration, () {
-      if (!_firstPageReady.value) _showLoadFailure();
+      if (!_loadPolicy.isResumed) {
+        _deferRecoveryUntilResume(invalidateNavigation: false);
+        return;
+      }
+      if (_loadPolicy.isCurrentLoadTimeout(
+        scheduledNavigationGeneration: navigationGeneration,
+        currentNavigationGeneration: _navigationGeneration,
+        scheduledLifecycleEpoch: lifecycleEpoch,
+        pageReady: _firstPageReady.value,
+      )) {
+        if (_recoveryInFlight &&
+            _automaticRecoveryAttempts < _maxAutomaticRecoveryAttempts) {
+          _recoveryInFlight = false;
+          unawaited(_recoverWebContent(controller));
+        } else {
+          _showLoadFailure();
+        }
+      }
     });
   }
 
@@ -228,6 +329,13 @@ class StoreWebView extends StatefulWidget {
 
   static Future<bool> _hasMeaningfulContent(
     WebViewController controller,
+  ) async => await _probeMeaningfulContent(controller) == true;
+
+  /// Returns null when WebKit cannot answer yet (common while its content
+  /// process is thawing after resume). That is inconclusive, not proof that
+  /// the document is empty.
+  static Future<bool?> _probeMeaningfulContent(
+    WebViewController controller,
   ) async {
     try {
       final Object result = await controller.runJavaScriptReturningResult(r'''
@@ -252,8 +360,72 @@ class StoreWebView extends StatefulWidget {
       final String normalized = result.toString().replaceAll('"', '').trim();
       return result == true || normalized == 'true' || normalized == '1';
     } catch (_) {
-      return false;
+      return null;
     }
+  }
+
+  static Future<void> _handleForegroundNavigationError(
+    WebViewController controller,
+  ) async {
+    if (!_loadPolicy.isResumed) {
+      _deferRecoveryUntilResume();
+      return;
+    }
+
+    final int generation = _navigationGeneration;
+    final List<bool?> probeResults = <bool?>[];
+    if (_firstPageReady.value) {
+      // A failed provisional navigation normally leaves the last committed
+      // page intact. Give it two chances to prove that before covering it.
+      for (final Duration delay in const <Duration>[
+        Duration(milliseconds: 250),
+        Duration(milliseconds: 500),
+      ]) {
+        await Future.delayed(delay);
+        if (!_loadPolicy.isResumed || generation != _navigationGeneration) {
+          return;
+        }
+        final bool? result = await _probeMeaningfulContent(controller);
+        if (!_loadPolicy.isResumed || generation != _navigationGeneration) {
+          return;
+        }
+        if (result == true) {
+          _loadTimeout?.cancel();
+          _loadTimeout = null;
+          _mainFrameErrorRecoveryPending = false;
+          _loadFailed.value = false;
+          return;
+        }
+        probeResults.add(result);
+      }
+      if (!_loadPolicy.shouldRecoverAfterResumeProbes(
+        probeResults,
+        requiredProbeCount: 2,
+      )) {
+        if (!_loadPolicy.shouldRecoverAfterMainFrameErrorProbes(
+          probeResults,
+          requiredProbeCount: 2,
+        )) {
+          _loadPolicy.deferRecovery();
+          return;
+        }
+      }
+
+      // The delegate already confirmed a main-frame failure. If neither
+      // bounded probe could prove the old page healthy, heal on this same
+      // foreground cycle rather than waiting for another app switch.
+      if (_recoveryInFlight) _recoveryInFlight = false;
+      await _recoverWebContent(controller);
+      return;
+    }
+
+    if (_recoveryInFlight &&
+        _automaticRecoveryAttempts < _maxAutomaticRecoveryAttempts) {
+      _recoveryInFlight = false;
+      await _recoverWebContent(controller);
+      return;
+    }
+    _showLoadFailure();
   }
 
   static Future<void> _markPageReady(
@@ -270,8 +442,11 @@ class StoreWebView extends StatefulWidget {
     await controller.setBackgroundColor(Colors.white);
     if (generation != _navigationGeneration || _loadFailed.value) return;
     _loadTimeout?.cancel();
+    _loadTimeout = null;
     _automaticRecoveryAttempts = 0;
     _recoveryInFlight = false;
+    _webContentProcessRecoveryPending = false;
+    _mainFrameErrorRecoveryPending = false;
     _loadFailed.value = false;
     _firstPageReady.value = true;
     _navTick.value++;
@@ -279,60 +454,263 @@ class StoreWebView extends StatefulWidget {
   }
 
   static Future<void> _recoverWebContent(WebViewController controller) async {
+    if (!_loadPolicy.isResumed) {
+      _deferRecoveryUntilResume();
+      return;
+    }
     if (_recoveryInFlight) return;
     if (_automaticRecoveryAttempts >= _maxAutomaticRecoveryAttempts) {
       _showLoadFailure();
       return;
     }
 
+    // Claim the recovery slot and attempt budget before the first await.
+    // WebKit can report several errors for one failed navigation; without an
+    // atomic claim, concurrent handlers can consume both attempts while only
+    // one reload is actually started.
     _recoveryInFlight = true;
     _automaticRecoveryAttempts++;
+    final int recoveryAttempt = _automaticRecoveryAttempts;
+    final int sourceNavigationGeneration = _navigationGeneration;
+    final int recoveryLifecycleEpoch = _loadPolicy.lifecycleEpoch;
+    _handledMainFrameErrorGeneration = sourceNavigationGeneration;
+
+    Uri? safeFallbackUri;
+    // Fail closed. A GET fallback is permitted only after currentUrl()
+    // positively verifies a safe first-party storefront page. Unknown URLs
+    // stay reload-only so checkout/account/OAuth state cannot be replaced by
+    // a storefront-root request.
+    bool protectedOrExternalFlow = true;
+    try {
+      final String? currentUrl = await controller.currentUrl();
+      final Uri? currentUri = Uri.tryParse(currentUrl ?? '');
+      if (currentUri != null &&
+          (currentUri.scheme == 'https' || currentUri.scheme == 'http')) {
+        if (_loadPolicy.isSafeStorefrontRecoveryFallback(currentUri)) {
+          safeFallbackUri = currentUri;
+          protectedOrExternalFlow = false;
+        } else {
+          protectedOrExternalFlow = true;
+        }
+      }
+    } catch (_) {}
+
+    final bool stillOwnsRecovery =
+        _loadPolicy.isResumed &&
+        _loadPolicy.lifecycleEpoch == recoveryLifecycleEpoch &&
+        _recoveryInFlight &&
+        _automaticRecoveryAttempts == recoveryAttempt;
+    if (!stillOwnsRecovery) return;
+    if (sourceNavigationGeneration != _navigationGeneration) {
+      // A real navigation took ownership while currentUrl was resolving.
+      _recoveryInFlight = false;
+      return;
+    }
+
+    _webContentProcessRecoveryPending = false;
+    _mainFrameErrorRecoveryPending = false;
     _viewportReloadUsed = false;
     unawaited(controller.setBackgroundColor(Colors.black));
     _showLoadingCover();
     _navigationGeneration++;
-    _armLoadTimeout();
+    // Ignore late duplicate callbacks from the failed source navigation
+    // during the short pre-reload delay. onPageStarted clears this for the
+    // actual recovery navigation, whose own first failure may spend attempt 2.
+    _handledMainFrameErrorGeneration = _navigationGeneration;
+    _armLoadTimeout(controller);
+    final int recoveryGeneration = _navigationGeneration;
 
     try {
       // Let WebKit finish replacing the terminated process before reloading.
       await Future.delayed(const Duration(milliseconds: 200));
+      if (!_loadPolicy.isResumed) {
+        return;
+      }
+      if (recoveryGeneration != _navigationGeneration) {
+        // A newer navigation or resume validator owns the state now. A stale
+        // task may release only its own recovery slot.
+        if (_loadPolicy.lifecycleEpoch == recoveryLifecycleEpoch &&
+            _recoveryInFlight &&
+            _automaticRecoveryAttempts == recoveryAttempt) {
+          _recoveryInFlight = false;
+        }
+        return;
+      }
       await controller.reload();
     } catch (_) {
+      if (!_loadPolicy.isResumed) {
+        _deferRecoveryUntilResume();
+        return;
+      }
+      if (!_recoveryInFlight || _automaticRecoveryAttempts != recoveryAttempt) {
+        return;
+      }
+      if (protectedOrExternalFlow) {
+        await _retryRecoveryOrShowFailure(controller, recoveryAttempt);
+        return;
+      }
+      if (safeFallbackUri == null) {
+        await _retryRecoveryOrShowFailure(controller, recoveryAttempt);
+        return;
+      }
       try {
-        await controller.loadRequest(storeRootUri());
+        await controller.loadRequest(safeFallbackUri);
       } catch (_) {
-        _showLoadFailure();
+        await _retryRecoveryOrShowFailure(controller, recoveryAttempt);
       }
     }
   }
 
+  static Future<void> _retryRecoveryOrShowFailure(
+    WebViewController controller,
+    int failedAttempt,
+  ) async {
+    if (!_loadPolicy.isResumed) {
+      _deferRecoveryUntilResume();
+      return;
+    }
+    if (!_recoveryInFlight || _automaticRecoveryAttempts != failedAttempt) {
+      return;
+    }
+    if (_automaticRecoveryAttempts >= _maxAutomaticRecoveryAttempts) {
+      _showLoadFailure();
+      return;
+    }
+
+    final int navigationGeneration = _navigationGeneration;
+    final int lifecycleEpoch = _loadPolicy.lifecycleEpoch;
+    await Future.delayed(const Duration(milliseconds: 500));
+    if (!_loadPolicy.isResumed ||
+        _loadPolicy.lifecycleEpoch != lifecycleEpoch ||
+        navigationGeneration != _navigationGeneration ||
+        !_recoveryInFlight ||
+        _automaticRecoveryAttempts != failedAttempt) {
+      return;
+    }
+
+    _recoveryInFlight = false;
+    await _recoverWebContent(controller);
+  }
+
+  static void _handleLifecycleChange(
+    WebViewController controller,
+    AppLifecycleState state,
+  ) {
+    final bool wasResumed = _loadPolicy.isResumed;
+    _loadPolicy.didChangeLifecycle(state);
+
+    if (!_loadPolicy.isResumed) {
+      _resumeValidationGeneration++;
+      _resumeValidationInFlight = false;
+      _loadTimeout?.cancel();
+      _loadTimeout = null;
+      _recoveryInFlight = false;
+      _navigationGeneration++;
+      _paintProbeGeneration = null;
+      return;
+    }
+
+    if (!wasResumed) {
+      _automaticRecoveryAttempts = 0;
+    }
+    unawaited(_validateAfterResume(controller));
+  }
+
   static Future<void> _validateAfterResume(WebViewController controller) async {
-    if (!_firstPageReady.value || _loadFailed.value || _recoveryInFlight) {
-      return;
-    }
-    final int generation = _navigationGeneration;
-    await Future.delayed(const Duration(milliseconds: 350));
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    final bool healthy = await _hasMeaningfulContent(controller);
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    if (!healthy) {
-      await _recoverWebContent(controller);
+    if (!_loadPolicy.isResumed) return;
+
+    final bool shouldValidate = _loadPolicy.consumeResumeRecovery(
+      pageReady: _firstPageReady.value,
+      loadFailed: _loadFailed.value,
+      recoveryInFlight: _recoveryInFlight,
+    );
+    if (!shouldValidate) return;
+
+    final int resumeValidation = ++_resumeValidationGeneration;
+    _resumeValidationInFlight = true;
+    try {
+      final int generation = _navigationGeneration;
+      final int lifecycleEpoch = _loadPolicy.lifecycleEpoch;
+      final bool hadLatchedFailure = _loadFailed.value;
+      final bool hadReadyPage = _firstPageReady.value;
+      final bool processRecoveryPending = _webContentProcessRecoveryPending;
+      _loadTimeout?.cancel();
+      _loadTimeout = null;
+      _loadFailed.value = false;
+      _recoveryInFlight = false;
+      if (processRecoveryPending) {
+        _showLoadingCover();
+      }
+
+      final List<bool?> probeResults = <bool?>[];
+      for (final Duration delay in const <Duration>[
+        Duration(milliseconds: 350),
+        Duration(milliseconds: 650),
+        Duration(seconds: 1),
+      ]) {
+        await Future.delayed(delay);
+        if (!_loadPolicy.isResumed ||
+            lifecycleEpoch != _loadPolicy.lifecycleEpoch ||
+            resumeValidation != _resumeValidationGeneration ||
+            generation != _navigationGeneration) {
+          return;
+        }
+
+        final bool? result = await _probeMeaningfulContent(controller);
+        if (!_loadPolicy.isResumed ||
+            lifecycleEpoch != _loadPolicy.lifecycleEpoch ||
+            resumeValidation != _resumeValidationGeneration ||
+            generation != _navigationGeneration) {
+          return;
+        }
+
+        if (result == true) {
+          _webContentProcessRecoveryPending = false;
+          _mainFrameErrorRecoveryPending = false;
+          if (!_firstPageReady.value || hadLatchedFailure) {
+            await _markPageReady(controller, generation);
+          } else {
+            _loadFailed.value = false;
+            _automaticRecoveryAttempts = 0;
+            _scheduleRevealWatchdog(controller);
+          }
+          return;
+        }
+        probeResults.add(result);
+      }
+
+      final bool definitelyUnhealthy = _loadPolicy
+          .shouldRecoverAfterResumeProbes(probeResults);
+      final bool explicitMainFrameFailure =
+          _mainFrameErrorRecoveryPending &&
+          _loadPolicy.shouldRecoverAfterMainFrameErrorProbes(
+            probeResults,
+            requiredProbeCount: 3,
+          );
+      if (processRecoveryPending ||
+          explicitMainFrameFailure ||
+          definitelyUnhealthy ||
+          !hadReadyPage) {
+        await _recoverWebContent(controller);
+      } else {
+        // WebKit did not answer, but the last page was already painted and no
+        // termination signal was received. Preserve it and validate again
+        // after the next lifecycle transition instead of destroying a healthy
+        // session.
+        _loadPolicy.deferRecovery();
+      }
+    } finally {
+      if (resumeValidation == _resumeValidationGeneration) {
+        _resumeValidationInFlight = false;
+      }
     }
   }
 
   static void _retryFromError(WebViewController controller) {
     _automaticRecoveryAttempts = 0;
     _recoveryInFlight = false;
+    _webContentProcessRecoveryPending = false;
+    _mainFrameErrorRecoveryPending = false;
     unawaited(_loadStoreRoot(controller));
   }
 
@@ -362,7 +740,7 @@ class StoreWebView extends StatefulWidget {
         unawaited(controller.setBackgroundColor(Colors.black));
         _showLoadingCover();
         _navigationGeneration++;
-        _armLoadTimeout();
+        _armLoadTimeout(controller);
         try {
           await controller.reload();
         } catch (_) {
@@ -712,9 +1090,7 @@ class _StoreWebViewState extends State<StoreWebView>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      unawaited(StoreWebView._validateAfterResume(_controller));
-    }
+    StoreWebView._handleLifecycleChange(_controller, state);
   }
 
   void _onNotifierChanged() {
@@ -923,13 +1299,13 @@ class _LoadErrorView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(
-                    CupertinoIcons.wifi_exclamationmark,
+                    CupertinoIcons.exclamationmark_circle,
                     size: 38,
                     color: Colors.black,
                   ),
                   const SizedBox(height: 18),
                   const Text(
-                    'Let’s reconnect',
+                    'Page didn’t reload',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
@@ -940,7 +1316,7 @@ class _LoadErrorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'BeautyOnTApp couldn’t refresh. Check your connection and try again.',
+                    'BeautyOnTApp couldn’t reload this page. Tap below to try again.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
