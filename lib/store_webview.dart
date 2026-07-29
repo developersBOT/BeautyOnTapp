@@ -265,6 +265,8 @@ class StoreWebView extends StatefulWidget {
     if (generation != _navigationGeneration || _loadFailed.value) return;
     await _configureBottomSafeArea(controller);
     if (generation != _navigationGeneration || _loadFailed.value) return;
+    await _installWebKitTabTapRecovery(controller);
+    if (generation != _navigationGeneration || _loadFailed.value) return;
     await controller.setBackgroundColor(Colors.white);
     if (generation != _navigationGeneration || _loadFailed.value) return;
     _loadTimeout?.cancel();
@@ -443,6 +445,140 @@ class StoreWebView extends StatefulWidget {
 
   static void _scheduleRevealWatchdog(WebViewController controller) {
     controller.runJavaScript(_revealWatchdogJs).catchError((_) {});
+  }
+
+  /// Keeps genuine taps on the theme's horizontally scrollable category rail
+  /// navigable in WKWebView. The theme treats any 8px horizontal pointer drift
+  /// as a drag and cancels the following anchor click, which can leave a
+  /// genuine tap inert inside the app.
+  ///
+  /// This capture-phase guard only takes over the theme's false-positive band
+  /// when:
+  /// - the pointer ends on the same category link;
+  /// - horizontal movement exceeded the theme's 8px cut-off but stayed within
+  ///   a conservative tap-sized range;
+  /// - vertical movement remained small; and
+  /// - the rail itself did not scroll.
+  ///
+  /// Ordinary taps, deliberate swipes, mouse clicks, keyboard activation,
+  /// external documents, and every link outside the top category rail keep the
+  /// theme's existing behavior and event propagation.
+  static const String _webKitTabTapRecoveryJs = r'''
+(function(){
+  if(window.__botWebKitTabTapRecovery)return;
+  var hostname=window.location.hostname.toLowerCase();
+  if(hostname!=='beautyontapp.com'&&hostname!=='www.beautyontapp.com')return;
+  window.__botWebKitTabTapRecovery=true;
+
+  var active=null;
+  var themeDragThreshold=8;
+  var maxTapX=24;
+  var maxTapY=12;
+  var maxScrollTravel=1;
+  var maxClickDelay=750;
+
+  function categoryLink(target){
+    return target&&target.closest
+      ?target.closest('.tabs-wrapper a[data-bui-tab][href]')
+      :null;
+  }
+
+  function clear(){
+    active=null;
+  }
+
+  document.addEventListener('pointerdown',function(event){
+    var link=categoryLink(event.target);
+    if(!link||event.pointerType!=='touch'){
+      clear();
+      return;
+    }
+
+    var rail=link.closest('.tabs-wrapper');
+    active={
+      pointerId:event.pointerId,
+      link:link,
+      rail:rail,
+      startX:event.clientX,
+      startY:event.clientY,
+      maxX:0,
+      maxY:0,
+      startScrollLeft:rail?rail.scrollLeft:0,
+      maxScroll:0,
+      ended:false,
+      endedAt:0
+    };
+  },true);
+
+  document.addEventListener('pointermove',function(event){
+    if(!active||event.pointerId!==active.pointerId)return;
+    active.maxX=Math.max(active.maxX,Math.abs(event.clientX-active.startX));
+    active.maxY=Math.max(active.maxY,Math.abs(event.clientY-active.startY));
+    if(active.rail){
+      active.maxScroll=Math.max(
+        active.maxScroll,
+        Math.abs(active.rail.scrollLeft-active.startScrollLeft)
+      );
+    }
+  },true);
+
+  document.addEventListener('pointerup',function(event){
+    if(!active||event.pointerId!==active.pointerId)return;
+    active.maxX=Math.max(active.maxX,Math.abs(event.clientX-active.startX));
+    active.maxY=Math.max(active.maxY,Math.abs(event.clientY-active.startY));
+    if(active.rail){
+      active.maxScroll=Math.max(
+        active.maxScroll,
+        Math.abs(active.rail.scrollLeft-active.startScrollLeft)
+      );
+    }
+    active.ended=categoryLink(event.target)===active.link;
+    active.endedAt=Date.now();
+  },true);
+
+  document.addEventListener('pointercancel',clear,true);
+
+  document.addEventListener('click',function(event){
+    var link=categoryLink(event.target);
+    var gesture=active;
+    clear();
+    if(!link||!gesture)return;
+    if(Date.now()-gesture.endedAt>maxClickDelay)return;
+    if(gesture.link!==link)return;
+    if(
+      gesture.maxX>maxTapX||
+      gesture.maxY>maxTapY||
+      gesture.maxScroll>maxScrollTravel
+    ){
+      event.preventDefault();
+      return;
+    }
+    if(!gesture.ended)return;
+    if(gesture.maxX<=themeDragThreshold)return;
+
+    var destination;
+    try{
+      destination=new URL(link.href,window.location.href);
+    }catch(_){
+      return;
+    }
+    if(destination.origin!==window.location.origin)return;
+
+    event.preventDefault();
+    window.location.assign(destination.href);
+  },true);
+})();
+''';
+
+  static Future<void> _installWebKitTabTapRecovery(
+    WebViewController controller,
+  ) async {
+    if (defaultTargetPlatform != TargetPlatform.iOS) return;
+    try {
+      await controller.runJavaScript(_webKitTabTapRecoveryJs);
+    } catch (_) {
+      // A page without an injectable document keeps its native link behavior.
+    }
   }
 
   /// Extends first-party storefront pages through the iPhone's bottom safe
