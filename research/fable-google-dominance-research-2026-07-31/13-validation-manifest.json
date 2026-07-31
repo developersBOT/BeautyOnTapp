@@ -1,0 +1,103 @@
+{
+  "investigation": "BeautyOnTApp Google dominance gap analysis",
+  "executed_utc": "2026-07-31T04:40:00Z to 2026-07-31T05:20:00Z",
+  "environment": "remote Claude Code container (linux), branch claude/new-session-5jpwou, session 74b7707f",
+  "dispatch": {
+    "file": "7fa51ca0-fable5googledominanceresearchinvestigation.xml",
+    "sha256": "cf6eb00223c476f6507cb0daa9a00f955ea7b465219bc844f3c0d118c70841fd",
+    "bytes": 21263,
+    "read_in_full": true
+  },
+  "output_directory_substitution": {
+    "dispatch_specified": "/Users/tn/Documents/google bot/execution-2026-07-31/fable-google-dominance-research/",
+    "delivered": "research/fable-google-dominance-research-2026-07-31/ on branch claude/new-session-5jpwou (draft PR #6)",
+    "reason": "dispatch path is macOS-local and unreachable from this container"
+  },
+  "completion_status": {
+    "overall": "COMPLETE WITHIN ACCESS LIMITS — every scoped surface investigated or explicitly marked inaccessible; no field filled without a source; roadmap maps to finding IDs; zero writes made",
+    "surfaces_with_first_party_or_observed_evidence": ["technical", "architecture", "onpage", "shopping (catalog side)", "local (Shopify side)", "entities (theme side)", "ai_search (asset side)", "media (app/catalog side)", "competitive (observed set)", "demand (presence/absence only)"],
+    "surfaces_marked_inaccessible": ["demand sizing (GSC+Semrush)", "shopping (Merchant Center side)", "local (GBP side)", "performance (CrUX/PSI field+lab)", "authority (backlinks)", "current ZA SERPs incl. AI Overviews", "google official documentation", "public-site URL fetches", "SF crawl reconciliation", "Business Facts reconciliation"]
+  },
+  "source_hashes_sha256_first16": {
+    "source-probes.json": "9fda1f647feb8e4d",
+    "shopify-theme-config.json": "c90877039fece84b",
+    "shopify-products-quality.json": "a6ddfc64f95f5bd8",
+    "shopify-content-architecture.json": "e39d6619e53d622b",
+    "websearch-brand.json": "0fe075015bfa24a8",
+    "websearch-category.json": "00f8af8ce721c3f1",
+    "websearch-local.json": "c88f1180158d1dda",
+    "repo-app-surface.json": "f7aa9c1b86075fe9",
+    "psi-fetch-log.txt": "005fa1556e95750a",
+    "psi-home.BLOCKED.json": "bc2b9650ad8b27a8",
+    "psi-collections-korean-skincare.BLOCKED.json": "eec80522cb94ac86",
+    "psi-collections-skincare.BLOCKED.json": "f4362d2c6604215c",
+    "psi-pages-locations.BLOCKED.json": "5387409db9d7ade9"
+  },
+  "cursor_and_page_exhaustion": {
+    "products_active": {"covered": 1623, "total": 1623, "pages": "7 x 250, hasNextPage=false", "exhausted": true},
+    "collections": {"covered": 525, "total": 525, "pages": "11 x 50, hasNextPage=false", "exhausted": true},
+    "pages": {"covered": 32, "total": 32, "exhausted": true},
+    "menus": {"covered": 10, "exhausted": true},
+    "articles": {"covered": 12, "total": 12, "exhausted": true},
+    "url_redirects": {"total_counted": 92, "row_sampled": 50, "exhausted": false, "note": "42 redirects unsampled — flagged in F-TECH-02 recommendation"},
+    "metaobject_definitions": {"covered": "first 50", "exhausted": false, "note": "pageInfo not queried"},
+    "draft_and_archived_products": {"counted": "94 + 42", "field_audited": false, "note": "scope was active products"}
+  },
+  "crawler_gates": {
+    "screaming_frog_v8_2_1": "NOT EVALUABLE — exports unreachable (macOS-local)",
+    "screaming_frog_v8_2_2": "NOT EVALUABLE — exports unreachable; dispatch completion gates (Spider 100%, zero waiting, Crawl Analysis 100%, saved crawl, exports read back) could not be checked",
+    "semrush_site_audit_29228518": "NOT EVALUABLE — zero API units, then skipped per T directive",
+    "no_partial_crawl_used_as_evidence": true
+  },
+  "deliverable_row_counts_and_not_verified_markers": {
+    "00-source-manifest.md": {"not_verified_markers": 2},
+    "01-executive-verdict.md": {"not_verified_markers": 2},
+    "02-google-surface-scorecard.csv": {"data_rows": 14, "not_verified_markers": 12},
+    "03-query-opportunity-map.csv": {"data_rows": 13, "not_verified_markers": 13},
+    "04-url-gap-ledger.csv": {"data_rows": 35, "not_verified_markers": 22},
+    "05-competitor-serp-evidence.csv": {"data_rows": 16, "not_verified_markers": 16},
+    "06-local-google-gap.csv": {"data_rows": 10, "not_verified_markers": 9},
+    "07-shopping-merchant-gap.csv": {"data_rows": 9, "not_verified_markers": 6},
+    "08-authority-entity-gap.csv": {"data_rows": 10, "not_verified_markers": 9},
+    "09-ai-media-discovery-gap.csv": {"data_rows": 12, "not_verified_markers": 6},
+    "10-mobile-cwv-gap.csv": {"data_rows": 7, "not_verified_markers": 1},
+    "11-roadmap-90-days.md": {"actions": 22, "not_verified_markers": 1},
+    "12-open-decisions.md": {"decisions": 8, "not_verified_markers": 2},
+    "14-measurement-framework.csv": {"data_rows": 14, "not_verified_markers": 12},
+    "15-risk-and-do-not-do-register.md": {"not_verified_markers": 5},
+    "16-bibliography.md": {"not_verified_markers": 2},
+    "total_not_verified_markers": 131
+  },
+  "url_fetch_failures": {
+    "policy_denied_hosts": ["beautyontapp.com:443 (proxy connect_rejected 403 x3, 04:42Z)", "www.google.com:443 (04:42Z)"],
+    "webfetch_403": ["https://beautyontapp.com/", "https://beautyontapp.com/robots.txt", "https://developers.google.com/search/docs/appearance/ai-features", "https://apps.apple.com/za/app/beautyontapp/id6754606514"],
+    "rate_limited": ["www.googleapis.com PSI v5 keyless — HTTP 429 'Queries per day', project 583797351490, all 4 target URLs"],
+    "consequence": "dispatch phase-4 requirement to fetch every reported URL could not be met; every URL-level claim is labeled with its actual source (Admin data or observed index title)"
+  },
+  "unresolved_conflicts": [
+    "Site claims 7 retail stores incl. Hemingways; Shopify holds 6 retail + head office (F-LOCAL-01 / D5)",
+    "5 live nav-linked collection paths also carry URL redirects — which wins live is unverified (F-TECH-01)",
+    "Google index still shows 6+ URLs superseded by v8.2.2 directives — recrawl lag vs unread directives undetermined without GSC (F-TECH-04)",
+    "Play app package identity (app.shopbeautyontapp.co.za) vs this repo's template applicationId (com.example.beautyontapp) — two build lineages (APP-02 / D4)",
+    "Shopify products count internal discrepancy: per-status sum 1759 vs total 1760 (API approximation, noted in evidence)"
+  ],
+  "prohibited_action_scan": {
+    "method": "final re-read of all 17 files against dispatch hard constraints P1-P16",
+    "robots_change_recommended": false,
+    "product_schema_change_recommended": false,
+    "universal_title_replacement_recommended": false,
+    "blanket_collection_consolidation_recommended": false,
+    "pastry_domain_strategy_recommended": false,
+    "local_inventory_activation_recommended": false,
+    "google_youtube_sync_enablement_recommended": false,
+    "new_paid_tool_recommended": false,
+    "fabricated_brand_product_store_facts": false
+  },
+  "zero_write_attestation": {
+    "statement": "No write, mutation, creation, publication, configuration or sync change was made to Shopify (admin, theme, products, collections, redirects, robots, sitemap), Google Search Console, Merchant Center, Business Profile, Google Ads, Semrush, Klaviyo, Meta, or any external platform during this investigation. The only artifacts created are research files in this repository directory on the designated branch, plus session-scratchpad evidence files.",
+    "shopify_tools_called": ["get-shop-info (read)", "graphql_query (read)"],
+    "mutation_tools_called": [],
+    "workflow_agent_guardrail": "every agent prompt hard-banned mutation tools; journal wf_e423eff3-8d7 (8 agents, 160 tool uses, 0 errors) is the audit trail",
+    "attested_by": "this session, 2026-07-31"
+  }
+}
