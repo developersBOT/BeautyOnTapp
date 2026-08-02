@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="BeautyOnTApp heart-B monogram — stroke construction">
+  <title>BeautyOnTApp heart-B monogram — stroke construction</title>
+  <rect x="0" y="0" width="1024" height="1024" fill="#000000"/>
+  <g fill="none" stroke="#EFE7DD" stroke-width="41.207" stroke-linejoin="round">
+    <path d="M232.967 512 L469.962 275.006 C485.031 259.937 537.521 207.447 609.845 195.165C662.354 186.248 714.079 200.434 750.137 238.378C785.604 275.699 789.817 319.066 790.723 336.011C796.365 441.595 725.252 487.804 683.189 512C725.252 536.196 796.365 582.405 790.723 687.989C789.817 704.934 785.604 748.301 750.137 785.622C714.079 823.566 662.354 837.752 609.845 828.835C537.521 816.553 485.031 764.063 469.962 748.994Z"/>
+    <path stroke-linecap="round" d="M487.454 395.335 L487.454 628.665"/>
+    <path stroke-linecap="butt" d="M487.454 512 L703.792 512"/>
+  </g>
+</svg>
