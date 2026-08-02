@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<!--
+  Heart-B logomark. Monoline construction, mirror-symmetric about y = 500.
+
+  Outline, apex -> cleft (mirrored for the lower half):
+    apex      90 deg round-joined vertex at (220.652, 500); the only corner on the outline
+    straight  two edges at exactly 45 deg
+    arc r=281.632   transition, tangent to the straight, tangent to the lobe
+    arc r=154.75   lobe
+    arc r=187.863   cleft, tangent to the lobe, meets its mirror on the axis at (665, 500)
+  Every junction is tangent-continuous; the cleft is a re-entrant notch, so it stays
+  crisp regardless of linejoin. Stroke 41.191 is uniform throughout.
+-->
+  <rect width="1000" height="1000" fill="#FFFFFF"/>
+  <g fill="none" stroke="#000000" stroke-width="41.191" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 220.652 500 L 463.364 257.288 A 281.632 281.632 0 0 1 578.362 187.664 A 154.75 154.75 0 0 1 773.887 376.093 A 187.863 187.863 0 0 1 665 500 A 187.863 187.863 0 0 1 773.887 623.907 A 154.75 154.75 0 0 1 578.362 812.336 A 281.632 281.632 0 0 1 463.364 742.712 Z"/>
+    <path d="M 474.771 383.425 L 474.771 616.575"/>
+    <path d="M 474.771 500 L 665 500"/>
+  </g>
+</svg>
