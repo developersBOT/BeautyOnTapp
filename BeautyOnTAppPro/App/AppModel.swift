@@ -97,6 +97,7 @@ final class AppModel: ObservableObject {
   @Published var isSearchPresented = false
   @Published var isCartPresented = false
   @Published var isLovesPresented = false
+  @Published var isBeautyServicesPresented = false
   @Published var isIngredientGuidePresented = false
   @Published var presentedNativeProduct: StoreProduct?
   @Published var shouldPresentNativeCart = false
@@ -827,6 +828,21 @@ final class AppModel: ObservableObject {
     isCartPresented = false
     isLovesPresented = false
     isIngredientGuidePresented = false
+    isBeautyServicesPresented = false
+  }
+
+  func presentBeautyServices() {
+    dismissPresentedOverlays()
+    dismissPresentedSheets()
+    isBeautyServicesPresented = true
+  }
+
+  /// Opens one of the two bookable services natively. The product page owns
+  /// the live price and the "Book an appointment" entry into the native
+  /// three-step flow.
+  func showBeautyService(handle: String) {
+    isBeautyServicesPresented = false
+    openNativeWebNavigation(.product(handle: handle))
   }
 
   func presentWeb(
@@ -867,13 +883,12 @@ final class AppModel: ObservableObject {
       if !openStorefrontURLNatively(title: title, url: url) {
         presentWeb(title: title, url: url)
       }
-    case .booking(let url):
-      presentWeb(
-        title: title,
-        url: url,
-        allowsExternalNavigation: true,
-        allowsCommerceNavigation: true
-      )
+    case .booking:
+      // Booking is a native experience. The old WebKit page was slow to
+      // load, surfaced the Shopify draft-theme banner and could not complete
+      // checkout, so every booking entry point now opens the native services
+      // sheet instead.
+      presentBeautyServices()
     case .external(let url):
       externalURLOpener(url)
     case .none:

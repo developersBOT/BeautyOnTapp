@@ -188,22 +188,38 @@ actor BookEasyClient {
       "userAgent": Configuration.userAgent,
     ]
 
-    let validation = try await requestData(
-      path: "/api/bookeasy/validateDateAndTime",
-      method: "POST",
-      body: wrapped
-    )
+    let validation: Data
+    do {
+      validation = try await requestData(
+        path: "/api/bookeasy/validateDateAndTime",
+        method: "POST",
+        body: wrapped
+      )
+    } catch {
+      // A failed validation transport is a reserve-step problem; the old
+      // invalidResponse mapping showed the unrelated "availability could not
+      // be loaded" copy on the review screen.
+      throw BookEasyError.reservationFailed
+    }
     guard String(data: validation, encoding: .utf8)?
       .trimmingCharacters(in: .whitespacesAndNewlines) == "true"
     else {
       throw BookEasyError.slotUnavailable
     }
 
-    _ = try await requestJSON(
-      path: "/api/bookeasy/reservation",
-      method: "POST",
-      body: wrapped
-    )
+    // The reservation endpoint answers 2xx with a bare JSON fragment (the
+    // validate endpoint returns literal `true` the same way), so success is
+    // the status code, not a parseable object. Parsing it as a JSON object
+    // previously threw and surfaced as "availability could not be loaded".
+    do {
+      _ = try await requestData(
+        path: "/api/bookeasy/reservation",
+        method: "POST",
+        body: wrapped
+      )
+    } catch {
+      throw BookEasyError.reservationFailed
+    }
     return BookEasyBooking(
       reservationID: reservationID,
       date: day.date,
@@ -330,7 +346,12 @@ actor BookEasyClient {
   ) async throws -> Any {
     let data = try await requestData(path: path, method: method, body: body)
     do {
-      return try JSONSerialization.jsonObject(with: data)
+      // Bookeasy endpoints may answer with bare fragments (`true`, an id
+      // string); accept them rather than failing an otherwise-2xx response.
+      return try JSONSerialization.jsonObject(
+        with: data,
+        options: [.fragmentsAllowed]
+      )
     } catch {
       throw BookEasyError.invalidResponse
     }

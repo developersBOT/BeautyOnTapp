@@ -494,3 +494,135 @@ struct BookingFlowView: View {
     isLoading = false
   }
 }
+
+/// Native replacement for the WebKit /pages/make-services page. Lists the two
+/// bookable services using the Shop sheet's card language; each opens the
+/// native product page, which carries the live price and the "Book an
+/// appointment" entry into the native three-step flow.
+struct BeautyServicesSheet: View {
+  @EnvironmentObject private var appModel: AppModel
+
+  private struct Service: Identifiable {
+    let id: String
+    let title: String
+    let detail: String
+    let symbol: String
+    let tint: Color
+    let handle: String
+  }
+
+  private let services: [Service] = [
+    Service(
+      id: "skin-analysis",
+      title: "Skin Analysis",
+      detail: "Your skin, scientifically understood",
+      symbol: "camera.viewfinder",
+      tint: Color(hex: 0x4C9A83),
+      handle: "skin-analysis-quiz-routine-advice"
+    ),
+    Service(
+      id: "hair-scalp-analysis",
+      title: "Hair & Scalp Analysis",
+      detail: "Understand your scalp, transform your hair",
+      symbol: "scissors",
+      tint: Color(hex: 0x5B718B),
+      handle: "hair-analyser"
+    ),
+  ]
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 0) {
+      ZStack {
+        Text("Book Smart Analysis")
+          .themeScaledFont(size: 18, weight: .bold)
+          .accessibilityAddTraits(.isHeader)
+
+        HStack {
+          Spacer()
+          Button {
+            NativeHaptics.play(.dismiss)
+            appModel.isBeautyServicesPresented = false
+          } label: {
+            Image(systemName: "xmark")
+              .font(.system(size: 15, weight: .semibold))
+              .frame(width: 44, height: 44)
+              .contentShape(Circle())
+          }
+          .buttonStyle(.plain)
+          .adaptiveGlass(in: Circle(), interactive: true)
+          .accessibilityLabel("Close booking services")
+        }
+      }
+      .frame(minHeight: 56)
+      .padding(.horizontal, 16)
+
+      Text("In-store at BeautyOnTApp stores")
+        .themeScaledFont(size: 12, weight: .semibold)
+        .foregroundStyle(ThemeTokens.muted)
+        .padding(.horizontal, 20)
+        .padding(.bottom, 12)
+
+      VStack(spacing: 10) {
+        ForEach(services) { service in
+          serviceTile(service)
+        }
+      }
+      .padding(.horizontal, 16)
+
+      Spacer(minLength: 0)
+    }
+    .padding(.top, 8)
+    .accessibilityIdentifier("beauty-services-sheet")
+  }
+
+  private func serviceTile(_ service: Service) -> some View {
+    Button {
+      NativeHaptics.play(.navigation)
+      appModel.showBeautyService(handle: service.handle)
+    } label: {
+      HStack(spacing: 12) {
+        Image(systemName: service.symbol)
+          .font(.system(size: 20, weight: .regular))
+          .symbolRenderingMode(.monochrome)
+          .foregroundStyle(service.tint)
+          .frame(width: 30, height: 30)
+          .accessibilityHidden(true)
+
+        VStack(alignment: .leading, spacing: 2) {
+          Text(service.title)
+            .themeScaledFont(size: 15, weight: .semibold)
+            .foregroundStyle(ThemeTokens.ink)
+          Text(service.detail)
+            .themeScaledFont(size: 12)
+            .foregroundStyle(ThemeTokens.muted)
+            .lineLimit(1)
+            .minimumScaleFactor(0.85)
+        }
+
+        Spacer(minLength: 4)
+
+        Image(systemName: "chevron.right")
+          .font(.system(size: 11, weight: .semibold))
+          .foregroundStyle(.secondary)
+          .accessibilityHidden(true)
+      }
+      .padding(.horizontal, 14)
+      .frame(maxWidth: .infinity)
+      .frame(minHeight: 66)
+      .contentShape(Rectangle())
+      .adaptiveGlass(
+        in: RoundedRectangle(cornerRadius: 20, style: .continuous),
+        tint: ThemeTokens.glassControlTint,
+        interactive: true
+      )
+      .overlay {
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
+          .stroke(ThemeTokens.separator.opacity(0.60), lineWidth: 0.8)
+      }
+      .shadow(color: Color.black.opacity(0.06), radius: 9, y: 4)
+    }
+    .buttonStyle(.plain)
+    .accessibilityHint("Opens \(service.title)")
+    .accessibilityIdentifier("beauty-service-\(service.id)")
+  }
+}

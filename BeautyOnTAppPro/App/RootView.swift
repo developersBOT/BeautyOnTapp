@@ -103,6 +103,11 @@ struct RootView: View {
       SearchView()
         .environmentObject(appModel)
     }
+    .sheet(isPresented: $appModel.isBeautyServicesPresented) {
+      BeautyServicesSheet()
+        .environmentObject(appModel)
+        .nativeSheetStyle(.options)
+    }
     .sheet(
       isPresented: Binding(
         get: {

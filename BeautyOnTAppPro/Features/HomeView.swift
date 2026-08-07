@@ -1063,6 +1063,9 @@ enum NativeHomeFooterContent {
     ),
   ]
 
+  // The twelve storefront links keep their storefront order, flowed into two
+  // equal six-row columns so the block ends on one clean baseline instead of
+  // leaving a dead corner under the shorter column.
   static let menuColumns = [
     [
       Link(title: "About Us", link: ThemeLink("/pages/about-us")),
@@ -1077,12 +1080,12 @@ enum NativeHomeFooterContent {
         link: ThemeLink("/products/gift-card-1")
       ),
       Link(title: "Contact us", link: ThemeLink("/pages/contact")),
+    ],
+    [
       Link(
         title: "Ingredient Guide",
         link: ThemeLink("/pages/ingredient-glossary")
       ),
-    ],
-    [
       Link(
         title: "Privacy Policy",
         link: ThemeLink("/policies/privacy-policy")
@@ -1316,10 +1319,12 @@ private struct NativeHomeFooter: View {
 
   private func menuLabel(_ title: String) -> some View {
     Text(title)
-      .themeScaledFont(size: 11.5)
-      .foregroundStyle(Color.white.opacity(0.88))
+      .themeScaledFont(size: 12, weight: .medium)
+      .foregroundStyle(Color.white.opacity(0.92))
       .multilineTextAlignment(.leading)
-      .frame(maxWidth: .infinity, minHeight: 34, alignment: .leading)
+      .lineLimit(1)
+      .minimumScaleFactor(0.82)
+      .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
       .contentShape(Rectangle())
   }
 

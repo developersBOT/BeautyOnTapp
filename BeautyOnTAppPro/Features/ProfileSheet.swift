@@ -521,13 +521,13 @@ private struct ProfileActionRow: View {
       HStack(alignment: .center, spacing: 7) {
         VStack(alignment: .leading, spacing: 3) {
           Text(title)
-            .themeScaledFont(size: 13, weight: .semibold)
+            .themeScaledFont(size: 14.5, weight: .semibold)
             .foregroundStyle(ThemeTokens.ink)
             .lineLimit(2)
-            .minimumScaleFactor(0.88)
+            .minimumScaleFactor(0.82)
 
           Text(subtitle)
-            .themeScaledFont(size: 10)
+            .themeScaledFont(size: 10.5)
             .foregroundStyle(.secondary)
             .lineLimit(2)
             .fixedSize(horizontal: false, vertical: true)
@@ -559,29 +559,29 @@ private struct ProfileActionRow: View {
             .accessibilityHidden(true)
         }
       }
-      .padding(.horizontal, 11)
+      .padding(.horizontal, 13)
       .padding(.vertical, 7)
       .frame(maxWidth: .infinity, alignment: .leading)
-      .frame(minHeight: 58, alignment: .center)
+      .frame(minHeight: 66, alignment: .center)
       .contentShape(
-        RoundedRectangle(cornerRadius: 18, style: .continuous)
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
       )
-      // The sheet owns the material layer. Tiles are opaque semantic content
-      // cards, which keeps the profile menu readable and avoids grey
-      // glass-on-glass stacking in Dark Mode.
-      .background(
-        ThemeTokens.cardSurface,
-        in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+      // Shared card language with the Shop sheet: the same interactive glass
+      // tile, continuous 20pt corners, hairline stroke and soft shadow, so
+      // Shop and Profile read as one system.
+      .adaptiveGlass(
+        in: RoundedRectangle(cornerRadius: 20, style: .continuous),
+        tint: ThemeTokens.glassControlTint,
+        interactive: true
       )
       .overlay {
-        RoundedRectangle(cornerRadius: 18, style: .continuous)
-          .stroke(actionStroke, lineWidth: 0.7)
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
+          .stroke(ThemeTokens.separator.opacity(0.60), lineWidth: 0.8)
       }
-      .shadow(color: actionShadow, radius: 4, y: 2)
+      .shadow(color: Color.black.opacity(0.06), radius: 9, y: 4)
     }
     .buttonStyle(.plain)
-    .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-    .nativePressResponse(scale: 0.98)
+    .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
     .accessibilityElement(children: .combine)
     .accessibilityLabel("\(title), \(subtitle)")
     .accessibilityIdentifier(identifier)
@@ -630,28 +630,21 @@ private struct ProfileIcon: View {
   let background: Color
 
   var body: some View {
+    // Clean line icons, exactly like the Shop tiles: no chip background, one
+    // uniform optical size, the destination colour carried by the glyph
+    // itself in both appearances.
     Group {
       if symbol == "bestie.sparkle" {
-        BestieMark(
-          foreground: colorScheme == .dark ? Color.white : foreground
-        )
+        BestieMark(foreground: foreground)
       } else {
         Image(systemName: symbol)
-          .font(.system(size: 13, weight: .medium))
-          .foregroundStyle(
-            colorScheme == .dark ? Color.white : foreground
-          )
+          .font(.system(size: 20, weight: .regular))
+          .symbolRenderingMode(.monochrome)
+          .foregroundStyle(foreground)
       }
     }
-      .frame(width: 22, height: 22)
-      .background(
-        colorScheme == .dark ? foreground.opacity(0.20) : background,
-        in: RoundedRectangle(
-          cornerRadius: 6,
-          style: .continuous
-        )
-      )
-      .accessibilityHidden(true)
+    .frame(width: 30, height: 30)
+    .accessibilityHidden(true)
   }
 }
 
