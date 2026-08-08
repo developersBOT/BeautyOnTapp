@@ -30,11 +30,6 @@ struct HomeView: View {
             }
 
             NativeHomeFooter()
-              // The dock is intentionally floating above the scroll content.
-              // Keep only the measured dock clearance after the footer so the
-              // final links remain tappable without creating gaps between
-              // storefront sections.
-              .padding(.bottom, 82)
           } header: {
             StoreHeader(
               appModel: appModel,
@@ -46,6 +41,13 @@ struct HomeView: View {
       }
       .accessibilityIdentifier("home-screen")
       .background(ThemeTokens.canvas)
+      // The page ends on the black storefront footer, so the bottom
+      // overscroll bounce must reveal black, not the white canvas.
+      .background(alignment: .bottom) {
+        Color.black
+          .frame(height: 260)
+          .ignoresSafeArea(edges: .bottom)
+      }
       .nativeSoftTopScrollEdgeEffect()
       // Storefront content must never collide with the status bar. The soft
       // scroll-edge effect alone is too light over dense product imagery, so
@@ -633,14 +635,20 @@ private struct RoutineRailView: View {
               }
               .frame(width: 112, height: 72, alignment: .topLeading)
               .padding(9)
-              .background(
-                ThemeTokens.cardSurface,
-                in: RoundedRectangle(cornerRadius: 20, style: .continuous)
+              .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+              // The storefront renders these as glass tiles; use the same
+              // Shop-tile recipe so the routine rail matches the site and
+              // the rest of the app's card language.
+              .adaptiveGlass(
+                in: RoundedRectangle(cornerRadius: 20, style: .continuous),
+                tint: ThemeTokens.glassControlTint,
+                interactive: true
               )
               .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                  .stroke(ThemeTokens.separator.opacity(0.55), lineWidth: 0.7)
+                  .stroke(ThemeTokens.separator.opacity(0.60), lineWidth: 0.8)
               }
+              .shadow(color: Color.black.opacity(0.06), radius: 9, y: 4)
             }
           }
         }
@@ -695,14 +703,17 @@ private struct GuidanceRailView: View {
                   .lineLimit(2)
               }
               .frame(width: 110, height: 108)
-              .background(
-                ThemeTokens.cardSurface,
-                in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+              .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+              .adaptiveGlass(
+                in: RoundedRectangle(cornerRadius: 18, style: .continuous),
+                tint: ThemeTokens.glassControlTint,
+                interactive: true
               )
               .overlay {
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
-                  .stroke(ThemeTokens.separator.opacity(0.55), lineWidth: 0.7)
+                  .stroke(ThemeTokens.separator.opacity(0.60), lineWidth: 0.8)
               }
+              .shadow(color: Color.black.opacity(0.06), radius: 9, y: 4)
             }
           }
         }
@@ -1156,6 +1167,11 @@ private struct NativeHomeFooter: View {
     }
     .padding(.horizontal, ThemeTokens.horizontalPadding)
     .padding(.top, 16)
+    // The dock clearance belongs INSIDE the footer's black surface: the
+    // storefront footer stays black to the very bottom of the screen, with
+    // the dock floating on it. A transparent clearance strip here read as a
+    // white band under the dock.
+    .padding(.bottom, 96)
     .background(Color.black)
     .accessibilityIdentifier("home-native-footer")
   }
