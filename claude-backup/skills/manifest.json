@@ -1,0 +1,684 @@
+{
+  "lastUpdated": 1786203158892,
+  "skills": [
+    {
+      "skillId": "morning",
+      "name": "morning",
+      "description": "Render the user's morning brief as a styled HTML artifact, or set it up as a recurring weekday task. Use only when the user explicitly asks to run, see, or set up their morning brief, or if they invoke /morning by name. A question about their day, schedule, or calendar is not by itself a request for the brief; answer it directly instead.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:13.363095Z"
+    },
+    {
+      "skillId": "skill_01Q34b17mpsWcKGViCeHn828",
+      "name": "apple-design",
+      "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+      "source": "custom",
+      "updatedAt": "2026-08-05T15:39:30.467218Z"
+    },
+    {
+      "skillId": "skill_01ASxkDt3PidR5jYnzsmvJzA",
+      "name": "content-strategy",
+      "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content strategy,\" \"what should I write about,\" \"content ideas,\" \"blog strategy,\" \"topic clusters,\" \"content planning,\" \"editorial calendar,\" \"content marketing,\" \"content roadmap,\" \"what content should I create,\" \"blog topics,\" \"content pillars,\" or \"I don't know what to write.\" Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social.",
+      "source": "custom",
+      "updatedAt": "2026-08-05T15:51:10.277542Z"
+    },
+    {
+      "skillId": "skill_01LhbV4VADCXFxbS8YtVJu71",
+      "name": "seo-audit",
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" \"SEO health check,\" \"my traffic dropped,\" \"lost rankings,\" \"not showing up in Google,\" \"site isn't ranking,\" \"Google update hit me,\" \"page speed,\" \"core web vitals,\" \"crawl errors,\" or \"indexing issues.\" Use this even if the user just says something vague like \"my SEO is bad\" or \"help with SEO\" — start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema. For AI search optimization, see ai-seo.",
+      "source": "custom",
+      "updatedAt": "2026-08-05T15:51:43.204123Z"
+    },
+    {
+      "skillId": "skill_017ZHvY4QdJQbwjS7suG9EbS",
+      "name": "ad-creative",
+      "description": "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising platform. Also use when the user mentions 'ad copy variations,' 'ad creative,' 'generate headlines,' 'RSA headlines,' 'bulk ad copy,' 'ad iterations,' 'creative testing,' 'ad performance optimization,' 'write me some ads,' 'Facebook ad copy,' 'Google ad headlines,' 'LinkedIn ad text,' 'static ads,' 'static ad concepts,' 'ad templates,' 'iMessage ad,' 'chat reveal ad,' 'fake DM ad,' 'ChatGPT ad,' 'Apple Notes ad,' 'AirDrop ad,' 'creative strategy,' 'creative roadmap,' 'creative retro,' 'hook writing,' 'creative review page,' 'present ad creative for approval,' 'motion video ad,' 'faceless video ad,' 'animated explainer ad,' 'motion collage ad,' or 'I need more ad variations.' Use this whenever someone needs to produce ad copy at scale or iterate on existing ads. For campaign strategy and targeting, see ads. For landing page copy, see copywriting.",
+      "source": "custom",
+      "updatedAt": "2026-08-05T15:51:23.703682Z"
+    },
+    {
+      "skillId": "skill_0125LfvTYLGf2SZkgk5MQdY2",
+      "name": "beautyontapp-discipline",
+      "description": "ALWAYS invoke FIRST on every PNCapital task (BeautyOnTApp, Pastry Skincare, Mzuri Skin) — before reading files, drafting, fixing, building, auditing, or shipping anything. Make sure to use whenever T uploads any file, export, screenshot, or paste; issues any directive verb (fix, build, ship, audit, write, update, draft, deploy, review); requests any structured deliverable (table, sheet, rows × columns, batch list, dispatch); or when Claude is about to offer options, split a deliverable, fill a description field, state a number, or call present_files. Enforces: audit inputs first, literal minimum-viable scope, execute-don't-ask, template-trap check, per-claim inline sources, complete sourced deliverables, verify before shipping, self-audit before delivery. Replaces beautyontapp-audit-first, -execute-dont-ask, -instruction-discipline, -complete-deliverables, -ship-it-right-first-time, -challenge-verify, -evidence-citations, -anti-fabrication (full originals in references/).",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:31:43.686975Z"
+    },
+    {
+      "skillId": "skill_01RCPvsb7H71pQDaTXqrFnoH",
+      "name": "beautyontapp-audit-first",
+      "description": "PNCapital audit-first gate for BeautyOnTApp, Pastry Skincare, Mzuri Skin on Shopify Advanced. ALWAYS invoke this skill FIRST whenever the user's message includes any uploaded file, attachment, screenshot, paste, CSV, XLSX, PDF, ZIP, theme export, dashboard image, report, export, or referenced document — regardless of the action verb in the same message. This skill OVERRIDES default routing for the verbs fix, update, rewrite, ship, build, draft, deploy, write, edit, improve, optimize, refactor, change, revise, redo, generate, create, audit, review, analyze, check, look at. Do not draft, fix, build, ship, or recommend until the audit step in this skill has produced a written audit report (filename, shape, verbatim quote, restated user ask, verdict). Skipping the audit is the most common PNCapital failure mode and produces wrong-confidence outputs on real customer and revenue data. Use FIRST; domain skills run only after the audit report sits in conversation context.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:29:34.670111Z"
+    },
+    {
+      "skillId": "skill_012coLYFGWeGoih3yoyHyW9u",
+      "name": "beautyontapp-instruction-discipline",
+      "description": "Forces literal interpretation and minimum-viable response on every PNCapital task — BeautyOnTApp, Pastry Skincare, Mzuri Skin. Use whenever T issues a direct request, a terse imperative (\"fix this\", \"send the files\", \"do X\", \"build it\", \"ship it\"), or any request for a specific artifact (file, doc, zip, skill, image, list, table). Forbids adding deliverables T didn't ask for (zip-on-top-of-files, prefixed filenames when bare names were requested, summary tables, \"next steps\", \"you might also want\", \"while I was at it\"). Forbids A/B/C/D option menus on action verbs. Forbids multi-question interrogations when intent is clear from project files, recent turns, or a tool call could resolve the ambiguity. Pairs with execute-dont-ask, ship-it-right-first-time, complete-deliverables. Co-activates rather than duplicates.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:30:29.810946Z"
+    },
+    {
+      "skillId": "skill_01NDHWLxhkpmyJ62sFPm9d3H",
+      "name": "beautyontapp-shopify-flow",
+      "description": "Design, deploy, and audit Shopify Flow automations for BeautyOnTApp on Shopify Advanced (Flow is included at no cost and runs server-side — zero Claude token cost). Auto-invoke when T says \"Flow\", \"automate in Shopify\", \"alert me when\", \"auto-tag\", \"workflow\", \"guard\", or when any recurring manual admin check surfaces — catalog hygiene (missing product type or tags, null SKUs, duplicate SKUs, delisted-vendor republish), low-stock alerts, order tagging (B2B, high-value), refund notifications. Also invoke when a Shopify audit finding repeats a failure class Flow could have caught. NOT for email/SMS flows (use beautyontapp-klaviyo-platform). NOT for ad-platform rules (use beautyontapp-google-ads-automated-rules). NOT for theme code (use beautyontapp-shopify). Never build Flows that write to products, feeds, or data managed by Analyzify, Simprosys, or BookX.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:32:07.766715Z"
+    },
+    {
+      "skillId": "skill_01Bo92VPx38PEoZLhnYzTZtW",
+      "name": "beautyontapp-execute-dont-ask",
+      "description": "Suppresses Claude's tendency to over-ask clarifying questions and present options menus when the user's intent is reasonably inferable. Use this skill whenever the user gives a directive (\"do X\", \"fix Y\", \"build Z\", \"audit this\", \"write the email\", \"update the theme\", \"ship it\", \"make it happen\"), uploads files with an implicit task, or has provided enough context across the conversation that intent is clear. Always invoke alongside audit-first for analysis tasks. Make sure to use this skill whenever Claude is tempted to respond with \"Would you like me to...\", \"I can do A or B, which do you prefer?\", \"Should I...\", \"Do you want me to also...\", or any menu of next-step options. T runs a Shopify beauty business with a large skill library already loaded — context is rich, questions are friction.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:30:19.509961Z"
+    },
+    {
+      "skillId": "skill_01576Wenu3KPcJrKW1fUmUAE",
+      "name": "beautyontapp-challenge-verify",
+      "description": "Self-verification and proof-of-work protocol for BeautyOnTApp. Auto-invoke when Claude is about to deliver code changes, campaign configurations, Shopify theme edits, Google Ads or Meta Ads settings, tracking changes, Liquid code, Dart code, or any technical implementation. Also invoke when T says \"prove it\", \"are you sure\", \"double check\", \"verify this works\", \"test this\", or when the task involves irreversible changes (deleting campaigns, changing pixel settings, modifying tracking). Forces Claude to verify its own work BEFORE presenting it. Do NOT invoke for brainstorming, strategy discussion, or content writing. NOT for campaign management (use google-ads or meta). NOT for financial analysis (use financial-intel).",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:29:45.145936Z"
+    },
+    {
+      "skillId": "skill_011SUVsXZ3vnAMXX1wPz93Qh",
+      "name": "beautyontapp-evidence-citations",
+      "description": "Requires that every factual claim cite a specific source — uploaded file with row reference, URL fetched this conversation, prior message, project file, loaded skill body, or explicit NOT VERIFIED tag. Make sure to invoke whenever the response contains numbers, statistics, percentages, dates, prices, regulations, named entities, competitor claims, brand descriptions, product positioning, ingredient claims, stocking status, brand provenance, or any descriptive copy about a brand or product. Also invoke before drafting any structured deliverable (rows × columns, tables, batch edit lists, sheets, multi-section dispatches) — descriptive copy and brand positioning are factual claims about T's business, not creative writing, and require sources just like numbers. Hardened 17 May 2026 after Claude fabricated brand descriptions for Lele Feminine, Uso Skincare, Nilotiqa, Anasa, Torriden, Manetain, Ndanaka by treating weak H1 SF flags as license to invent positioning copy. Pairs with beautyontapp-audit-first.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:30:08.323909Z"
+    },
+    {
+      "skillId": "skill_01EUegzjrR3Jtb9NrfA3TVQm",
+      "name": "beautyontapp-ship-it-right-first-time",
+      "description": "Prevents the failure pattern where Claude ships a deliverable, then T asks \"are there any issues?\" or \"audit this\" and Claude finds problems it should have caught before shipping. Use this skill BEFORE every file delivery, theme zip, Chrome dispatch, schema, Liquid edit, ad copy, email, prompt, or document. Make sure to invoke this skill whenever Claude is about to call present_files, deliver code, send a zip, or output a final deliverable. The user has been burned repeatedly by Claude finding \"concerns\" or \"gaps\" only after being asked to audit — those issues were always there, Claude just didn't check first. This skill makes Claude do that check BEFORE shipping, not after.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:30:39.463332Z"
+    },
+    {
+      "skillId": "skill_01HmQHjWKMV6H1kkdEDqhuP9",
+      "name": "beautyontapp-anti-fabrication",
+      "description": "Forces evidence-cited or explicitly-refused output for every descriptive claim about external brands, products, ingredients, positioning, pricing, competitor copy, or hero sections. Make sure to use this skill whenever the operator asks for competitor research, brand audits, positioning grids, ingredient comparisons, market mapping, product descriptions, or any table/row/column structure with a Description, Positioning, USP, Hero, Tagline, Claim, Ingredients, Price, or About column — even when the operator does not say \"audit\" or \"research\". Invoke the moment a template with empty descriptive cells appears, before any cell is filled. DO NOT TRIGGER for T's own copy with source provided this turn, pure CSS/Liquid work, or numerical-only sheets. Pairs with beautyontapp-audit-first, beautyontapp-evidence-citations, beautyontapp-ship-it-right-first-time. When in doubt, invoke — false positives are cheap, fabrications are not.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:29:23.530926Z"
+    },
+    {
+      "skillId": "skill_01H935x81UTnVWfTo9P4HTMZ",
+      "name": "beautyontapp-shopify-liquid-auditor",
+      "description": "Read-only auditor for Shopify themes, Liquid templates, schema markup, and theme.zip uploads. Use this skill whenever the user uploads a theme zip, .liquid file, schema/JSON-LD blob, Shopify export, or asks to audit/review/check Shopify code, theme performance, schema validity, Liquid template logic, section/block configuration, or storefront performance. Make sure to invoke this skill whenever the user mentions \"theme\", \"Liquid\", \"schema\", \"JSON-LD\", \"section\", \"snippet\", \"Online Store 2.0\", \"OS 2.0\", \"Hydrogen\", \"checkout extensions\", \"theme audit\", \"metafields\", or uploads any .liquid, .json, or theme.zip file. This skill is read-only — it produces audit reports, never modified code. After audit, hand off to a separate executor turn for fixes.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:57:49.254264Z"
+    },
+    {
+      "skillId": "skill_019q6171tSFEDqe5x4eByJnM",
+      "name": "beautyontapp-decision-council",
+      "description": "Convene a five-adviser decision council plus a chairman inside one Claude chat to pressure-test any PNCapital decision before T commits. Auto-invoke when T says \"council\", \"convene the council\", \"stress-test this\", \"pressure-test\", \"red-team this\", \"poke holes\", \"what am I missing\", \"go or no-go\", or pastes a plan/decision for a verdict. Five advisers — Contrarian (what fails), First-Principles (the load-bearing assumption), Expansionist (the bigger play), Outsider (cross-domain naive question), Executor (Monday-morning next step) — argue independently, then cross-examine each other and T's framing, then a Chairman rules in VERDICT → WHY → DO THIS NOW → VALIDATE → RISKS format. Engineered against the documented ~49% AI-sycophancy bias (Stanford / Science 2026): disagreement is the product, not agreement; no flattery; unknowns marked NOT VERIFIED, never fabricated. NOT for pure fact lookups (use beautyontapp-research-mode) or ad pause/keep calls (use beautyontapp-bleeder-detection).",
+      "source": "custom",
+      "updatedAt": "2026-06-01T06:21:11.316770Z"
+    },
+    {
+      "skillId": "skill_01Em3AE2W64X1yjx5wf55RvT",
+      "name": "beautyontapp-ppc-audit-engine",
+      "description": "PPC audit execution engine — the step-by-step protocol Claude follows when auditing a Google Ads account. Auto-invoke when T says \"audit\", \"audit Google Ads\", \"check the account\", \"what's happening in Google Ads\", \"run an audit\", \"account health\", \"how are campaigns doing\", \"review campaigns\", \"campaign performance\", \"what should I pause\", \"where am I wasting money\", \"optimize Google Ads\", \"find waste\", \"search terms check\", \"PMax audit\", \"Shopping audit\", \"feed audit\", \"conversion tracking check\", \"placement audit\", or any request to evaluate, diagnose, or optimize Google Ads account performance. This skill is the EXECUTION ENGINE — it tells Claude what to check, in what order, with what thresholds, and in what output format. Always load alongside beautyontapp-google-ads (account data), beautyontapp-google-ads (benchmarks), and beautyontapp-bleeder-detection (pause logic). Without this skill, Claude gives generic PPC advice. With it, Claude runs a professional-grade audit.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:57:34.717139Z"
+    },
+    {
+      "skillId": "skill_01AT6LofKoD8LXNWZR113SLi",
+      "name": "beautyontapp-complete-deliverables",
+      "description": "Anti-partial-delivery protocol for BeautyOnTApp. Auto-invoke on EVERY prompt, task, fix, audit, or campaign action. Forces Claude to deliver ALL known fixes, ALL known issues, and ALL required steps in a single prompt — never split across multiple prompts, never leave known issues for \"later\", never deliver one fix and wait to be asked for the rest. If Claude knows about 6 issues and the user asks for a fix, the prompt must fix all 6 — not 1 with \"let me know when you want the rest.\" Also auto-invoke when Claude is about to say \"want me to write a prompt for that?\", \"want me to do X next?\", \"let me know if you want Y\" — these are signals Claude is about to split a deliverable. STOP and include it. This skill overrides all other skills when they would produce partial output. NOT a content skill — it governs DELIVERY COMPLETENESS across all other skills.",
+      "source": "custom",
+      "updatedAt": "2026-07-05T06:29:56.667529Z"
+    },
+    {
+      "skillId": "skill_01Bi772fumWi1CFZuMpi4NwN",
+      "name": "beautyontapp-skill-health",
+      "description": "Auto-invoke for \"audit skills\", \"skill health\", \"score this skill\", \"evaluate skill\", \"120-point\", \"trigger collision\", \"skill overlap\", \"run evals\", or after Claude model updates. Full rubric in references/. NOT for session-handoff.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:57:29.776866Z"
+    },
+    {
+      "skillId": "skill_01QDetTaxEedefRoDmSnY6CP",
+      "name": "beautyontapp-skill-authoring",
+      "description": "How to AUTHOR a Claude skill that triggers and executes reliably, for PNCapital (BeautyOnTApp, Pastry Skincare, Mzuri Skin). Make sure to invoke whenever T wants to write, create, draft, or restructure a skill, or asks why a skill is not firing — triggers include \"write a skill\", \"create a skill\", \"author a skill\", \"new skill\", \"skill description\", \"skill triggers\", \"skill not firing\", \"skill won't trigger\", \"freedom calibration\", \"progressive disclosure\", \"split this skill\", \"SKILL.md\". Encodes the selection-first rule, the description trap, narrow-bridge vs open-field freedom calibration, progressive disclosure, explicit-scope literalism, coverage-first for finding skills, completion marking, and per-tier testing. NOT for scoring or maintaining existing skills or trigger-collision scans (use beautyontapp-skill-health). NOT for writing marketing PROMPTS or dispatches (use beautyontapp-prompting-discipline). NOT for the canonical skill count or routing (use 02_PNCapital_Skill_Router).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:13:41.224513Z"
+    },
+    {
+      "skillId": "skill_016BYpAW6Pa9WkYbZi1ZFTC5",
+      "name": "beautyontapp-prompting-discipline",
+      "description": "Prompting discipline for Google Ads, Meta Ads, and SEO/content marketing tasks at PNCapital — BeautyOnTApp, Pastry Skincare, Mzuri Skin. Make sure to invoke whenever T or any agent is about to write, rewrite, dispatch, or evaluate a marketing prompt or audit (PMax, ASC, EMQ, technical SEO, programmatic SEO, GEO/AEO, schema, Google Ads Scripts, Meta rules). Auto-invoke on \"write a prompt\", \"prompt for\", \"dispatch\", \"rewrite this prompt\", \"audit\", \"brief\", \"PMax\", \"ASC\", \"Andromeda\", \"EMQ\", \"Screaming Frog\", \"Semrush export\", \"content brief\", \"programmatic SEO\", \"SERP analysis\", \"schema markup\", \"GEO\", \"AEO\", \"AI Overview\", \"AI Mode\", \"query fan-out\". Forces XML-tag structure, refuse-the-field defaults, anti-training-memory clauses, tier-based model routing (Opus/Sonnet/Haiku) and the current-model execution levers. Pairs with audit-first, evidence-citations, execute-dont-ask.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:13:38.227211Z"
+    },
+    {
+      "skillId": "skill_01T5KsUu8yAzoF4JbzQhwotd",
+      "name": "beautyontapp-webapp-testing",
+      "description": "Python Playwright live-site testing for PNCapital — validate beautyontapp.com, Pastry, and Mzuri sites; verify Meta Pixel and Analyzify v4 events fire with Variant ID as Content ID; screenshot and scrape competitors (Bash, Secret Skin, Woolworths, Takealot, Clicks, Dis-Chem, Glow Theory, Seoul of Tokyo, MYKOCO); inspect live OG tags, canonical URLs, JSON-LD schema; check Core Web Vitals; detect broken links; capture network requests to spot pixel duplicates or F&I Data Sharing leaks; validate /pages/delivery R30 pricing compliance. Auto-invoke when T asks to test, verify, check, scrape, screenshot, audit live, capture network, inspect DOM, or validate any live URL. Also auto-invoke for \"does the pixel fire\", \"what does Bash show\", \"verify our OG image\", \"is Secret Skin bidding on X\", \"is our schema correct\", \"screenshot their storefront\", \"are we showing R30 on delivery\". Uses headless Chromium in the Claude.ai Linux sandbox.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:23:38.891979Z"
+    },
+    {
+      "skillId": "skill_0132EQWF1ETwait6Rqh5vnrs",
+      "name": "beautyontapp-tiktok",
+      "description": "TikTok content strategy, trend monitoring, and platform readiness for BeautyOnTApp, Pastry Skincare, and Mzuri Skin. Auto-invoke when T asks about TikTok content, TikTok trends, TikTok Ads, TikTok Shop, Reels/short-form video strategy, K-beauty viral moments, or says \"TikTok\", \"short-form\", \"Reels strategy\", \"viral\", \"trending products\". Also invoke for K-beauty trend-spotting from social signals. NOT for Meta Ads campaign management (use meta skill) or Google Ads (use google-ads skill).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:22:43.350738Z"
+    },
+    {
+      "skillId": "skill_01MzGQRqHFQGJB9qjRKJxXMX",
+      "name": "beautyontapp-tools-stack",
+      "description": "Proactive tool recommendations for BeautyOnTApp — external SEO, PPC, analytics, feed, competitor intelligence, and site health tools that make money or save money. Auto-invoke when discussing SEO strategy, technical SEO, site audits, competitor research, backlink analysis, feed optimization, attribution, creative analytics, ad spy, keyword research, site speed, Schema markup, crawl errors, broken links, placement audits, AEO readiness, or any performance optimization where an external tool would give BeautyOnTApp a tactical edge. Also auto-invoke when Claude is about to give strategic advice that would be BETTER with data from one of these tools — don't wait for T to ask. If the recommendation would be stronger with tool data, SAY SO and recommend the tool. NOT for campaign management (use google-ads or meta). NOT for Shopify app configuration (use shopify). This skill exists because Claude previously failed to recommend Screaming Frog for 45+ conversations about SEO. Never again.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:22:55.651806Z"
+    },
+    {
+      "skillId": "skill_01LUsNgfvifHxBQtgMComdn9",
+      "name": "pastry-skincare-google-ads",
+      "description": "Google Ads account management for Pastry Skincare (Account 851-084-2703). Auto-invoke when T mentions Pastry Skincare Google Ads, Pastry Skincare campaigns, Pastry PPC, Pastry conversions, Pastry tracking, or any Google Ads question specific to the Pastry Skincare account (not BeautyOnTApp). NOT for BeautyOnTApp Google Ads (use beautyontapp-google-ads). NOT for Pastry Skincare Meta Ads (use beautyontapp-meta, which covers both brands).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:24:02.715202Z"
+    },
+    {
+      "skillId": "skill_01C4h9QDTXXdy3Gd5cfdnXRt",
+      "name": "beautyontapp-ads-benchmarks-auditor",
+      "description": "Read-only auditor for Google Ads, Meta Ads, TikTok Ads, and other paid media exports. Make sure to use this skill whenever the user uploads a Google Ads CSV/Excel export, Meta Ads Manager export, ROAS report, search-term report, audience report, or mentions ROAS, CPA, CPC, CPM, wasted spend, search terms, audience overlap, creative decay, frequency cap, quality score, TikTok ads, or uploads any ads export. Produces a tagged finding list with effort/impact scores. Never executes campaign changes — hand off to a separate executor turn for fixes.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T08:57:40.278234Z"
+    },
+    {
+      "skillId": "skill_01BxbSdVFrghgFtuUu7cbtJo",
+      "name": "beautyontapp-web-performance",
+      "description": "Web performance optimization for BeautyOnTApp — Core Web Vitals, Lighthouse audits, image optimization (AVIF/WebP), font optimization, third-party script management, mobile-first SA network optimization, Shopify-specific performance patterns, page weight budgets. Auto-invoke for \"site speed\", \"page speed\", \"slow loading\", \"Core Web Vitals\", \"LCP\", \"CLS\", \"INP\", \"Lighthouse\", \"performance score\", \"mobile speed\", \"images too large\", \"third party scripts\", or any question about site speed. NOT for SEO (use beautyontapp-onpage-seo). NOT for CRO (use beautyontapp-cro-engine).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:23:18.081354Z"
+    },
+    {
+      "skillId": "skill_01PFfpbu5Z5T1XihhG9HvsjS",
+      "name": "beautyontapp-skill-router",
+      "description": "Master router for 76 BoT/PNCapital skills (Google/Meta/Shopify focused). Auto-invoke at START of every BoT task to select correct skill or bundle. Resolves disambiguation. NOT for execution.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:22:32.415522Z"
+    },
+    {
+      "skillId": "skill_01EgpDAqX9VjUeHfzfBU4tKq",
+      "name": "beautyontapp-rsa-generator",
+      "description": "Responsive Search Ad (RSA) headline and description generator for BeautyOnTApp Google Ads (account 820-452-9325) and Pastry Skincare (851-084-2703). Enforces 30-character headline limit, 90-character description limit, brand voice, product accuracy, and Google Ads RSA best practices. Ingests campaign CSV, keyword list, landing page URL, and VoC language bank. Outputs Google Ads Editor bulk-upload CSV with 15 headlines and 4 descriptions per ad group. Logs every variant + hypothesis to a hypothesis log so subsequent variant rounds build on prior tests. Make sure to invoke whenever T asks for \"RSA copy\", \"RSA headlines\", \"Google Ads headlines\", \"search ad copy\", \"responsive search ads\", \"ad copy for [campaign/ad group]\", \"RSA variants\", \"headline generator\", \"write RSAs\", \"Google Ads Editor CSV\", or wants new search ad assets for any active campaign. Pairs with google-ads, voc-mining, copywriting-engine, brand-context, evidence-citations.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:21:30.359266Z"
+    },
+    {
+      "skillId": "skill_012QVYRs9U6h91rxNwj9Gf6y",
+      "name": "beautyontapp-session-handoff",
+      "description": "Session continuity and context handoff protocol for BeautyOnTApp. Auto-invoke when T starts a new conversation referencing previous work, says \"continue where we left off\", \"what were we working on\", \"pick up from last time\", \"last session\", \"continue\", or when T references a task or project that appears incomplete. Also invoke when T says \"save progress\", \"handoff\", \"wrap up for now\", \"summarize what we did\", or \"what's left to do\". Ensures nothing falls through the cracks between conversations. NOT for campaign management (use google-ads or meta). NOT for skill maintenance (use skill-health). Forces structured context capture so the next session starts at full speed.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:22:10.705151Z"
+    },
+    {
+      "skillId": "skill_016sxBHPF9xcKoeuCwf5ePSh",
+      "name": "beautyontapp-meta-creative-testing",
+      "description": "Auto-invoke for \"creative testing\", \"hook rate\", \"creative fatigue\", \"CTR dropping\", \"CPM rising\", \"UGC formats\", \"how many creatives\". UGC framework + SA UGC sourcing + tools + benchmarks in references/. NOT for algo (meta-algorithm-intel).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:20:15.855168Z"
+    },
+    {
+      "skillId": "skill_01LG9NsKBNX4oxqsPYHCoMut",
+      "name": "beautyontapp-meta-audit-engine",
+      "description": "Make sure to use this skill whenever T says \"audit Meta\", \"check Meta Ads\", \"Meta performance\", \"creative fatigue\", \"ASC audit\", \"Advantage+ audit\", \"frequency check\", \"EMQ\", \"Event Match Quality\", \"ASC cap\", \"New Customer Ratio\", \"Andromeda\", \"Creative Diversity Score\", or any request to evaluate Meta Ads performance. EXECUTION ENGINE for Meta. v2 (May 2026) closes 12 gaps vs Foxwell / Motion / Confect / jetfuel.agency / Tag Hero / Snow Media / Stormy.ai — Andromeda/GEM/Lattice model, EMQ floors (Purchase ≥ 8.0, AddToCart ≥ 6.5), ASC existing-customer cap, 4-signal creative-kill rule, Creative Diversity Score (≥ 8 concepts), domain restriction screen, Pixel+CAPI dedup parity, AEM priority audit, placement breakdown, scaling-readiness 4-check, Threads ads SA status, account-level \"6% of ads carry majority of spend\" health. Always load with beautyontapp-meta, beautyontapp-meta-algorithm-intel, beautyontapp-meta-creative-testing, beautyontapp-bleeder-detection.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:20:03.458506Z"
+    },
+    {
+      "skillId": "skill_01L7j6iv4cSfU9rqz1pk6Pxu",
+      "name": "beautyontapp-google-ads-automated-rules",
+      "description": "Google Ads native automated rules for BeautyOnTApp — auto-pause bleeders, budget protection, CPA alerts, and scheduled actions using Google Ads' built-in rules engine. Auto-invoke when T asks about automated rules, auto-pause, \"automatically pause\", \"alert me when\", \"budget protection\", \"CPA alert\", \"automated actions\", \"rules engine\", \"schedule pause\", or wants to set up guardrails that work when T isn't watching. NOT for Google Ads scripts (use beautyontapp-google-ads-scripts). NOT for campaign management decisions (use beautyontapp-google-ads + beautyontapp-bleeder-detection).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:18:31.371643Z"
+    },
+    {
+      "skillId": "skill_01GokbUTLUrfNyKv4SsEZvJt",
+      "name": "beautyontapp-loyalty-redesign",
+      "description": "Loyalty program redesign for BeautyOnTApp — previously OneLoyalty (replaced by Toki Pay-as-you-Go), cross-brand point earning, physical store integration, tiered rewards, cashback vs points vs store credit evaluation, Shopify loyalty app comparison, competing against TFG Rewards (20M+ members) and Clicks ClubCard. Auto-invoke for \"loyalty program\", \"loyalty redesign\", \"OneLoyalty\", \"replace loyalty app\", \"points program\", \"rewards program\", \"loyalty tiers\", \"loyalty vs Clicks\", \"loyalty vs TFG Rewards\", or any question about loyalty strategy. NOT for referrals. NOT for retention emails (use beautyontapp-retention).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:19:29.699896Z"
+    },
+    {
+      "skillId": "skill_018yreWZXUf7PGpehuEvdv8y",
+      "name": "beautyontapp-sa-competitive-scanner",
+      "description": "South African beauty retail competitive intelligence scanner for BeautyOnTApp. Auto-invoke when T asks about competitors (Clicks, Dis-Chem, Secret Skin, Woolworths, Glow Theory, Seoul of Tokyo, MYKOCO, EggBeauty, weareegg, skins, Arc stores, edgars, K-Beauty House, CareToBeauty, YesStyle, iHerb, Takealot), market positioning, competitive pricing, competitor campaigns, industry trends, or says \"what are they doing\", \"competitor check\", \"competitive analysis\", \"market scan\", \"who's winning\". Also invoke for SA beauty market sizing, retail expansion intelligence, or K-beauty market landscape in South Africa. NOT for Secret Skin PPC/Google Ads competitive moves (use beautyontapp-counter-ppc). NOT for Secret Skin SEO/organic ranking counter-moves (use beautyontapp-counter-seo).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:21:43.458995Z"
+    },
+    {
+      "skillId": "skill_01SeWcp8j6cTW169tdQQEaQS",
+      "name": "beautyontapp-meta-algorithm-intel",
+      "description": "Meta's algorithm mechanics decoded for BeautyOnTApp — Breakdown Effect, Learning Phase diagnostics, Auction Overlap, Pacing, and why Meta's optimizer behaves counterintuitively. Auto-invoke when T asks about \"why CPA spiked\", \"learning phase\", \"breakdown effect\", \"why is Meta spending on bad placements\", \"auction overlap\", \"ad set stuck\", \"pacing\", \"delivery issues\", \"why did performance drop\", \"Meta algorithm\", \"Andromeda\", \"how Meta optimizes\", or any question about WHY Meta is doing something unexpected. Also invoke when beautyontapp-meta-audit-engine identifies performance anomalies that need root cause diagnosis. This skill explains the WHY. The meta-ads-playbook explains the WHAT TO DO. The meta-audit-engine explains the HOW TO CHECK. Load all three together for full diagnosis. NOT for campaign structure (use beautyontapp-meta). NOT for creative strategy. NOT for Google Ads (use beautyontapp-google-ads).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:19:45.532401Z"
+    },
+    {
+      "skillId": "skill_01WypWyr47Y2THP5Q1jZprzj",
+      "name": "beautyontapp-klaviyo-platform",
+      "description": "Klaviyo platform configuration, flow architecture, segment definitions, Composer AI prompts, Customer Agent setup, template design, and Shopify integration for BeautyOnTApp, Pastry Skincare, and Mzuri Skin. Auto-invoke when T asks about Klaviyo setup, Klaviyo flows, Klaviyo segments, Klaviyo templates, Composer, Customer Agent, Klaviyo integration, email deliverability, list hygiene, Klaviyo API, or says \"Klaviyo\", \"flow setup\", \"segment\", \"template\", \"Composer\", \"Customer Agent setup\", \"email deliverability\", \"list clean\". This skill covers PLATFORM CONFIGURATION and technical setup. NOT for retention strategy, email content strategy, or loyalty program design (use beautyontapp-retention). NOT for writing email copy (use beautyontapp-copywriting-engine).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:19:19.463330Z"
+    },
+    {
+      "skillId": "skill_011PykXxeB1zHbWvPKd6CZMr",
+      "name": "beautyontapp-google-ads",
+      "description": "Manage Google Ads, Merchant Center, Shopping feeds, conversion tracking for BoT + Pastry. Auto-invoke for campaigns, bidding, keywords, feeds, conversions. SA agency playbook in references/. NOT for Meta. NOT for pause/keep (bleeder-detection).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:18:53.280834Z"
+    },
+    {
+      "skillId": "skill_01C1tb8hrgTjuHFUoPaF3TjT",
+      "name": "beautyontapp-google-ads-scripts",
+      "description": "Google Ads scripts and automation for BeautyOnTApp — PMax transparency scripts, monitoring automation, alerting, and Google Ads API scripts. Auto-invoke when T asks about Google Ads scripts, PMax scripts, PMax insights, automated monitoring, Mike Rhodes script, Nils Rooijmans, campaign automation, Google Ads API, scheduled reports, anomaly detection, or \"automate Google Ads\", \"PMax transparency\", \"where is PMax spending\", \"PMax channel breakdown\", \"automated alerts\", \"scripts for Google Ads\". NOT for native automated rules (use beautyontapp-google-ads-automated-rules). NOT for campaign management (use beautyontapp-google-ads).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:18:43.554666Z"
+    },
+    {
+      "skillId": "skill_01NBqHP3N9wo3NLDAfa16x3B",
+      "name": "beautyontapp-meta",
+      "description": "Manage Meta Ads, Business Suite, Pixel, CAPI, Catalog, and Commerce for BeautyOnTApp and Pastry Skincare. Auto-invoke for campaign structure, pixel debugging, CAPI, catalog issues, Instagram Shopping, or domain verification. NOT for Google Ads or Shopify theme edits.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:20:41.881833Z"
+    },
+    {
+      "skillId": "skill_013Pvhz27qPB6tct1wqMoMbK",
+      "name": "beautyontapp-d3-visualizations",
+      "description": "Interactive D3.js visualizations for PNCapital reporting — MER timelines, ROAS breakdowns, CPA trend charts, cohort heatmaps, funnel diagrams, multi-brand revenue flows, 6-store performance spiders, and competitor positioning maps (Bash, Woolworths, Secret Skin, Clicks, Dis-Chem). Auto-invoke when T asks for a chart, visualization, graph, dashboard view, trend line, heatmap, funnel, sankey, treemap, or any visual representation of BeautyOnTApp, Pastry Skincare, or Mzuri Skin data. Also auto-invoke for strategy reports, audit summaries, investor decks, executive dashboards, KPI scorecards, and whenever T pastes performance data and wants to see patterns. Always produces single-file HTML artifacts with inline D3.js v7 — no external dependencies, no build tools. Uses brand-aware color palettes and enforces SA beauty benchmark overlays (1.82x MER floor, 5.0x scaling trigger, R167/R300 CPA ceilings).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:17:28.470590Z"
+    },
+    {
+      "skillId": "skill_01WnDJWPyPWvGLtzgpeudqi6",
+      "name": "beautyontapp-cross-channel-reporting",
+      "description": "Standardized cross-channel performance reporting for BeautyOnTApp — weekly, monthly, and quarterly report templates with consistent metrics, comparison logic, and output format. Auto-invoke when T says \"how are things going\", \"weekly report\", \"monthly report\", \"performance update\", \"what's working\", \"dashboard\", \"MER\", \"cross-channel\", \"report\", \"summary of performance\", \"how did we do this week/month\", or any request for a performance overview across Google Ads + Meta Ads + organic. Forces consistent reporting format so reports are comparable over time. NOT for campaign-level audits (use beautyontapp-ppc-audit-engine or beautyontapp-meta-audit-engine). NOT for GA4 deep dives (use beautyontapp-analytics).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:17:17.344648Z"
+    },
+    {
+      "skillId": "skill_01GLHyCx2tf4sfPZASd8p2Zb",
+      "name": "beautyontapp-cross-channel-attribution",
+      "description": "Cross-channel attribution for BeautyOnTApp — reconciling Meta Ads and Google Ads revenue attribution, calculating MER, designing incrementality tests, resolving double-counting between platforms. Auto-invoke when T asks about \"attribution\", \"MER\", \"marketing efficiency ratio\", \"which channel is driving sales\", \"Meta vs Google\", \"double counting\", \"incrementality\", \"holdout test\", \"geo-lift\", \"conversion path\", \"last click vs data-driven\", \"channel mix\", \"true ROAS\", \"both platforms claiming the same sale\", \"blended ROAS\", or any question about measuring channel performance within the combined monthly ad budget (see business-facts). Also invoke alongside beautyontapp-analytics for GA4 attribution. NOT for campaign management (use beautyontapp-google-ads or beautyontapp-meta). NOT for financial P&L (use beautyontapp-financial-intel).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:17:06.276158Z"
+    },
+    {
+      "skillId": "skill_01HGcS26DhGMsHFh7ZEG7wZF",
+      "name": "beautyontapp-counter-ppc",
+      "description": "Counter-intelligence skill that reverse-engineers Western Cloud's PPC strategy for Secret Skin and provides real-time counter-moves for BeautyOnTApp's Google Ads. Auto-invoke when T mentions Secret Skin, Western Cloud, competitor ads, auction insights, impression share, competitor bidding, \"they're outranking us\", \"secret skin is showing up\", competitor Shopping ads, bid war, or any Google Ads competitive question. Also invoke when building new Search or Shopping campaigns to ensure they exploit Secret Skin's known gaps. NOT for SEO counter-strategy (use beautyontapp-counter-seo). NOT for campaign structure or account management (use beautyontapp-google-ads).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:16:38.805074Z"
+    },
+    {
+      "skillId": "skill_01M1RKx4UcajiGvZ956PENX1",
+      "name": "beautyontapp-creative-qa-rubric",
+      "description": "Pre-launch creative quality assurance scoring rubric for BeautyOnTApp, Pastry Skincare, and Mzuri Skin. Scores ad variants 1-10 against advertising psychology principles (Cialdini influence levers, AIDA mechanics, hook clarity, value-prop placement, mobile-first composition, brand-voice fit, evidence grounding) BEFORE creative ships to Meta, Google Ads, TikTok, or any paid surface. Outputs per-variant scores with justification, identifies the single highest-leverage rewrite per variant, and ranks variants for launch order. Make sure to invoke whenever T asks for \"creative QA\", \"score this creative\", \"rate these ads\", \"rubric scoring\", \"pre-launch review\", \"creative scoring\", \"rank these variants\", \"which creative should I launch\", \"QA before shipping\", or wants to evaluate ad copy / static creative / video creative before paid spend. Pairs with rsa-generator, copywriting-engine, meta-creative-testing, voc-mining, brand-context.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:16:54.226245Z"
+    },
+    {
+      "skillId": "skill_014uR1NgSvpb9ByJXFWLAukq",
+      "name": "beautyontapp-business-rules",
+      "description": "Core business rules, brand guidelines, pricing, delivery, and decision frameworks for all BeautyOnTApp brands. Auto-invoke alongside any other BeautyOnTApp skill, or for customer-facing content, pricing, chatbot config, ad copy, or brand voice decisions. NOT for campaign-specific settings (use google-ads or meta). NOT for code or theme edits (use shopify).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:16:11.237544Z"
+    },
+    {
+      "skillId": "skill_015FT3KPNnvAKmYL5AWQyf13",
+      "name": "beautyontapp-meta-scaling-engine",
+      "description": "Budget scaling frameworks, Advantage+ Shopping Campaign optimization, frequency management, and budget rebalancing for BeautyOnTApp Meta Ads. Auto-invoke when T asks about \"scaling Meta\", \"increase Meta budget\", \"ASC\", \"Advantage+ Shopping\", \"how to scale\", \"budget allocation Meta\", \"rebalance budget\", \"frequency cap\", \"should I increase spend\", \"Meta budget\", \"CBO\", \"campaign budget optimization\", \"ad set budget\", \"ABO vs CBO\", \"when to scale\", \"scaling cadence\", or when MER sustains above 5.0x and the ceiling challenge protocol triggers. This skill covers WHEN and HOW MUCH to scale. For WHY performance changed, use beautyontapp-meta-algorithm-intel. For creative testing budget splits, use beautyontapp-meta-creative-testing. NOT for Google Ads scaling.",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:20:28.898347Z"
+    },
+    {
+      "skillId": "learn",
+      "name": "learn",
+      "description": "Use this skill when the user wants intellectual understanding — learning how or why something works, not getting a task done or soliciting Claude's judgment.\n\nTrigger for:\n- Explicit learning requests: teach, explain, ELI5, walk me through, quiz me, flashcards, \"I'm rusty on\"; definitions (\"what is X\")\n- Terse concept names implying \"help me understand this\": \"Galois theory,\" \"transformers, from scratch\"\n- Confusion signals: \"won't stick,\" \"keep mixing these up,\" \"not getting it\"\n- Learning-path questions: prerequisites, sequencing, what to study before X\n- Conceptual questions about mechanisms, causes, or dynamics\n\nDon't trigger for:\n- Tasks: coding, writing, calculation, translation, factual lookup, news updates\n- Personal troubleshooting; resource/textbook recommendations\n- Claude's evaluative verdict: opinion prompts (\"do you think X\", \"settle this\", \"honest take\", \"is X dead / still taken seriously\") and interpretive takes (\"was X really as harsh as people say\")\n",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:13.038022Z"
+    },
+    {
+      "skillId": "skill_01X1ThaXCkwhexe6vwehTsDB",
+      "name": "beautyontapp-geo-aeo-authoring",
+      "description": "Generative Engine Optimisation (GEO) and Answer Engine Optimisation (AEO) authoring discipline for BeautyOnTApp, Pastry Skincare, and Mzuri Skin. Writes content engineered to be cited by Google AI Overviews, AI Mode, Perplexity, ChatGPT, and Gemini. Produces passage-level structure where each section stands alone and is citable by query fan-out, 40-60 word opening answer paragraphs extractable verbatim by AI extractors, statistics-rich and quotation-rich content per Princeton GEO paper interventions, FAQPage + Article schema markup, named author E-E-A-T credentials. Make sure to invoke whenever T asks for \"AI Overview optimisation\", \"AEO\", \"GEO\", \"AI Mode visibility\", \"ChatGPT citation\", \"Perplexity ranking\", \"AI Overviews\", \"passage-level content\", \"answer engine\", \"query fan-out\", \"be cited by AI\", or any content brief that needs AI search visibility. Pairs with seo-content, onpage-seo, programmatic-seo, copywriting-engine.",
+      "source": "custom",
+      "updatedAt": "2026-05-21T04:57:23.523783Z"
+    },
+    {
+      "skillId": "skill_01Czj4Xhy6zwRUyj5yiyuKjX",
+      "name": "beautyontapp-voc-mining",
+      "description": "Voice-of-Customer (VoC) language extraction from Judge.me product reviews, Google store reviews, Trustpilot, App Store, Play Store, and customer service transcripts. Mines for pain points, success phrases, recurring language, objections, and switching triggers. Outputs a per-brand language bank that feeds ad copy, email subject lines, SEO briefs, PDP descriptions, and chatbot scripts. Make sure to invoke whenever T uploads or references review data (Judge.me CSV, Google reviews export, Trustpilot, App Store, Play Store, support transcripts), or asks for \"customer language\", \"VoC\", \"voice of customer\", \"review mining\", \"pain points\", \"what are customers saying\", \"review analysis\", \"customer phrases\", \"language bank\", or wants to extract customer language for ad headlines, subject lines, or product copy. Pairs with copywriting-engine, meta-creative-testing, klaviyo-platform, seo-content, customer-experience.",
+      "source": "custom",
+      "updatedAt": "2026-05-21T04:50:19.592751Z"
+    },
+    {
+      "skillId": "skill_01PMxQrTsnSQGh8PKNFUSVYK",
+      "name": "beautyontapp-analytics",
+      "description": "GA4 dashboard reading, Analyzify v4 report interpretation, attribution modeling, Meta Ads Manager metrics, Google Ads performance analysis, and cross-channel diagnosis for BeautyOnTApp and Pastry Skincare. Make sure to use this skill whenever T asks 'what's working', 'how are we performing', 'read this report', 'what does this metric mean', attribution, conversion rate, bounce rate, sessions, traffic source, channel breakdown, GA4, dashboard, 'why did sales drop', 'compare this week', or shares screenshots/exports from GA4, Ads Manager, or Shopify Analytics. NOT for pause/keep decisions (use bleeder-detection).",
+      "source": "custom",
+      "updatedAt": "2026-05-31T06:15:37.699695Z"
+    },
+    {
+      "skillId": "skill_01JhhRmzAbNvNX5qGcoMDmXu",
+      "name": "beautyontapp-copywriting-engine",
+      "description": "Customer-facing copywriting for BeautyOnTApp, Pastry Skincare, Mzuri Skin. Auto-invoke for ad copy (Google Ads RSA/PMax/Shopping, Meta primary text/headlines, TikTok captions), product + collection descriptions, email, SMS, WhatsApp, social captions, website banners, chatbot scripts, push notifications, meta descriptions, title tags, OG + Twitter card text, schema descriptions, outreach emails to brand partners / press / stockist directories, App Store + Play Store listings, GBP posts, loyalty tier names, blog metas, or ANY customer-facing text. Combines brand voice with Ogilvy principles. Also invoke when T says write copy, ad copy, meta description, title tag, outreach email, product description, caption. v3 (May 2026) hardens against fabrication: every brand-specific claim requires a source under beautyontapp-evidence-citations rules. Brand descriptions, ingredients, positioning copy are factual claims requiring sources — never creative writing. NOT for internal comms or technical docs.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T13:44:24.917356Z"
+    },
+    {
+      "skillId": "skill_01QMQLeK63BGJNzLhf3C5vjh",
+      "name": "beautyontapp-sqr-negatives-pipeline",
+      "description": "Weekly Search Query Report (SQR) to negative-keyword pipeline for BeautyOnTApp (Google Ads account 820-452-9325) and Pastry Skincare (851-084-2703). Takes a search-term CSV export from Google Ads, identifies wasted-spend terms (high spend, zero conversions, wrong intent), classifies each into one of four buckets (irrelevant, wrong intent, competitor, ambiguous), and outputs Google Ads Editor bulk-upload CSV of themed exact-match negative keyword lists ready for upload. Make sure to invoke whenever T uploads a Google Ads search-term report, asks for \"negatives\", \"wasted spend\", \"SQR mining\", \"search query review\", \"negative keywords\", \"search terms cleanup\", \"weekly ops\", \"find waste in Google Ads\", or runs the weekly Google Ads housekeeping cadence. Pairs with bleeder-detection, google-ads, ppc-audit-engine, evidence-citations.",
+      "source": "custom",
+      "updatedAt": "2026-05-21T04:57:26.401002Z"
+    },
+    {
+      "skillId": "skill_01MjXHULtM8qzpAUDXQprsqw",
+      "name": "beautyontapp-shopify",
+      "description": "Manage BeautyOnTApp, Pastry Skincare, and Mzuri Skin Shopify stores. Auto-invoke for theme edits, Liquid code, product feeds, Analyzify, Simprosys, BookX, collections, checkout configuration, or any Shopify admin task. NOT for Google Ads campaigns or Meta Ads campaigns. NOT for delivery, shipping, or dispatch (use beautyontapp-local-delivery). NOT for POS or in-store operations (use beautyontapp-shopify-pos).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:44:34.637268Z"
+    },
+    {
+      "skillId": "skill_01WmVKGX4DJdsrNzjj7Ri81s",
+      "name": "beautyontapp-programmatic-seo",
+      "description": "Programmatic SEO for BeautyOnTApp — template-driven page generation at scale for location-based beauty pages, ingredient glossaries, brand comparison pages, concern-based landing pages, and routine pages. 12 playbook patterns adapted for Shopify Advanced with 1,400+ products across 6 stores. Auto-invoke for \"programmatic SEO\", \"generate pages at scale\", \"template pages\", \"location pages\", \"glossary\", \"comparison pages\", \"auto-generate content\", \"[city] skincare\", \"skincare near me\", or any request to create SEO pages at scale. NOT for individual page optimization (use beautyontapp-onpage-seo). NOT for blog content (use beautyontapp-seo-content).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:45:18.584196Z"
+    },
+    {
+      "skillId": "skill_01LRmBvP5PZXMJuSwnxHuykF",
+      "name": "beautyontapp-discount-strategy",
+      "description": "Discount and promotion strategy for BeautyOnTApp — when to discount (welcome, win-back, birthday, cart email 3), when NEVER to (hero products, launches, sitewide), and value-add alternatives (GWP, store credit, empties return). Auto-invoke for discounting decisions, sales events, promos, coupons, BFCM, Black Friday, GWP, store credit vs discounts, or \"should we discount this\". This skill decides WHETHER to discount and WHICH mechanism to use. NOT for margin math, markup calculations, or bundle pricing economics (use beautyontapp-pricing-promotions).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:44:03.782530Z"
+    },
+    {
+      "skillId": "skill_01EMJS1aDqgN654JW8DNk3a8",
+      "name": "beautyontapp-local-delivery",
+      "description": "Local delivery infrastructure for BeautyOnTApp — same-day delivery, EasyRoutes dispatch, 4-rider fleet, delivery zones, store pickup, and SA-wide standard shipping. Auto-invoke when T asks about delivery, shipping, riders, dispatch, EasyRoutes, Track-POD, delivery zones, same-day delivery, same-day delivery, local delivery, store pickup, collection, courier, Pargo, Paxi, locker, door-to-door, shipping rates, delivery fee, rider management, fleet, motorbike, delivery radius, or says \"delivery\", \"shipping\", \"dispatch\", \"rider\", \"courier\", \"pickup\", \"collection\", \"EasyRoutes\", \"how do we deliver\", \"delivery cost\". Also invoke for delivery-related ad copy questions or customer communication about delivery timelines. NOT for POS in-store operations (use beautyontapp-shopify-pos). NOT for online checkout configuration (use beautyontapp-shopify).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:44:28.863078Z"
+    },
+    {
+      "skillId": "skill_01PnCTkdCivWtnzeax2bLoys",
+      "name": "beautyontapp-chat-handoff",
+      "description": "Generates a structured session-handoff summary that transfers context from the current BeautyOnTApp chat to a new Claude session without losing business-critical specifics. Produces a single copy-paste block with five fixed sections (Core context, Key decisions, Business specifics, What's pending, Tone and style), bullets only, no preamble or sign-off. Activate ONLY on the explicit keyword command — \"handoff\", \"handoft\" (common typo), \"/handoff\", \"/Handoff\", or any case variation of the literal word. Do NOT activate on broader session-continuity phrases like \"save progress\", \"wrap up for now\", \"continue where we left off\", \"what were we working on\", or \"summarize what we did\" — those route to beautyontapp-session-handoff instead. This skill is the keyword-triggered copy-paste export format; beautyontapp-session-handoff is the narrative session-continuity protocol. Treat the bare word \"handoff\" as sufficient trigger signal on its own.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:45:40.474548Z"
+    },
+    {
+      "skillId": "skill_018r3N91N1Yp7NxeveUE5o15",
+      "name": "beautyontapp-retention",
+      "description": "CRM, email, SMS, WhatsApp, and loyalty program strategy for BeautyOnTApp, Pastry Skincare, and Mzuri Skin. Auto-invoke for email campaigns, SMS broadcasts, WhatsApp marketing, post-purchase flows, replenishment reminders, loyalty program design, retention metrics, customer segmentation, or any customer lifecycle management. Also invoke when T says \"email flow\", \"retention\", \"loyalty\", \"CRM\", \"repeat customers\", \"WhatsApp campaign\", \"SMS blast\", \"win-back\", or \"churn\". NOT for acquisition ads (use google-ads or meta skills) or ad copy (use copywriting-engine). NOT for Klaviyo platform configuration, flow setup, segments, templates, or Composer/Customer Agent config (use beautyontapp-klaviyo-platform).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:43:46.758635Z"
+    },
+    {
+      "skillId": "skill_013kXT8eH37CM6NbgX92KKB9",
+      "name": "beautyontapp-referral-program",
+      "description": "Referral and affiliate program design for BeautyOnTApp, Pastry Skincare, and Mzuri Skin — WhatsApp-first referral mechanics, cross-brand referral flows, physical store QR integration, Bestie Squad affiliate tiers, viral coefficient modeling, fraud prevention, Shopify app selection. Auto-invoke for \"referral\", \"refer a friend\", \"affiliate\", \"ambassador\", \"word of mouth\", \"give get\", \"invite friends\", \"referral code\", \"referral program\", \"advocacy\", \"viral loop\", or any customer acquisition via existing customers. NOT for influencer ops (use beautyontapp-influencer-ops). NOT for loyalty/points (use beautyontapp-retention).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:43:58.642504Z"
+    },
+    {
+      "skillId": "skill_01W57wcXr9AGMb7NessfRCYq",
+      "name": "beautyontapp-shopify-pos",
+      "description": "Shopify POS Pro migration, in-store operations, hardware setup, staff training, and omnichannel inventory management for BeautyOnTApp's 6 physical stores. Auto-invoke when T asks about POS, point of sale, inTouch, receipt printers, barcode scanners, in-store checkout, staff permissions, inventory sync, stock counts, shrinkage, cash management, refunds at till, store operations, POS hardware, Star TSP143, Socket Mobile, card machines, POS Pro, till, register, or says \"POS\", \"point of sale\", \"in-store\", \"checkout at store\", \"staff training\", \"inventory count\", \"stock sync\", \"receipt printer\", \"scanner\". Also invoke for omnichannel questions about online-to-store or store-to-online customer journeys. NOT for Shopify theme edits or online checkout (use beautyontapp-shopify). NOT for local delivery dispatch (use beautyontapp-local-delivery).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:44:11.014884Z"
+    },
+    {
+      "skillId": "skill_01MdBPZ6VHoBWmTMSwpXUKW9",
+      "name": "beautyontapp-bleeder-detection",
+      "description": "Anti-conservative spending protocol for BeautyOnTApp Google Ads and Meta Ads. Auto-invoke BEFORE any campaign performance recommendation, pause/keep decision, budget advice, \"wait for more data\" suggestion, or campaign evaluation. Also auto-invoke when T shares campaign screenshots, performance data, asks \"should I pause this\", \"is this working\", \"what about these campaigns\", \"are these bleeding\", or when Claude is about to say \"give it more time\", \"wait 7 days\", \"needs more data\", \"too early to tell\", or any variant of conservative PPC advice. This skill OVERRIDES generic PPC best practices with T's proven account patterns. If Claude is about to recommend patience on a zero-conversion campaign, STOP and read this skill first. NOT for campaign structure or bidding changes (use google-ads or meta). NOT for creative testing.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:45:24.010949Z"
+    },
+    {
+      "skillId": "skill_018hsCmGm6eAGd6gN3cfpnzM",
+      "name": "beautyontapp-ugc-management",
+      "description": "User-generated content collection, rights management, and product page display for BeautyOnTApp — photo/video review incentives, UGC rights acquisition, Judge.me photo review optimization, before/after content governance, cross-brand UGC sharing, Bestie Squad content pipeline integration. Auto-invoke for \"UGC\", \"user generated content\", \"customer photos\", \"before and after\", \"photo reviews\", \"video reviews\", \"content rights\", \"customer testimonials\", \"review photos\", \"social proof photos\", or any question about collecting and displaying customer content. NOT for influencer ops (use beautyontapp-influencer-ops). NOT for TikTok content (use beautyontapp-tiktok).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:38:35.250643Z"
+    },
+    {
+      "skillId": "skill_016xgKs1mhu4XafV54VVod6P",
+      "name": "beautyontapp-ai-max-search",
+      "description": "AI Max for Search evaluation framework — Google's combined broad match + keywordless DSA + AI-generated text + Final URL expansion toggle. Make sure to use this skill whenever T asks about AI Max, AI Max for Search, broad match expansion, Google AI features for Search, DSA replacement, automatically created assets, Final URL expansion, keywordless targeting, or 'should I enable AI Max on Search campaigns'. Google claims 14% more conversions but practitioners report increased irrelevant queries — this skill provides the SA-beauty-specific evaluation framework. NOT for PMax (use ppc-audit-engine).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T07:16:29.833609Z"
+    },
+    {
+      "skillId": "skill_01W8x1FZTrBgzR7MYQGSWHi6",
+      "name": "beautyontapp-research-mode",
+      "description": "Anti-hallucination research mode for BeautyOnTApp. Auto-invoke when T asks factual questions about competitors, market data, SA beauty industry stats, product ingredients, regulatory info, supplier claims, platform documentation, or anything where accuracy is mission-critical. Also invoke when T says \"research mode\", \"verify this\", \"fact-check\", \"is this true\", \"prove it\", or asks about data that could be fabricated. Forces citations, admits uncertainty, and grounds every claim in verified sources. Do NOT invoke for creative brainstorming, ad copy ideation, or strategic speculation where Claude should think freely. NOT for campaign management (use google-ads or meta). NOT for copywriting (use copywriting-engine).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:36:42.745826Z"
+    },
+    {
+      "skillId": "skill_01GcbFWGHeAQQ8hupvP916YW",
+      "name": "beautyontapp-brand-visual-guidelines",
+      "description": "Visual brand guidelines for BeautyOnTApp, Pastry Skincare, and Mzuri Skin — color palettes, typography, logo usage, photography direction, packaging design principles, social media visual templates, multi-brand visual consistency rules. Auto-invoke for \"brand colors\", \"brand guidelines\", \"visual identity\", \"logo\", \"typography\", \"color palette\", \"brand consistency\", \"packaging design\", \"social media templates\", \"visual style\", or any visual brand question. NOT for brand voice/positioning (use beautyontapp-brand-context). NOT for ad creative concepts.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:22:47.091921Z"
+    },
+    {
+      "skillId": "skill_017h2fyni2smnz9vNNgn1F2o",
+      "name": "beautyontapp-seo-content",
+      "description": "SEO and content strategy for BeautyOnTApp on Shopify Advanced — technical SEO, K-beauty keyword targeting, content pillars, local SEO for 6 stores, schema markup, and backlinks. Auto-invoke for SEO, organic traffic, blog strategy, keywords, rankings, Core Web Vitals, local SEO, Google Business Profile, or content calendar. NOT for Google Ads (use google-ads). NOT for theme edits (use shopify). NOT for Secret Skin SEO counter-strategy specifically (use counter-seo — this skill provides general SEO strategy).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:35:09.632247Z"
+    },
+    {
+      "skillId": "skill_01SiX5tyaaQ71PyY4FpuYqDU",
+      "name": "beautyontapp-product-merchandising",
+      "description": "Product merchandising, brand buying, assortment planning, distribution agreements, product lifecycle, and K-beauty import logistics for BeautyOnTApp. Auto-invoke for new brands, product selection, distribution agreements, exclusivity, MOQ, import logistics, assortment planning, dead stock, expiry management, margin by brand, K-beauty trends, or supplier negotiations. NOT for pricing (use pricing-promotions) or Shopify product setup (use shopify).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:36:17.079549Z"
+    },
+    {
+      "skillId": "skill_01Ufa1Nvt9dPDhjGe2WHVVMY",
+      "name": "beautyontapp-whatsapp-commerce",
+      "description": "WhatsApp Business API strategy, chatbot flows, cart recovery, product recommendations, and SA-specific WhatsApp commerce for BeautyOnTApp. Auto-invoke for WhatsApp, WhatsApp Business API, WhatsApp chatbot, WhatsApp broadcasts, WhatsApp catalog, cart recovery via WhatsApp, restock alerts, Zoko, charles, Respond.io, or WhatsApp commerce. SA has 96% WhatsApp penetration. NOT for email/SMS (use retention) or chatbot personality (use customer-experience).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:37:35.732414Z"
+    },
+    {
+      "skillId": "skill_0184LFH7q8RUk9Pdr4gthsmK",
+      "name": "beautyontapp-cart-recovery",
+      "description": "Cart abandonment recovery for BeautyOnTApp — timed email/SMS/WhatsApp sequences, exit-intent popups, checkout friction audit, beauty-specific recovery messaging, cross-brand cart recovery, Klaviyo flow design. Auto-invoke for \"cart abandonment\", \"abandoned cart\", \"checkout drop-off\", \"why aren't people completing orders\", \"cart recovery\", \"exit intent\", \"checkout optimization\", or any question about recovering lost sales. NOT for CRO on pages (use beautyontapp-cro-engine). NOT for Klaviyo config (use beautyontapp-klaviyo-platform).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:22:58.710014Z"
+    },
+    {
+      "skillId": "skill_0149FWLee3MAfrjoY5SBfwGf",
+      "name": "beautyontapp-returns-management",
+      "description": "Returns and reverse logistics for BeautyOnTApp — return policy design, beauty-specific return reasons (shade mismatch, sensitivity reactions, wrong product for skin type), in-store returns for online orders, return-to-exchange conversion, loss prevention, restocking criteria for opened beauty products. Auto-invoke for \"returns\", \"refund\", \"exchange\", \"return policy\", \"wrong shade\", \"product didn't work\", \"allergic reaction\", \"return to store\", \"reverse logistics\", or any returns/refund question. NOT for fraud detection. NOT for customer service scripts (use beautyontapp-customer-experience).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:35:28.731429Z"
+    },
+    {
+      "skillId": "skill_013rUY6gigDrUyvHLLWqtRdi",
+      "name": "beautyontapp-subagent-orchestrator",
+      "description": "For any complex task that combines analysis and execution (audit a theme then fix it, analyze ads then restructure, review schema then deploy), this skill enforces a two-phase pattern — fresh read-only auditor subagent first, then independent executor subagent with the auditor report as context. Use this skill whenever a task spans audit + execute, when T says \"audit and fix\", \"review and update\", \"analyze and ship\", \"find issues and resolve them\", or when the deliverable requires both diagnosis and treatment. Pairs with audit-first, ads-benchmarks-auditor, shopify-liquid-auditor.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:38:06.036380Z"
+    },
+    {
+      "skillId": "skill_01BZnShYRcERjqaziQHjdk2T",
+      "name": "beautyontapp-cro-engine",
+      "description": "Full-funnel conversion rate optimization for BeautyOnTApp — 7-dimension page scoring, popup/form/signup/onboarding CRO, mobile-first SA optimization, beauty-specific trust signals, PDP optimization, collection page conversion, checkout friction reduction. Auto-invoke for \"CRO\", \"conversion rate\", \"why aren't people buying\", \"bounce rate high\", \"add to cart rate\", \"checkout abandonment\", \"page not converting\", \"optimize page\", \"trust signals\", \"CTA\", \"above the fold\", \"friction\", or any conversion optimization question. NOT for landing page QS (use beautyontapp-landing-page-optimization). NOT for cart recovery emails (use beautyontapp-cart-recovery).",
+      "source": "custom",
+      "updatedAt": "2026-04-12T08:34:20.386302Z"
+    },
+    {
+      "skillId": "skill_011wHg3x96PKgtKRnmqDwpXh",
+      "name": "beautyontapp-web-assets",
+      "description": "Generate production-ready brand assets for PNCapital's 3 brands (BeautyOnTApp, Pastry Skincare, Mzuri Skin) and 6 physical stores — favicons, Flutter iOS and Android app icons at all required sizes, PWA manifests, Open Graph social share images, Instagram profile and feed and story sizes, Facebook covers, TikTok profile images, Google Business Profile covers for Gateway, Fourways, Mall of Africa, Menlyn, Sandton, and Canal Walk, and WhatsApp Business display pictures. Auto-invoke when T asks for favicons, app icons, social media images, Open Graph, PWA manifest, GBP covers, brand asset pack, logo variants, Flutter launcher icons, Instagram templates, or any request to resize, crop, or generate images for web, mobile, or social. Uses Python Pillow with brand-aware palettes and outputs organized folders ready to drop into Shopify theme, Flutter assets directory, or social media scheduler.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:37:48.743390Z"
+    },
+    {
+      "skillId": "skill_01S84XmTUNPNM9ixjYyiKrXA",
+      "name": "beautyontapp-privacy-compliance",
+      "description": "POPIA privacy compliance and data protection for BeautyOnTApp — consent management, data subject rights, cookie banners, email/SMS opt-in, cross-brand data sharing, skin analysis data handling, Shopify privacy configuration, PCI compliance for 6 physical POS locations. Auto-invoke for \"POPIA\", \"privacy\", \"data protection\", \"consent\", \"cookie banner\", \"opt-in\", \"opt-out\", \"data subject request\", \"right to delete\", \"PCI compliance\", \"card security\", \"customer data\", or any privacy/data protection question. NOT for SAHPRA cosmetics regulations (use beautyontapp-legal-compliance). NOT for ad policy compliance (use beautyontapp-legal-compliance).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:36:19.830243Z"
+    },
+    {
+      "skillId": "skill_01SPR2qs7QR4ASKCwgynizeG",
+      "name": "beautyontapp-pricing-promotions",
+      "description": "Pricing strategy, margin management, promotional frameworks, bundle pricing economics, and markup calculations for BeautyOnTApp. Auto-invoke for pricing, margins, markups, promotions, bundles, MAP enforcement, competitor pricing, discount depth, bundle economics, payday promos, or pricing psychology. This skill decides HOW MUCH to price/discount and calculates margin impact. NOT for whether to discount or which mechanism to use (use beautyontapp-discount-strategy). NOT for ad copy (use copywriting-engine) or loyalty tiers (use retention).",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:35:52.851516Z"
+    },
+    {
+      "skillId": "skill_01JsogwbL1CXRCgF9DTjgt3B",
+      "name": "beautyontapp-meta-competitive-creative",
+      "description": "Meta Ad Library competitive intelligence for BeautyOnTApp — extracting competitor creative strategies, messaging themes, format analysis, and gaps to exploit from Secret Skin, Clicks, Dis-Chem, Woolworths Beauty, Glow Theory, Seoul of Tokyo, MYKOCO, and other SA beauty competitors. Auto-invoke when T asks about \"what ads are competitors running\", \"competitor creative\", \"Ad Library\", \"Facebook Ad Library\", \"spy on ads\", \"what is Secret Skin advertising\", \"competitor messaging\", \"creative spy\", \"ad intelligence\", \"what formats are they using\", \"competitor ad analysis\", \"creative benchmark\", or any request to analyze what competitors are doing on Meta/Facebook/Instagram. Also invoke when beautyontapp-meta-creative-testing needs competitive context. NOT for Google Ads competitive intelligence (use beautyontapp-counter-ppc). NOT for SEO (use beautyontapp-counter-seo). NOT for general competitor strategy (use beautyontapp-sa-competitive-scanner).",
+      "source": "custom",
+      "updatedAt": "2026-05-03T05:15:58.589976Z"
+    },
+    {
+      "skillId": "skill_01VXbEbVaunFVYzADK9NR98V",
+      "name": "beautyontapp-brand-context",
+      "description": "Brand marketing context for BeautyOnTApp, Pastry Skincare, and Mzuri Skin — positioning, audience, personas, pain points, competitive landscape, differentiation, objections, switching dynamics, customer language, brand voice, proof points. Auto-invoke on EVERY marketing, content, copywriting, ad copy, email, social, or customer-facing task. Read BEFORE asking questions. Triggers on brand voice, positioning, target audience, persona, tone, messaging, \"who is our customer\", \"what makes us different\", or any content creation task.",
+      "source": "custom",
+      "updatedAt": "2026-05-17T08:22:46.011328Z"
+    },
+    {
+      "skillId": "slack-gif-creator",
+      "name": "slack-gif-creator",
+      "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:13.013747Z"
+    },
+    {
+      "skillId": "doc-coauthoring",
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.841464Z"
+    },
+    {
+      "skillId": "algorithmic-art",
+      "name": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.898915Z"
+    },
+    {
+      "skillId": "brand-guidelines",
+      "name": "brand-guidelines",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.958846Z"
+    },
+    {
+      "skillId": "web-artifacts-builder",
+      "name": "web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.944379Z"
+    },
+    {
+      "skillId": "skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.887201Z"
+    },
+    {
+      "skillId": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.996595Z"
+    },
+    {
+      "skillId": "internal-comms",
+      "name": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.984640Z"
+    },
+    {
+      "skillId": "theme-factory",
+      "name": "theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:13.028568Z"
+    },
+    {
+      "skillId": "skill_01ErsnYCi6zgRsbU3A7uBF85",
+      "name": "beautyontapp-landing-page-optimization",
+      "description": "Landing page audit and optimization for Google Ads Quality Score and conversion rate improvement on BeautyOnTApp's Shopify store. Auto-invoke when T asks about Quality Score, landing page experience, page speed, mobile optimization, collection page optimization, product page conversion rate, message match, bounce rate, landing page for ads, \"QS is low\", \"landing page score\", \"why is my CPA high\" (since landing page experience is a major CPA driver), or any request to improve the pages ads point to. Also auto-invoke when beautyontapp-ppc-audit-engine identifies QS below 7 on high-spend keywords. NOT for Shopify theme code edits (use beautyontapp-shopify). NOT for SEO content strategy (use beautyontapp-seo-content).",
+      "source": "custom",
+      "updatedAt": "2026-04-06T16:28:13.174313Z"
+    },
+    {
+      "skillId": "skill_01WSmdbhT25odn975NqP1bbP",
+      "name": "beautyontapp-customer-experience",
+      "description": "Customer experience strategy and Bestie chatbot personality for BeautyOnTApp — chatbot design, skin quiz flows, customer service scripts, review management, NPS/CSAT tracking, and helpdesk selection. Auto-invoke for chatbot, Bestie personality, customer service, complaints, returns, reviews, NPS, support tickets, skin quiz, or CX design. NOT for WhatsApp commerce (use whatsapp-commerce) or retention flows (use retention).",
+      "source": "custom",
+      "updatedAt": "2026-03-31T04:11:59.790448Z"
+    },
+    {
+      "skillId": "skill_0165Pt9PrDxPwSU5YzBBGUT4",
+      "name": "beautyontapp-inventory-demand",
+      "description": "Demand forecasting, reorder point calculations, ABC analysis, seasonal planning, expiry risk management, store-level stock allocation, and safety stock calculations for BeautyOnTApp's 1,400+ SKU beauty retail portfolio across 6 stores + e-commerce. Auto-invoke when T asks about inventory, stock levels, reorder, demand forecasting, stock-outs, dead stock, expiry, shelf life, ABC analysis, safety stock, allocation, \"how much should we order\", \"what's running low\", \"expiring stock\", \"slow movers\", or inventory planning for seasonal events (BFCM, Mother's Day, payday cycles). Critical for K-beauty with 6-12 week import lead times. NOT for pricing or margin math (use beautyontapp-pricing-promotions). NOT for brand buying decisions or distribution agreements (use beautyontapp-product-merchandising). NOT for Shopify POS inventory sync (use beautyontapp-shopify-pos).",
+      "source": "custom",
+      "updatedAt": "2026-04-05T06:37:02.235354Z"
+    },
+    {
+      "skillId": "pdf",
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-07-10T19:23:15.432550Z"
+    },
+    {
+      "skillId": "canvas-design",
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-07T20:29:12.976417Z"
+    },
+    {
+      "skillId": "skill_011wq4jCndwLjTvqHGHU1Gcw",
+      "name": "beautyontapp-flutter-app",
+      "description": "Develop and maintain the BeautyOnTApp Flutter WebView mobile app. Auto-invoke for Dart code, splash screen, WebView config, back button, APK builds, App Store or Play Store submissions. NOT for Shopify theme edits or ad campaigns.",
+      "source": "custom",
+      "updatedAt": "2026-03-27T05:35:57.432681Z"
+    },
+    {
+      "skillId": "docx",
+      "name": "docx",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.747439Z"
+    },
+    {
+      "skillId": "skill_01Tn69iVUbcaiF4BErg9gscd",
+      "name": "beautyontapp-counter-seo",
+      "description": "Counter-intelligence skill that reverse-engineers Western Cloud's SEO strategy for Secret Skin and provides real-time counter-moves for BeautyOnTApp's organic search dominance. Auto-invoke when T mentions Secret Skin SEO, organic rankings, \"they're ranking above us\", blog content strategy, backlinks, content calendar, brand collection pages, meta titles, site structure for SEO, Schema markup, \"how do we outrank them\", or any organic search competitive question. Also invoke when planning blog posts, creating collection pages, or optimizing meta copy to ensure content exploits Secret Skin's known weaknesses. NOT for PPC counter-strategy (use beautyontapp-counter-ppc). NOT for general SEO strategy (use beautyontapp-seo-content).",
+      "source": "custom",
+      "updatedAt": "2026-03-30T05:18:56.005453Z"
+    },
+    {
+      "skillId": "xlsx",
+      "name": "xlsx",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.792740Z"
+    },
+    {
+      "skillId": "pptx",
+      "name": "pptx",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.771949Z"
+    }
+  ]
+}
