@@ -70,14 +70,10 @@ struct HomeView: View {
   }
 
   private var nativeSections: [ThemeHomeSection] {
-    snapshot.sections.compactMap { section in
-      switch section {
-      case .routine, .guidance:
-        return nil
-      default:
-        return section
-      }
-    }
+    // Every storefront section renders natively, in storefront order —
+    // including Shop by Routine and Need a Little Guidance, which the live
+    // homepage shows between Bundle Deals and the blog rail.
+    snapshot.sections
   }
 
   @ViewBuilder
