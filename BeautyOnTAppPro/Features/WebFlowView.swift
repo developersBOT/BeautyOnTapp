@@ -48,20 +48,23 @@ struct WebFlowView: View {
         ZStack(alignment: .topTrailing) {
             webContent
 
-            if session.isLoading {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.body.weight(.semibold))
-                        .frame(width: 44, height: 44)
-                }
-                .tint(ThemeTokens.ink)
-                .background(.thinMaterial, in: Circle())
-                .padding(.top, 8)
-                .padding(.trailing, 12)
-                .accessibilityLabel("Close Ask Bestie")
+            // The close control must survive the load: with the dock hidden
+            // this button is the only way out of the chat. Losing it after
+            // the page finished loading trapped the user inside Ask Bestie.
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(ThemeTokens.ink)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Circle())
             }
+            .buttonStyle(.plain)
+            .adaptiveGlass(in: Circle(), interactive: true)
+            .padding(.top, 8)
+            .padding(.trailing, 12)
+            .accessibilityLabel("Close Ask Bestie")
 
             accessibilityMarker(
                 label: "Ask Bestie isolated web flow",
@@ -105,10 +108,11 @@ struct WebFlowView: View {
     }
 
     private var loadingShield: some View {
-        VStack(spacing: 14) {
-            ProgressView()
-                .controlSize(.large)
-                .tint(ThemeTokens.ink)
+        VStack(spacing: 16) {
+            // The brand mark breathing on the canvas reads as the app
+            // preparing its own surface; a bare spinner on white read as
+            // being handed off to another app.
+            BrandLoadingMark()
             Text("Opening \(destination.title)…")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(ThemeTokens.muted)
@@ -158,4 +162,29 @@ struct WebFlowView: View {
         .background(ThemeTokens.canvas)
         .transition(.opacity)
     }
+}
+
+/// The heart-B brand mark gently breathing while a surface prepares.
+/// Shared by every loading shield so waiting always looks like BeautyOnTApp.
+struct BrandLoadingMark: View {
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @State private var isBreathing = false
+
+  var body: some View {
+    Image("LaunchHeart")
+      .resizable()
+      .renderingMode(.template)
+      .scaledToFit()
+      .frame(width: 52, height: 52)
+      .foregroundStyle(ThemeTokens.ink)
+      .opacity(reduceMotion ? 0.9 : (isBreathing ? 1 : 0.32))
+      .animation(
+        reduceMotion
+          ? nil
+          : .easeInOut(duration: 0.9).repeatForever(autoreverses: true),
+        value: isBreathing
+      )
+      .onAppear { isBreathing = true }
+      .accessibilityHidden(true)
+  }
 }

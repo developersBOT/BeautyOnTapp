@@ -170,10 +170,11 @@ struct StoresView: View {
             .lineLimit(2)
 
           if !location.address.lines.isEmpty {
+            // A store address must never truncate mid-line: the card grows
+            // instead, so directions-critical detail stays readable.
             Text(location.address.lines.joined(separator: "\n"))
               .themeScaledFont(size: 10)
               .foregroundStyle(.secondary)
-              .lineLimit(2)
               .fixedSize(horizontal: false, vertical: true)
           }
         }
