@@ -1,0 +1,549 @@
+{
+  "type": "bot-ingredient-guide",
+  "blocks": {
+    "filter_all": {
+      "type": "filter",
+      "settings": {
+        "label": "All ingredients",
+        "query": ""
+      }
+    },
+    "filter_breakouts": {
+      "type": "filter",
+      "settings": {
+        "label": "Breakouts & pores",
+        "query": "acne"
+      }
+    },
+    "filter_pigmentation": {
+      "type": "filter",
+      "settings": {
+        "label": "Dark spots",
+        "query": "pigmentation"
+      }
+    },
+    "filter_hydration": {
+      "type": "filter",
+      "settings": {
+        "label": "Dry & barrier",
+        "query": "hydration"
+      }
+    },
+    "filter_texture": {
+      "type": "filter",
+      "settings": {
+        "label": "Texture",
+        "query": "texture"
+      }
+    },
+    "filter_ageing": {
+      "type": "filter",
+      "settings": {
+        "label": "Visible ageing",
+        "query": "ageing"
+      }
+    },
+    "filter_hair": {
+      "type": "filter",
+      "settings": {
+        "label": "Hair & scalp",
+        "query": "hair"
+      }
+    },
+    "ingredient_retinol": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Retinol",
+        "summary": "For clogged pores, dark spots and visible ageing",
+        "body": "Retinol is an over-the-counter retinoid. It can help unclog pores and reduce the look of fine lines and dark spots. Follow the product directions because irritation can happen.",
+        "search_terms": "retinoid vitamin a acne fine lines pigmentation",
+        "routine_label": "PM",
+        "works_with": "Moisturiser to help reduce dryness and irritation.",
+        "caution_with": "Do not use during pregnancy. Use daytime sun protection and avoid applying to very dry, red or inflamed skin unless advised by a dermatologist.",
+        "beginner_tip": "Start with the least-intense formula every other night, then build up slowly.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: American Academy of Dermatology",
+        "source_url": "https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/retinoid-retinol"
+      }
+    },
+    "ingredient_niacinamide": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Niacinamide",
+        "summary": "A form of vitamin B3 used in topical skincare",
+        "body": "Niacinamide is another name for nicotinamide, a form of vitamin B3. Check the product label to understand its role and concentration in that formula.",
+        "search_terms": "nicotinamide vitamin b3",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Watch for excessive dryness with twice-daily use.",
+        "beginner_tip": "If dryness develops, reduce use to once daily or every other day.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/nicotinamide"
+      }
+    },
+    "ingredient_vitamin_c": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Vitamin C",
+        "summary": "A topical antioxidant used in skincare",
+        "body": "Topical vitamin C is an antioxidant. Stability and concentration vary by formula, so follow the product's directions and storage guidance.",
+        "search_terms": "ascorbic acid antioxidant dark spots pigmentation",
+        "routine_label": "AM",
+        "works_with": "Sunscreen — apply vitamin C after cleansing and before sunscreen.",
+        "caution_with": "Formula stability and skin absorption vary, so follow the product's storage and use directions.",
+        "beginner_tip": "Choose a formula made for your concern and skin type.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Routine source: American Academy of Dermatology",
+        "pairing_source_url": "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-in-your-20s",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/topical-vitamin-c"
+      }
+    },
+    "ingredient_hyaluronic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Hyaluronic Acid",
+        "summary": "A moisturising ingredient for dry or dehydrated-feeling skin",
+        "body": "Hyaluronic acid is used in moisturisers to help hydrate skin. Despite the word acid, its role here is moisturising rather than exfoliating.",
+        "search_terms": "hydration moisture dry dehydrated",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "If your skin is dry or sensitive, check the full formula for fragrance, which can irritate dry skin.",
+        "beginner_tip": "Apply a moisturiser containing hyaluronic acid while skin is still damp to help trap water.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: American Academy of Dermatology",
+        "source_url": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/pick-moisturizer"
+      }
+    },
+    "ingredient_salicylic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Salicylic Acid",
+        "summary": "A BHA exfoliant used in products for clogged pores",
+        "body": "Salicylic acid is a keratolytic ingredient, which means it helps loosen and remove outer skin cells. Strength and directions matter, so follow the label.",
+        "search_terms": "bha acne pores exfoliation",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Do not use on irritated, infected or reddened skin. Keep away from eyes and other sensitive areas.",
+        "beginner_tip": "Use only as directed — never more often, more heavily or longer than the label says.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/salicylic-acid"
+      }
+    },
+    "ingredient_glycolic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Glycolic Acid",
+        "summary": "An AHA exfoliant used to smooth the skin surface",
+        "body": "Glycolic acid is an alpha hydroxy acid used for chemical exfoliation. Exfoliating products can irritate skin when overused, so follow the formula's directions.",
+        "search_terms": "aha exfoliation texture",
+        "routine_label": "PM",
+        "works_with": "Vitamin C or retinoid products on alternate applications.",
+        "caution_with": "Use sunscreen, protective clothing and limit sun exposure while using an AHA and for one week afterwards.",
+        "beginner_tip": "",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Safety source: U.S. Food and Drug Administration",
+        "pairing_source_url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-labeling-cosmetics-containing-alpha-hydroxy-acids",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/alpha-hydroxy-acid-facial-treatments"
+      }
+    },
+    "ingredient_collagen": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Collagen",
+        "summary": "A structural protein; topical and oral products are not the same",
+        "body": "Collagen is a major structural protein in skin. DermNet notes that evidence differs by form, with oral collagen hydrolysates typically showing better results than large collagen molecules and topical formulas.",
+        "search_terms": "protein supplements topical oral ageing",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Do not treat topical and oral collagen products as interchangeable; the evidence differs by form.",
+        "beginner_tip": "First check whether the product is topical or ingestible before interpreting its claim.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/collagen"
+      }
+    },
+    "ingredient_glutathione": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Glutathione",
+        "summary": "A topical agent listed in melasma care",
+        "body": "DermNet lists topical glutathione among agents used in melasma care. Evidence, strength and directions vary by formula, so it should not be described as a guaranteed result.",
+        "search_terms": "melasma pigmentation dark spots",
+        "routine_label": "",
+        "works_with": "Year-round broad-spectrum sun protection when used in a pigmentation routine.",
+        "caution_with": "",
+        "beginner_tip": "Keep sun protection as the foundation; glutathione is only one topical option listed for melasma.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/melasma"
+      }
+    },
+    "ingredient_kojic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Kojic Acid",
+        "summary": "A topical agent listed in melasma care",
+        "body": "DermNet lists kojic acid among topical agents used in melasma care. Follow the directions for the exact product rather than assuming every formula has the same strength.",
+        "search_terms": "melasma pigmentation dark spots",
+        "routine_label": "",
+        "works_with": "Year-round broad-spectrum sun protection when used in a pigmentation routine.",
+        "caution_with": "",
+        "beginner_tip": "Keep sun protection as the foundation; kojic acid is only one topical option listed for melasma.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/melasma"
+      }
+    },
+    "ingredient_tranexamic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Tranexamic Acid",
+        "summary": "Used in some approaches to stubborn pigmentation and melasma",
+        "body": "Tranexamic acid is used in melasma treatment, but topical and oral forms are not interchangeable. Oral treatment requires qualified medical guidance.",
+        "search_terms": "txa melasma pigmentation dark spots",
+        "routine_label": "",
+        "works_with": "Year-round broad-spectrum sun protection when used in a pigmentation routine.",
+        "caution_with": "Do not use oral tranexamic acid for pigmentation without medical assessment; it has important contraindications and possible clotting risks.",
+        "beginner_tip": "Confirm the product is topical; evidence for topical tranexamic acid remains under investigation.",
+        "card_accent": "#f5d7df",
+        "pairing_source_label": "Routine source: DermNet melasma guidance",
+        "pairing_source_url": "https://dermnetnz.org/topics/melasma",
+        "source_label": "Source: DermNet",
+        "source_url": "https://dermnetnz.org/topics/tranexamic-acid"
+      }
+    },
+    "ingredient_centella": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Centella Asiatica",
+        "summary": "A botanical extract used in some soothing and moisturising formulas",
+        "body": "Clinical research has tested specific Centella asiatica formulas, including a topical emollient for dry skin. Results are tied to the studied formula and population, so every cica product should not be assumed to work the same way.",
+        "search_terms": "cica centella soothing dry barrier hydration acne",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Read the complete formula: cica is one ingredient within a finished product.",
+        "card_accent": "#dceee8",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32908567/"
+      }
+    },
+    "ingredient_snail_mucin": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Snail Mucin",
+        "summary": "Snail secretion filtrate used in hydrating skincare",
+        "body": "A small controlled study tested one snail-derived regimen for skin barrier, roughness and firmness. The results were formula-specific and do not prove that every snail mucin product gives the same result.",
+        "search_terms": "snail mucin hydration barrier ageing",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Compare the complete formula, not only the snail percentage or ingredient name.",
+        "card_accent": "#e6dff5",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/32308795/"
+      }
+    },
+    "ingredient_ceramides": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Ceramides",
+        "summary": "Skin lipids commonly used in moisturisers for dry skin",
+        "body": "The American Academy of Dermatology recommends looking for ceramides in moisturisers when skin is dry. The complete formula still matters, especially if your skin is sensitive to fragrance.",
+        "search_terms": "ceramide lipids dry hydration barrier moisturiser",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Apply moisturiser after washing while skin is still damp to help trap water.",
+        "card_accent": "#d8e7f2",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: American Academy of Dermatology",
+        "source_url": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/pick-moisturizer"
+      }
+    },
+    "ingredient_turmeric": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Turmeric",
+        "summary": "A botanical ingredient with limited evidence for skin conditions",
+        "body": "The U.S. National Center for Complementary and Integrative Health says there is not enough evidence to reach definitive conclusions about turmeric or curcumin for health purposes.",
+        "search_terms": "turmeric curcumin botanical pigmentation",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Topical curcumin can cause hives or itching.",
+        "beginner_tip": "Treat turmeric as one part of the full formula, not a guaranteed result.",
+        "card_accent": "#f7e7a8",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: NCCIH",
+        "source_url": "https://www.nccih.nih.gov/health/turmeric"
+      }
+    },
+    "ingredient_shea_butter": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Shea Butter",
+        "summary": "A plant-derived emollient used in moisturising formulas",
+        "body": "Small studies have tested complete moisturisers containing shea butter or shea butter extract. Because several ingredients were used together, the result cannot be assigned to shea butter alone.",
+        "search_terms": "shea butter emollient dry hydration barrier hair scalp",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Judge the finished moisturiser or hair product, not one ingredient in isolation.",
+        "card_accent": "#f0dfcc",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26314567/"
+      }
+    },
+    "ingredient_ginseng": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Ginseng",
+        "summary": "A botanical extract studied in a small topical skin trial",
+        "body": "A small study tested one enzyme-modified Panax ginseng cream for facial roughness and photo-ageing. That evidence is specific to the studied extract and cream, not every ginseng product.",
+        "search_terms": "ginseng botanical ageing fine lines texture",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Check which ginseng extract and complete formula the product uses.",
+        "card_accent": "#ead7d1",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/25867599/"
+      }
+    },
+    "ingredient_peptides": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Peptides",
+        "summary": "Short amino-acid chains whose effects depend on the exact peptide",
+        "body": "Clinical studies usually test a named peptide in a specific formula. Results from palmitoyl pentapeptide, for example, should not be treated as proof that every product labelled peptides works the same way.",
+        "search_terms": "peptide amino acid ageing fine lines",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Look for the exact peptide name and judge the complete formula.",
+        "card_accent": "#d8e3f5",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/18492182/"
+      }
+    },
+    "ingredient_squalane": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Squalane",
+        "summary": "An emollient used in moisturising formulas",
+        "body": "Published reviews describe squalane and its related compound squalene as emollient and skin-hydrating ingredients. The performance of a finished serum or moisturiser still depends on its full formula.",
+        "search_terms": "squalane emollient dry hydration barrier oil",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Choose the finished texture that suits your skin rather than judging by the ingredient name alone.",
+        "card_accent": "#dceee7",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed review",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/22361190/"
+      }
+    },
+    "ingredient_bakuchiol": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Bakuchiol",
+        "summary": "A botanical ingredient compared with retinol in one small trial",
+        "body": "One 12-week study compared specific 0.5% bakuchiol and retinol formulas. Both changed measured wrinkles and pigmentation, while the retinol group reported more scaling and stinging. This does not make every bakuchiol formula equivalent to retinol.",
+        "search_terms": "bakuchiol botanical retinol alternative ageing fine lines pigmentation",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Read the strength and directions for the exact formula.",
+        "card_accent": "#eadcf2",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed randomised trial",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29947134/"
+      }
+    },
+    "ingredient_azelaic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Azelaic Acid",
+        "summary": "A topical ingredient used in some acne and rosacea treatments",
+        "body": "The American Academy of Dermatology lists azelaic acid among topical treatments that can help acne-like rosacea breakouts and long-lasting colour. The correct diagnosis and formula matter.",
+        "search_terms": "azelaic acid acne breakouts redness rosacea pigmentation",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Persistent redness or acne-like bumps may need professional diagnosis before self-treatment.",
+        "beginner_tip": "Follow the product directions and introduce one new active at a time.",
+        "card_accent": "#f2d8df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: American Academy of Dermatology",
+        "source_url": "https://www.aad.org/public/diseases/rosacea/treatment/diagnosis-treat"
+      }
+    },
+    "ingredient_lactic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Lactic Acid",
+        "summary": "An AHA used for surface exfoliation",
+        "body": "The U.S. Food and Drug Administration lists lactic acid among common alpha hydroxy acids. AHA exfoliation depends on the acid, concentration, pH and the rest of the formula.",
+        "search_terms": "lactic acid aha exfoliation texture",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "AHAs may increase sun sensitivity. Use sunscreen, wear protective clothing and limit sun exposure while using the product and for one week afterwards.",
+        "beginner_tip": "Follow the label and do not assume two AHA formulas have the same strength.",
+        "card_accent": "#f6e2d6",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: U.S. Food and Drug Administration",
+        "source_url": "https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids"
+      }
+    },
+    "ingredient_argan": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Argan Oil",
+        "summary": "A plant oil used in skin and hair formulas; human evidence is narrow",
+        "body": "One small human study examined topical argan oil and skin elasticity in postmenopausal women. That narrow result should not be treated as proof for every skin or hair product containing argan oil.",
+        "search_terms": "argan oil emollient dry hair scalp",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "",
+        "beginner_tip": "Choose the finished skin or hair formula for your concern.",
+        "card_accent": "#ead3b8",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed clinical study",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/25673976/"
+      }
+    },
+    "ingredient_mandelic": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Mandelic Acid",
+        "summary": "An exfoliating acid studied in professional peel formulas",
+        "body": "A clinical trial compared a 45% mandelic acid peel with a 30% salicylic acid peel for mild-to-moderate acne. Those professional-strength results do not tell you how a lower-strength daily wash should be used.",
+        "search_terms": "mandelic acid aha exfoliation texture acne",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Do not copy professional peel timing or strength at home. Follow the directions for your exact product.",
+        "beginner_tip": "Start with the product label; rinse-off and leave-on formulas are not interchangeable.",
+        "card_accent": "#f6d7df",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: PubMed comparative trial",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31553119/"
+      }
+    },
+    "ingredient_alpha_arbutin": {
+      "type": "ingredient",
+      "settings": {
+        "title": "Alpha-Arbutin",
+        "summary": "A cosmetic ingredient assessed for use at defined concentrations",
+        "body": "The European Scientific Committee on Consumer Safety concluded that alpha-arbutin is safe up to 2% in face creams and 0.5% in body lotions, including combined use at those levels. This is a safety assessment, not a promise of results.",
+        "search_terms": "alpha arbutin arbutin pigmentation dark spots",
+        "routine_label": "",
+        "works_with": "",
+        "caution_with": "Do not assume that more is better; follow the concentration and directions of the finished product.",
+        "beginner_tip": "Check whether the label says alpha-arbutin or beta-arbutin because their assessments differ.",
+        "card_accent": "#e7dcf4",
+        "pairing_source_label": "Source for routine guidance",
+        "pairing_source_url": "",
+        "source_label": "Source: SCCS opinion on PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/26646661/"
+      }
+    }
+  },
+  "block_order": [
+    "filter_all",
+    "filter_breakouts",
+    "filter_pigmentation",
+    "filter_hydration",
+    "filter_texture",
+    "filter_ageing",
+    "filter_hair",
+    "ingredient_retinol",
+    "ingredient_niacinamide",
+    "ingredient_vitamin_c",
+    "ingredient_hyaluronic",
+    "ingredient_salicylic",
+    "ingredient_glycolic",
+    "ingredient_collagen",
+    "ingredient_glutathione",
+    "ingredient_kojic",
+    "ingredient_tranexamic",
+    "ingredient_centella",
+    "ingredient_snail_mucin",
+    "ingredient_ceramides",
+    "ingredient_turmeric",
+    "ingredient_shea_butter",
+    "ingredient_ginseng",
+    "ingredient_peptides",
+    "ingredient_squalane",
+    "ingredient_bakuchiol",
+    "ingredient_azelaic",
+    "ingredient_lactic",
+    "ingredient_argan",
+    "ingredient_mandelic",
+    "ingredient_alpha_arbutin"
+  ],
+  "settings": {
+    "eyebrow": "Skincare, explained simply",
+    "heading": "Ingredient Guide",
+    "intro_text": "New to skincare? Start with what you want help with, then open one ingredient at a time. The source link under each card explains where the guidance comes from.",
+    "notice_heading": "Good to know.",
+    "notice_text": "This guide is general education, not medical advice. Follow the directions on the product and speak to a qualified health professional about pregnancy, prescriptions, allergies, or a skin condition.",
+    "search_label": "Search ingredients",
+    "search_placeholder": "Search an ingredient",
+    "filter_label": "Filter ingredients by concern",
+    "no_results_text": "No ingredient matches that search yet.",
+    "close_label": "Close Ingredient Guide",
+    "surface_color": "#f5f5f7",
+    "surface_opacity": 90,
+    "backdrop_opacity": 30,
+    "text_color": "#1d1d1f",
+    "muted_text_color": "#6e6e73",
+    "border_color": "#c7c7cc",
+    "accent_color": "#f5d7df",
+    "link_color": "#0066cc",
+    "focus_color": "#007aff",
+    "heading_size": 26,
+    "card_title_size": 17,
+    "body_size": 16,
+    "content_width": 720,
+    "panel_height": 88,
+    "panel_radius": 28,
+    "card_radius": 18,
+    "glass_blur": 24,
+    "side_padding": 20
+  }
+}

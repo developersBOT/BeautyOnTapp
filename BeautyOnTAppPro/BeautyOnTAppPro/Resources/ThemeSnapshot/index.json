@@ -1,0 +1,1309 @@
+{
+  "sections": {
+    "bot_greeting": {
+      "type": "bot-greeting",
+      "settings": {
+        "kicker": "South Africa's beauty destination 🖤",
+        "greeting_prefix": "Happy",
+        "greeting_suffix": "Bestie.😊",
+        "subtext": "K-beauty, dermocosmetic & proudly South African — in one place.",
+        "kicker_size": 9,
+        "kicker_color": "#a48840",
+        "h1_size": 18,
+        "h1_color": "#1a1a1a",
+        "sub_size": 12,
+        "sub_color": "#5d574d",
+        "show_on_mobile": true,
+        "show_on_desktop": false,
+        "desktop_align": "left",
+        "desktop_max_width": 720
+      }
+    },
+    "custom_collection_slider_LQ8mx6": {
+      "type": "custom-collection-slider",
+      "blocks": {
+        "slide_8ryeA4": {
+          "type": "Slide",
+          "settings": {
+            "bg-color": "#f7f1f1",
+            "text-color": "#000000",
+            "image": "shopify://shop_images/IMG_6824_e14c176b-b6bf-4264-ac50-bca733ed45f1.jpg",
+            "slide-heading": "Fade Dark Marks, Every Wash",
+            "description": "Mandelic acid —with kojic acid and licorice root to fade dark marks, smooth texture and even skin tone.",
+            "btn-text": "SHOP NOW",
+            "btn-link": "shopify://collections/pastry-skincare"
+          }
+        },
+        "slide_t9LLAN": {
+          "type": "Slide",
+          "settings": {
+            "bg-color": "#a2d0fb",
+            "text-color": "#000000",
+            "image": "shopify://shop_images/nua_Heartleaf_cleanser_Medik8_Pure_Cellulose_Purifying_Cleanser_SEDUL1988_Cleansing_Balm_and_Centella_Serum_by_SkinTrea.jpg",
+            "slide-heading": "The Pore Care Edit",
+            "description": "Cleanse, Resurface & Calm With K-Beauty Pore Heroes From Anua, Medicube, SKIN1004 & SEOUL 1988.",
+            "btn-text": "SHOP NOW",
+            "btn-link": "shopify://collections/korean-skincare"
+          }
+        },
+        "slide_pQETJc": {
+          "type": "Slide",
+          "settings": {
+            "bg-color": "#ebe5e0",
+            "text-color": "#090909",
+            "image": "shopify://shop_images/Website_poster_no_logo.png",
+            "slide-heading": "Fresh From Seoul",
+            "description": "New innisfree, Erborian & LANEIGE four K-beauty drops to cleanse, deeply hydrate & glaze your glow.",
+            "btn-text": "SHOP NOW",
+            "btn-link": "shopify://collections/new-arrivals"
+          }
+        },
+        "slide_8m3EXw": {
+          "type": "Slide",
+          "settings": {
+            "bg-color": "#f9ce96",
+            "text-color": "#0e0e0e",
+            "image": "shopify://shop_images/surface.jpg",
+            "slide-heading": "Sun, Meet Your Match",
+            "description": "High-Protection SPF from Beauty of Joseon, La Roche, Pastry & TOCOBO  Shield, Hydrate  & Glow Every Day.",
+            "btn-text": "SHOP NOW",
+            "btn-link": "shopify://collections/sunscreens"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8ryeA4",
+        "slide_t9LLAN",
+        "slide_pQETJc",
+        "slide_8m3EXw"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading_size_mobile": 15,
+        "heading_size_desktop": 18,
+        "heading_weight": "700",
+        "bg-color": "#000000",
+        "slide-heading-one": "",
+        "slide-subhead-one": "",
+        "btn-text": "",
+        "btn-url": "",
+        "bg-color-one": "#f7da6c",
+        "slide-heading-two": "",
+        "slide-subheading-two": "",
+        "btn-two-text": "",
+        "btn-two-url": "#",
+        "bg-color-two": "#3a9b5f",
+        "slide-heading-three": "",
+        "slide-subheading-three": "",
+        "btn-three-text": "SHOP NOW ▸",
+        "btn-three-url": "#",
+        "bg-color-three": "#ffe7f9",
+        "slide-heading-four": "",
+        "slide-subheading-four": "",
+        "btn-text-four": "SHOP NOW ▸",
+        "btn-four-url": "#"
+      }
+    },
+    "featured_collection_kDYPRe": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 410,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 14,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "skincare",
+        "heading_bold": true,
+        "subheading": "",
+        "eyebrow_text": "Loved across BeautyOnTApp stores",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 9,
+        "heading": "Best Sellers",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "Show more",
+        "link_url": "shopify://collections/skincare",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 9,
+        "product_gap": 12,
+        "enable_mobile_gap": true,
+        "product_gap_mobile": 2,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000"
+      }
+    },
+    "4ab9cd36-aab7-44ae-8b22-fbdfb3d5d3a7": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 340,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 14,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "korean-skincare",
+        "heading_bold": true,
+        "subheading": "",
+        "eyebrow_text": "K-beauty favourites",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 9,
+        "heading": "Korean Skincare",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "link_url": "shopify://collections/korean-skincare",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 9,
+        "product_gap": 12,
+        "enable_mobile_gap": true,
+        "product_gap_mobile": 2,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "bot_smart_analysis": {
+      "type": "bot-smart-analysis",
+      "settings": {
+        "eyebrow": "In-store · BeautyOnTApp stores",
+        "heading": "Book Smart Analysis",
+        "text": "Take the guesswork out of skincare & haircare.",
+        "btn_label": "Book",
+        "btn_link": "https://beautyontapp.com/pages/make-services",
+        "chip1_label": "Skin Analysis",
+        "chip1_price": "R 285",
+        "chip1_link": "https://beautyontapp.com/products/skin-analysis-quiz-routine-advice",
+        "chip2_label": "Hair Analysis",
+        "chip2_price": "R 199",
+        "chip2_link": "https://beautyontapp.com/products/hair-analyser",
+        "show_on_mobile": true,
+        "show_on_desktop": false,
+        "desktop_align": "left",
+        "desktop_max_width": 720
+      }
+    },
+    "featured_collection_FDAaca": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "name": "suncare",
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 340,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 14,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "sunscreen",
+        "heading_bold": true,
+        "subheading": "",
+        "eyebrow_text": "Daily SPF, sorted",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 9,
+        "heading": "Suncare",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "link_url": "shopify://collections/sunscreen",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 9,
+        "product_gap": 12,
+        "enable_mobile_gap": false,
+        "product_gap_mobile": 10,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "multicolumn_qK9Pkf": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_3jhTXk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_1.png",
+            "video_autoplay": true,
+            "heading": "Shop Our House Brands",
+            "heading_size": "h5",
+            "content": "<p>Pastry, Mzuri Forme & B’AiR — proudly South African skincare. Brighten, exfoliate & protect. Made for melanin-rich skin.</p>",
+            "link_url": "shopify://collections/only-at-beautyontapp",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_bt8yYG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3582_2.png",
+            "video_autoplay": true,
+            "heading": "Travel-Sized Skincare",
+            "heading_size": "h5",
+            "content": "<p>Targeted skincare in travel-sized portions. Try potent formulas before committing to full size.</p>",
+            "link_url": "shopify://collections/mini-size",
+            "link_text": "SHOP NOW",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_mVMKQp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/3_cce51c70-9fff-4c3f-aef7-c26831c2ba69.png",
+            "video_autoplay": true,
+            "heading": "Korean Skincare Essentials",
+            "heading_size": "h5",
+            "content": "<p>COSRX, ANUA, Beauty of Joseon & more. Authentic K-beauty with fast SA delivery.</p>",
+            "link_url": "shopify://collections/korean-skincare",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_9XfDhj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4599.jpg",
+            "video_autoplay": true,
+            "heading": "Mzuri Skin — Gentle & Effective",
+            "heading_size": "h5",
+            "content": "<p>Brighten and protect sensitive skin with Mzuri’s sunscreen, kojic acid soap & niacinamide range.</p>",
+            "link_url": "shopify://collections/mzuri-skin",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_GiTKXd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3810.jpg",
+            "video_autoplay": true,
+            "heading": "Sunscreen Without The White Cast",
+            "heading_size": "h5",
+            "content": "<p>Korean & local SPF50+ sunscreens that blend into darker skin tones. Lightweight, no chalky finish.</p>",
+            "link_url": "shopify://collections/sunscreen",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_aVDTpA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Website_images_8637c6c1-f8a9-4ac8-9783-e743d53dad01.png",
+            "video_autoplay": true,
+            "heading": "Clearance — Up To 50% Off",
+            "heading_size": "h5",
+            "content": "<p> Great skincare at unbeatable prices. Limited stock — once it’s gone, it’s gone.</p>",
+            "link_url": "shopify://collections/clearance-sale",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_m6T687": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/5.jpg",
+            "video_autoplay": true,
+            "heading": "Lelive Favourites!",
+            "heading_size": "h5",
+            "content": "<p>Clean, conscious skincare made for African skin. Shop the full lelive range. </p>",
+            "link_url": "shopify://collections/lelive",
+            "link_text": "Shop Now",
+            "link_style": "button",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_3jhTXk",
+        "column_bt8yYG",
+        "column_mVMKQp",
+        "column_9XfDhj",
+        "column_GiTKXd",
+        "column_aVDTpA",
+        "column_m6T687"
+      ],
+      "custom_css": [
+        ".multicolumn__item {box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px, rgba(0, 0, 0, 0.1) 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px; margin-top: 10px;}",
+        "@media (min-width: 768px) {.md\\:mb-12 {margin-bottom: 1rem; }}",
+        ".button {margin-left: 10px; background: transparent; color: black; border-width: 2px; height: 32px; font-size: 12px; border: 2px solid; text-transform: capitalize; font-weight: 600; margin-bottom: 20px;}",
+        ".h5 {font-size: 14px; padding: 0px 10px; font-weight: 600;}",
+        ".prose {padding: 0px 10px; font-size: 14px;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "enable_swipe_on_mobile": true,
+        "align_card_buttons": true,
+        "number_of_columns_on_desktop": 6,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "media--ratio-4-3",
+        "column_text_alignment": "text-left items-start",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "eyebrow_text": "Perks & promos",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 8,
+        "heading": "Beauty Offers",
+        "heading_size": "h5",
+        "content": "",
+        "text_alignment": "text-left",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "featured_collection_AmHxrq": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 340,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 14,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "new-arrivals",
+        "heading_bold": true,
+        "subheading": "",
+        "eyebrow_text": "Just landed",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 8,
+        "heading": "New Arrivals",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "link_url": "shopify://collections/new-arrivals",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 9,
+        "product_gap": 12,
+        "enable_mobile_gap": false,
+        "product_gap_mobile": 10,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_z7Wn3E": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 340,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 14,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "smart-collection",
+        "heading_bold": true,
+        "subheading": "",
+        "eyebrow_text": "Small prices, serious formulas",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 8,
+        "heading": "Beauty Under R200",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "link_url": "shopify://collections/smart-collection",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 9,
+        "product_gap": 12,
+        "enable_mobile_gap": false,
+        "product_gap_mobile": 10,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "featured_collection_ELgnaT": {
+      "type": "featured-collection",
+      "custom_css": [
+        "img.product-thumbnail-shade {min-width: 100px;}",
+        ".grid-carousel {gap: 0;}",
+        ".product-card {max-height: 280px;}"
+      ],
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "full_width": false,
+        "section_width": 1420,
+        "carousel": true,
+        "product_card_size": "custom",
+        "custom_grid_columns": 8,
+        "custom_grid_columns_sm_desktop": 6,
+        "custom_grid_columns_tab": 4,
+        "custom_grid_columns_sm_tab": 3,
+        "custom_grid_columns_mobile": 2.2,
+        "card_height_mode": "equal",
+        "card_min_height": 340,
+        "override_card_spacing": true,
+        "card_inner_spacing": 0,
+        "product_image_ratio": "theme",
+        "product_image_fit": "theme",
+        "product_image_scale": 90,
+        "vendor_position": "theme",
+        "vendor_alignment": "center",
+        "override_vendor_size": true,
+        "vendor_font_size": 11,
+        "override_vendor_spacing": true,
+        "vendor_spacing": 12,
+        "price_alignment": "center",
+        "override_price_size": true,
+        "price_font_size": 12,
+        "override_price_spacing": true,
+        "price_spacing_top": 16,
+        "override_quick_add_spacing": true,
+        "quick_add_spacing": 0,
+        "products_count": 16,
+        "grid_columns": 6.6,
+        "grid_columns_sm_desktop": 6,
+        "grid_columns_tab": 5,
+        "grid_columns_sm_tab": 4,
+        "grid_columns_mobile": 3.4,
+        "products": [],
+        "collection": "bundle-deals",
+        "heading_bold": false,
+        "subheading": "",
+        "eyebrow_text": "Bundle & save",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 8,
+        "heading": "Bundle Deals",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "link_url": "shopify://collections/bundle-deals",
+        "show_link_mobile": true,
+        "link_position": "below-right",
+        "link_size": 11,
+        "product_gap": 12,
+        "enable_mobile_gap": false,
+        "product_gap_mobile": 10,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": ""
+      }
+    },
+    "bot_tiles_am": {
+      "type": "bot-routine-tiles",
+      "blocks": {
+        "am1": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Glass Skin Hydration",
+            "link": "/collections/the-melanin-barrier-repair"
+          }
+        },
+        "am2": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Vitamin C Brighten",
+            "link": "/collections/vitamin-c-brighten-am"
+          }
+        },
+        "am3": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Clear Pores + Calm",
+            "link": "/collections/clear-pores-calm-am"
+          }
+        },
+        "am4": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "TXA + Niacinamide Even Tone",
+            "link": "/collections/txa-niacinamide-even-tone-am"
+          }
+        },
+        "am5": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Daily SPF Shield",
+            "link": "/collections/sunscreen"
+          }
+        },
+        "am6": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Hyaluronic Hydration",
+            "link": "/collections/hyaluronic-acid"
+          }
+        },
+        "am7": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Sensitive Skin Essentials",
+            "link": "/collections/sensitive-skin"
+          }
+        },
+        "am8": {
+          "type": "tile",
+          "settings": {
+            "period": "am",
+            "name": "Oily Skin Essentials",
+            "link": "/collections/oily-skin"
+          }
+        }
+      },
+      "block_order": [
+        "am1",
+        "am2",
+        "am3",
+        "am4",
+        "am5",
+        "am6",
+        "am7",
+        "am8"
+      ],
+      "settings": {
+        "intro_eyebrow": "Help me choose · AM & PM",
+        "intro_heading": "Shop by Routine",
+        "heading": "Morning Routine",
+        "glass_color": "#ffffff",
+        "glass_opacity": 75,
+        "glass_blur": 18,
+        "border_color": "#ffffff",
+        "border_opacity": 85,
+        "shadow_opacity": 7,
+        "corner_radius": 20,
+        "tile_height": 84,
+        "tile_padding": 12,
+        "tile_gap": 11,
+        "eyebrow_size": 9,
+        "intro_heading_size": 20,
+        "group_heading_size": 17,
+        "tile_font_size": 13,
+        "eyebrow_color": "#8a6d1e",
+        "heading_color": "#1d1d1f",
+        "tile_text_color": "#1d1d1f",
+        "am_tag_color": "#ecb824",
+        "am_tag_text": "#241d08",
+        "pm_tag_color": "#1d1d1f",
+        "pm_tag_text": "#ffffff",
+        "focus_color": "#007aff",
+        "mobile_tile_width": 112,
+        "mobile_tile_height": 72,
+        "mobile_tile_padding": 9,
+        "mobile_tile_gap": 8,
+        "mobile_intro_heading_size": 20,
+        "mobile_group_heading_size": 15,
+        "mobile_tile_font_size": 12,
+        "mobile_glass_opacity": 25,
+        "mobile_glass_blur": 10,
+        "show_on_mobile": true,
+        "show_on_desktop": false,
+        "desktop_align": "left",
+        "desktop_max_width": 720
+      }
+    },
+    "bot_tiles_pm": {
+      "type": "bot-routine-tiles",
+      "blocks": {
+        "pm1": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Sensitive Barrier Rescue",
+            "link": "/collections/sensitive-barrier-rescue-pm"
+          }
+        },
+        "pm2": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Retinol Renewal",
+            "link": "/collections/retinol-renewal-pm"
+          }
+        },
+        "pm3": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Weekly Glow Peel",
+            "link": "/collections/weekly-glow-peel-pm"
+          }
+        },
+        "pm4": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Spa Collagen Mask",
+            "link": "/collections/spa-collagen-mask-pm"
+          }
+        },
+        "pm5": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Cleansing Oil Reset",
+            "link": "/collections/cleansing-oil"
+          }
+        },
+        "pm6": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Acne Night Care",
+            "link": "/collections/acne"
+          }
+        },
+        "pm7": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Ceramide Barrier Care",
+            "link": "/collections/ceramide-1"
+          }
+        },
+        "pm8": {
+          "type": "tile",
+          "settings": {
+            "period": "pm",
+            "name": "Dark Marks Night Care",
+            "link": "/collections/dark-marks"
+          }
+        }
+      },
+      "block_order": [
+        "pm1",
+        "pm2",
+        "pm3",
+        "pm4",
+        "pm5",
+        "pm6",
+        "pm7",
+        "pm8"
+      ],
+      "settings": {
+        "intro_eyebrow": "",
+        "intro_heading": "",
+        "heading": "Evening Routine",
+        "glass_color": "#ffffff",
+        "glass_opacity": 75,
+        "glass_blur": 18,
+        "border_color": "#ffffff",
+        "border_opacity": 85,
+        "shadow_opacity": 7,
+        "corner_radius": 20,
+        "tile_height": 84,
+        "tile_padding": 12,
+        "tile_gap": 11,
+        "eyebrow_size": 10,
+        "intro_heading_size": 22,
+        "group_heading_size": 17,
+        "tile_font_size": 13,
+        "eyebrow_color": "#8a6d1e",
+        "heading_color": "#1d1d1f",
+        "tile_text_color": "#1d1d1f",
+        "am_tag_color": "#c8a951",
+        "am_tag_text": "#241d08",
+        "pm_tag_color": "#1d1d1f",
+        "pm_tag_text": "#ffffff",
+        "focus_color": "#007aff",
+        "mobile_tile_width": 112,
+        "mobile_tile_height": 72,
+        "mobile_tile_padding": 9,
+        "mobile_tile_gap": 8,
+        "mobile_intro_heading_size": 20,
+        "mobile_group_heading_size": 15,
+        "mobile_tile_font_size": 12,
+        "mobile_glass_opacity": 25,
+        "mobile_glass_blur": 10,
+        "show_on_mobile": true,
+        "show_on_desktop": false,
+        "desktop_align": "left",
+        "desktop_max_width": 720
+      }
+    },
+    "text_with_icon_PVzYCY": {
+      "type": "text-with-icon",
+      "settings": {
+        "heading": "💂🏽‍♂️Need a Little Guidance?",
+        "sub-heading": "Check out what's popular now.",
+        "navigation_label": "Popular categories",
+        "glass_color": "#ffffff",
+        "glass_opacity": 70,
+        "glass_blur": 18,
+        "border_color": "#ffffff",
+        "border_opacity": 75,
+        "shadow_opacity": 7,
+        "divider_color": "#d2d2d7",
+        "focus_color": "#007aff",
+        "heading_size": 21,
+        "body_size": 15,
+        "item_font_size": 12,
+        "heading_color": "#1d1d1f",
+        "text_color": "#6e6e73",
+        "item_text_color": "#1d1d1f",
+        "max_width": 1280,
+        "section_padding_y": 36,
+        "side_padding": 20,
+        "content_gap": 20,
+        "card_gap": 10,
+        "card_width": 140,
+        "card_height": 140,
+        "card_padding": 14,
+        "corner_radius": 18,
+        "icon_size": 38,
+        "mobile_heading_size": 19,
+        "mobile_body_size": 13,
+        "mobile_item_font_size": 12,
+        "mobile_section_padding_y": 16,
+        "mobile_side_padding": 10,
+        "mobile_content_gap": 12,
+        "mobile_card_gap": 6,
+        "mobile_card_width": 110,
+        "mobile_card_height": 108,
+        "mobile_card_padding": 8,
+        "mobile_icon_size": 40,
+        "mobile_glass_opacity": 25,
+        "mobile_glass_blur": 10,
+        "image-one": "shopify://shop_images/Untitled_design_2c1cc9da-9798-49f1-9324-ad14551586da.png",
+        "image-head-one": "Bundle Deals",
+        "image-one-link": "shopify://collections/bundle-deals",
+        "image-two": "shopify://shop_images/Untitled_design_11.png",
+        "image-two-text": "Active Bodycare",
+        "image-two-url": "shopify://collections/active-bodycare",
+        "image-three": "shopify://shop_images/Untitled_design_6.png",
+        "image-head-three": "Serums",
+        "image-three-url": "shopify://collections/serums",
+        "image-four": "shopify://shop_images/Untitled_design_-_1.png",
+        "heading-four": "Pigmentation",
+        "image-four-url": "shopify://collections/hyperpigmentation",
+        "image-five": "shopify://shop_images/Untitled_design_4.png",
+        "headind-five": "Body Washes",
+        "image-five-url": "shopify://collections/body-wash-1",
+        "image-six": "shopify://shop_images/Untitled_design_13.png",
+        "heading-six": "Moisturisers & Balms",
+        "image-six-url": "shopify://collections/moisturisers-balms",
+        "image-sevn": "shopify://shop_images/Untitled_design_d46a1fa6-27ff-4fda-8255-e83b57779590.png",
+        "heading-sevn": "Haircare",
+        "heading-sevn-url": "shopify://collections/hair",
+        "image-eight": "shopify://shop_images/product-title-variant-title-authentic-k-beauty-south-africa-3100639.png",
+        "heading-eight": "Book Smart Analysis",
+        "image-eight-url": "shopify://pages/make-services"
+      }
+    },
+    "featured_blog_ftBf6e": {
+      "type": "featured-blog",
+      "settings": {
+        "full_width": true,
+        "carousel": true,
+        "blog": "news",
+        "articles_count": 10,
+        "grid_columns": 4,
+        "heading": "Blog posts",
+        "heading_size": "h6",
+        "text_alignment": "text-left",
+        "link_text": "View all",
+        "show_category": true,
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "multicolumn_zgEUVW": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tz8Wh3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BOT_for_skin.jpg",
+            "video_autoplay": true,
+            "heading": "For Skin",
+            "heading_size": "h5",
+            "content": "<p>Glow with the Best – Skin Care Essentials, Exclusive Deals & Expert Picks!</p>",
+            "link_url": "shopify://collections/skincare",
+            "link_text": "SHOP NOW ▸",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_eYEbjx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/197CCFF5-6745-4163-B11C-CFA60885BF47-scaled.jpg",
+            "video_autoplay": true,
+            "heading": "For Hair",
+            "heading_size": "h5",
+            "content": "<p>Discover the Best in Hair Care – Exclusive Deals, Trendy Collections & Expert Picks!</p>",
+            "link_url": "shopify://collections/hair",
+            "link_text": "SHOP NOW ▸",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_eQMkmG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BOT_for_him.jpg",
+            "video_autoplay": true,
+            "heading": "For Him",
+            "heading_size": "h5",
+            "content": "<p>Explore Our Latest Collections & Exclusive Deals for a Seamless Shopping Experience!</p>",
+            "link_url": "shopify://collections/beard",
+            "link_text": "SHOP NOW ▸",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        },
+        "column_DrPTHz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BOT_for_home.jpg",
+            "video_autoplay": true,
+            "heading": "For Home",
+            "heading_size": "h5",
+            "content": "<p> Explore our latest collections, discover  and enjoy a seamless shopping experience.</p>",
+            "link_url": "shopify://collections/cologne",
+            "link_text": "SHOP NOW ▸",
+            "link_style": "link",
+            "heading_html_tag": "p"
+          }
+        }
+      },
+      "block_order": [
+        "column_tz8Wh3",
+        "column_eYEbjx",
+        "column_eQMkmG",
+        "column_DrPTHz"
+      ],
+      "custom_css": [
+        ".multicolumn__item:nth-child(1) {background: #c5c5c5;}",
+        ".multicolumn__item:nth-child(2) {background: #fadfca;}",
+        ".multicolumn__item:nth-child(3) {background: #c3cccd;}",
+        ".multicolumn__item:nth-child(4) {background: #c8c5bd;}",
+        ".h5 {color: #333; padding-left: 20px; font-weight: 600;}",
+        ".underlined-link {padding-left: 20px; color: #333; font-weight: 600; text-decoration: none; margin-top: 15px; margin-bottom: 40px; font-size: 14px;}",
+        ".prose {padding-left: 20px; color: #333;}",
+        "@media (min-width: 768px) {.md\\:mb-12 {margin-bottom: 1.8rem; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "section_width": 1200,
+        "enable_swipe_on_mobile": true,
+        "align_card_buttons": true,
+        "number_of_columns_on_desktop": 4,
+        "space_between_columns": 16,
+        "image_width": 100,
+        "image_size": "media--ratio-4-3",
+        "column_text_alignment": "text-center items-center",
+        "column_text_alignment_mobile": "",
+        "subheading": "",
+        "eyebrow_text": "",
+        "eyebrow_color": "#a48840",
+        "eyebrow_size": 10,
+        "heading": "",
+        "heading_size": "h4",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    },
+    "logo_list_AmHiiE": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_LzdCHM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/5.png",
+            "alt_text": "Dermalogica",
+            "link": "",
+            "width": 100
+          }
+        },
+        "logo_hWbXq9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/pastry_logo_bw.png",
+            "alt_text": "",
+            "link": "shopify://collections/pastry-skincare",
+            "width": 100
+          }
+        },
+        "logo_ydhLxr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/1.png",
+            "alt_text": "",
+            "link": "shopify://collections/cosrx",
+            "width": 100
+          }
+        },
+        "logo_MVBj9x": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/10.png",
+            "alt_text": "",
+            "link": "shopify://collections/medicube",
+            "width": 100
+          }
+        },
+        "logo_7CgKGc": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/7.png",
+            "alt_text": "",
+            "link": "shopify://collections/standard-beauty",
+            "width": 100
+          }
+        },
+        "logo_AjKaPW": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/2_4d685296-d9d8-42ac-a954-3e90debdd50e.png",
+            "alt_text": "",
+            "link": "shopify://collections/axis-y",
+            "width": 100
+          }
+        },
+        "logo_zWf6zj": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/9.png",
+            "alt_text": "",
+            "link": "shopify://collections/swiitchbeauty",
+            "width": 100
+          }
+        },
+        "logo_3AyCD4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/8.png",
+            "alt_text": "",
+            "link": "shopify://collections/fundamentals",
+            "width": 100
+          }
+        },
+        "logo_34YNid": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_White_Black_Bold_Minimalist_Beauty_Blogger_Logo.png",
+            "alt_text": "",
+            "link": "shopify://collections/mzuri-skin",
+            "width": 100
+          }
+        },
+        "logo_dNzRyC": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/3.png",
+            "alt_text": "",
+            "link": "shopify://collections/juce-fragrances",
+            "width": 100
+          }
+        },
+        "logo_rRQcpT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/4.png",
+            "alt_text": "",
+            "link": "shopify://collections/bair-skincare",
+            "width": 100
+          }
+        },
+        "logo_WWmrbh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/6.png",
+            "alt_text": "",
+            "link": "shopify://collections/la-roche-posay",
+            "width": 100
+          }
+        },
+        "logo_YkymrK": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/standard_beauty_logo.png",
+            "alt_text": "",
+            "link": "shopify://collections/standard-beauty",
+            "width": 100
+          }
+        },
+        "logo_KpC9Tt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/derm_opal_logo_bw.png",
+            "alt_text": "",
+            "link": "shopify://collections/dermopal",
+            "width": 100
+          }
+        },
+        "logo_EbExj6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/skin_functional_logo_bw.png",
+            "alt_text": "",
+            "link": "shopify://collections/skin-functional",
+            "width": 100
+          }
+        },
+        "logo_kwB9MM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/cerave_logo_bW.png",
+            "alt_text": "",
+            "link": "shopify://collections/cerave",
+            "width": 100
+          }
+        },
+        "logo_Veewca": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/lelive_logo_bw.jpg",
+            "alt_text": "",
+            "link": "shopify://collections/lelive",
+            "width": 100
+          }
+        }
+      },
+      "block_order": [
+        "logo_LzdCHM",
+        "logo_hWbXq9",
+        "logo_ydhLxr",
+        "logo_MVBj9x",
+        "logo_7CgKGc",
+        "logo_AjKaPW",
+        "logo_zWf6zj",
+        "logo_3AyCD4",
+        "logo_34YNid",
+        "logo_dNzRyC",
+        "logo_rRQcpT",
+        "logo_WWmrbh",
+        "logo_YkymrK",
+        "logo_KpC9Tt",
+        "logo_EbExj6",
+        "logo_kwB9MM",
+        "logo_Veewca"
+      ],
+      "custom_css": [
+        ".heading {font-size: 10px; font-weight: 600;}",
+        ".rfs\\:gap-12 {gap: min(2rem, calc(0.5rem + 3vw));}"
+      ],
+      "settings": {
+        "full_width": true,
+        "logo_opacity": 40,
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h6",
+        "content": "",
+        "text_alignment": "text-center",
+        "background_color": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_html_tag": "p"
+      }
+    }
+  },
+  "order": [
+    "bot_greeting",
+    "custom_collection_slider_LQ8mx6",
+    "featured_collection_kDYPRe",
+    "4ab9cd36-aab7-44ae-8b22-fbdfb3d5d3a7",
+    "bot_smart_analysis",
+    "featured_collection_FDAaca",
+    "multicolumn_qK9Pkf",
+    "featured_collection_AmHxrq",
+    "featured_collection_z7Wn3E",
+    "featured_collection_ELgnaT",
+    "bot_tiles_am",
+    "bot_tiles_pm",
+    "text_with_icon_PVzYCY",
+    "featured_blog_ftBf6e",
+    "multicolumn_zgEUVW",
+    "logo_list_AmHiiE"
+  ]
+}
