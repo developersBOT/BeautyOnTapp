@@ -25,21 +25,30 @@ protocol StoreLocationsFetching: Sendable {
 }
 
 actor StoreLocationsClient: StoreLocationsFetching {
-  static let shared = StoreLocationsClient()
+  // Disk persistence is reserved for the production instance; tests inject
+  // their own vault when they want to exercise it.
+  static let shared = StoreLocationsClient(vault: .shared)
   static let liveURL = URL(
     string: "https://beautyontapp.com/pages/locations"
   )!
 
   private static let maximumResponseBytes = 5 * 1_024 * 1_024
+  private static let vaultKey = StorefrontResponseVault.key(
+    for: Data("store-locations|pages/locations".utf8)
+  )
 
   private let session: URLSession
   private let endpoint: URL
+  private let vault: StorefrontResponseVault?
+  private var isRevalidating = false
 
   init(
     session: URLSession? = nil,
-    endpoint: URL = StoreLocationsClient.liveURL
+    endpoint: URL = StoreLocationsClient.liveURL,
+    vault: StorefrontResponseVault? = nil
   ) {
     self.endpoint = endpoint
+    self.vault = vault
     if let session {
       self.session = session
     } else {
@@ -53,6 +62,24 @@ actor StoreLocationsClient: StoreLocationsFetching {
   }
 
   func fetchLocations() async throws -> [StoreLocation] {
+    // Stores is a dock tab: physical locations change rarely, so the last
+    // parsed page renders instantly and refreshes behind the list.
+    if let vault,
+      let cachedData = await vault.read(key: Self.vaultKey),
+      let locations = try? StoreLocationsParser.parse(data: cachedData),
+      !locations.isEmpty
+    {
+      scheduleRevalidation()
+      return locations
+    }
+
+    let data = try await fetchLocationsPageData()
+    let locations = try StoreLocationsParser.parse(data: data)
+    await vault?.write(key: Self.vaultKey, data: data)
+    return locations
+  }
+
+  private func fetchLocationsPageData() async throws -> Data {
     var request = URLRequest(url: endpoint)
     request.timeoutInterval = 30
     request.cachePolicy = .reloadRevalidatingCacheData
@@ -75,8 +102,28 @@ actor StoreLocationsClient: StoreLocationsFetching {
     guard data.count <= Self.maximumResponseBytes else {
       throw StoreLocationsError.pageTooLarge
     }
+    return data
+  }
 
-    return try StoreLocationsParser.parse(data: data)
+  private func scheduleRevalidation() {
+    guard !isRevalidating else { return }
+    isRevalidating = true
+    Task(priority: .utility) { [weak self] in
+      await self?.revalidate()
+    }
+  }
+
+  private func revalidate() async {
+    defer { isRevalidating = false }
+    guard let vault else { return }
+    guard
+      let data = try? await fetchLocationsPageData(),
+      let locations = try? StoreLocationsParser.parse(data: data),
+      !locations.isEmpty
+    else {
+      return
+    }
+    await vault.write(key: Self.vaultKey, data: data)
   }
 }
 

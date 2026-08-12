@@ -2,7 +2,13 @@ import SwiftUI
 
 struct HomeView: View {
   @EnvironmentObject private var appModel: AppModel
-  private let snapshot = ThemeHomeSnapshot.bundled
+  @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  // Home renders the live storefront snapshot: bundled content for the very
+  // first frame, then whatever the theme-sync store has published — the last
+  // synced copy from disk, refreshed from the storefront in the background.
+  // Injected from RootView so the main-actor singleton is never touched
+  // during nonisolated view construction.
+  @EnvironmentObject private var themeStore: ThemeSnapshotStore
 
   var body: some View {
     GeometryReader { proxy in
@@ -40,6 +46,12 @@ struct HomeView: View {
         }
       }
       .accessibilityIdentifier("home-screen")
+      // A synced storefront change (for example the weekly hero image swap)
+      // crossfades into place; content is never removed while it loads.
+      .animation(
+        reduceMotion ? nil : .easeInOut(duration: 0.32),
+        value: themeStore.generation
+      )
       .background(ThemeTokens.canvas)
       // The page ends on the black storefront footer, so the bottom
       // overscroll bounce must reveal black, not the white canvas.
@@ -75,7 +87,7 @@ struct HomeView: View {
     // Every storefront section renders natively, in storefront order —
     // including Shop by Routine and Need a Little Guidance, which the live
     // homepage shows between Bundle Deals and the blog rail.
-    snapshot.sections
+    themeStore.home.sections
   }
 
   @ViewBuilder
@@ -776,7 +788,9 @@ private struct BlogLinkView: View {
         .accessibilityLabel("Retry blog posts")
       }
     }
-    .task(id: "\(specification.handle)-\(retryID)") {
+    .task(
+      id: "\(specification.handle)-\(retryID)-\(appModel.contentGeneration)"
+    ) {
       await load()
     }
   }

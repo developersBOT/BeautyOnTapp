@@ -40,6 +40,17 @@ enum StorefrontError: LocalizedError, Equatable, Sendable {
   }
 }
 
+/// Cache behaviour for storefront reads.
+///
+/// `.staleWhileRevalidate` serves the last-known-good disk copy instantly
+/// (when one exists and is recent enough) and refreshes it in the background,
+/// so recurring screens never show a loading state. Anything transactional —
+/// cart, checkout, search-as-you-type — stays `.networkOnly`.
+enum StorefrontReadCache: Sendable {
+  case networkOnly
+  case staleWhileRevalidate
+}
+
 enum CollectionSort: String, CaseIterable, Identifiable, Sendable {
   case featured = "COLLECTION_DEFAULT"
   case bestSelling = "BEST_SELLING"
@@ -51,7 +62,9 @@ enum CollectionSort: String, CaseIterable, Identifiable, Sendable {
 }
 
 actor StorefrontClient {
-  static let shared = StorefrontClient()
+  // Only the production instance persists responses; test instances stay
+  // disk-free unless a test injects its own vault.
+  static let shared = StorefrontClient(vault: .shared)
 
   static let apiVersion = "2026-07"
   static let shopDomain = "i0ma19-q8.myshopify.com"
@@ -67,11 +80,19 @@ actor StorefrontClient {
   private let session: URLSession
   private let ajaxSession: URLSession
   private let decoder = JSONDecoder()
+  private let vault: StorefrontResponseVault?
+  private var revalidatingKeys: Set<String> = []
+  /// Invoked off the main actor whenever a background revalidation replaced
+  /// cached bytes with materially different content. AppModel debounces this
+  /// into a single content-generation bump.
+  private var backgroundRefreshHandler: (@Sendable () -> Void)?
 
   init(
     session: URLSession? = nil,
-    ajaxSession: URLSession? = nil
+    ajaxSession: URLSession? = nil,
+    vault: StorefrontResponseVault? = nil
   ) {
+    self.vault = vault
     endpoint = URL(
       string: "https://\(Self.shopDomain)/api/\(Self.apiVersion)/graphql.json"
     )!
@@ -129,7 +150,8 @@ actor StorefrontClient {
         "after": after as Any,
         "sortKey": sort.rawValue,
         "reverse": reverse,
-      ]
+      ],
+      cache: .staleWhileRevalidate
     )
     guard let collection = payload.collection else {
       throw StorefrontError.missingData("Collection")
@@ -145,7 +167,8 @@ actor StorefrontClient {
   func product(handle: String) async throws -> StoreProduct {
     let payload: ProductResponse = try await graphQL(
       query: StorefrontQuery.product,
-      variables: ["handle": handle]
+      variables: ["handle": handle],
+      cache: .staleWhileRevalidate
     )
     guard let product = payload.product else {
       throw StorefrontError.missingData("Product")
@@ -159,7 +182,8 @@ actor StorefrontClient {
   ) async throws -> [StoreProduct] {
     let payload: ProductRecommendationsResponse = try await graphQL(
       query: StorefrontQuery.productRecommendations,
-      variables: ["productId": productID]
+      variables: ["productId": productID],
+      cache: .staleWhileRevalidate
     )
     return payload.productRecommendations
       .prefix(min(max(limit, 1), 8))
@@ -194,7 +218,8 @@ actor StorefrontClient {
   func menu(handle: String) async throws -> StoreMenu {
     let payload: MenuResponse = try await graphQL(
       query: StorefrontQuery.menu,
-      variables: ["handle": handle]
+      variables: ["handle": handle],
+      cache: .staleWhileRevalidate
     )
     guard let menu = payload.menu else {
       throw StorefrontError.missingData("Menu")
@@ -213,7 +238,8 @@ actor StorefrontClient {
         "handle": handle,
         "first": min(max(first, 1), 50),
         "after": after as Any,
-      ]
+      ],
+      cache: .staleWhileRevalidate
     )
     guard let blog = payload.blog else {
       throw StorefrontError.missingData("Blog")
@@ -704,9 +730,16 @@ actor StorefrontClient {
     throw StorefrontError.userErrors(errors.map(\.message))
   }
 
+  func setBackgroundRefreshHandler(
+    _ handler: (@Sendable () -> Void)?
+  ) {
+    backgroundRefreshHandler = handler
+  }
+
   private func graphQL<Value: Decodable>(
     query: String,
-    variables: [String: Any]
+    variables: [String: Any],
+    cache: StorefrontReadCache = .networkOnly
   ) async throws -> Value {
     let normalizedVariables = variables.compactMapValues { value -> Any? in
       if let optional = value as? OptionalProtocol, optional.isNil {
@@ -714,18 +747,52 @@ actor StorefrontClient {
       }
       return value
     }
+    // Sorted keys keep the request bytes — and therefore the vault key —
+    // stable across launches for identical queries.
     let body = try JSONSerialization.data(
       withJSONObject: [
         "query": query,
         "variables": normalizedVariables,
-      ]
+      ],
+      options: [.sortedKeys]
     )
+    let request = graphQLRequest(body: body)
+
+    guard cache == .staleWhileRevalidate, let vault else {
+      let data = try await performGraphQL(request)
+      return try decodeEnvelope(from: data)
+    }
+
+    let key = StorefrontResponseVault.key(
+      for: Data("\(Self.apiVersion)|".utf8) + body
+    )
+    if let cachedData = await vault.read(key: key),
+      let cachedValue: Value = try? decodeEnvelope(from: cachedData)
+    {
+      scheduleRevalidation(
+        request: request,
+        key: key,
+        previousData: cachedData
+      )
+      return cachedValue
+    }
+
+    let data = try await performGraphQL(request)
+    let value: Value = try decodeEnvelope(from: data)
+    await vault.write(key: key, data: data)
+    return value
+  }
+
+  private func graphQLRequest(body: Data) -> URLRequest {
     var request = URLRequest(url: endpoint)
     request.httpMethod = "POST"
     request.httpBody = body
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     request.setValue("application/json", forHTTPHeaderField: "Accept")
+    return request
+  }
 
+  private func performGraphQL(_ request: URLRequest) async throws -> Data {
     let (data, response) = try await session.data(for: request)
     guard let response = response as? HTTPURLResponse else {
       throw StorefrontError.invalidResponse
@@ -733,7 +800,12 @@ actor StorefrontClient {
     guard (200...299).contains(response.statusCode) else {
       throw StorefrontError.httpStatus(response.statusCode)
     }
+    return data
+  }
 
+  private func decodeEnvelope<Value: Decodable>(
+    from data: Data
+  ) throws -> Value {
     let envelope: GraphQLEnvelope<Value>
     do {
       envelope = try decoder.decode(GraphQLEnvelope<Value>.self, from: data)
@@ -748,17 +820,74 @@ actor StorefrontClient {
     }
     return value
   }
+
+  /// Refreshes a served-stale response in the background. When the fresh
+  /// bytes differ, the vault is updated and the refresh handler fires so
+  /// visible screens can silently re-render with current content.
+  private func scheduleRevalidation(
+    request: URLRequest,
+    key: String,
+    previousData: Data
+  ) {
+    guard !revalidatingKeys.contains(key) else { return }
+    revalidatingKeys.insert(key)
+
+    Task(priority: .utility) { [weak self] in
+      await self?.revalidate(
+        request: request,
+        key: key,
+        previousData: previousData
+      )
+    }
+  }
+
+  private func revalidate(
+    request: URLRequest,
+    key: String,
+    previousData: Data
+  ) async {
+    defer { revalidatingKeys.remove(key) }
+    guard let vault else { return }
+    guard let data = try? await performGraphQL(request) else { return }
+    // Never poison the vault: only a structurally valid, error-free envelope
+    // may replace last-known-good bytes.
+    guard
+      let object = try? JSONSerialization.jsonObject(with: data)
+        as? [String: Any],
+      object["data"] is [String: Any],
+      (object["errors"] as? [Any])?.isEmpty ?? true
+    else {
+      return
+    }
+
+    await vault.write(key: key, data: data)
+    if data != previousData {
+      backgroundRefreshHandler?()
+    }
+  }
 }
 
 /// Reads the live first-party Brands directory. Keeping this separate from
 /// the Storefront API avoids deriving collection handles from vendor names;
 /// the page itself is the source of truth for both display labels and links.
 actor BrandDirectoryClient {
-  static let shared = BrandDirectoryClient()
+  // Disk persistence is reserved for the production instance; tests inject
+  // their own vault when they want to exercise it.
+  static let shared = BrandDirectoryClient(vault: .shared)
 
   private let session: URLSession
+  private let vault: StorefrontResponseVault?
+  private var isRevalidating = false
 
-  init(session: URLSession? = nil) {
+  private static let vaultKey = StorefrontResponseVault.key(
+    for: Data("brand-directory|pages/brands".utf8)
+  )
+
+  init(
+    session: URLSession? = nil,
+    vault: StorefrontResponseVault? = nil
+  ) {
+    self.vault = vault
     if let session {
       self.session = session
     } else {
@@ -772,6 +901,24 @@ actor BrandDirectoryClient {
   }
 
   func fetchBrands() async throws -> [NativeBrand] {
+    // Serve the last directory instantly and refresh it behind the sheet;
+    // the page is editorial and changes far less often than it is opened.
+    if let vault,
+      let cachedData = await vault.read(key: Self.vaultKey),
+      let brands = try? Self.parseBrands(from: cachedData),
+      !brands.isEmpty
+    {
+      scheduleRevalidation()
+      return brands
+    }
+
+    let data = try await fetchBrandsPageData()
+    let brands = try Self.parseBrands(from: data)
+    await vault?.write(key: Self.vaultKey, data: data)
+    return brands
+  }
+
+  private func fetchBrandsPageData() async throws -> Data {
     let url = ShopifyAsset.shopRoot.appendingPathComponent("pages/brands")
     var request = URLRequest(url: url)
     request.setValue("text/html", forHTTPHeaderField: "Accept")
@@ -783,6 +930,31 @@ actor BrandDirectoryClient {
     guard (200...299).contains(response.statusCode) else {
       throw StorefrontError.httpStatus(response.statusCode)
     }
+    return data
+  }
+
+  private func scheduleRevalidation() {
+    guard !isRevalidating else { return }
+    isRevalidating = true
+    Task(priority: .utility) { [weak self] in
+      await self?.revalidate()
+    }
+  }
+
+  private func revalidate() async {
+    defer { isRevalidating = false }
+    guard let vault else { return }
+    guard
+      let data = try? await fetchBrandsPageData(),
+      let brands = try? Self.parseBrands(from: data),
+      !brands.isEmpty
+    else {
+      return
+    }
+    await vault.write(key: Self.vaultKey, data: data)
+  }
+
+  private static func parseBrands(from data: Data) throws -> [NativeBrand] {
     guard let html = String(data: data, encoding: .utf8) else {
       throw StorefrontError.invalidResponse
     }

@@ -119,6 +119,11 @@ final class AppModel: ObservableObject {
   @Published private(set) var isCustomerSessionRefreshing = false
   @Published private(set) var isCustomerAuthInProgress = false
   @Published private(set) var transientNotice: String?
+  /// Bumped (debounced) when a background revalidation of cached storefront
+  /// content produced different bytes. Recurring screens key their refresh
+  /// tasks off this so already-visible stale content silently catches up —
+  /// there is never a loading state for content the customer can see.
+  @Published private(set) var contentGeneration = 0
 
   let client: StorefrontClient
 
@@ -153,7 +158,10 @@ final class AppModel: ObservableObject {
   // immediately while the shared WebKit cookie is still settling.
   private var didCompleteCustomerAuthenticationHandoff = false
   private var pendingNativeWebNavigation: NativeStorefrontNavigation?
+  private var contentRefreshDebounce: Task<Void, Never>?
+  private var didRegisterBackgroundRefreshHandler = false
   private static let customerSessionRetryDelay: UInt64 = 250_000_000
+  private static let contentRefreshDebounceDelay: UInt64 = 600_000_000
 
   #if DEBUG
     private var usesSignedInProfileFixture: Bool {
@@ -213,6 +221,7 @@ final class AppModel: ObservableObject {
 
   func bootstrap() async {
     startInitialCustomerSessionRefreshIfNeeded()
+    await registerBackgroundRefreshHandlerIfNeeded()
 
     if isBootstrapComplete {
       return
@@ -275,6 +284,38 @@ final class AppModel: ObservableObject {
     }
     if fetchedShopMenu?.handle == Self.shopMenuHandle {
       shopMenu = fetchedShopMenu
+    }
+  }
+
+  private func registerBackgroundRefreshHandlerIfNeeded() async {
+    guard !didRegisterBackgroundRefreshHandler else { return }
+    didRegisterBackgroundRefreshHandler = true
+
+    await client.setBackgroundRefreshHandler { [weak self] in
+      Task { @MainActor [weak self] in
+        self?.noteContentRefreshed()
+      }
+    }
+  }
+
+  /// A background revalidation replaced cached storefront bytes. Debounce a
+  /// burst of refreshes (one per rail on a cold launch) into a single pass:
+  /// drop the 5-minute in-memory copies so the next read re-decodes the
+  /// fresh vault bytes, then bump the generation recurring screens observe.
+  private func noteContentRefreshed() {
+    contentRefreshDebounce?.cancel()
+    contentRefreshDebounce = Task { @MainActor [weak self] in
+      do {
+        try await Task.sleep(
+          nanoseconds: Self.contentRefreshDebounceDelay
+        )
+      } catch {
+        return
+      }
+      guard let self else { return }
+      self.productCache = [:]
+      self.collectionCache = [:]
+      self.contentGeneration &+= 1
     }
   }
 

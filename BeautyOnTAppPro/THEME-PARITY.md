@@ -1,5 +1,13 @@
 # BeautyOnTApp native theme parity
 
+> **2026-08-12 update:** Home *settings* (hero slides, rails, copy, images)
+> now sync from the live storefront at runtime via the `bot_native_theme`
+> metaobject — see `SHOPIFY-SYNC.md`. The bundled snapshot below is the
+> first-frame/offline fallback and was refreshed the same day from the
+> published theme `bot-semrush-face-mask-redirect-fix-20260811`. The parity
+> rules in this file still govern section *markup semantics* (how each
+> section type renders natively).
+
 ## Authoritative source
 
 Every native visual or navigation change must be checked against this export
@@ -10,10 +18,13 @@ before implementation:
 SHA-256:
 `c5ff25b1d4e03733228adc2fb9a63d99c6a0aaaf9e8505bf4a01cdbcc900d8de`
 
-The bundled snapshots are byte-identical to that export:
+The bundled snapshots are byte-identical to that export, except where noted:
 
 - `Resources/ThemeSnapshot/index.json`
-  — `88062f7d355c1c2371b7a8c65645cd79b21be62f98d5da70d7528e71b413109d`
+  — refreshed 2026-08-12 from the published theme
+  `bot-semrush-face-mask-redirect-fix-20260811` (runtime sync keeps it
+  current from here; the 29 Jul copy hashed
+  `88062f7d355c1c2371b7a8c65645cd79b21be62f98d5da70d7528e71b413109d`)
 - `Resources/ThemeSnapshot/header-group.json`
   — `ef9ac7ba217cf64d8cbb2bfb1c4e72e49a35047f70f6796844e420ff407d3b62`
 - `Resources/ThemeSnapshot/footer-group.json`

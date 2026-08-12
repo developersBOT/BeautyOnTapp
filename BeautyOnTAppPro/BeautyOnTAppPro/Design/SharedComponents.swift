@@ -1261,7 +1261,12 @@ struct ProductRailView: View {
       }
     }
     .padding(.vertical, ThemeTokens.sectionVerticalPadding)
-    .task(id: specification.collectionHandle) {
+    // Re-keyed on the content generation: when a background revalidation
+    // finds changed collection data, the rail re-reads it silently — the
+    // placeholder only ever shows while the rail has nothing at all.
+    .task(
+      id: "\(specification.collectionHandle)-\(appModel.contentGeneration)"
+    ) {
       await loadProducts()
     }
   }

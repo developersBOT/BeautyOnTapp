@@ -2,6 +2,7 @@ import SwiftUI
 
 struct RootView: View {
   @Environment(\.accessibilityReduceMotion) private var reduceMotion
+  @Environment(\.scenePhase) private var scenePhase
   @StateObject var appModel: AppModel
   @State private var shopFocusRequest = 0
   @State private var profileFocusRequest = 0
@@ -65,8 +66,21 @@ struct RootView: View {
       value: appModel.transientNotice
     )
     .environmentObject(appModel)
+    .environmentObject(ThemeSnapshotStore.shared)
     .task {
-      await appModel.bootstrap()
+      // Bootstrap and the storefront theme sync run concurrently; neither
+      // may delay the other's first useful frame.
+      async let bootstrap: Void = appModel.bootstrap()
+      async let themeSync: Void = ThemeSnapshotStore.shared.activate()
+      _ = await (bootstrap, themeSync)
+    }
+    .onChange(of: scenePhase) { phase in
+      // Returning to the app is the moment a week-old Home would otherwise
+      // show: pull the current storefront snapshot (throttled internally).
+      guard phase == .active else { return }
+      Task {
+        await ThemeSnapshotStore.shared.refreshIfStale()
+      }
     }
     .sheet(
       isPresented: $appModel.isShopPresented,

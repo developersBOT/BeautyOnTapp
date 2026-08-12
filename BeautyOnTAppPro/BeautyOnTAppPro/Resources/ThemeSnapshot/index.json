@@ -5,7 +5,7 @@
       "settings": {
         "kicker": "South Africa's beauty destination 🖤",
         "greeting_prefix": "Happy",
-        "greeting_suffix": "Bestie.😊",
+        "greeting_suffix": "Bestie.😉",
         "subtext": "K-beauty, dermocosmetic & proudly South African — in one place.",
         "kicker_size": 9,
         "kicker_color": "#a48840",
@@ -25,57 +25,57 @@
         "slide_8ryeA4": {
           "type": "Slide",
           "settings": {
-            "bg-color": "#f7f1f1",
+            "bg-color": "#f2ede8",
             "text-color": "#000000",
-            "image": "shopify://shop_images/IMG_6824_e14c176b-b6bf-4264-ac50-bca733ed45f1.jpg",
-            "slide-heading": "Fade Dark Marks, Every Wash",
-            "description": "Mandelic acid —with kojic acid and licorice root to fade dark marks, smooth texture and even skin tone.",
+            "image": "shopify://shop_images/IMG_4570_1.jpg",
+            "slide-heading": "Softness, Served Overnight",
+            "description": "Pastry's Overnight Body Balm melts in while you sleep, Gently smooths rough, bumpy skin. Wake up buttery. 💚",
             "btn-text": "SHOP NOW",
             "btn-link": "shopify://collections/pastry-skincare"
-          }
-        },
-        "slide_t9LLAN": {
-          "type": "Slide",
-          "settings": {
-            "bg-color": "#a2d0fb",
-            "text-color": "#000000",
-            "image": "shopify://shop_images/nua_Heartleaf_cleanser_Medik8_Pure_Cellulose_Purifying_Cleanser_SEDUL1988_Cleansing_Balm_and_Centella_Serum_by_SkinTrea.jpg",
-            "slide-heading": "The Pore Care Edit",
-            "description": "Cleanse, Resurface & Calm With K-Beauty Pore Heroes From Anua, Medicube, SKIN1004 & SEOUL 1988.",
-            "btn-text": "SHOP NOW",
-            "btn-link": "shopify://collections/korean-skincare"
           }
         },
         "slide_pQETJc": {
           "type": "Slide",
           "settings": {
-            "bg-color": "#ebe5e0",
-            "text-color": "#090909",
-            "image": "shopify://shop_images/Website_poster_no_logo.png",
-            "slide-heading": "Fresh From Seoul",
-            "description": "New innisfree, Erborian & LANEIGE four K-beauty drops to cleanse, deeply hydrate & glaze your glow.",
+            "bg-color": "#b9ebbb",
+            "text-color": "#000000",
+            "image": "shopify://shop_images/IMG_6332_d7f7f8e9-2aa9-41ee-bfd3-c5b14376ee91.jpg",
+            "slide-heading": "Seoul's Finest, Landed in SA",
+            "description": "The K-beauty icons  COSRX Snail Mucin, Medicube retinol, Purito, AXIS-Y and Torriden  All In One Place. 🖤",
             "btn-text": "SHOP NOW",
-            "btn-link": "shopify://collections/new-arrivals"
+            "btn-link": "shopify://collections/korean-skincare"
           }
         },
         "slide_8m3EXw": {
           "type": "Slide",
           "settings": {
-            "bg-color": "#f9ce96",
-            "text-color": "#0e0e0e",
-            "image": "shopify://shop_images/surface.jpg",
-            "slide-heading": "Sun, Meet Your Match",
-            "description": "High-Protection SPF from Beauty of Joseon, La Roche, Pastry & TOCOBO  Shield, Hydrate  & Glow Every Day.",
+            "bg-color": "#fdeea0",
+            "text-color": "#000000",
+            "image": "shopify://shop_images/20250306_205844220_iOS.jpg",
+            "slide-heading": "Glow, The Mzuri Way",
+            "description": "Sun-warmed Turmeric &Glycolic Acid, whipped in sugar scrub that buffs away dull skin and leaves you gleaming.",
             "btn-text": "SHOP NOW",
-            "btn-link": "shopify://collections/sunscreens"
+            "btn-link": "shopify://collections/mzuri-skin-scrubs"
+          }
+        },
+        "slide_t9LLAN": {
+          "type": "Slide",
+          "settings": {
+            "bg-color": "#7da6d9",
+            "text-color": "#ffffff",
+            "image": "shopify://shop_images/20250216_130544060_iOS.jpg",
+            "slide-heading": "Oils Your Dry Skin Will Drink Up",
+            "description": "Cleansing oils from Avène,La Roche-Posay & Bioderma wash without the strip, made for very dry, sensitive skin.",
+            "btn-text": "SHOP NOW",
+            "btn-link": "shopify://collections/body-oil"
           }
         }
       },
       "block_order": [
         "slide_8ryeA4",
-        "slide_t9LLAN",
         "slide_pQETJc",
-        "slide_8m3EXw"
+        "slide_8m3EXw",
+        "slide_t9LLAN"
       ],
       "custom_css": [],
       "settings": {
@@ -403,7 +403,7 @@
             "video_autoplay": true,
             "heading": "Clearance — Up To 50% Off",
             "heading_size": "h5",
-            "content": "<p> Great skincare at unbeatable prices. Limited stock — once it’s gone, it’s gone.</p>",
+            "content": "<p> Great skincare at unbeatable prices. Limited stock — once it’s gone, it’s gone.</p>",
             "link_url": "shopify://collections/clearance-sale",
             "link_text": "Shop Now",
             "link_style": "button",
@@ -418,7 +418,7 @@
             "video_autoplay": true,
             "heading": "Lelive Favourites!",
             "heading_size": "h5",
-            "content": "<p>Clean, conscious skincare made for African skin. Shop the full lelive range. </p>",
+            "content": "<p>Clean, conscious skincare made for African skin. Shop the full lelive range. </p>",
             "link_url": "shopify://collections/lelive",
             "link_text": "Shop Now",
             "link_style": "button",
@@ -841,7 +841,7 @@
           "settings": {
             "period": "pm",
             "name": "Ceramide Barrier Care",
-            "link": "/collections/ceramide-1"
+            "link": "/collections/ceramide"
           }
         },
         "pm8": {
@@ -961,7 +961,7 @@
         "image-four-url": "shopify://collections/hyperpigmentation",
         "image-five": "shopify://shop_images/Untitled_design_4.png",
         "headind-five": "Body Washes",
-        "image-five-url": "shopify://collections/body-wash-1",
+        "image-five-url": "shopify://collections/body-wash",
         "image-six": "shopify://shop_images/Untitled_design_13.png",
         "heading-six": "Moisturisers & Balms",
         "image-six-url": "shopify://collections/moisturisers-balms",
@@ -1307,3 +1307,4 @@
     "logo_list_AmHiiE"
   ]
 }
+

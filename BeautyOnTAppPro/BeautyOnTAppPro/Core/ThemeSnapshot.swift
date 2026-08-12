@@ -59,6 +59,45 @@ struct ThemeHomeSnapshot {
     (try? ThemeSnapshotLoader.loadHome(resourceName: "index-preview"))
       ?? ThemeHomeSnapshot(sections: [])
   }()
+
+  /// Hash of the bundled `templates/index.json` bytes. ThemeSnapshotStore
+  /// compares synced payloads against this so an unchanged storefront never
+  /// triggers a re-render.
+  static let bundledPayloadHash: String? = {
+    guard
+      let data = ThemeSnapshotLoader.homeResourceData(
+        resourceName: StorefrontThemeSource.homeSnapshotResourceName
+      )
+    else {
+      return nil
+    }
+    return ThemeSyncPayload.hash(of: data)
+  }()
+
+  /// Parses a raw `templates/index.json` document — the same shape the
+  /// bundled snapshot uses — fetched from the live storefront at runtime.
+  static func parse(data: Data) throws -> ThemeHomeSnapshot {
+    try ThemeSnapshotLoader.loadHome(data: data)
+  }
+
+  /// A remote document must look like a real BeautyOnTApp homepage before it
+  /// may replace what is on screen. This guards Home against a partial
+  /// theme save, a placeholder file, or a truncated response.
+  var isAcceptableHome: Bool {
+    guard sections.count >= 3 else { return false }
+
+    let hasRenderableHero = sections.contains { section in
+      guard case .hero(_, let slides) = section else { return false }
+      return slides.contains { slide in
+        ShopifyAsset.url(from: slide.imageReference) != nil
+      }
+    }
+    let hasProductRail = sections.contains { section in
+      guard case .productRail(_, let rail) = section else { return false }
+      return !rail.collectionHandle.isEmpty
+    }
+    return hasRenderableHero && hasProductRail
+  }
 }
 
 struct ThemeGreeting: Equatable {
@@ -269,11 +308,11 @@ enum ThemeSnapshotError: Error {
   case malformedRoot
 }
 
-private enum ThemeSnapshotLoader {
-  static func loadHome(
+enum ThemeSnapshotLoader {
+  static func homeResourceData(
     bundle: Bundle = .main,
     resourceName: String = "index"
-  ) throws -> ThemeHomeSnapshot {
+  ) -> Data? {
     let resourceURL =
       bundle.url(
         forResource: resourceName,
@@ -284,10 +323,43 @@ private enum ThemeSnapshotLoader {
         forResource: resourceName,
         withExtension: "json"
       )
-    guard let resourceURL else {
+    guard let resourceURL else { return nil }
+    return try? Data(contentsOf: resourceURL)
+  }
+
+  static func loadHome(
+    bundle: Bundle = .main,
+    resourceName: String = "index"
+  ) throws -> ThemeHomeSnapshot {
+    guard
+      let data = homeResourceData(
+        bundle: bundle,
+        resourceName: resourceName
+      )
+    else {
       throw ThemeSnapshotError.missingResource
     }
-    let data = try Data(contentsOf: resourceURL)
+    return try loadHome(data: data)
+  }
+
+  /// Shopify saves JSON templates with a leading `/* auto-generated */`
+  /// banner comment, which strict JSON parsing rejects. Bundled snapshots
+  /// were hand-cleaned; live documents fetched at runtime are not — so the
+  /// banner must be tolerated here, ahead of the parser.
+  static func strippingThemeBanner(from data: Data) -> Data {
+    guard var text = String(data: data, encoding: .utf8) else {
+      return data
+    }
+    text = text.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard text.hasPrefix("/*") else { return data }
+    guard let bannerEnd = text.range(of: "*/") else { return data }
+    let body = text[bannerEnd.upperBound...]
+      .trimmingCharacters(in: .whitespacesAndNewlines)
+    return Data(body.utf8)
+  }
+
+  static func loadHome(data: Data) throws -> ThemeHomeSnapshot {
+    let data = strippingThemeBanner(from: data)
     guard let root = try JSONSerialization.jsonObject(with: data) as? JSONDictionary,
       let sections = root.dictionary("sections"),
       let order = root.array("order") as? [String]

@@ -12,6 +12,10 @@
 		0ACDBC2E1C530E21AE15AC78 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7AA1AEC8E4BBCB7D7099B8F0 /* PrivacyInfo.xcprivacy */; };
 		0F4915C1D00E3983E6E44B69 /* ThemeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0D096C59069DF1C350D50 /* ThemeSnapshot.swift */; };
 		11DE4D92F934EFF8AA900FE6 /* StorefrontClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C106FFE2246676B41F401F9A /* StorefrontClient.swift */; };
+		CAC4E0A10000000000000002 /* StorefrontResponseVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC4E0A10000000000000001 /* StorefrontResponseVault.swift */; };
+		CAC4E0A10000000000000004 /* ThemeSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC4E0A10000000000000003 /* ThemeSyncService.swift */; };
+		CAC4E0A10000000000000006 /* StorefrontResponseVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC4E0A10000000000000005 /* StorefrontResponseVaultTests.swift */; };
+		CAC4E0A10000000000000008 /* ThemeSyncServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC4E0A10000000000000007 /* ThemeSyncServiceTests.swift */; };
 		B00CEA520000000000000002 /* BookEasyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CEA510000000000000001 /* BookEasyClient.swift */; };
 		B00CEA540000000000000004 /* BookingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CEA530000000000000003 /* BookingFlowView.swift */; };
 		17977D7F1BB72C839C6251B2 /* CustomerSessionProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F5724F417022567F4ED042 /* CustomerSessionProbe.swift */; };
@@ -156,6 +160,10 @@
 		AF2A4990A6F61CB1BFB37209 /* ProductVariantSelectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariantSelectionTests.swift; sourceTree = "<group>"; };
 		B1C2D3E4F5061728394A5B6C /* product-reviews-page-2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "product-reviews-page-2.json"; sourceTree = "<group>"; };
 		BCC0D096C59069DF1C350D50 /* ThemeSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSnapshot.swift; sourceTree = "<group>"; };
+		CAC4E0A10000000000000001 /* StorefrontResponseVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontResponseVault.swift; sourceTree = "<group>"; };
+		CAC4E0A10000000000000003 /* ThemeSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSyncService.swift; sourceTree = "<group>"; };
+		CAC4E0A10000000000000005 /* StorefrontResponseVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontResponseVaultTests.swift; sourceTree = "<group>"; };
+		CAC4E0A10000000000000007 /* ThemeSyncServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSyncServiceTests.swift; sourceTree = "<group>"; };
 		B00CEA510000000000000001 /* BookEasyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEasyClient.swift; sourceTree = "<group>"; };
 		B00CEA530000000000000003 /* BookingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFlowView.swift; sourceTree = "<group>"; };
 		C0C13926A7ABEB946E5CC53F /* LaunchExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchExperience.swift; sourceTree = "<group>"; };
@@ -206,10 +214,12 @@
 				325E8F3A762AAD8C88004763 /* ProtectedWebSession.swift */,
 				FBD07238BF3741C27B120ACA /* ResourceLinkRails.swift */,
 				C106FFE2246676B41F401F9A /* StorefrontClient.swift */,
+				CAC4E0A10000000000000001 /* StorefrontResponseVault.swift */,
 				3B0DAF5BCF91906ABE3868FF /* StoreLocationModels.swift */,
 				5F4886241EF73741B233510F /* StoreLocationsClient.swift */,
 				EB921EC28F5BF18D2EEC2E17 /* StoreModels.swift */,
 				BCC0D096C59069DF1C350D50 /* ThemeSnapshot.swift */,
+				CAC4E0A10000000000000003 /* ThemeSyncService.swift */,
 				E8F9FD78EF31601B6018168B /* WishlistBridge.swift */,
 			);
 			path = Core;
@@ -335,7 +345,9 @@
 				CDC8C0300567E359D0F29E71 /* ProfileSheetTests.swift */,
 				0CD8241FAA344332AF1A237E /* ResourceLinkRailTests.swift */,
 				20172EEECD997C7660F11FAD /* ShopSheetViewTests.swift */,
+				CAC4E0A10000000000000005 /* StorefrontResponseVaultTests.swift */,
 				834FAE7407D96F0D0ADCE16E /* StoreLocationsTests.swift */,
+				CAC4E0A10000000000000007 /* ThemeSyncServiceTests.swift */,
 				5DE71F2D6770D11F40372BB9 /* WishlistPageTests.swift */,
 				427E8835937C3744C1E4BA63 /* Fixtures */,
 			);
@@ -502,7 +514,9 @@
 				72A839FACFB2D7DEF24C291A /* ProfileSheetTests.swift in Sources */,
 				E524A34609FBD566E8DAD356 /* ResourceLinkRailTests.swift in Sources */,
 				58385708E6158078C9728F03 /* ShopSheetViewTests.swift in Sources */,
+				CAC4E0A10000000000000006 /* StorefrontResponseVaultTests.swift in Sources */,
 				DE932DDE1FA6A0C22798E53E /* StoreLocationsTests.swift in Sources */,
+				CAC4E0A10000000000000008 /* ThemeSyncServiceTests.swift in Sources */,
 				5CA643D62A38AC4A7EE1E4E2 /* WishlistPageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,9 +573,11 @@
 				FAF561B9B3619D2C7C37431B /* StoreLocationsClient.swift in Sources */,
 				C23CAE480D5EB12BAF2B62F0 /* StoreModels.swift in Sources */,
 				11DE4D92F934EFF8AA900FE6 /* StorefrontClient.swift in Sources */,
+				CAC4E0A10000000000000002 /* StorefrontResponseVault.swift in Sources */,
 				1ADE79DE1ABE98720405C65D /* StoresView.swift in Sources */,
 				E2506240F2CF0B0ADC668FA3 /* ThemeScaledFont.swift in Sources */,
 				0F4915C1D00E3983E6E44B69 /* ThemeSnapshot.swift in Sources */,
+				CAC4E0A10000000000000004 /* ThemeSyncService.swift in Sources */,
 				35DCBDD457D46EEC61DA8A24 /* ThemeTokens.swift in Sources */,
 				287E96B35F945DED0D90B485 /* WebFlowView.swift in Sources */,
 				DAE6E8A9ACF8AD9E2E36A734 /* WishlistBridge.swift in Sources */,
@@ -671,7 +687,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 5N7V3M9JR6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -778,7 +794,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5N7V3M9JR6;
 				ENABLE_NS_ASSERTIONS = NO;
