@@ -1,0 +1,90 @@
+# Publishes the live theme's home template to the `bot_native_theme` metaobject
+# that BeautyOnTAppPro (iOS) reads at runtime — the bridge that keeps the
+# native Home identical to the storefront without an App Store release.
+#
+# Runs weekly (before the usual Monday content change lands) and on demand.
+# Requires one repository secret:
+#   SHOPIFY_ADMIN_TOKEN — Admin API token for beautyontapp
+#     (custom app, scopes: read_themes, write_metaobjects)
+name: native-theme-sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 04:15 UTC Mondays = 06:15 SAST, ahead of the trading day.
+    - cron: "15 4 * * 1"
+
+permissions:
+  contents: read
+
+env:
+  SHOP: i0ma19-q8.myshopify.com
+  API_VERSION: "2026-07"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull live home template from the published theme
+        env:
+          TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS "https://${SHOP}/admin/api/${API_VERSION}/graphql.json" \
+            -H "X-Shopify-Access-Token: ${TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"query { themes(first: 1, roles: [MAIN]) { nodes { id name updatedAt files(filenames: [\"templates/index.json\"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } } }"}' \
+            > theme.json
+
+          jq -e '.data.themes.nodes[0].files.nodes[0].body.content' theme.json > /dev/null
+          jq -r '.data.themes.nodes[0].files.nodes[0].body.content' theme.json > index-raw.json
+          jq -r '.data.themes.nodes[0].name' theme.json > theme-name.txt
+
+          # Shopify prefixes saved JSON templates with a /* banner */ comment.
+          # Store pure JSON in the metaobject (the app tolerates either).
+          sed -n '/^{/,$p' index-raw.json > index.json
+
+          # The app refuses documents that cannot carry Home; mirror that
+          # gate here so a broken template never reaches the metaobject.
+          jq -e '.sections and .order and (.order | length >= 3)' index.json > /dev/null
+          grep -q 'custom-collection-slider' index.json
+          grep -q 'featured-collection' index.json
+          echo "Template OK: $(wc -c < index.json) bytes from theme $(cat theme-name.txt)"
+
+      - name: Upsert bot_native_theme/home metaobject
+        env:
+          TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+        run: |
+          set -euo pipefail
+          jq -n \
+            --rawfile index index.json \
+            --rawfile theme theme-name.txt \
+            '{
+              query: "mutation Sync($handle: MetaobjectHandleInput!, $metaobject: MetaobjectUpsertInput!) { metaobjectUpsert(handle: $handle, metaobject: $metaobject) { metaobject { id updatedAt } userErrors { field message } } }",
+              variables: {
+                handle: { type: "bot_native_theme", handle: "home" },
+                metaobject: {
+                  fields: [
+                    { key: "index_json", value: $index },
+                    { key: "theme_name", value: ($theme | rtrimstr("\n")) },
+                    { key: "synced_at", value: (now | todate) }
+                  ]
+                }
+              }
+            }' > upsert.json
+
+          curl -sS "https://${SHOP}/admin/api/${API_VERSION}/graphql.json" \
+            -H "X-Shopify-Access-Token: ${TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d @upsert.json > result.json
+
+          jq -e '.data.metaobjectUpsert.metaobject.id' result.json > /dev/null \
+            || { echo "Upsert failed:"; cat result.json; exit 1; }
+          echo "Synced: $(jq -r '.data.metaobjectUpsert.metaobject.updatedAt' result.json)"
+
+      - name: Keep the fetched template as a run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-home-template
+          path: index.json
+          retention-days: 30

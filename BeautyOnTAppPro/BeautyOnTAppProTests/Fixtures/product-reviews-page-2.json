@@ -1,0 +1,5 @@
+{
+  "html": "<div class='jdgm-rev-widg__reviews'><div class='jdgm-rev jdgm-divider-top' data-verified-buyer='false' data-review-id='fixture-review-two'><div class='jdgm-rev__header'><span class='jdgm-rev__rating' data-score='4'></span><span class='jdgm-rev__author'>Anonymous</span></div><div class='jdgm-rev__content'><b class='jdgm-rev__title'></b><div class='jdgm-rev__body'></div></div></div><div class='jdgm-rev jdgm-divider-top' data-verified-buyer='true' data-review-id='fixture-review-three'><div class='jdgm-rev__header'><span class='jdgm-rev__rating' data-score='5'></span><span class='jdgm-rev__timestamp' data-content='2026-07-12 10:15:30 UTC'></span><span class='jdgm-rev__author'>Second Page Customer</span></div><div class='jdgm-rev__content'><b class='jdgm-rev__title'>A second page review</b><div class='jdgm-rev__body'><p>Loaded without reopening the storefront.</p></div></div></div></div><div class='jdgm-paginate' data-per-page='5' data-url='https://api.judge.me/reviews/reviews_for_widget'></div>",
+  "total_count": 8,
+  "page": "2"
+}

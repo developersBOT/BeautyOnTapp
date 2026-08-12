@@ -1,0 +1,93 @@
+name: BeautyOnTAppPro
+
+options:
+  minimumXcodeGenVersion: 2.46.0
+  deploymentTarget:
+    iOS: "15.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: 5N7V3M9JR6
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SUPPORTS_MACCATALYST: NO
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    MARKETING_VERSION: "1.1.3"
+    # Keep in lockstep with project.pbxproj — Xcode bumps happened outside
+    # XcodeGen between builds 14 and 54, so a regen must not roll back.
+    CURRENT_PROJECT_VERSION: "55"
+
+targets:
+  BeautyOnTAppPro:
+    type: application
+    platform: iOS
+    sources:
+      - path: BeautyOnTAppPro
+        excludes:
+          - Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_NAME: BeautyOnTAppPro
+        PRODUCT_MODULE_NAME: BeautyOnTAppPro
+        INFOPLIST_FILE: BeautyOnTAppPro/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: com.beautyontapp.ios.pro.nativepreview
+        Release:
+          PRODUCT_BUNDLE_IDENTIFIER: com.beautyontapp.ios.pro
+
+  BeautyOnTAppProTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: BeautyOnTAppProTests
+    dependencies:
+      - target: BeautyOnTAppPro
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.beautyontapp.ios.pro.nativeTests
+        GENERATE_INFOPLIST_FILE: YES
+
+  BeautyOnTAppProUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: BeautyOnTAppProUITests
+    dependencies:
+      - target: BeautyOnTAppPro
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.beautyontapp.ios.pro.nativeUITests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: BeautyOnTAppPro
+
+schemes:
+  BeautyOnTAppPro:
+    build:
+      targets:
+        BeautyOnTAppPro: all
+        BeautyOnTAppProTests:
+          - test
+        BeautyOnTAppProUITests:
+          - test
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: false
+      targets:
+        - BeautyOnTAppProTests
+        - BeautyOnTAppProUITests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
