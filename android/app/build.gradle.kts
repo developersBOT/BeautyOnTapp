@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -5,8 +7,68 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.isFile) {
+    keystorePropertiesFile.inputStream().use(keystoreProperties::load)
+}
+
+fun releaseSigningValue(propertyName: String, environmentName: String): String? {
+    return keystoreProperties.getProperty(propertyName)?.takeIf(String::isNotBlank)
+        ?: System.getenv(environmentName)?.takeIf(String::isNotBlank)
+}
+
+val releaseStoreFile = releaseSigningValue("storeFile", "BOT_ANDROID_STORE_FILE")
+val releaseStorePassword =
+    releaseSigningValue("storePassword", "BOT_ANDROID_STORE_PASSWORD")
+val releaseKeyAlias = releaseSigningValue("keyAlias", "BOT_ANDROID_KEY_ALIAS")
+val releaseKeyPassword =
+    releaseSigningValue("keyPassword", "BOT_ANDROID_KEY_PASSWORD")
+val releaseSigningConfigured =
+    listOf(
+        releaseStoreFile,
+        releaseStorePassword,
+        releaseKeyAlias,
+        releaseKeyPassword,
+    ).all { it != null }
+val releaseArtifactTaskNames =
+    setOf(
+        "assembleRelease",
+        "bundleRelease",
+        "installRelease",
+        "packageRelease",
+        "signReleaseBundle",
+    )
+val appProjectPath = project.path
+
+gradle.taskGraph.whenReady {
+    val releaseArtifactRequested =
+        allTasks.any { task ->
+            task.project.path == appProjectPath && task.name in releaseArtifactTaskNames
+        }
+
+    if (releaseArtifactRequested && !releaseSigningConfigured) {
+        throw GradleException(
+            "Release signing is not configured. Add android/key.properties with " +
+                "storeFile, storePassword, keyAlias, and keyPassword, or set the " +
+                "BOT_ANDROID_STORE_FILE, BOT_ANDROID_STORE_PASSWORD, " +
+                "BOT_ANDROID_KEY_ALIAS, and BOT_ANDROID_KEY_PASSWORD environment variables.",
+        )
+    }
+
+    if (
+        releaseArtifactRequested &&
+        releaseStoreFile != null &&
+        !rootProject.file(releaseStoreFile).isFile
+    ) {
+        throw GradleException(
+            "Release keystore not found at ${rootProject.file(releaseStoreFile)}.",
+        )
+    }
+}
+
 android {
-    namespace = "com.example.beautyontapp"
+    namespace = "app.shopbeautyontapp.co.za"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"  // Set to the highest NDK version
 
@@ -20,21 +82,29 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.beautyontapp"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "app.shopbeautyontapp.co.za"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        versionCode = 4
+        versionName = "1.4.3"
+    }
+
+    signingConfigs {
+        if (releaseSigningConfigured) {
+            create("release") {
+                storeFile = rootProject.file(requireNotNull(releaseStoreFile))
+                storePassword = requireNotNull(releaseStorePassword)
+                keyAlias = requireNotNull(releaseKeyAlias)
+                keyPassword = requireNotNull(releaseKeyPassword)
+            }
+        }
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfigs.findByName("release")?.let {
+                signingConfig = it
+            }
         }
     }
 }

@@ -1,16 +1,25 @@
-# beautyontapp
+# BeautyOnTApp
 
-A new Flutter project.
+BeautyOnTApp is a Flutter WebView wrapper for the first-party storefront at
+`https://beautyontapp.com`.
 
-## Getting Started
+## Runtime architecture
 
-This project is a starting point for a Flutter application.
+The shipped app has one live path:
 
-A few resources to get you started if this is your first Flutter project:
+`lib/main.dart` → `lib/splash_screen.dart` → `lib/store_webview.dart`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The store URL is hardcoded so app startup has no remote configuration or
+external API dependency. Storefront browsing, customer accounts, cart and
+checkout remain owned by the website inside the WebView.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## App-attribution measurement
+
+Initial and error-recovery store loads include platform-specific app UTMs.
+Website analytics and purchase attribution continue through the existing web
+tracking implementation.
+
+Before running any App campaigns, integrate Firebase Analytics + Google Ads app conversion import (needs google-services.json / GoogleService-Info.plist from the Firebase project).
+
+Firebase is intentionally not included until the required project credentials
+are available.

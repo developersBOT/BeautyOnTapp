@@ -28,6 +28,14 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>BeautyonTApp uses your camera only when you choose to take a photo for Ask Bestie.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BeautyonTApp uses your photo library only when you choose an existing photo to share with Ask Bestie.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>BeautyonTApp saves an image to your photo library only when you choose to download it.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BeautyonTApp uses your location to show nearby stores when a storefront location feature requests it.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

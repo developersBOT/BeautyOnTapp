@@ -36,9 +36,6 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  # Fix for libphonenumber_plugin (0.3.3) Swift error with PhoneNumberKit v4+
-  pod 'PhoneNumberKit', '~> 3.7.6'
-
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
   target 'RunnerTests' do

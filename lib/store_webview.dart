@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:beautyontapp/store_navigation_policy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,49 @@ import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 // API dependencies — do not replace this with a remote lookup of any kind.
 const String kStoreUrl = 'https://beautyontapp.com';
 
+/// Store root with app-attribution UTMs. The spoofed browser user agent
+/// (required for Google OAuth) makes app sessions indistinguishable from
+/// mobile web in Shopify/GA4 — these parameters are the only signal that a
+/// session came from the app. Applied to the initial load and recovery
+/// reloads only; in-page navigation keeps the session's first-touch UTMs.
+Uri storeRootUri() => Uri.parse(kStoreUrl).replace(
+  queryParameters: {
+    'utm_source': 'beautyontapp_app',
+    'utm_medium': 'app',
+    'utm_campaign': defaultTargetPlatform == TargetPlatform.iOS
+        ? 'app_ios'
+        : 'app_android',
+  },
+);
+
+/// Browser-like user agent shared by every WebView in the app so first-party
+/// analytics cookies stay consistent across the storefront and checkout.
+String get kBrowserUserAgent => defaultTargetPlatform == TargetPlatform.iOS
+    ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) '
+          'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 '
+          'Mobile/15E148 Safari/604.1'
+    : 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 '
+          '(KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36';
+
+/// A native retry surface is appropriate only when the initial main document
+/// definitely failed. Resource errors with an unknown frame, cancelled
+/// navigations and failures after a page is already visible must not replace
+/// a working Shopify authentication flow.
+bool shouldShowNativeLoadFailure({
+  required bool? isForMainFrame,
+  required int errorCode,
+  required bool hasRenderedPage,
+}) {
+  return isForMainFrame == true && errorCode != -999 && !hasRenderedPage;
+}
+
 class StoreWebView extends StatefulWidget {
   const StoreWebView({super.key});
 
+  static const MethodChannel _iosWebViewPolicyChannel = MethodChannel(
+    'beautyontapp/webview_policy',
+  );
   static WebViewController? _preloaded;
-  // Bumped on every navigation event so the screen can re-check history state.
-  static final ValueNotifier<int> _navTick = ValueNotifier<int>(0);
   static final ValueNotifier<bool> _loadFailed = ValueNotifier<bool>(false);
   // True after a BeautyOnTApp page has been prepared to use the iPhone's
   // bottom safe area. The app always protects the status bar itself, while
@@ -30,6 +68,7 @@ class StoreWebView extends StatefulWidget {
   static final ValueNotifier<bool> _firstPageReady = ValueNotifier<bool>(false);
   static Timer? _loadTimeout;
   static int _navigationGeneration = 0;
+  static String? _activeNavigationUrl;
   static int? _paintProbeGeneration;
   static bool _recoveryInFlight = false;
   static int _automaticRecoveryAttempts = 0;
@@ -54,25 +93,40 @@ class StoreWebView extends StatefulWidget {
 
   // Google blocks OAuth inside embedded WebViews it can detect. A browser-like
   // user agent lets "Sign in with Google" on the store work inside the app.
-  static String get _userAgent => defaultTargetPlatform == TargetPlatform.iOS
-      ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) '
-            'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 '
-            'Mobile/15E148 Safari/604.1'
-      : 'Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 '
-            '(KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36';
+  static String get _userAgent => kBrowserUserAgent;
 
   static WebViewController _buildController() {
     late final WebViewController controller;
+    bool protectedFlowActive = false;
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setUserAgent(_userAgent)
       ..setBackgroundColor(Colors.white)
       ..setNavigationDelegate(
         NavigationDelegate(
-          onPageStarted: (_) {
+          onNavigationRequest: (NavigationRequest request) {
+            if (!request.isMainFrame) return NavigationDecision.navigate;
+            if (defaultTargetPlatform == TargetPlatform.iOS &&
+                StoreNavigationPolicy.isHostedSocialSignInDestination(
+                  request.url,
+                )) {
+              return NavigationDecision.prevent;
+            }
+            return StoreNavigationPolicy.shouldAllowMainFrame(
+                  request.url,
+                  protectedFlowActive: protectedFlowActive,
+                )
+                ? NavigationDecision.navigate
+                : NavigationDecision.prevent;
+          },
+          onPageStarted: (String url) {
             _navigationGeneration++;
+            _activeNavigationUrl = url;
+            if (StoreNavigationPolicy.isFirstParty(url)) {
+              protectedFlowActive =
+                  StoreNavigationPolicy.isProtectedFirstPartyFlow(url);
+            }
             _loadFailed.value = false;
-            _navTick.value++;
             if (!_firstPageReady.value) {
               _armLoadTimeout();
               // Shopify's document can paint well before WebKit reports 80%
@@ -81,13 +135,11 @@ class StoreWebView extends StatefulWidget {
               _schedulePaintConfirmation(controller);
             }
           },
-          onUrlChange: (_) => _navTick.value++,
           onProgress: (int progress) {
             if (progress >= 80) _schedulePaintConfirmation(controller);
           },
-          onPageFinished: (_) {
-            _navTick.value++;
-            unawaited(_handlePageFinished(controller));
+          onPageFinished: (String url) {
+            unawaited(_handlePageFinished(controller, url));
           },
           onWebResourceError: (WebResourceError error) {
             // iOS can terminate WKWebView's content process while Flutter
@@ -99,12 +151,24 @@ class StoreWebView extends StatefulWidget {
               return;
             }
 
-            // -999 is iOS "navigation cancelled" — benign, fired on quick
-            // link taps. Every other failed main-frame load gets a native
-            // retry surface instead of exposing WKWebView's white background.
-            final bool cancelled = error.errorCode == -999;
-            if ((error.isForMainFrame ?? true) && !cancelled) {
+            // onWebResourceError is raised for every resource, not just the
+            // main document, and isForMainFrame is nullable. Authentication
+            // redirects commonly produce a resource error with an unknown
+            // frame type even though the destination page is healthy. Never
+            // replace an already-rendered website with a native error screen.
+            // The initial load timeout still catches a genuinely hung launch.
+            if (shouldShowNativeLoadFailure(
+              isForMainFrame: error.isForMainFrame,
+              errorCode: error.errorCode,
+              hasRenderedPage: _firstPageReady.value,
+            )) {
               _showLoadFailure();
+            } else if (kDebugMode) {
+              debugPrint(
+                'Ignored WebView resource error '
+                '${error.errorCode} (${error.errorType}); '
+                'mainFrame=${error.isForMainFrame}',
+              );
             }
           },
         ),
@@ -113,10 +177,30 @@ class StoreWebView extends StatefulWidget {
     // iOS: navigate the WebView back/forward with the native swipe gesture.
     final platform = controller.platform;
     if (platform is WebKitWebViewController) {
-      platform.setAllowsBackForwardNavigationGestures(true);
+      unawaited(_prepareIosWebView(controller, platform));
+    } else {
+      _scheduleInitialLoad(controller);
     }
-    _scheduleInitialLoad(controller);
     return controller;
+  }
+
+  static Future<void> _prepareIosWebView(
+    WebViewController controller,
+    WebKitWebViewController platform,
+  ) async {
+    try {
+      await _iosWebViewPolicyChannel.invokeMethod<void>(
+        'installGeolocationGuard',
+        <String, int>{'webViewIdentifier': platform.webViewIdentifier},
+      );
+      await platform.setAllowsBackForwardNavigationGestures(true);
+      _scheduleInitialLoad(controller);
+    } catch (error) {
+      if (kDebugMode) {
+        debugPrint('Unable to prepare the iOS WebView policy: $error');
+      }
+      _showLoadFailure();
+    }
   }
 
   /// Starts the first page load only AFTER the first Flutter frame, once the
@@ -142,7 +226,7 @@ class StoreWebView extends StatefulWidget {
     _navigationGeneration++;
     _armLoadTimeout();
     try {
-      await controller.loadRequest(Uri.parse(kStoreUrl));
+      await controller.loadRequest(storeRootUri());
     } catch (_) {
       _showLoadFailure();
     }
@@ -177,11 +261,84 @@ class StoreWebView extends StatefulWidget {
     unawaited(_confirmMeaningfulPaint(controller, generation));
   }
 
-  static Future<void> _handlePageFinished(WebViewController controller) async {
+  static Future<void> _handlePageFinished(
+    WebViewController controller,
+    String url,
+  ) async {
     final int generation = _navigationGeneration;
+    if (!_isActiveNavigation(generation, url)) return;
+    await _applyAppCompliance(controller, url);
+    if (!_isActiveNavigation(generation, url)) return;
     if (await _healZeroViewport(controller)) return;
-    if (generation != _navigationGeneration || _loadFailed.value) return;
+    if (!_isActiveNavigation(generation, url)) return;
     _schedulePaintConfirmation(controller);
+  }
+
+  static bool _isActiveNavigation(int generation, String url) {
+    return generation == _navigationGeneration &&
+        !_loadFailed.value &&
+        _activeNavigationUrl == url;
+  }
+
+  static const String _iosFirstPartyLoginOnlyJs = r'''
+(() => {
+  if (location.hostname !== 'account.beautyontapp.com' &&
+      !location.hostname.endsWith('.account.beautyontapp.com')) return true;
+  if (!location.pathname.toLowerCase().startsWith('/authentication/login')) {
+    return true;
+  }
+
+  const removeThirdPartyLogin = () => {
+    document
+      .querySelectorAll('a[href*="/authentication/social/"]')
+      .forEach((link) => {
+        const providerGroup = link.parentElement?.parentElement;
+        (providerGroup || link).remove();
+      });
+  };
+
+  removeThirdPartyLogin();
+  if (!window.__botFirstPartyLoginObserver && document.documentElement) {
+    window.__botFirstPartyLoginObserver = new MutationObserver(
+      removeThirdPartyLogin
+    );
+    window.__botFirstPartyLoginObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
+  const socialLogin = document.querySelector(
+    'a[href*="/authentication/social/"]'
+  );
+  const emailLogin = document.querySelector(
+    'input[type="email"], input[name="email"]'
+  );
+  const verificationCode = document.querySelector(
+    'input[autocomplete="one-time-code"], ' +
+    'input[inputmode="numeric"], ' +
+    'input[name*="code" i]'
+  );
+  return !socialLogin && Boolean(emailLogin || verificationCode);
+})()
+''';
+
+  static Future<void> _applyAppCompliance(
+    WebViewController controller,
+    String url,
+  ) async {
+    try {
+      if (defaultTargetPlatform == TargetPlatform.iOS &&
+          StoreNavigationPolicy.isHostedCustomerLogin(url)) {
+        // Best-effort hardening only. The hosted Shopify account page remains
+        // visible and authoritative; a DOM timing difference must never block
+        // login or replace the website with native loading/error UI.
+        await controller.runJavaScript(_iosFirstPartyLoginOnlyJs);
+      }
+    } catch (error) {
+      if (kDebugMode) {
+        debugPrint('Unable to apply first-party login hardening: $error');
+      }
+    }
   }
 
   /// WebView progress 100 and onPageFinished only mean that navigation ended;
@@ -217,17 +374,49 @@ class StoreWebView extends StatefulWidget {
   const root = document.documentElement;
   if (!body || !root) return false;
 
-  const text = (body.innerText || '').replace(/\s+/g, ' ').trim();
-  const title = (document.title || '').trim();
   const viewportReady = window.innerWidth > 1 && window.innerHeight > 1;
-  const documentReady = body.childElementCount > 0 && root.scrollHeight > 40;
-  const hasLoadedImage = Array.from(document.images).some(
-    (image) => image.complete && image.naturalWidth > 0
+  const host = location.hostname.toLowerCase();
+  const isStorefront =
+    host === 'beautyontapp.com' || host === 'www.beautyontapp.com';
+
+  // Hosted customer-account, checkout and payment pages do not share the
+  // theme's #MainContent structure or product imagery. Requiring a storefront
+  // image on those pages leaves the native loading cover up forever after a
+  // WebKit recovery. A visible document or form is sufficient there.
+  if (!isStorefront) {
+    const bodyRect = body.getBoundingClientRect();
+    return viewportReady &&
+      body.childElementCount > 0 &&
+      root.scrollHeight > 40 &&
+      bodyRect.width > 0 &&
+      bodyRect.height > 40 &&
+      (
+        body.innerText.trim().length > 0 ||
+        Boolean(body.querySelector('input, button, form'))
+      );
+  }
+
+  const main = document.querySelector('#MainContent, main');
+  if (!main) return false;
+  const mainRect = main.getBoundingClientRect();
+  const documentReady =
+    body.childElementCount > 0 &&
+    root.scrollHeight > 40 &&
+    mainRect.width > 0 &&
+    mainRect.height > 80;
+  const hasPaintedMainImage = Array.from(main.querySelectorAll('img')).some(
+    (image) => {
+      const rect = image.getBoundingClientRect();
+      return image.complete &&
+        image.naturalWidth > 0 &&
+        rect.width > 40 &&
+        rect.height > 40;
+    }
   );
 
   return viewportReady &&
     documentReady &&
-    (text.length >= 24 || title.length >= 3 || hasLoadedImage);
+    hasPaintedMainImage;
 })()
 ''');
       final String normalized = result.toString().replaceAll('"', '').trim();
@@ -253,7 +442,6 @@ class StoreWebView extends StatefulWidget {
     _recoveryInFlight = false;
     _loadFailed.value = false;
     _firstPageReady.value = true;
-    _navTick.value++;
     _scheduleRevealWatchdog(controller);
   }
 
@@ -278,34 +466,10 @@ class StoreWebView extends StatefulWidget {
       await controller.reload();
     } catch (_) {
       try {
-        await controller.loadRequest(Uri.parse(kStoreUrl));
+        await controller.loadRequest(storeRootUri());
       } catch (_) {
         _showLoadFailure();
       }
-    }
-  }
-
-  static Future<void> _validateAfterResume(WebViewController controller) async {
-    if (!_firstPageReady.value || _loadFailed.value || _recoveryInFlight) {
-      return;
-    }
-    final int generation = _navigationGeneration;
-    await Future.delayed(const Duration(milliseconds: 350));
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    final bool healthy = await _hasMeaningfulContent(controller);
-    if (generation != _navigationGeneration ||
-        !_firstPageReady.value ||
-        _loadFailed.value ||
-        _recoveryInFlight) {
-      return;
-    }
-    if (!healthy) {
-      await _recoverWebContent(controller);
     }
   }
 
@@ -526,10 +690,8 @@ class StoreWebView extends StatefulWidget {
   State<StoreWebView> createState() => _StoreWebViewState();
 }
 
-class _StoreWebViewState extends State<StoreWebView>
-    with WidgetsBindingObserver {
+class _StoreWebViewState extends State<StoreWebView> {
   late final WebViewController _controller;
-  bool _awayFromHome = false;
 
   bool get _isAndroid => defaultTargetPlatform == TargetPlatform.android;
 
@@ -541,44 +703,17 @@ class _StoreWebViewState extends State<StoreWebView>
     // the splash, dark icons once the store is revealed).
     _controller = StoreWebView._preloaded ?? StoreWebView._buildController();
     StoreWebView._preloaded ??= _controller;
-    WidgetsBinding.instance.addObserver(this);
-    StoreWebView._navTick.addListener(_refreshBackState);
     StoreWebView._loadFailed.addListener(_onNotifierChanged);
-    _refreshBackState();
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    StoreWebView._navTick.removeListener(_refreshBackState);
     StoreWebView._loadFailed.removeListener(_onNotifierChanged);
     super.dispose();
   }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      unawaited(StoreWebView._validateAfterResume(_controller));
-    }
-  }
-
   void _onNotifierChanged() {
     if (mounted) setState(() {});
-  }
-
-  Future<void> _refreshBackState() async {
-    final bool canGoBack = await _controller.canGoBack();
-    if (!mounted) return;
-    if (canGoBack != _awayFromHome) {
-      setState(() => _awayFromHome = canGoBack);
-    }
-  }
-
-  Future<void> _goBack() async {
-    if (await _controller.canGoBack()) {
-      await _controller.goBack();
-    }
-    _refreshBackState();
   }
 
   void _retry() {
@@ -604,7 +739,6 @@ class _StoreWebViewState extends State<StoreWebView>
         // Android system back walks the web history first, then exits.
         if (await _controller.canGoBack()) {
           await _controller.goBack();
-          _refreshBackState();
         } else {
           SystemNavigator.pop();
         }
@@ -656,15 +790,6 @@ class _StoreWebViewState extends State<StoreWebView>
                 },
               ),
             ),
-            // Android only: floating back button, 34px, top-left.
-            // Homepage-conditional — appears ONLY once the user has
-            // navigated away from home. Hidden on home is intended.
-            if (_isAndroid && _awayFromHome)
-              Positioned(
-                top: insets.top + 8,
-                left: 10,
-                child: _FloatingBackButton(onTap: _goBack),
-              ),
           ],
         ),
       ),
@@ -700,29 +825,6 @@ class _LoadingCover extends StatelessWidget {
             const SizedBox(height: 28),
             const CupertinoActivityIndicator(radius: 11, color: Colors.white),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _FloatingBackButton extends StatelessWidget {
-  const _FloatingBackButton({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.black.withValues(alpha: 0.55),
-      shape: const CircleBorder(),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onTap,
-        child: const SizedBox(
-          width: 34,
-          height: 34,
-          child: Icon(Icons.arrow_back, color: Colors.white, size: 20),
         ),
       ),
     );
