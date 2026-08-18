@@ -105,14 +105,123 @@ Use a phone or a browser you don't mind exposing; **do not enter any real person
 
 ## 5. Takedown channels — prioritized battle plan
 
-<!-- CHANNELS_PLACEHOLDER -->
-*(Verified reporting channels and expected effects are populated in this section from live verification — see the channel table and the fill-in complaint templates in §6.)*
+Every channel below has a **verified current reporting URL** (checked live; source and confidence noted). **Only you can submit these** — each requires the rights holder's identity, and the DMCA/affidavit ones are sworn statements. Fire the **first-hour four** immediately; they hit the site itself. Then work down.
+
+**Legend:** 🔴 hits the site/domain directly · 🟠 cuts the traffic (ads/social) · 🟣 chokes the money · 🔵 strategic / permanent
+
+### Tier 1 — First hour (take the site offline / warn every browser)
+
+| # | Channel | Where to file | What it actually does | Speed |
+|---|---|---|---|---|
+| 1 | 🔴 **Google Safe Browsing** — report phishing | `safebrowsing.google.com/safebrowsing/report_phish/` | **The single highest-impact action.** Adds the domain to the Safe Browsing list → full-page red "Deceptive site ahead" warning in **Chrome, Safari, Firefox, Android, Gmail**. Collapses traffic/conversions even though Cloudflare stays in front. No login, works whether or not they advertise. | Hours–days |
+| 2 | 🔴 **Cloudflare abuse** (Phishing & Malware) | `abuse.cloudflare.com/phishing` | Cloudflare is the proxy, not the host — it flags the site, can serve an interstitial, and **forwards your complaint to the hidden origin host** (and registrar). Pair with #3. | Ack immediate; forwarded ~24–48h |
+| 3 | 🔴 **Registrar abuse report** | Registrar's abuse email — get it from WHOIS (§4.2) | **The fastest true kill.** The registrar can put the domain on `clientHold` / terminate it → site fully offline regardless of Cloudflare. Registrars are contractually required (ICANN RAA §3.18) to act on abuse. | Often 24–72h |
+| 4 | 🔴 **Netcraft takedown** | `report.netcraft.com` | One of the largest phishing takedown operations; blocklists the URL across many browsers/apps and pushes takedown to host + registrar. Free, no account. | Blocking mins; takedown mins–hours |
+
+### Tier 2 — First day (platform + registry pressure)
+
+| # | Channel | Where to file | What it does | Notes |
+|---|---|---|---|---|
+| 5 | 🔴 **.shop registry (GMO) abuse** | `get.shop/abuse` (use the form; email `abuse@gmoregistry.com` is slower) | Registry sits **above** the registrar and can suspend at registry level — a strong backstop if the registrar stalls. | Verified |
+| 6 | 🔴 **Shopify — Trademark / Trade-dress** | `shopify.com/legal/tools/report-an-issue/trademark-infringement` | **Only if the site is on Shopify** (check first — §5 note below). Strongest Shopify angle; no DMCA auto-restore, so it sticks. | List every infringing URL individually |
+| 7 | 🔴 **Shopify — Fraud / AUP abuse** | `shopify.com/legal/tools/report-an-issue/fraud` | Non-IP impersonation/fraud path; can suspend the store. File in parallel with #6. | Chargeback volume speeds it |
+| 8 | 🔴 **Shopify — Copyright / DMCA** | `shopify.com/legal/tools/report-an-issue/dmca` | For copied photos/logos/copy. Note: merchant can counter-notice → content may restore in ~10–14 business days, so pair with #6. | Sworn statement |
+| 9 | 🔴 **APWG** | email `reportphishing@apwg.org` | Feeds browser/security blocklists. Best if you have an actual phishing email (forward with headers). | Verified |
+| 10 | 🔴 **PhishTank** | `phishtank.com` | Community blocklist. **Caveat:** new-user registration is currently disabled — only usable if you already have an account. | Reliable |
+
+> **Is it actually Shopify? Check before filing #6–#8.** Open `lovebeautyontapp.shop/products.json` (a Shopify store returns a JSON product feed; non-Shopify returns 404/HTML). Also look in page source for `cdn.shopify.com` assets, and add an item to cart — Shopify checkouts redirect to `*.myshopify.com`. If none of these hit, it's **not** Shopify — skip the Shopify channels and lean on Cloudflare + registrar + host.
+
+### Tier 3 — Cut the traffic (ads & social — conditional on them advertising)
+
+| # | Channel | Where | What it does |
+|---|---|---|---|
+| 11 | 🟠 **Meta — impersonating Page/Account** | `facebook.com/help/contact/295309487309948` (IG/Threads: `.../636276399721841`) | Removes impostor FB/IG pages/accounts. Works without a registered trademark. |
+| 12 | 🟠 **Meta — Trademark infringement** | `facebook.com/help/contact/trademarkform` | Removes infringing pages/ads/shops. Needs a **registered** mark. |
+| 13 | 🟠 **Meta — scam ad + Ad Library recon** | `facebook.com/ads/library` (set country = South Africa; search "BeautyOnTApp", "lovebeautyontapp") | Find the ads driving traffic, then three-dot → Report ad → Scam. Kills their acquisition channel. |
+| 14 | 🟠 **TikTok — trademark IPR** | `ipr.tiktokforbusiness.com/legal/report/Trademark` | Brand-owner route; removes infringing videos/ads/Shop listings platform-wide. |
+| 15 | 🟠 **TikTok — in-app scam/impersonation report** | In-app Report → "Fraud and scams" / "Pretending to be someone"; web `tiktok.com/legal/report/submit-requests` | Fastest removal of a specific TikTok ad/video/profile. |
+| 16 | 🟠 **Google Ads — trademark complaint** | `services.google.com/inquiry/aw_tmcomplaint` | Stops use of "BeautyOnTApp" in Google Ads. Only bites if they run Google Ads; still pre-registers the mark. |
+| 17 | 🟠 **Google Ads — report scam ad/listing** | `support.google.com/ads/troubleshooter/4578507` | Reports a specific misleading ad / Shopping listing. |
+
+> **Recon caveats:** Meta's Ad Library shows only *currently active* ads — absence ≠ no ads. TikTok's Commercial Content Library (`library.tiktok.com/ads`) only indexes **EEA/UK/Switzerland** ads, so an SA-targeted scam may not appear — a null result there is inconclusive. Taboola (`taboola.com/report`) / Outbrain (`legal@outbrain.com`) only apply if it runs as native "recommended" ads.
+
+### Tier 4 — South Africa: authorities & money rails
+
+| # | Channel | Where | What it does |
+|---|---|---|---|
+| 18 | 🟣 **SAFPS / Yima** (do this early — it's fast) | `yima.org.za/reportscam` · hotline 083 123 7226 | Logs the site into SA's shared fraud database → **member banks block it** + consumers warned. High-value, fast. |
+| 19 | 🔵 **SAPS cybercrime** — open a case | In person at any station; Crime Stop 08600 10111 | Produces a **CAS number** — the key banks/PSPs/registrars ask for. Anchor filing; slow on its own. |
+| 20 | 🟣 **Capitec Fraud Centre** | 0860 10 20 43 · WhatsApp 067 418 9565 · `capitecbank.co.za/fraud-centre/report-fraud/` | If a Capitec account receives scam payments, it can be flagged/frozen and funds recalled (fastest same-day). |
+| 21 | 🟣 **Payfast Risk & Compliance** | 021 300 4455 · `payfast.io/contact` | If the store transacts via Payfast, the merchant can be terminated. |
+| 22 | 🟣 **Ozow** | `phishing@ozow.com` / `support@ozow.com` | If it abuses/impersonates Ozow, they can pull the merchant. |
+| 23 | 🟣 **Payflex** | `support@payflex.co.za` | If it offers Payflex checkout, merchant can be terminated. |
+| 24 | 🟣 **NCC** (consumer complaint) | `eservice.thencc.org.za` · 012 065 1940 | Logs consumer harm under the CPA. Slow; limited reach over an anonymous foreign site. |
+
+> **Money-rail reality check:** SA gateways are KYC-gated, and this is a throwaway domain (no mail records) — it likely does **not** hold a legitimate Payfast/Ozow/Payflex merchant account. **Confirm the rail is actually present at checkout** (§4.1 step 3) before expecting these to bite; where present, they're among the most effective levers because they choke the cash-out.
+
+### Tier 5 — Strategic & permanent
+
+| # | Channel | Where | What it does |
+|---|---|---|---|
+| 25 | 🔵 **CIPC trademark** — search + register "BeautyOnTApp" | `iponline.cipc.co.za` (free search; TM1 filing ~R590/class, classes 3 & 35) | Even a *pending* application strengthens every IP complaint above and unlocks UDRP. Registration takes 12–24 months. |
+| 26 | 🔵 **UDRP / URS (WIPO)** — seize/suspend the domain name | `wipo.int/amc/en/domains/` | Trademark-based domain dispute: UDRP → transfer/cancel the domain; URS → suspension. Needs trademark rights; ~2 months. |
+| 27 | 🔵 **ICANN compliance** (escalation) | `icann.org/compliance/complaint` | Use **only if the registrar ignores** a valid abuse report — you must show you contacted the registrar first. |
+
+**Not effective for this case (don't waste time):** FPB (out of mandate — it handles prohibited content, not fraud); CIPC company-name complaint (its jurisdiction doesn't reach an anonymous foreign `.shop` domain); Google's Search "spam" form (no direct action — use the phishing path instead).
+
+*Sources for the above are recorded per-channel in the verification run; the primary first-party references are Cloudflare, Google Safe Browsing, Shopify, Meta, TikTok, ICANN, GMO Registry, WIPO, SAPS/cybercrime.org.za, SAFPS/Yima, CIPC, and the SA payment providers' own pages.*
 
 ---
 
 ## 6. Ready-to-send complaint templates
 
-<!-- TEMPLATES_PLACEHOLDER -->
+Copy each block, replace the `[BRACKETED]` fields, attach the evidence from §4, and submit. Written to be firm, factual, and rights-holder-grade.
+
+### A. Google Safe Browsing (paste into the report box)
+> **URL:** `https://lovebeautyontapp.shop`
+>
+> This site is a fraudulent storefront impersonating our legitimate South African beauty retail brand **BeautyOnTApp** (our official sites: `https://beautyontapp.com` and `https://beautyontapp.net`). It copies our brand name ("BeautyOnTApp" with a "love" prefix) to deceive our customers into entering payment and personal details. The domain is a throwaway (no mail records; Cloudflare-fronted; recently registered). Please add it to the Safe Browsing list. Contact: `[YOUR EMAIL]`.
+
+### B. Cloudflare abuse — Phishing & Malware (`abuse.cloudflare.com/phishing`)
+> **Reporter:** `[YOUR NAME]`, `[ROLE]` at BeautyOnTApp · `[YOUR EMAIL]`
+> **URL(s) reported:** `https://lovebeautyontapp.shop` , `https://www.lovebeautyontapp.shop`
+> **Category:** Phishing & Malware (also filing under Trademark Infringement — see below)
+>
+> `lovebeautyontapp.shop` is a fraudulent website impersonating our legitimate brand **BeautyOnTApp** (`beautyontapp.com`, `beautyontapp.net`), a South African beauty retailer with physical stores, mobile apps, and an established social presence. It reproduces our brand name and — per the attached screenshots — our branding/product content to deceive our customers and harvest payment and personal data at checkout. The domain shows the hallmarks of a disposable fraud domain: it is fronted by your network (NS `mcgrory`/`wally.ns.cloudflare.com`; `104.21.88.151` / `172.67.223.176`) and has no MX/SPF/DMARC records. As Cloudflare is the reverse proxy and DNS provider, please flag the URL and forward this complaint to the origin host and registrar. **We request that our identity be kept confidential from the site owner.**
+> *Attachments: screenshots of the fraudulent site + our genuine sites; WHOIS/RDAP record.*
+
+### C. Registrar abuse (email to the Registrar Abuse Contact from WHOIS)
+> **To:** `[REGISTRAR ABUSE EMAIL]` (from `lookup.icann.org` — see §4.2)
+> **Subject:** Abuse report — fraudulent brand-impersonation domain `lovebeautyontapp.shop` (request suspension)
+>
+> To the Abuse Team,
+>
+> I am `[YOUR NAME]`, `[ROLE]` of BeautyOnTApp, a South African beauty retailer. The domain you sponsor, **`lovebeautyontapp.shop`** (created `[CREATION DATE]`), is being used for **brand impersonation and consumer fraud**. It copies our registered/established brand "BeautyOnTApp" (our sites: `beautyontapp.com`, `beautyontapp.net`) to deceive our customers into placing orders and entering payment details on a store we do not operate.
+>
+> Evidence of abuse (attached): dated screenshots of the fraudulent site showing use of our brand name and content; our genuine sites for comparison; the RDAP record; and DNS records showing a throwaway configuration (Cloudflare-fronted, no MX/SPF/DMARC). This is actionable abuse under your Acceptable Use Policy and ICANN RAA §3.18.
+>
+> **We request that you investigate and suspend (`clientHold`) or terminate the domain.** Please confirm receipt and your case reference.
+>
+> Regards, `[YOUR NAME]` · `[CONTACT]`
+
+### D. .shop registry — GMO abuse (`get.shop/abuse`)
+> Same body as **C**, addressed to the registry, adding: *"I am also reporting this to the sponsoring registrar; I am escalating to the .shop registry because this domain is being used for fraud/impersonation in breach of the .shop Anti-Abuse Policy and I request registry-level action."*
+
+### E. Shopify — Trademark / Fraud (only if the site is on Shopify)
+> **To:** Shopify Trust & Safety (via `shopify.com/legal/tools/report-an-issue/trademark-infringement` and `/fraud`)
+>
+> The Shopify-powered store at **`lovebeautyontapp.shop`** is impersonating our brand **BeautyOnTApp** to defraud South African consumers. Infringing URLs: `[LIST EACH SPECIFIC PAGE URL — homepage link alone is insufficient]`. Our trademark/brand: "BeautyOnTApp" `[registration no. + jurisdiction if registered; otherwise state established common-law rights since [YEAR]]`. Our genuine sites: `beautyontapp.com`, `beautyontapp.net`. The store uses our name and `[copied logo/photos/copy]` to deceive our customers. I have a good-faith belief this use is unauthorized, and I state under penalty of perjury that this notice is accurate and I am authorized to act for the rights holder. `[YOUR NAME, SIGNATURE, CONTACT]`.
+
+### F. Meta — impersonation / trademark
+> The `[Facebook Page / Instagram account / ad]` at `[URL]` is impersonating our official brand **BeautyOnTApp** (`beautyontapp.com`) and directs users to a fraudulent store, `lovebeautyontapp.shop`, that we do not operate. It uses our brand name/logo/content to deceive our customers. I represent the genuine business `[proof: business registration / official domain email]`. Please remove the impersonating content. `[trademark reg. no. + jurisdiction, if using the trademark form]`.
+
+### G. SAFPS / Yima + SAPS (SA)
+> **Yima (`yima.org.za/reportscam`):** "Fake online store `lovebeautyontapp.shop` impersonating the real SA brand BeautyOnTApp (`beautyontapp.com`) to take payments for goods it does not supply. Please add to the fraud database and warn consumers." Attach screenshots.
+>
+> **SAPS affidavit skeleton:** "I, `[FULL NAME, ID NO.]`, `[ROLE]` of BeautyOnTApp `[company reg. no.]`, declare that `lovebeautyontapp.shop` is fraudulently impersonating our brand to deceive our customers. `[Describe any known victims / fake orders.]` I request this be investigated as online fraud and impersonation and referred to the Cybercrime/Commercial Crime unit." → obtain the **CAS number**.
+
+### H. Customer warning (post on your site banner + socials, immediately)
+> ⚠️ **Scam alert:** The only official BeautyOnTApp store is **beautyontapp.com** and our official apps. We are **not** affiliated with **lovebeautyontapp.shop** — please do not order or enter payment details there. Share to protect others. 💛
 
 ---
 

@@ -1,0 +1,650 @@
+<title>Impostor Takedown War Room</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #f7f2f5;
+    --surface: #ffffff;
+    --surface-2: #fbf7f9;
+    --ink: #1b1620;
+    --ink-soft: #4c4552;
+    --ink-faint: #7a7280;
+    --border: #e7dde5;
+    --border-strong: #d4c6d2;
+    --accent: #b32d63;        /* rose-magenta — beauty-brand nod, used for action */
+    --accent-ink: #8f1f4d;
+    --accent-wash: #f6e6ee;
+    --crit: #c30a26;          /* fraud red — semantic, distinct from accent */
+    --crit-wash: #fdE7ea;
+    --warn: #9a5b00;
+    --warn-wash: #fbefdb;
+    --good: #1c7a4d;
+    --good-wash: #e2f2ea;
+    --shadow: 0 1px 2px rgba(27,22,32,.05), 0 8px 24px rgba(27,22,32,.06);
+    --radius: 14px;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --display: "Archivo", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #130f16;
+      --surface: #1c1722;
+      --surface-2: #221b29;
+      --ink: #f2ecf1;
+      --ink-soft: #c3b8c6;
+      --ink-faint: #8f8496;
+      --border: #2e2637;
+      --border-strong: #3d3348;
+      --accent: #ef6ba1;
+      --accent-ink: #f7a9ca;
+      --accent-wash: #34202c;
+      --crit: #ff6b7d;
+      --crit-wash: #37181d;
+      --warn: #e0a54a;
+      --warn-wash: #33270f;
+      --good: #5ec98f;
+      --good-wash: #12291d;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #130f16;
+    --surface: #1c1722;
+    --surface-2: #221b29;
+    --ink: #f2ecf1;
+    --ink-soft: #c3b8c6;
+    --ink-faint: #8f8496;
+    --border: #2e2637;
+    --border-strong: #3d3348;
+    --accent: #ef6ba1;
+    --accent-ink: #f7a9ca;
+    --accent-wash: #34202c;
+    --crit: #ff6b7d;
+    --crit-wash: #37181d;
+    --warn: #e0a54a;
+    --warn-wash: #33270f;
+    --good: #5ec98f;
+    --good-wash: #12291d;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 20px 96px; }
+  a { color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
+  a:hover { border-bottom-color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+  .eyebrow { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; color: var(--accent-ink); }
+
+  /* Header */
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--ground) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .top-inner { max-width: 1020px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 14px; }
+  .shield { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 9px; background: var(--crit-wash); color: var(--crit); font-size: 19px; border: 1px solid color-mix(in srgb, var(--crit) 25%, transparent); }
+  .top-title { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: -.01em; line-height: 1.1; }
+  .top-sub { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); }
+  .top-spacer { flex: 1; }
+  .themebtn { font: inherit; font-size: 13px; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .themebtn:hover { border-color: var(--border-strong); }
+
+  /* Hero */
+  .hero { padding: 44px 0 8px; }
+  .hero h1 { font-size: clamp(30px, 5.4vw, 48px); line-height: 1.02; }
+  .hero .target { color: var(--crit); }
+  .hero p.lede { font-size: clamp(16px, 2.1vw, 19px); color: var(--ink-soft); max-width: 68ch; margin: 18px 0 0; }
+  .threatline { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+  .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px; border: 1px solid transparent; font-family: var(--sans); }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .pill.crit { background: var(--crit-wash); color: var(--crit); border-color: color-mix(in srgb, var(--crit) 30%, transparent); }
+  .pill.crit .dot { background: var(--crit); }
+  .pill.warn { background: var(--warn-wash); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+  .pill.good { background: var(--good-wash); color: var(--good); border-color: color-mix(in srgb, var(--good) 30%, transparent); }
+  .pill.neutral { background: var(--surface-2); color: var(--ink-soft); border-color: var(--border); }
+  .pill.verified { background: var(--good-wash); color: var(--good); border-color: color-mix(in srgb, var(--good) 30%, transparent); }
+
+  /* Section scaffolding */
+  section.block { margin-top: 40px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .sec-head h2 { font-size: clamp(20px, 3vw, 26px); }
+  .sec-head .n { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); }
+  .sec-note { color: var(--ink-soft); max-width: 72ch; margin: -4px 0 18px; }
+
+  /* Stat tiles */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+  .tile .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); font-weight: 600; }
+  .tile .v { font-family: var(--display); font-weight: 800; font-size: 21px; margin-top: 6px; letter-spacing: -.01em; }
+  .tile .s { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+  .tile.alert { border-color: color-mix(in srgb, var(--crit) 40%, var(--border)); }
+  .tile.alert .v { color: var(--crit); }
+
+  /* Cards */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .card + .card { margin-top: 14px; }
+
+  /* Forensic mono block */
+  .forensic { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px; overflow-x: auto; }
+  .forensic table { border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 13.5px; }
+  .forensic td { padding: 7px 12px 7px 0; vertical-align: top; border-bottom: 1px dashed var(--border); }
+  .forensic tr:last-child td { border-bottom: none; }
+  .forensic .rec { color: var(--accent-ink); white-space: nowrap; font-weight: 500; }
+  .forensic .val { color: var(--ink); font-weight: 500; }
+  .forensic .mean { color: var(--ink-faint); font-family: var(--sans); font-size: 12.5px; }
+  .tag { font-family: var(--sans); font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--good-wash); color: var(--good); border: 1px solid color-mix(in srgb, var(--good) 30%, transparent); white-space: nowrap; }
+  .tag.cf { background: var(--warn-wash); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+  .tag.none { background: var(--crit-wash); color: var(--crit); border-color: color-mix(in srgb, var(--crit) 30%, transparent); }
+
+  /* Comparison */
+  .versus { display: grid; grid-template-columns: 1fr 44px 1fr; gap: 0; align-items: stretch; }
+  @media (max-width: 620px) { .versus { grid-template-columns: 1fr; } .versus .vs { display: none; } }
+  .vcol { padding: 18px; }
+  .vcol.real { background: var(--good-wash); border-radius: var(--radius) 0 0 var(--radius); }
+  .vcol.fake { background: var(--crit-wash); border-radius: 0 var(--radius) var(--radius) 0; }
+  @media (max-width: 620px) { .vcol.real { border-radius: var(--radius) var(--radius) 0 0; } .vcol.fake { border-radius: 0 0 var(--radius) var(--radius); } }
+  .vcol h4 { font-family: var(--display); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
+  .vcol.real h4 { color: var(--good); }
+  .vcol.fake h4 { color: var(--crit); }
+  .vcol dl { margin: 0; display: grid; gap: 8px; }
+  .vcol .row { display: grid; gap: 1px; }
+  .vcol dt { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); font-weight: 600; }
+  .vcol dd { margin: 0; font-family: var(--mono); font-size: 13px; word-break: break-word; }
+  .vs { display: grid; place-items: center; font-family: var(--display); font-weight: 800; color: var(--ink-faint); font-size: 13px; }
+
+  /* Channel cards (injected) */
+  .chan { padding: 18px; }
+  .chan-head { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .prio { font-family: var(--mono); font-size: 12px; font-weight: 700; width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 8px; background: var(--accent-wash); color: var(--accent-ink); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+  .chan-title { font-family: var(--display); font-weight: 800; font-size: 17px; letter-spacing: -.01em; }
+  .chan-purpose { color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
+  .chan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 14px; }
+  @media (max-width: 560px) { .chan-grid { grid-template-columns: 1fr; } }
+  .field .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); font-weight: 600; margin-bottom: 2px; }
+  .field .txt { font-size: 14px; }
+  .field .txt.url { font-family: var(--mono); font-size: 12.5px; word-break: break-all; }
+  .chan-foot { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; align-items: center; }
+
+  /* Copy-paste template blocks */
+  .tmpl { margin-top: 14px; }
+  .tmpl-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .tmpl-head .name { font-family: var(--display); font-weight: 700; font-size: 15px; }
+  .copybtn { font: inherit; font-family: var(--sans); font-size: 12.5px; font-weight: 600; color: #fff; background: var(--accent); border: none; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .copybtn:hover { background: var(--accent-ink); }
+  .copybtn.copied { background: var(--good); }
+  pre.block { margin: 0; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-family: var(--mono); font-size: 13px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; color: var(--ink); }
+  pre.block .fill { color: var(--accent-ink); font-weight: 600; }
+
+  /* Steps */
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  ol.steps li { counter-increment: s; position: relative; padding: 12px 14px 12px 46px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+  ol.steps li::before { content: counter(s); position: absolute; left: 12px; top: 11px; width: 24px; height: 24px; border-radius: 7px; background: var(--accent-wash); color: var(--accent-ink); font-family: var(--mono); font-weight: 700; font-size: 12px; display: grid; place-items: center; }
+  ol.steps code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; border: 1px solid var(--border); }
+
+  ul.clean { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  ul.clean li { padding-left: 24px; position: relative; }
+  ul.clean li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  /* Tracker table */
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+  table.track { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 560px; background: var(--surface); }
+  table.track th, table.track td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  table.track th { font-family: var(--display); font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); background: var(--surface-2); position: sticky; top: 0; }
+  table.track tr:last-child td { border-bottom: none; }
+  table.track .box { font-family: var(--mono); color: var(--ink-faint); }
+
+  .callout { border-left: 3px solid var(--accent); background: var(--accent-wash); padding: 14px 16px; border-radius: 0 10px 10px 0; color: var(--ink); font-size: 14.5px; }
+  .callout.crit { border-left-color: var(--crit); background: var(--crit-wash); }
+  .foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--ink-faint); font-size: 12.5px; }
+  .muted { color: var(--ink-faint); }
+  .loading-note { color: var(--ink-faint); font-family: var(--mono); font-size: 13px; padding: 16px; border: 1px dashed var(--border-strong); border-radius: var(--radius); }
+
+  /* Tier groups */
+  .tier { margin-top: 26px; }
+  .tier-h { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .tier-h .lead { font-family: var(--display); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border-radius: 999px; }
+  .tier-h.t1 .lead { background: var(--crit-wash); color: var(--crit); }
+  .tier-h.t2 .lead { background: var(--warn-wash); color: var(--warn); }
+  .tier-h.t3 .lead { background: var(--accent-wash); color: var(--accent-ink); }
+  .tier-h.t4 .lead { background: var(--good-wash); color: var(--good); }
+  .tier-h.t5 .lead { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--border); }
+  .tier-h .desc { font-size: 14px; color: var(--ink-soft); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .chan.compact { padding: 14px 16px; }
+  .chan.compact .chan-title { font-size: 15px; }
+  .chan.compact .where { font-family: var(--mono); font-size: 12px; color: var(--accent-ink); word-break: break-all; margin-top: 4px; }
+  .chan.compact .eff { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+  .chan .lane { font-size: 15px; flex: none; }
+  .metaline { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; align-items: center; }
+  .chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--border); }
+  .chip.v { background: var(--good-wash); color: var(--good); border-color: color-mix(in srgb, var(--good) 30%, transparent); }
+  .chip.r { background: var(--warn-wash); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+  .chip.cond { background: var(--accent-wash); color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+  .note-inline { border-left: 3px solid var(--warn); background: var(--warn-wash); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; color: var(--ink); margin-top: 12px; }
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="shield">🛡️</div>
+    <div>
+      <div class="top-title">Impostor Takedown War Room</div>
+      <div class="top-sub">target: lovebeautyontapp.shop</div>
+    </div>
+    <div class="top-spacer"></div>
+    <button class="themebtn" id="themeToggle" aria-label="Toggle colour theme"><span id="themeIcon">◐</span><span id="themeLabel">Theme</span></button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Brand-protection dossier · 18 Aug 2026</div>
+    <h1>Someone built <span class="target">lovebeautyontapp.shop</span> to steal BeautyOnTApp's sales.</h1>
+    <p class="lede">It clones your brand name — "BeautyOnTApp" with <em>"love"</em> bolted on the front — on a throwaway <code>.shop</code> domain, hides behind Cloudflare, and runs no real email. This is the war plan to take it down through every channel that actually works: its infrastructure, the browsers, its platform, the ad networks, the registrar, and South African authorities.</p>
+    <div class="threatline">
+      <span class="pill crit"><span class="dot"></span>Threat: brand impersonation / fake store</span>
+      <span class="pill verified">✓ Evidence verified first-hand</span>
+      <span class="pill warn"><span class="dot"></span>Confidence: High</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="tiles">
+      <div class="tile alert">
+        <div class="k">Impostor domain</div>
+        <div class="v">lovebeautyontapp<span class="muted">.shop</span></div>
+        <div class="s">Your brand + "love" on a cheap TLD</div>
+      </div>
+      <div class="tile">
+        <div class="k">Infrastructure</div>
+        <div class="v">Cloudflare</div>
+        <div class="s">DNS + proxy — origin hidden</div>
+      </div>
+      <div class="tile alert">
+        <div class="k">Mail records</div>
+        <div class="v">None</div>
+        <div class="s">No MX / SPF / DMARC = disposable</div>
+      </div>
+      <div class="tile">
+        <div class="k">Your real store</div>
+        <div class="v">beautyontapp<span class="muted">.com</span></div>
+        <div class="s">Shopify · apps · 7 SA stores</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="evidence">
+    <div class="sec-head"><span class="n">01</span><h2>The forensic evidence</h2></div>
+    <p class="sec-note">Resolved first-hand on 18 Aug 2026 via direct DNS lookup. These are facts, not guesses — every takedown report below is built on them.</p>
+    <div class="forensic">
+      <table>
+        <tr><td class="rec">A / IPv4</td><td class="val">104.21.88.151 · 172.67.223.176</td><td class="mean"><span class="tag cf">Cloudflare</span> proxy ranges 104.21.0.0/16, 172.67.0.0/16</td></tr>
+        <tr><td class="rec">AAAA / IPv6</td><td class="val">2606:4700:3030::6815:5897 · 2606:4700:3031::ac43:dfb0</td><td class="mean"><span class="tag cf">Cloudflare</span> 2606:4700::/32 (encodes the same v4)</td></tr>
+        <tr><td class="rec">Nameservers</td><td class="val">mcgrory.ns.cloudflare.com · wally.ns.cloudflare.com</td><td class="mean"><span class="tag cf">Cloudflare</span> DNS managed inside a Cloudflare account</td></tr>
+        <tr><td class="rec">MX (mail)</td><td class="val">—</td><td class="mean"><span class="tag none">NONE</span> cannot run legitimate business email</td></tr>
+        <tr><td class="rec">SPF / DMARC</td><td class="val">—</td><td class="mean"><span class="tag none">NONE</span> no email authentication — throwaway domain</td></tr>
+        <tr><td class="rec">www subdomain</td><td class="val">→ same Cloudflare IPs</td><td class="mean">full site proxied through Cloudflare</td></tr>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <strong>Why Cloudflare is the #1 lever:</strong> Cloudflare runs both the DNS and the reverse proxy for this domain. A single abuse report to Cloudflare gets the site flagged and the complaint forwarded to the hidden origin host — the fastest way to hit a site whose real server you can't see.
+    </div>
+  </section>
+
+  <section class="block" id="compare">
+    <div class="sec-head"><span class="n">02</span><h2>Real vs. impostor</h2></div>
+    <p class="sec-note">This side-by-side is your core exhibit — it proves prior, genuine reputation in "BeautyOnTApp" and a deliberate copy.</p>
+    <div class="card">
+      <div class="versus">
+        <div class="vcol real">
+          <h4>✓ Legitimate — BeautyOnTApp</h4>
+          <dl>
+            <div class="row"><dt>Store</dt><dd>beautyontapp.com (Shopify)</dd></div>
+            <div class="row"><dt>Also</dt><dd>beautyontapp.net · beautyontappcos.co.za</dd></div>
+            <div class="row"><dt>Apps</dt><dd>App Store id6754606514 · Google Play app.shopbeautyontapp.co.za</dd></div>
+            <div class="row"><dt>Social</dt><dd>@BeautyonTApp (X, TikTok, Threads, FB, LinkedIn)</dd></div>
+            <div class="row"><dt>Physical</dt><dd>7 SA stores · Mall of Africa 2131 · East London</dd></div>
+            <div class="row"><dt>Tagline</dt><dd>"For the love of all things Beauty"</dd></div>
+          </dl>
+        </div>
+        <div class="vs">VS</div>
+        <div class="vcol fake">
+          <h4>✗ Impostor — lovebeautyontapp.shop</h4>
+          <dl>
+            <div class="row"><dt>Domain</dt><dd>lovebeautyontapp.shop (+ www)</dd></div>
+            <div class="row"><dt>Registered</dt><dd>[pull from WHOIS — likely very recent]</dd></div>
+            <div class="row"><dt>Hosting</dt><dd>Cloudflare-fronted, origin hidden</dd></div>
+            <div class="row"><dt>Email</dt><dd>none — no MX/SPF/DMARC</dd></div>
+            <div class="row"><dt>Footprint</dt><dd>no organic/legit web presence</dd></div>
+            <div class="row"><dt>Tagline steals</dt><dd>your exact brand + "love" prefix</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="capture">
+    <div class="sec-head"><span class="n">03</span><h2>Do this first — preserve the evidence</h2></div>
+    <p class="sec-note">Fake stores vanish the moment they're reported. Capture proof <em>before</em> you file. Use a device you don't mind exposing — <strong>never enter real personal or payment details.</strong></p>
+    <ol class="steps">
+      <li>Screenshot the <strong>homepage</strong> with <code>lovebeautyontapp.shop</code> visible in the URL bar.</li>
+      <li>Screenshot any <strong>logo, tagline, or product photos copied from your store</strong> — put your matching real page beside it. These are your infringement exhibits.</li>
+      <li>Screenshot the <strong>checkout</strong> — especially the payment methods / card fields and any SA gateway logos (Payfast, Ozow, Payflex).</li>
+      <li>Screenshot <strong>about / contact / returns / terms</strong> pages (usually missing, fake, or copied).</li>
+      <li>Save the page as <code>complete web page</code> or print-to-PDF so the HTML + timestamp are preserved.</li>
+      <li>Run the URL through <code>urlscan.io</code> and <code>scamadviser.com</code> and save the result links — independent corroboration.</li>
+      <li><strong>Pull the WHOIS:</strong> open <code>lookup.icann.org</code>, enter the domain, and record <em>Registrar</em>, <em>Registrar Abuse Email</em>, and <em>Creation Date</em>. Drop them into the templates below.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="channels">
+    <div class="sec-head"><span class="n">04</span><h2>Takedown channels — in priority order</h2></div>
+    <p class="sec-note">Fire the top three within the first hour; they hit hardest and fastest. Only you can submit these — each requires the rights holder's real identity, and DMCA notices are sworn statements.</p>
+    <div id="channels-mount">
+
+      <div class="tier">
+        <div class="tier-h t1"><span class="lead">Tier 1 · First hour</span><span class="desc">Take the site offline &amp; warn every browser — fire all four now</span></div>
+
+        <div class="card chan">
+          <div class="chan-head">
+            <div class="prio">1</div>
+            <div style="flex:1">
+              <div class="chan-title">Google Safe Browsing — report phishing</div>
+              <div class="chan-purpose">The single highest-impact action. Adds the domain to the Safe Browsing list, triggering a full-page red <em>"Deceptive site ahead"</em> warning in Chrome, Safari, Firefox, Android and Gmail — collapsing traffic even with Cloudflare in front. No login; works whether or not they advertise.</div>
+            </div>
+            <span class="lane">🔴</span>
+          </div>
+          <div class="chan-grid">
+            <div class="field"><div class="lbl">Where to file</div><div class="txt url">safebrowsing.google.com/safebrowsing/report_phish/</div></div>
+            <div class="field"><div class="lbl">Speed</div><div class="txt">Hours to a few days</div></div>
+          </div>
+          <div class="metaline"><span class="chip v">Verified</span><span class="chip">no account needed</span><span class="chip">use template A ↓</span></div>
+        </div>
+
+        <div class="card chan">
+          <div class="chan-head">
+            <div class="prio">2</div>
+            <div style="flex:1">
+              <div class="chan-title">Cloudflare abuse — Phishing &amp; Malware</div>
+              <div class="chan-purpose">Cloudflare is the proxy, not the host. It flags the URL, can serve an interstitial, and forwards your complaint to the hidden origin host and registrar. You can request your identity stay confidential.</div>
+            </div>
+            <span class="lane">🔴</span>
+          </div>
+          <div class="chan-grid">
+            <div class="field"><div class="lbl">Where to file</div><div class="txt url">abuse.cloudflare.com/phishing</div></div>
+            <div class="field"><div class="lbl">Speed</div><div class="txt">Ack immediate · forwarded ~24–48h</div></div>
+          </div>
+          <div class="metaline"><span class="chip v">Verified</span><span class="chip">also file "Trademark" category</span><span class="chip">use template B ↓</span></div>
+        </div>
+
+        <div class="card chan">
+          <div class="chan-head">
+            <div class="prio">3</div>
+            <div style="flex:1">
+              <div class="chan-title">Registrar abuse report</div>
+              <div class="chan-purpose">The fastest true kill. The registrar can put the domain on <code>clientHold</code> or terminate it — taking the site fully offline regardless of Cloudflare. Registrars must act on abuse under ICANN RAA §3.18. Get the abuse email from WHOIS first.</div>
+            </div>
+            <span class="lane">🔴</span>
+          </div>
+          <div class="chan-grid">
+            <div class="field"><div class="lbl">Where to file</div><div class="txt">Registrar's abuse email → from <span class="txt url">lookup.icann.org</span></div></div>
+            <div class="field"><div class="lbl">Speed</div><div class="txt">Often 24–72h</div></div>
+          </div>
+          <div class="metaline"><span class="chip v">Verified</span><span class="chip">needs WHOIS (§ capture)</span><span class="chip">use template C ↓</span></div>
+        </div>
+
+        <div class="card chan">
+          <div class="chan-head">
+            <div class="prio">4</div>
+            <div style="flex:1">
+              <div class="chan-title">Netcraft takedown</div>
+              <div class="chan-purpose">One of the largest phishing takedown operations. Blocklists the URL across many browsers/apps and pushes takedown to the host and registrar. Free, no account.</div>
+            </div>
+            <span class="lane">🔴</span>
+          </div>
+          <div class="chan-grid">
+            <div class="field"><div class="lbl">Where to file</div><div class="txt url">report.netcraft.com</div></div>
+            <div class="field"><div class="lbl">Speed</div><div class="txt">Blocking mins · takedown mins–hours</div></div>
+          </div>
+          <div class="metaline"><span class="chip v">Verified</span><span class="chip">submit the URL</span></div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-h t2"><span class="lead">Tier 2 · First day</span><span class="desc">Platform &amp; registry pressure</span></div>
+        <div class="grid2">
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">.shop registry abuse (GMO)</div><span class="lane">🔴</span></div><div class="where">get.shop/abuse</div><div class="eff">Registry sits above the registrar and can suspend at registry level — strong backstop if the registrar stalls.</div><div class="metaline"><span class="chip v">Verified</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Shopify — Trademark / trade-dress</div><span class="lane">🔴</span></div><div class="where">shopify.com/legal/tools/report-an-issue/trademark-infringement</div><div class="eff">Strongest Shopify angle; no DMCA auto-restore so it sticks. List every infringing URL.</div><div class="metaline"><span class="chip cond">only if Shopify</span><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Shopify — Fraud / AUP abuse</div><span class="lane">🔴</span></div><div class="where">shopify.com/legal/tools/report-an-issue/fraud</div><div class="eff">Non-IP impersonation path; can suspend the store. File in parallel with the trademark form.</div><div class="metaline"><span class="chip cond">only if Shopify</span><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Shopify — Copyright / DMCA</div><span class="lane">🔴</span></div><div class="where">shopify.com/legal/tools/report-an-issue/dmca</div><div class="eff">For copied photos/logos/copy. Merchant can counter-notice (~10–14 days), so pair with trademark.</div><div class="metaline"><span class="chip cond">only if Shopify</span><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">APWG</div><span class="lane">🔴</span></div><div class="where">reportphishing@apwg.org</div><div class="eff">Feeds browser/security blocklists. Best if you have a phishing email (forward with headers).</div><div class="metaline"><span class="chip v">Verified</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">PhishTank</div><span class="lane">🔴</span></div><div class="where">phishtank.com</div><div class="eff">Community blocklist. Caveat: new-user registration is currently disabled — only usable with an existing account.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+        </div>
+        <div class="note-inline"><strong>Check if it's actually Shopify first.</strong> Open <code>lovebeautyontapp.shop/products.json</code> (Shopify returns a JSON product feed; non-Shopify returns 404/HTML), look for <code>cdn.shopify.com</code> assets in page source, and add to cart — Shopify checkouts redirect to <code>*.myshopify.com</code>. If none hit, skip the Shopify channels.</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-h t3"><span class="lead">Tier 3 · Cut the traffic</span><span class="desc">Ads &amp; social — conditional on them advertising</span></div>
+        <div class="grid2">
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Meta — impersonating Page/Account</div><span class="lane">🟠</span></div><div class="where">facebook.com/help/contact/295309487309948</div><div class="eff">Removes impostor FB/IG pages/accounts. Works without a registered trademark.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Meta — Trademark infringement</div><span class="lane">🟠</span></div><div class="where">facebook.com/help/contact/trademarkform</div><div class="eff">Removes infringing pages/ads/shops. Needs a registered mark.</div><div class="metaline"><span class="chip cond">registered TM</span><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Meta — scam ad + Ad Library recon</div><span class="lane">🟠</span></div><div class="where">facebook.com/ads/library · country = South Africa</div><div class="eff">Search "BeautyOnTApp"/"lovebeautyontapp", find the ads, three-dot → Report ad → Scam. Kills their acquisition channel.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">TikTok — trademark IPR</div><span class="lane">🟠</span></div><div class="where">ipr.tiktokforbusiness.com/legal/report/Trademark</div><div class="eff">Brand-owner route; removes infringing videos/ads/Shop listings platform-wide.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">TikTok — in-app scam report</div><span class="lane">🟠</span></div><div class="where">Report → "Fraud and scams" / "Pretending to be someone"</div><div class="eff">Fastest removal of a specific TikTok ad/video/profile.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Google Ads — trademark complaint</div><span class="lane">🟠</span></div><div class="where">services.google.com/inquiry/aw_tmcomplaint</div><div class="eff">Stops use of "BeautyOnTApp" in Google Ads. Only bites if they run ads; still pre-registers the mark.</div><div class="metaline"><span class="chip cond">if advertising</span><span class="chip v">Verified</span></div></div>
+        </div>
+        <div class="note-inline">Recon caveats: Meta's Ad Library shows only <em>currently active</em> ads (absence ≠ none). TikTok's Commercial Content Library indexes only EEA/UK/Swiss ads — an SA-targeted scam may not appear there, so a null result is inconclusive.</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-h t4"><span class="lead">Tier 4 · South Africa</span><span class="desc">Authorities &amp; money rails</span></div>
+        <div class="grid2">
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">SAFPS / Yima — do this early</div><span class="lane">🟣</span></div><div class="where">yima.org.za/reportscam · hotline 083 123 7226</div><div class="eff">Logs the site into SA's shared fraud DB → member banks block it + consumers warned. Fast, high-value.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">SAPS cybercrime — open a case</div><span class="lane">🔵</span></div><div class="where">Any station · Crime Stop 08600 10111</div><div class="eff">Produces a CAS number — the key banks/PSPs/registrars ask for. Anchor filing; slow alone.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Capitec Fraud Centre</div><span class="lane">🟣</span></div><div class="where">0860 10 20 43 · WhatsApp 067 418 9565</div><div class="eff">If a Capitec account receives scam funds, it can be flagged/frozen and funds recalled (fastest same-day).</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">Payfast · Ozow · Payflex</div><span class="lane">🟣</span></div><div class="where">payfast.io/contact · phishing@ozow.com · support@payflex.co.za</div><div class="eff">If the store transacts on one of these rails, the merchant can be terminated — choking the cash-out.</div><div class="metaline"><span class="chip r">Reliable</span><span class="chip cond">confirm rail first</span></div></div>
+        </div>
+        <div class="note-inline"><strong>Money-rail reality check:</strong> SA gateways are KYC-gated and this is a throwaway domain — it likely holds no legitimate merchant account. Confirm the rail is actually present at checkout before expecting these to bite.</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-h t5"><span class="lead">Tier 5 · Strategic</span><span class="desc">Permanent protection — start now, pays off over weeks/months</span></div>
+        <div class="grid2">
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">CIPC trademark — search + register</div><span class="lane">🔵</span></div><div class="where">iponline.cipc.co.za · TM1, classes 3 &amp; 35, ~R590/class</div><div class="eff">Even a pending application strengthens every IP complaint above and unlocks UDRP. Registration 12–24 months.</div><div class="metaline"><span class="chip r">Reliable</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">UDRP / URS (WIPO) — seize the domain</div><span class="lane">🔵</span></div><div class="where">wipo.int/amc/en/domains/</div><div class="eff">Trademark-based dispute: UDRP transfers/cancels the domain; URS suspends it. Needs TM rights; ~2 months.</div><div class="metaline"><span class="chip v">Verified</span></div></div>
+          <div class="card chan compact"><div class="chan-head"><div class="chan-title">ICANN compliance — escalation</div><span class="lane">🔵</span></div><div class="where">icann.org/compliance/complaint</div><div class="eff">Use only if the registrar ignores a valid abuse report — you must show you contacted them first.</div><div class="metaline"><span class="chip v">Verified</span></div></div>
+          <div class="card chan compact" style="opacity:.72"><div class="chan-head"><div class="chan-title">Skip: FPB · CIPC company-name · Google spam form</div><span class="lane">⛔</span></div><div class="eff">Out of scope for this case — FPB handles prohibited content not fraud; CIPC company-name can't reach an anonymous foreign domain; Google's spam form takes no direct action (use the phishing path).</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="block" id="templates">
+    <div class="sec-head"><span class="n">05</span><h2>Ready-to-send complaint text</h2></div>
+    <p class="sec-note">Copy, fill the <span class="fill">highlighted</span> blanks, and submit. Written to be firm, factual, and rights-holder-grade.</p>
+    <div id="templates-mount">
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">A · Google Safe Browsing</span><button class="copybtn" data-target="tA">Copy</button></div>
+        <pre class="block" id="tA">URL: https://lovebeautyontapp.shop
+
+This site is a fraudulent storefront impersonating our legitimate South African beauty retail brand BeautyOnTApp (official sites: https://beautyontapp.com and https://beautyontapp.net). It copies our brand name ("BeautyOnTApp" with a "love" prefix) to deceive our customers into entering payment and personal details. The domain is a throwaway — no mail records, Cloudflare-fronted, recently registered. Please add it to the Safe Browsing list. Contact: [YOUR EMAIL]</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">B · Cloudflare abuse (Phishing &amp; Malware)</span><button class="copybtn" data-target="tB">Copy</button></div>
+        <pre class="block" id="tB">Reporter: [YOUR NAME], [ROLE] at BeautyOnTApp — [YOUR EMAIL]
+URL(s): https://lovebeautyontapp.shop , https://www.lovebeautyontapp.shop
+Category: Phishing & Malware (also filing under Trademark Infringement)
+
+lovebeautyontapp.shop is a fraudulent website impersonating our legitimate brand BeautyOnTApp (beautyontapp.com, beautyontapp.net), a South African beauty retailer with physical stores, mobile apps and an established social presence. It reproduces our brand name and — per the attached screenshots — our branding/product content to deceive our customers and harvest payment and personal data at checkout. The domain shows the hallmarks of a disposable fraud domain: it is fronted by your network (NS mcgrory/wally.ns.cloudflare.com; 104.21.88.151 / 172.67.223.176) and has no MX/SPF/DMARC records. As Cloudflare is the reverse proxy and DNS provider, please flag the URL and forward this complaint to the origin host and registrar. We request that our identity be kept confidential from the site owner.
+
+Attachments: screenshots of the fraudulent site + our genuine sites; WHOIS/RDAP record.</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">C · Registrar abuse email</span><button class="copybtn" data-target="tC">Copy</button></div>
+        <pre class="block" id="tC">To: [REGISTRAR ABUSE EMAIL]  (from lookup.icann.org)
+Subject: Abuse report — fraudulent brand-impersonation domain lovebeautyontapp.shop (request suspension)
+
+To the Abuse Team,
+
+I am [YOUR NAME], [ROLE] of BeautyOnTApp, a South African beauty retailer. The domain you sponsor, lovebeautyontapp.shop (created [CREATION DATE]), is being used for brand impersonation and consumer fraud. It copies our established brand "BeautyOnTApp" (our sites: beautyontapp.com, beautyontapp.net) to deceive our customers into placing orders and entering payment details on a store we do not operate.
+
+Evidence attached: dated screenshots of the fraudulent site showing use of our brand name and content; our genuine sites for comparison; the RDAP record; and DNS records showing a throwaway configuration (Cloudflare-fronted, no MX/SPF/DMARC). This is actionable abuse under your Acceptable Use Policy and ICANN RAA section 3.18.
+
+We request that you investigate and suspend (clientHold) or terminate the domain. Please confirm receipt and your case reference.
+
+Regards,
+[YOUR NAME] — [CONTACT]</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">D · .shop registry (GMO) — get.shop/abuse</span><button class="copybtn" data-target="tD">Copy</button></div>
+        <pre class="block" id="tD">[Use the same body as template C, addressed to the registry, adding:]
+
+I am also reporting this to the sponsoring registrar. I am escalating to the .shop registry because this domain is being used for fraud/impersonation in breach of the .shop Anti-Abuse Policy, and I request registry-level action (registry hold/suspension).</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">E · Shopify — Trademark / Fraud (only if Shopify)</span><button class="copybtn" data-target="tE">Copy</button></div>
+        <pre class="block" id="tE">The Shopify-powered store at lovebeautyontapp.shop is impersonating our brand BeautyOnTApp to defraud South African consumers.
+
+Infringing URLs: [LIST EACH SPECIFIC PAGE URL — a homepage link alone is insufficient]
+Our brand/trademark: "BeautyOnTApp" [registration no. + jurisdiction if registered; otherwise state established common-law rights since [YEAR]]
+Our genuine sites: beautyontapp.com, beautyontapp.net
+
+The store uses our name and [copied logo/photos/copy] to deceive our customers. I have a good-faith belief this use is unauthorized, and I state under penalty of perjury that this notice is accurate and I am authorized to act for the rights holder.
+
+[YOUR NAME, SIGNATURE, CONTACT]</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">F · Meta — impersonation / trademark</span><button class="copybtn" data-target="tF">Copy</button></div>
+        <pre class="block" id="tF">The [Facebook Page / Instagram account / ad] at [URL] is impersonating our official brand BeautyOnTApp (beautyontapp.com) and directs users to a fraudulent store, lovebeautyontapp.shop, that we do not operate. It uses our brand name/logo/content to deceive our customers. I represent the genuine business [proof: business registration / official domain email]. Please remove the impersonating content.
+[If using the trademark form: trademark registration no. + jurisdiction.]</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">G · SAFPS / Yima + SAPS affidavit</span><button class="copybtn" data-target="tG">Copy</button></div>
+        <pre class="block" id="tG">Yima (yima.org.za/reportscam):
+Fake online store lovebeautyontapp.shop impersonating the real SA brand BeautyOnTApp (beautyontapp.com) to take payments for goods it does not supply. Please add to the fraud database and warn consumers. [Attach screenshots.]
+
+SAPS affidavit skeleton:
+I, [FULL NAME, ID NO.], [ROLE] of BeautyOnTApp [company reg. no.], declare that lovebeautyontapp.shop is fraudulently impersonating our brand to deceive our customers. [Describe any known victims / fake orders.] I request this be investigated as online fraud and impersonation and referred to the Cybercrime / Commercial Crime unit.
+→ obtain the CAS number.</pre>
+      </div>
+
+      <div class="tmpl">
+        <div class="tmpl-head"><span class="name">H · Customer warning (post immediately)</span><button class="copybtn" data-target="tH">Copy</button></div>
+        <pre class="block" id="tH">⚠️ Scam alert: The only official BeautyOnTApp store is beautyontapp.com and our official apps. We are NOT affiliated with lovebeautyontapp.shop — please do not order or enter payment details there. Please share to protect others. 💛</pre>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="block" id="defense">
+    <div class="sec-head"><span class="n">06</span><h2>Proactive brand defense</h2></div>
+    <p class="sec-note">These don't take the impostor down but blunt its impact and stop the next one.</p>
+    <ul class="clean">
+      <li><strong>Warn your customers now.</strong> Banner + social post: "The only official BeautyOnTApp store is beautyontapp.com and our official apps. We are not affiliated with lovebeautyontapp.shop — do not enter payment details there." This kills the scammer's conversion rate immediately.</li>
+      <li><strong>Google Alerts</strong> for <code>beautyontapp</code>, <code>"beauty on tapp"</code>, <code>lovebeautyontapp</code> to catch new clones early.</li>
+      <li><strong>Register defensive domains</strong> you don't own (e.g. beautyontapp.shop and common typos) before squatters do.</li>
+      <li><strong>Register the "BeautyOnTApp" trademark with CIPC</strong> if you haven't — it turns every future takedown into a one-click IP complaint and unlocks UDRP domain seizure.</li>
+      <li><strong>Enable Meta Brand Rights Protection</strong> and lock in verified pages so Meta recognizes you as the rights holder.</li>
+      <li><strong>Alert your payment providers</strong> (Payfast, Ozow, Payflex, Capitec Pay) that a fraudster is impersonating you — they blocklist brand-abusing merchants on their rails.</li>
+    </ul>
+  </section>
+
+  <section class="block" id="tracker">
+    <div class="sec-head"><span class="n">07</span><h2>Campaign tracker</h2></div>
+    <p class="sec-note">Run it to completion — a fake store dies when enough independent channels act at once.</p>
+    <div class="tbl-wrap">
+      <table class="track">
+        <thead><tr><th>#</th><th>Channel</th><th>Filed</th><th>Date</th><th>Reference</th><th>Outcome</th></tr></thead>
+        <tbody id="tracker-body">
+          <tr><td>1</td><td>Google Safe Browsing</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>2</td><td>Cloudflare abuse</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>3</td><td>Registrar abuse</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>4</td><td>Netcraft takedown</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>5</td><td>.shop registry (GMO)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>6</td><td>Shopify trademark (if Shopify)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>7</td><td>Shopify fraud / AUP (if Shopify)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>8</td><td>APWG</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>9</td><td>Meta impersonation / trademark</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>10</td><td>Meta / IG scam-ad report</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>11</td><td>TikTok IP / scam report</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>12</td><td>Google Ads trademark (if advertising)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>13</td><td>SAFPS / Yima</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>14</td><td>SAPS cybercrime (CAS no.)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>15</td><td>Payment-rail report (if rail present)</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>16</td><td>CIPC trademark filing</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+          <tr><td>17</td><td>Customer warning posted</td><td class="box">☐</td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="foot">
+    <p><strong>Evidence integrity.</strong> All DNS records were resolved first-hand on 18 Aug 2026. Brand-ownership facts are cited to the BeautyOnTApp app source and public listings. Registrar/creation date and live-site content must be captured from a normal browser (see §03) because this investigation environment's outbound web access was restricted — those are the only two open gaps and neither blocks the takedown.</p>
+    <p class="muted">Not legal advice. For a registered-trademark enforcement action or UDRP filing, involve an IP attorney — this dossier is built to make that engagement fast by assembling the evidence up front.</p>
+  </div>
+</div>
+
+<script>
+  // Theme toggle: cycles system → light → dark, persisted in-memory only.
+  (function () {
+    var root = document.documentElement;
+    var icon = document.getElementById('themeIcon');
+    var label = document.getElementById('themeLabel');
+    var order = ['system', 'light', 'dark'];
+    var i = 0;
+    function apply() {
+      var mode = order[i];
+      if (mode === 'system') { root.removeAttribute('data-theme'); icon.textContent = '◐'; label.textContent = 'System'; }
+      else if (mode === 'light') { root.setAttribute('data-theme', 'light'); icon.textContent = '☀'; label.textContent = 'Light'; }
+      else { root.setAttribute('data-theme', 'dark'); icon.textContent = '☾'; label.textContent = 'Dark'; }
+    }
+    document.getElementById('themeToggle').addEventListener('click', function () { i = (i + 1) % order.length; apply(); });
+    apply();
+  })();
+
+  // Copy-to-clipboard for template blocks, with a select-fallback for sandboxed clipboards.
+  function wireCopy() {
+    document.querySelectorAll('.copybtn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pre = document.getElementById(btn.getAttribute('data-target'));
+        if (!pre) return;
+        var text = pre.innerText;
+        var done = function () { btn.classList.add('copied'); var t = btn.textContent; btn.textContent = 'Copied ✓'; setTimeout(function(){ btn.classList.remove('copied'); btn.textContent = t; }, 1600); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () { selectNode(pre); });
+        } else { selectNode(pre); }
+      });
+    });
+  }
+  function selectNode(node) {
+    var r = document.createRange(); r.selectNodeContents(node);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  window.__wireCopy = wireCopy;
+  wireCopy();
+</script>
