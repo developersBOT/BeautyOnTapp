@@ -1,0 +1,122 @@
+[
+ {
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "match_type": "EXACT",
+  "keywords": 35
+ },
+ {
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "match_type": "PHRASE",
+  "keywords": 35
+ },
+ {
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "match_type": "EXACT",
+  "keywords": 39
+ },
+ {
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "match_type": "PHRASE",
+  "keywords": 39
+ },
+ {
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "match_type": "EXACT",
+  "keywords": 30
+ },
+ {
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "match_type": "PHRASE",
+  "keywords": 17
+ },
+ {
+  "campaign": "Pastry_BodyWash_Search",
+  "match_type": "EXACT",
+  "keywords": 9
+ },
+ {
+  "campaign": "Pastry_BodyWash_Search",
+  "match_type": "PHRASE",
+  "keywords": 4
+ },
+ {
+  "campaign": "Pastry_Brand_Search",
+  "match_type": "BROAD",
+  "keywords": 2
+ },
+ {
+  "campaign": "Pastry_Brand_Search",
+  "match_type": "EXACT",
+  "keywords": 31
+ },
+ {
+  "campaign": "Pastry_Brand_Search",
+  "match_type": "PHRASE",
+  "keywords": 10
+ },
+ {
+  "campaign": "Search-bodyacne",
+  "match_type": "PHRASE",
+  "keywords": 28
+ },
+ {
+  "campaign": "Search-bodycare",
+  "match_type": "BROAD",
+  "keywords": 35
+ },
+ {
+  "campaign": "Search-bodycare",
+  "match_type": "PHRASE",
+  "keywords": 20
+ },
+ {
+  "campaign": "Search-bodywash",
+  "match_type": "BROAD",
+  "keywords": 2
+ },
+ {
+  "campaign": "Search-bodywash",
+  "match_type": "PHRASE",
+  "keywords": 2
+ },
+ {
+  "campaign": "Search-brightening",
+  "match_type": "BROAD",
+  "keywords": 35
+ },
+ {
+  "campaign": "Search-brightening",
+  "match_type": "PHRASE",
+  "keywords": 39
+ },
+ {
+  "campaign": "Search-competitor",
+  "match_type": "BROAD",
+  "keywords": 34
+ },
+ {
+  "campaign": "Search-competitor",
+  "match_type": "PHRASE",
+  "keywords": 16
+ },
+ {
+  "campaign": "Search-ingredients",
+  "match_type": "BROAD",
+  "keywords": 35
+ },
+ {
+  "campaign": "Search-ingredients",
+  "match_type": "PHRASE",
+  "keywords": 16
+ },
+ {
+  "campaign": "Search-pastryskincare",
+  "match_type": "BROAD",
+  "keywords": 17
+ },
+ {
+  "campaign": "Search-pastryskincare",
+  "match_type": "PHRASE",
+  "keywords": 18
+ }
+]

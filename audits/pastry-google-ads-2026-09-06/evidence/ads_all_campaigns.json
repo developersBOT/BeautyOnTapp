@@ -1,0 +1,1943 @@
+[
+ {
+  "campaign_id": "23614525870",
+  "campaign": "Search-brightening",
+  "ad_group_id": "192092133325",
+  "ad_group": "Ad group 1",
+  "ad_id": "798619932669",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "GOOD",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/hyperpigmentation"
+  ],
+  "path1": "Brightening",
+  "path2": "BodyCare",
+  "headlines": [
+   "Fade Dark Marks Safely",
+   "Body Care for Dark Spots",
+   "Even Tone Body Lotion",
+   "Brightening Body Serum",
+   "No Bleaching. No Burning.",
+   "Hyperpigmentation Fix",
+   "Niacinamide Body Lotion",
+   "Vitamin C Body Cream",
+   "Brightening Body Oil",
+   "For Melanin-Rich Skin",
+   "Proven Active Ingredients",
+   "81+ Five Star Reviews",
+   "Results From R199",
+   "Fragrance-Free Options",
+   "Shop Pastry Skincare"
+  ],
+  "descriptions": [
+   "Fade dark marks with niacinamide, vitamin C & brightening serums. No bleaching. From R199.",
+   "No bleaching, no burning. Active body care for melanin-rich skin. Even tone safely.",
+   "Niacinamide, vitamin C & alpha arbutin. Brightening body care. 81+ five star reviews.",
+   "SA's top even tone body care. Lotions, creams & serums that fade dark spots. Shop now."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23614294762",
+  "campaign": "Search-pastryskincare",
+  "ad_group_id": "193410155229",
+  "ad_group": "Ad group 1",
+  "ad_id": "798612155649",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "EXCELLENT",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za"
+  ],
+  "path1": "Pastry",
+  "path2": "Skincare",
+  "headlines": [
+   "Pastry Skincare Official",
+   "Shop Pastry Skincare SA",
+   "Pastry Skincare Online",
+   "Glycolic Acid Body Wash",
+   "Niacinamide Body Lotion",
+   "#1 Body Care Brand in SA",
+   "Made For Melanin-Rich Skin",
+   "No Bleaching. No Burning.",
+   "81+ Five Star Reviews",
+   "Shop Online Now",
+   "Body Care From R199",
+   "Proudly South African",
+   "Fragrance-Free Available",
+   "Sensitive Skin Friendly",
+   "Results-Driven Body Care"
+  ],
+  "descriptions": [
+   "Glycolic acid body wash, niacinamide lotion, serums & sunscreen. From R199. Proudly SA.",
+   "Body care for melanin-rich skin. Even tone without bleaching. Fragrance-free. Shop now.",
+   "SA's favourite brightening body care. Body washes, lotions, serums & creams that work.",
+   "81+ five star reviews. Niacinamide, glycolic & vitamin C. No harsh chemicals. From R199."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23610427184",
+  "campaign": "Search-competitor",
+  "ad_group_id": "193417483589",
+  "ad_group": "Competitor Brands",
+  "ad_id": "798636180693",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za"
+  ],
+  "path1": "Shop",
+  "path2": "Serums",
+  "headlines": [
+   "Pastry Skincare",
+   "Brightening & Sensitive Skin",
+   "Even Tone Skincare SA",
+   "Sensitive Skin Solutions",
+   "Dermatologist Tested",
+   "Skincare South Africa",
+   "Niacinamide Serum SA",
+   "Brightening Dark Marks",
+   "Shop From R199",
+   "Moisturising Cream SA",
+   "For Melanin-Rich Skin",
+   "Fragrance-Free Serums",
+   "Science-Backed Actives",
+   "SA's #1 Skincare Brand",
+   "Snail Mucin Serum"
+  ],
+  "descriptions": [
+   "Your Even Tone + Acne Free Skincare Hack Is Here",
+   "Shop gentle cleansers, serums & body care -fragrance-free and science-backed",
+   "Locally made, dermatologist.-tested skincare for sensitive & hyperpigmented skin",
+   "Switch to SA's #1 skincare brand. Better results, lower prices. Shop serums from R199."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23660112718",
+  "campaign": "Pastry_BodyWash_Search",
+  "ad_group_id": "194151132373",
+  "ad_group": "Ad group 1",
+  "ad_id": "800403079385",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/body-wash"
+  ],
+  "path1": "Pastry",
+  "path2": "Body Wash",
+  "headlines": [
+   "Pastry Body Wash",
+   "Shop Pastry Body Wash",
+   "SA Body Wash Brand",
+   "Moisturising Body Wash",
+   "Luxury Body Wash SA",
+   "Hydrating Body Wash",
+   "Body Wash for Dry Skin",
+   "Gentle Body Wash",
+   "Best Body Wash SA",
+   "Pastry Skincare SA",
+   "Buy Body Wash Online",
+   "Body Wash R119+",
+   "Proudly SA Body Wash",
+   "Order Body Wash Today",
+   "Shop Now - Body Wash"
+  ],
+  "descriptions": [
+   "Shop Pastry body wash - moisturising & hydrating. Proudly SA brand. Order online today.",
+   "Pastry Skincare body wash for dry skin. Luxury lather, gentle formula. Shop from R119.",
+   "Hydrating body wash that nourishes & cleanses. Proudly South African. Shop Pastry now.",
+   "Gentle, moisturising body wash by Pastry Skincare. Proudly SA. Shop the range online."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23609842490",
+  "campaign": "Search-bodywash",
+  "ad_group_id": "194443694355",
+  "ad_group": "Ad group 1",
+  "ad_id": "798729377453",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "http://pastryskincare.co.za/collections/body-wash"
+  ],
+  "path1": "BodyWash",
+  "path2": "Shop",
+  "headlines": [
+   "Glycolic Acid Body Wash",
+   "#1 Brightening Body Wash SA",
+   "Salicylic Acid Body Wash",
+   "Even Tone Body Wash",
+   "Body Wash for Dark Marks",
+   "Hydrating Body Wash",
+   "Lactic Acid Body Wash",
+   "Exfoliating Body Wash",
+   "Moisturising Body Wash",
+   "Shop Pastry Skincare",
+   "Gentle Body Wash",
+   "Acne Body Wash SA",
+   "Active Body Wash From R310",
+   "Body Wash South Africa",
+   "Fragrance Free Body Wash"
+  ],
+  "descriptions": [
+   "Glycolic acid body wash, 50+ reviews. Brightens, exfoliates & smooths uneven skin. R310.",
+   "Salicylic & glycolic washes for melanin-rich skin. No bleaching, no burning. Proudly SA.",
+   "SA's top brightening body wash. Lactic, glycolic & salicylic acid options. Fragrance-free.",
+   "Clear dark marks & body acne. Active body washes that actually work. Shop Pastry Skincare."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23614843633",
+  "campaign": "Search-bodycare",
+  "ad_group_id": "195291098322",
+  "ad_group": "Ad group 1",
+  "ad_id": "798662757811",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "EXCELLENT",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/lotions"
+  ],
+  "path1": "BodyCare",
+  "path2": "Lotions",
+  "headlines": [
+   "Pastry Skincare",
+   "Shop Pastry Skincare Online",
+   "Niacinamide Body Lotion",
+   "Lotions \u2013 Pastry Skincare",
+   "Body Lotion-Bakuchiol",
+   "81+ Five Star Reviews",
+   "Nationwide Delivery SA",
+   "Body Lotion From R199",
+   "SPF30 Hand Cream",
+   "Body Care From R199",
+   "Fragrance-Free Options",
+   "For Melanin-Rich Skin",
+   "Brightening Body Cream",
+   "Body Moisturiser SA",
+   "Body Butter SA"
+  ],
+  "descriptions": [
+   "Hyaluronic Acid Body Lotion. Vitamin C Body Cream",
+   "Shop gentle cleansers, serums & body care -fragrance-free and science-backed",
+   "Niacinamide Body Lotion. Niacinamide Body Butter. Anti-Pigment Hand Cream SPF30",
+   "Body lotions & creams for melanin-rich skin. Niacinamide, vitamin C & hyaluronic acid. SA."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24003538946",
+  "campaign": "Pastry_Shopping _Target_ROAS_Experiment",
+  "ad_group_id": "195335196942",
+  "ad_group": "Pastry_All_Products",
+  "ad_id": "800252093679",
+  "type": "SHOPPING_PRODUCT_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": null,
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_ENDED"
+  ],
+  "final_urls": null,
+  "path1": null,
+  "path2": null,
+  "headlines": [],
+  "descriptions": [],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23654472671",
+  "campaign": "Pastry_Shopping",
+  "ad_group_id": "195792485402",
+  "ad_group": "Pastry_All_Products",
+  "ad_id": "800252093679",
+  "type": "SHOPPING_PRODUCT_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": null,
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": null,
+  "path1": null,
+  "path2": null,
+  "headlines": [],
+  "descriptions": [],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23660059123",
+  "campaign": "Pastry_Brand_Search",
+  "ad_group_id": "195867018204",
+  "ad_group": "Ad group 1",
+  "ad_id": "800400380567",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/"
+  ],
+  "path1": "Pastry-Skincare",
+  "path2": "Shop-Now",
+  "headlines": [
+   "Pastry Skincare Official Store",
+   "Shop Pastry Skincare Online",
+   "Pastry Body Wash & Lotions",
+   "Proudly South African Brand",
+   "Shop Pastry Body Care Range",
+   "Moisturisers From R119",
+   "SA-Made Skincare Products",
+   "Nationwide Delivery 24-72hrs"
+  ],
+  "descriptions": [
+   "Shop Pastry Skincare - body wash, lotions & moisturisers. Proudly SA brand. Order now.",
+   "Pastry body care - SA-made skincare from R119. Nationwide delivery in 24-72 hours."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23660059123",
+  "campaign": "Pastry_Brand_Search",
+  "ad_group_id": "195867018204",
+  "ad_group": "Ad group 1",
+  "ad_id": "820943099986",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "GOOD",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit"
+  ],
+  "path1": null,
+  "path2": null,
+  "headlines": [
+   "Pastry Skincare Products",
+   "Pastry Skincare Mini Kit",
+   "Pastry Skincare Niacinamide",
+   "Pastry Skincare Glycolic Acid",
+   "Niaciamide Body Lotion",
+   "Niacinamide Body Lotion",
+   "250ml SA-made Body Wash",
+   "Glycolic Acid Body Wash",
+   "Fade dark marks",
+   "Pigmentation Mini Kit",
+   "Try before full size of kit",
+   "Perfect for Gifting",
+   "Glycolic Acid Mini Kit",
+   "Glycolic Acid & Niacinamide",
+   "Reduce blemishes"
+  ],
+  "descriptions": [
+   "Glycolic Acid & Niacinamide \u2013 Pastry Skincare",
+   "Locally made, dermatologist.-tested skincare for sensitive & hyperpigmented skin",
+   "Glycolic Acid Body Wash + Niacinamide Lotion + Loofah",
+   "Shop gentle cleansers, serums & body care -fragrance-free and science-backed"
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132486",
+  "ad_group": "Product | Anti-Pigment Deodorant",
+  "ad_id": "820897583658",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/anti-pigmentation-deodorant-linen-fresh-fragrance"
+  ],
+  "path1": "anti",
+  "path2": "pigmentation",
+  "headlines": [
+   "Anti Pigmentation Deodorant",
+   "Pastry Skincare",
+   "Shop Anti-Pigment Deodorant",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Anti Pigmentation Deodorant online at Pastry Skincare.",
+   "Deodorant that fights odour AND brightens underarm dark marks."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132526",
+  "ad_group": "Product | Anti-Pigment Hand Cream",
+  "ad_id": "821012818727",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/anti-pigment-spf30-hand-cream"
+  ],
+  "path1": "anti",
+  "path2": "pigment",
+  "headlines": [
+   "Anti-Pigment Hand Cream SPF30",
+   "Pastry Skincare",
+   "Shop Anti-Pigment Hand Cream",
+   "Pastry Skincare Anti-Pigment",
+   "Shop Online"
+  ],
+  "descriptions": [
+   "Shop Anti-Pigment Hand Cream SPF30 online at Pastry Skincare.",
+   "Protect and brighten hands with Anti-Pigment Hand Cream SPF30 by Pastry Skincare."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132686",
+  "ad_group": "Product | BHA Body Balm",
+  "ad_id": "821012812697",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/bha-overnight-body-balm"
+  ],
+  "path1": "bha",
+  "path2": "overnight",
+  "headlines": [
+   "BHA Overnight Body Balm",
+   "Pastry Skincare",
+   "Shop BHA Overnight Body Balm",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop BHA Overnight Body Balm online at Pastry Skincare.",
+   "Overnight body balm with salicylic acid, niacinamide, azelaic acid & squalane."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132726",
+  "ad_group": "Product | BHA Body Gel",
+  "ad_id": "821012818928",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/bha-body-gel"
+  ],
+  "path1": "bha",
+  "path2": "body",
+  "headlines": [
+   "BHA Body Gel Serum",
+   "Pastry Skincare",
+   "Shop BHA Body Gel Serum",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop BHA Body Gel Serum online at Pastry Skincare.",
+   "Water-based BHA body gel with salicylic acid & citric acid."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132766",
+  "ad_group": "Product | Barrier Repair Serum",
+  "ad_id": "821012812730",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/barrier-repair-serum-ceramide"
+  ],
+  "path1": "barrier",
+  "path2": "repair",
+  "headlines": [
+   "Barrier Repair Serum - 1.5%",
+   "Pastry Skincare",
+   "Shop Barrier Repair Serum",
+   "Barrier Repair Serum",
+   "Shop Online"
+  ],
+  "descriptions": [
+   "Shop Barrier Repair Serum - 1.5% Ceramide online at Pastry Skincare.",
+   "Ceramide face serum for barrier repair."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132926",
+  "ad_group": "Product | Evening Pigment Corrector",
+  "ad_id": "820897583736",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/evening-pigment-corrector"
+  ],
+  "path1": "evening",
+  "path2": "pigment",
+  "headlines": [
+   "Evening Pigment Corrector",
+   "Pastry Skincare",
+   "Shop Evening Pigment Corrector",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Evening Pigment Corrector online at Pastry Skincare.",
+   "Overnight pigment corrector for stubborn dark marks & hyperpigmentation."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968132966",
+  "ad_group": "Product | Glycolic Body Wash",
+  "ad_id": "820941311899",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/glycolic-acid-body-wash"
+  ],
+  "path1": "glycolic",
+  "path2": "body",
+  "headlines": [
+   "Glycolic Acid Body Wash",
+   "Pastry Skincare",
+   "Shop Glycolic Acid Body Wash",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Glycolic Acid Body Wash online at Pastry Skincare.",
+   "SLS-free glycolic acid body wash for hyperpigmentation & strawberry skin."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133006",
+  "ad_group": "Product | Glycolic Bundle",
+  "ad_id": "820897583886",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/glycolic-acid-niacinamide-bundle"
+  ],
+  "path1": "glycolic",
+  "path2": "niacinamide",
+  "headlines": [
+   "Glycolic Acid & Niacinamide",
+   "Pastry Skincare",
+   "Shop Glycolic Bundle",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Glycolic Acid & Niacinamide Bundle online at Pastry Skincare.",
+   "Bestselling duo \u2014 glycolic acid body wash + niacinamide lotion."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133166",
+  "ad_group": "Product | Glycolic Mini Kit",
+  "ad_id": "821012812778",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit"
+  ],
+  "path1": "glycolic",
+  "path2": "niacinamide",
+  "headlines": [
+   "Glycolic Acid & Niacinamide",
+   "Pastry Skincare",
+   "Shop Glycolic Mini Kit",
+   "Pigmentation Mini Kit 250ml",
+   "Shop Online"
+  ],
+  "descriptions": [
+   "Shop Glycolic Acid & Niacinamide Mini kit online at Pastry Skincare.",
+   "Starter pigmentation kit \u2014 glycolic acid body wash + niacinamide lotion + loofah."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133206",
+  "ad_group": "Product | Hyaluronic Body Lotion",
+  "ad_id": "820941344557",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/hyaluronic-acid-body-lotion"
+  ],
+  "path1": "hyaluronic",
+  "path2": "body",
+  "headlines": [
+   "Hyaluronic Acid Body Lotion",
+   "Pastry Skincare",
+   "Shop Hyaluronic Body Lotion",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Hyaluronic Acid Body Lotion online at Pastry Skincare.",
+   "Hydrating body lotion with hyaluronic acid & Panthenol for dry skin."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133246",
+  "ad_group": "Product | Lactic Body Wash",
+  "ad_id": "821012812928",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/lactic-acid-body-wash"
+  ],
+  "path1": "lactic",
+  "path2": "body",
+  "headlines": [
+   "Lactic Acid Body Wash",
+   "Pastry Skincare",
+   "Shop Lactic Acid Body Wash",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Lactic Acid Body Wash online at Pastry Skincare.",
+   "Gentle lactic acid body wash for sensitive skin."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133406",
+  "ad_group": "Product | Mandelic Body Wash",
+  "ad_id": "820941219079",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/mandelic-acid-body-wash"
+  ],
+  "path1": "mandelic",
+  "path2": "body",
+  "headlines": [
+   "Mandelic Acid Body Wash",
+   "Pastry Skincare",
+   "Shop Mandelic Acid Body Wash",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Mandelic Acid Body Wash online at Pastry Skincare.",
+   "SLS-free body wash with Mandelic Acid, Kojic Acid & Licorice Root Extract."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133446",
+  "ad_group": "Product | Niacinamide Body Butter",
+  "ad_id": "820897584141",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-body-butter"
+  ],
+  "path1": "niacinamide",
+  "path2": "body",
+  "headlines": [
+   "Niacinamide Body Butter",
+   "Pastry Skincare",
+   "Shop Niacinamide Body Butter",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide Body Butter online at Pastry Skincare.",
+   "Rich niacinamide body butter for brightening & deep hydration."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133486",
+  "ad_group": "Product | Niacinamide Body Lotion",
+  "ad_id": "820897584159",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-body-lotion"
+  ],
+  "path1": "niacinamide",
+  "path2": "body",
+  "headlines": [
+   "Niacinamide Body Lotion",
+   "Pastry Skincare",
+   "Shop Niacinamide Body Lotion",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide Body Lotion online at Pastry Skincare.",
+   "Niacinamide & Panthenol body lotion for hyperpigmentation & uneven tone."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133646",
+  "ad_group": "Product | Niacinamide Body Mist",
+  "ad_id": "820941344857",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-body-mist"
+  ],
+  "path1": "niacinamide",
+  "path2": "body",
+  "headlines": [
+   "Niacinamide Body Mist",
+   "Pastry Skincare",
+   "Shop Niacinamide Body Mist",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide Body Mist online at Pastry Skincare.",
+   "Water-based niacinamide body mist with hyaluronic acid."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133686",
+  "ad_group": "Product | Niacinamide SPF50",
+  "ad_id": "821012813186",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-spf50-sunscreen"
+  ],
+  "path1": "niacinamide",
+  "path2": "spf50",
+  "headlines": [
+   "Niacinamide SPF50 Sunscreen",
+   "Pastry Skincare",
+   "Shop Niacinamide SPF50",
+   "SPF50 Gel Sunscreen",
+   "Shop Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide SPF50 Sunscreen online at Pastry Skincare.",
+   "Lightweight SPF50 gel sunscreen with niacinamide & hyaluronic acid."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133726",
+  "ad_group": "Product | Pigmentation Serum",
+  "ad_id": "820897584471",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/pigmentation-correction-serum"
+  ],
+  "path1": "pigmentation",
+  "path2": "correction",
+  "headlines": [
+   "Pigmentation Correction Serum",
+   "Pastry Skincare",
+   "Shop Pigmentation Serum",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Pigmentation Correction Serum - 5% Niacinamide online at Pastry Skincare.",
+   "Face serum with 5% niacinamide, alpha arbutin & hyaluronic acid."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133886",
+  "ad_group": "Product | Salicylic Body Wash",
+  "ad_id": "821012813420",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/salicylic-acid-body-wash"
+  ],
+  "path1": "salicylic",
+  "path2": "body",
+  "headlines": [
+   "Salicylic Acid Body Wash",
+   "Pastry Skincare",
+   "Shop Salicylic Acid Body Wash",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Salicylic Acid Body Wash online at Pastry Skincare.",
+   "SLS-free salicylic acid body wash for bumps & textured skin."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133926",
+  "ad_group": "Product | Salicylic Mini Kit",
+  "ad_id": "820897584660",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/salicylic-acid-niacinamide-kit"
+  ],
+  "path1": "salicylic",
+  "path2": "niacinamide",
+  "headlines": [
+   "Salicylic Acid & Niacinamide",
+   "Pastry Skincare",
+   "Shop Salicylic Mini Kit",
+   "Skin Smoothing Mini Kit",
+   "Shop Online"
+  ],
+  "descriptions": [
+   "Shop Salicylic Acid & Niacinamide Mini Kit online at Pastry Skincare.",
+   "Peach salicylic acid body wash + grapefruit niacinamide lotion."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24142894204",
+  "campaign": "Pastry | Search | Product High Intent | 2026-08-14",
+  "ad_group_id": "197968133966",
+  "ad_group": "Product | Vitamin C Body Cream",
+  "ad_id": "820941345580",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "ELIGIBLE",
+  "primary_status_reasons": null,
+  "final_urls": [
+   "https://pastryskincare.co.za/products/vitamin-c-body-cream"
+  ],
+  "path1": "vitamin",
+  "path2": "c",
+  "headlines": [
+   "Vitamin C Body Cream",
+   "Pastry Skincare",
+   "Shop Vitamin C Body Cream",
+   "Shop Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Vitamin C Body Cream online at Pastry Skincare.",
+   "Mandarin-scented vitamin C & vitamin E body cream."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582692869",
+  "ad_group": "Pastry Skincare",
+  "ad_id": "819648643666",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/"
+  ],
+  "path1": "pastry",
+  "path2": "skincare",
+  "headlines": [
+   "Pastry Skincare Online",
+   "Shop Pastry Skincare",
+   "Pastry Official Store",
+   "Proudly South African",
+   "Pastry Body Care",
+   "Buy Pastry Skincare",
+   "Pastry Products Online",
+   "Shop The Pastry Range",
+   "Official Pastry Website",
+   "Pastry Skincare SA"
+  ],
+  "descriptions": [
+   "Shop Pastry Skincare on the official online store.",
+   "Browse the current Pastry Skincare range online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Find Pastry products and shop the range online."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693029",
+  "ad_group": "Pastry Body Wash",
+  "ad_id": "819722806715",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/body-wash"
+  ],
+  "path1": "pastry",
+  "path2": "body-wash",
+  "headlines": [
+   "Pastry Body Wash",
+   "Shop Pastry Body Wash",
+   "Pastry Washes Online",
+   "Body Wash From Pastry",
+   "Browse Pastry Body Wash",
+   "Pastry Skincare Online",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Body Wash Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop the Pastry body wash range on the official store.",
+   "Browse current Pastry body wash products online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose your Pastry body wash from the current range."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693069",
+  "ad_group": "Pastry Hand Cream",
+  "ad_id": "819722828537",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/hand-creams"
+  ],
+  "path1": "pastry",
+  "path2": "hand-cream",
+  "headlines": [
+   "Pastry Hand Cream",
+   "Shop Pastry Hand Cream",
+   "Pastry Hand Care",
+   "Hand Cream From Pastry",
+   "Browse Pastry Hand Cream",
+   "Pastry Skincare Online",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Hand Cream Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop the Pastry hand cream range on the official store.",
+   "Browse current Pastry hand cream products online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose your Pastry hand cream from the current range."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693109",
+  "ad_group": "Pastry Body Lotion",
+  "ad_id": "819607922319",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/lotions"
+  ],
+  "path1": "pastry",
+  "path2": "body-lotion",
+  "headlines": [
+   "Pastry Body Lotion",
+   "Shop Pastry Body Lotion",
+   "Pastry Lotions Online",
+   "Body Lotion From Pastry",
+   "Browse Pastry Lotions",
+   "Pastry Skincare Online",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Body Lotion Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop the Pastry lotion range on the official store.",
+   "Browse current Pastry body lotion products online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose your Pastry body lotion from the current range."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693269",
+  "ad_group": "Pastry Body Oil",
+  "ad_id": "819648628795",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/body-oil"
+  ],
+  "path1": "pastry",
+  "path2": "body-oil",
+  "headlines": [
+   "Pastry Body Oil",
+   "Shop Pastry Body Oil",
+   "Pastry Body Oil Online",
+   "Body Oil From Pastry",
+   "Browse Pastry Body Oil",
+   "Pastry Skincare Online",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Body Oil Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop the Pastry body oil range on the official store.",
+   "Browse current Pastry body oil products online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose your Pastry body oil from the current range."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693309",
+  "ad_group": "Pastry Sunscreen",
+  "ad_id": "819722828783",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/sunscreen"
+  ],
+  "path1": "pastry",
+  "path2": "sunscreen",
+  "headlines": [
+   "Pastry Sunscreen",
+   "Shop Pastry Sunscreen",
+   "Pastry Sunscreen Online",
+   "Sunscreen From Pastry",
+   "Browse Pastry Sunscreen",
+   "Pastry Skincare Online",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Sunscreen Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop the Pastry sunscreen range on the official store.",
+   "Browse current Pastry sunscreen products online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose your Pastry sunscreen from the current range."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24094997880",
+  "campaign": "PNC_PASTRY_WAR_Search_Brand_20260803",
+  "ad_group_id": "198582693349",
+  "ad_group": "Pastry Deodorant",
+  "ad_id": "819648644059",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/anti-pigmentation-deodorant-linen-fresh-fragrance"
+  ],
+  "path1": "pastry",
+  "path2": "deodorant",
+  "headlines": [
+   "Pastry Deodorant",
+   "Shop Pastry Deodorant",
+   "Pastry Roll On",
+   "Deodorant From Pastry",
+   "Pastry Skincare Online",
+   "Anti Pigment Deodorant",
+   "Proudly South African",
+   "Official Pastry Store",
+   "Shop Deodorant Online",
+   "Pastry Body Care"
+  ],
+  "descriptions": [
+   "Shop Pastry Anti Pigmentation Deodorant online.",
+   "Browse the exact deodorant product page on the official store.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693509",
+  "ad_group": "Glycolic Body Wash",
+  "ad_id": "819722828840",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/glycolic-acid-body-wash"
+  ],
+  "path1": "glycolic",
+  "path2": "body-wash",
+  "headlines": [
+   "Glycolic Acid Body Wash",
+   "Shop Glycolic Body Wash",
+   "Pastry Glycolic Body Wash",
+   "Glycolic Body Wash Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Wash",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Body Wash Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Glycolic Acid Body Wash on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693549",
+  "ad_group": "Salicylic Body Wash",
+  "ad_id": "819607922574",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/salicylic-acid-body-wash"
+  ],
+  "path1": "salicylic",
+  "path2": "body-wash",
+  "headlines": [
+   "Salicylic Acid Body Wash",
+   "Shop Salicylic Body Wash",
+   "Pastry Salicylic Wash",
+   "Salicylic Body Wash Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Wash",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Body Wash Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Salicylic Acid Body Wash on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693589",
+  "ad_group": "Mandelic Body Wash",
+  "ad_id": "819648644107",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/mandelic-acid-body-wash"
+  ],
+  "path1": "mandelic",
+  "path2": "body-wash",
+  "headlines": [
+   "Mandelic Acid Body Wash",
+   "Shop Mandelic Body Wash",
+   "Pastry Mandelic Body Wash",
+   "Mandelic Body Wash Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Wash",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Body Wash Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Mandelic Acid Body Wash on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693749",
+  "ad_group": "Anti-Pigment Hand Cream",
+  "ad_id": "819607863762",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/anti-pigment-spf30-hand-cream"
+  ],
+  "path1": "anti-pigment",
+  "path2": "hand-cream",
+  "headlines": [
+   "Anti Pigment Hand Cream",
+   "Hand Cream SPF30",
+   "Shop Pastry Hand Cream",
+   "Pastry Hand Cream Online",
+   "Shop Pastry Skincare",
+   "Pastry Hand Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Hand Cream Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Anti Pigment Hand Cream SPF30 on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry hand care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693789",
+  "ad_group": "Niacinamide Body Lotion",
+  "ad_id": "819607922793",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-body-lotion"
+  ],
+  "path1": "niacinamide",
+  "path2": "body-lotion",
+  "headlines": [
+   "Niacinamide Body Lotion",
+   "Shop Niacinamide Lotion",
+   "Pastry Body Lotion",
+   "Body Lotion Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Body Lotion",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide Body Lotion on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693829",
+  "ad_group": "Brightening Body Oil",
+  "ad_id": "819722806763",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/brightening-body-oil-vitamin-c"
+  ],
+  "path1": "brightening",
+  "path2": "body-oil",
+  "headlines": [
+   "Brightening Body Oil",
+   "Shop Brightening Body Oil",
+   "Pastry Body Oil",
+   "Vitamin C Body Oil",
+   "Shop Pastry Skincare",
+   "Pastry Body Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Body Oil Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Brightening Body Oil on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582693989",
+  "ad_group": "Glow Brightening Bundle",
+  "ad_id": "819722829050",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/pastry-glow-body-brightening-bundle"
+  ],
+  "path1": "glow",
+  "path2": "body-bundle",
+  "headlines": [
+   "Body Brightening Bundle",
+   "Pastry Glow Body Bundle",
+   "Shop Pastry Glow Bundle",
+   "Body Glow Bundle Online",
+   "Shop Pastry Skincare",
+   "Pastry Bundle Online",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Brightening Bundle",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop the Pastry Glow Body Brightening Bundle online.",
+   "Browse the exact Pastry bundle product page.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current bundle."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694029",
+  "ad_group": "Glycolic Niacinamide Bundle",
+  "ad_id": "819648640444",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/glycolic-acid-niacinamide-bundle"
+  ],
+  "path1": "glycolic",
+  "path2": "bundle",
+  "headlines": [
+   "Glycolic Niacinamide Bundle",
+   "Glycolic Acid Body Bundle",
+   "Shop Pastry Bundle",
+   "Pastry Body Bundle",
+   "Shop Pastry Skincare",
+   "Pastry Bundle Online",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Body Care Bundle",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop the Glycolic Acid and Niacinamide Bundle online.",
+   "Browse the exact Pastry bundle product page.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current bundle."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694069",
+  "ad_group": "BHA Body Gel",
+  "ad_id": "819722806766",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "POOR",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/bha-body-gel"
+  ],
+  "path1": "bha",
+  "path2": "body-gel",
+  "headlines": [
+   "BHA Body Gel Serum",
+   "Shop BHA Body Gel",
+   "Pastry BHA Body Gel",
+   "BHA Body Serum Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Body Gel Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop BHA Body Gel Serum on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694229",
+  "ad_group": "BHA Overnight Balm",
+  "ad_id": "819722806778",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/bha-overnight-body-balm"
+  ],
+  "path1": "bha",
+  "path2": "body-balm",
+  "headlines": [
+   "BHA Overnight Body Balm",
+   "Shop BHA Body Balm",
+   "Pastry BHA Body Balm",
+   "Overnight Body Balm",
+   "Shop Pastry Skincare",
+   "Pastry Body Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Body Balm Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop BHA Overnight Body Balm on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694269",
+  "ad_group": "Lactic Acid Body Wash",
+  "ad_id": "819607922844",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/lactic-acid-body-wash"
+  ],
+  "path1": "lactic",
+  "path2": "body-wash",
+  "headlines": [
+   "Lactic Acid Body Wash",
+   "Shop Lactic Body Wash",
+   "Pastry Lactic Body Wash",
+   "Lactic Body Wash Online",
+   "Shop Pastry Skincare",
+   "Pastry Body Wash",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Body Wash Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Lactic Acid Body Wash on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694309",
+  "ad_group": "Niacinamide Sunscreen",
+  "ad_id": "819648628999",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/niacinamide-spf50-sunscreen"
+  ],
+  "path1": "niacinamide",
+  "path2": "sunscreen",
+  "headlines": [
+   "Niacinamide SPF50 Sunscreen",
+   "Shop Niacinamide Sunscreen",
+   "Pastry SPF50 Sunscreen",
+   "Sunscreen From Pastry",
+   "Shop Pastry Skincare",
+   "Pastry Sunscreen",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Sunscreen Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Niacinamide SPF50 Sunscreen on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry skincare and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694469",
+  "ad_group": "Pigmentation Serum",
+  "ad_id": "819722829290",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/pigmentation-correction-serum"
+  ],
+  "path1": "pigmentation",
+  "path2": "serum",
+  "headlines": [
+   "Pigmentation Correction Serum",
+   "Shop Pigmentation Serum",
+   "Pastry Niacinamide Serum",
+   "Correction Serum Online",
+   "Shop Pastry Skincare",
+   "Pastry Serum Online",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Serum Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Pigmentation Correction Serum on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry skincare and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "24105712546",
+  "campaign": "PNC_PASTRY_WAR_Search_Product_20260803",
+  "ad_group_id": "198582694509",
+  "ad_group": "Anti-Pigment Deodorant",
+  "ad_id": "819607922874",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/products/anti-pigmentation-deodorant-linen-fresh-fragrance"
+  ],
+  "path1": "anti-pigment",
+  "path2": "deodorant",
+  "headlines": [
+   "Anti Pigment Deodorant",
+   "Shop Pastry Deodorant",
+   "Pastry Roll On",
+   "Deodorant From Pastry",
+   "Shop Pastry Skincare",
+   "Pastry Body Care",
+   "Official Pastry Store",
+   "Proudly South African",
+   "Shop Deodorant Online",
+   "Pastry Skincare Online"
+  ],
+  "descriptions": [
+   "Shop Anti Pigmentation Deodorant on the official Pastry store.",
+   "Browse the exact Pastry product page online.",
+   "Proudly South African skincare from Pastry Skincare.",
+   "Choose Pastry body care and shop the current product."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23610393524",
+  "campaign": "Search-ingredients",
+  "ad_group_id": "199392989448",
+  "ad_group": "Active IngredientsAd group 1",
+  "ad_id": "798668122789",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "AVERAGE",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/serums"
+  ],
+  "path1": "Serums",
+  "path2": "Ingredients",
+  "headlines": [
+   "Pastry Skincare",
+   "Serums \u2013 Pastry Skincare",
+   "Brightening Serum",
+   "Pastry Skincare Glow Duo",
+   "Niacinamide Serum SA",
+   "Vitamin C Brightening",
+   "Hyaluronic Acid Serum",
+   "AHA BHA Exfoliant",
+   "Shop Serums From R199",
+   "Nationwide Delivery SA",
+   "For Melanin-Rich Skin",
+   "Fade Dark Marks Fast",
+   "Bakuchiol Retinol Alt",
+   "SA Skincare Solutions",
+   "81+ Five Star Reviews"
+  ],
+  "descriptions": [
+   "Target dark marks with niacinamide, vitamin C & tranexamic acid serums. Fragrance-free.",
+   "Science-backed actives for melanin-rich skin. Bakuchiol, AHA, BHA & peptide serums.",
+   "Shop gentle cleansers, serums & body care -fragrance-free and science-backed",
+   "Kojic acid, azelaic acid & ceramide serums for SA skin. Fast nationwide delivery."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ },
+ {
+  "campaign_id": "23614710682",
+  "campaign": "Search-bodyacne",
+  "ad_group_id": "202204300468",
+  "ad_group": "Ad group 1",
+  "ad_id": "798734645939",
+  "type": "RESPONSIVE_SEARCH_AD",
+  "status": "ENABLED",
+  "approval_status": "APPROVED",
+  "review_status": "REVIEWED",
+  "ad_strength": "GOOD",
+  "primary_status": "NOT_ELIGIBLE",
+  "primary_status_reasons": [
+   "CAMPAIGN_PAUSED"
+  ],
+  "final_urls": [
+   "https://pastryskincare.co.za/collections/acne"
+  ],
+  "path1": "BodyAcne",
+  "path2": "Treatment",
+  "headlines": [
+   "Clear Body Acne Fast",
+   "Body Acne Treatment SA",
+   "Salicylic Acid Body Wash",
+   "BHA Body Gel Serum",
+   "Back Acne Solution",
+   "Body Breakout Treatment",
+   "Ingrown Hair Treatment",
+   "Strawberry Skin Fix",
+   "Keratosis Pilaris Solution",
+   "No Harsh Chemicals",
+   "Fragrance-Free Options",
+   "Body Acne Combo R821",
+   "Active Body Care From R210",
+   "Made For Melanin-Rich Skin",
+   "Shop Pastry Skincare"
+  ],
+  "descriptions": [
+   "Clear body acne & breakouts with salicylic acid body wash and BHA body gel. From R210.",
+   "Body acne treatment for melanin-rich skin. Fragrance-free, results-driven. Proudly SA.",
+   "Ingrown hairs, razor bumps, keratosis pilaris & strawberry skin. Pastry has the solution.",
+   "Body Acne Busting Combo: BHA gel & salicylic wash. Complete routine for R821. Shop now."
+  ],
+  "source": "raw/07_ad_group_ads.json"
+ }
+]

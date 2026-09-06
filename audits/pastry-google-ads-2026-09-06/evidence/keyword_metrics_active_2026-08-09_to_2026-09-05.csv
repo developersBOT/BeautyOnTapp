@@ -1,0 +1,91 @@
+campaign,ad_group,criterion_id,keyword,match_type,impressions,clicks,cost_zar,conversions,conversions_value,search_impression_share,search_rank_lost_is,search_top_is,avg_cpc_zar,source
+Pastry_Brand_Search,Ad group 1,1708694076447,pastry skincare,EXACT,8096,3329,5047.032734,186.474,131566.48,0.9073637702503682,0.032989690721649485,0.8545989698307579,1.52,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1893916735822,pastry body wash,EXACT,894,336,484.828689,9.812,6649.97,0.91796875,0.049479166666666664,0.8163001293661061,1.44,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1461729058522,pastry hand cream,EXACT,1147,287,226.324702,11,11254.29,0.7907771135781383,0.1349274124679761,0.6711979609175871,0.79,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,343284453804,glycolic body wash,PHRASE,328,57,157.82,0,0,0.3606299212598425,0.6299212598425197,0.2251968503937008,2.77,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Niacinamide Body Lotion,361236689016,niacinamide body lotion,PHRASE,242,54,152.343494,4,2785.25,0.1833839918946302,0.8125633232016211,0.0999,2.82,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,664539845701,pastry skin,EXACT,313,124,149.666118,4.985,4622.68,0.8810408921933085,0.07806691449814127,0.8074074074074075,1.21,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Anti-Pigment Hand Cream,2335665911035,anti pigment hand cream,PHRASE,191,53,146.43,2,550,0.6,0.39487179487179486,0.5076923076923077,2.76,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Salicylic Body Wash,343281213724,salicylic acid body wash,PHRASE,289,43,123.734968,0,0,0.1687211093990755,0.8212634822804314,0.0999,2.88,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1673984016675,pastry skin care,BROAD,408,85,116.944596,2,640,0.0999,0.7162846803377564,0.0999,1.38,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Mandelic Body Wash,314974608391,mandelic acid body wash,EXACT,275,40,116.57,0,0,0.75390625,0.24609375,0.47265625,2.91,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2382778613257,pastry skin,PHRASE,628,139,116.088391,1.991,1291.3,0.6419919246298789,0.2449528936742934,0.5255376344086021,0.84,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,296254512880,glycolic acid body wash,EXACT,571,37,107.17,1,622.25,0.5099557522123894,0.48008849557522126,0.2179203539823009,2.9,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1961686727217,pastry skincare,BROAD,493,83,98.353981,1,345,0.50390625,0.3450520833333333,0.37142857142857144,1.18,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1686855519267,pastry lotion,EXACT,214,69,72.207576,0.5,162.5,0.819047619047619,0.11428571428571428,0.6777251184834123,1.05,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1934246887095,pastry body lotion,EXACT,198,71,68.198207,0,0,0.824468085106383,0.1276595744680851,0.7340425531914894,0.96,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1673984016875,pastry skin care,EXACT,155,70,67.360894,4,2759,0.8835616438356164,0.0821917808219178,0.815068493150685,0.96,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,365593381119,pastry products,EXACT,213,56,57.711256,1,925,0.88,0.08,0.74,1.03,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Salicylic Body Wash,320574128594,salicylic acid body wash,EXACT,428,15,43.48,0,0,0.26001357773251865,0.7325186693822132,0.0999,2.9,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,295767168846,glycolic body wash,EXACT,127,14,40.81,0,0,0.5364583333333334,0.4635416666666667,0.23958333333333334,2.92,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2380540170471,pastry body oil,EXACT,121,29,30.460562,0,0,0.7890625,0.1796875,0.671875,1.05,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2303884319884,pastry skincare products,EXACT,105,23,26.8,1,622.25,0.8315789473684211,0.10526315789473684,0.7263157894736842,1.17,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Niacinamide Body Lotion,312631480528,niacinamide body lotion,EXACT,122,8,23.64,0,0,0.23516949152542374,0.7563559322033898,0.0999,2.96,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2443233430799,pastry skincare near me,EXACT,202,19,19.974571,0,0,0.4263803680981595,0.4110429447852761,0.3241590214067278,1.05,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2393312035839,pastry roll on,EXACT,107,12,13.637782,0,0,0.7596153846153846,0.22115384615384615,0.6190476190476191,1.14,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,331805783501,vitamin c body cream,PHRASE,19,4,11.94,0,0,0.0999,0.9001,0.0999,2.98,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Lactic Body Wash,357244380366,lactic acid body wash,PHRASE,26,4,11.88,1,1270,0.2625,0.7125,0.15,2.97,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | BHA Body Balm,2687559426152,bha overnight body balm,EXACT,10,4,11.64,0,0,1,0,1,2.91,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,304715356221,body cream vitamin c,PHRASE,48,4,11.52,0,0,0.0999,0.9001,0.0999,2.88,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2273367237822,pastry skincare south africa,EXACT,33,10,9.055685,1,631.75,0.6666666666666666,0.20512820512820512,0.5384615384615384,0.91,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Lactic Body Wash,309843502541,lactic acid body wash,EXACT,49,3,8.78,0,0,0.5060240963855421,0.4939759036144578,0.18072289156626506,2.93,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2265093365736,pastry skincare cape town,EXACT,15,5,7.254897,0,0,0.6875,0.3125,0.6875,1.45,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2381715180715,pastry sunscreen,EXACT,44,10,6.799971,0,0,0.6909090909090909,0.21818181818181817,0.44642857142857145,0.68,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2277027329009,the pastry skincare,EXACT,10,5,6.076101,0,0,0.9,0.1,0.9,1.22,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,406203709324,glycolic acid body cleanser,EXACT,8,2,5.99,0,0,0.23076923076923078,0.7692307692307693,0.11538461538461539,3.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Niacinamide Body Mist,2380260946705,niacinamide body mist,EXACT,4,2,5.98,0,0,0.5714285714285714,0.42857142857142855,0.0999,2.99,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Anti-Pigment Hand Cream,565263679373,anti pigment hand cream,EXACT,24,2,5.96,0,0,0.5,0.5,0.225,2.98,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Barrier Repair Serum,312757829662,barrier repair serum,EXACT,28,2,5.93,0,0,0.108,0.876,0.0999,2.96,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,375341742867,glycolic acid body cleanser,PHRASE,28,2,5.8,1,1202.25,0.1437125748502994,0.8562874251497006,0.0999,2.9,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2382046747630,pastry skincare reviews,EXACT,12,2,5.35,0,0,0.23076923076923078,0.5897435897435898,0.15384615384615385,2.67,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2443233430959,pastry skincare online,EXACT,18,5,4.81,0,0,0.9285714285714286,0.07142857142857142,0.8571428571428571,0.96,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Hyaluronic Body Lotion,318643300923,hyaluronic acid body lotion,PHRASE,10,2,4.61,0,0,0.10975609756097561,0.8902439024390244,0.0999,2.31,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2465428859661,pastry skincare gateway,EXACT,29,6,3.894811,0,0,0.5,0.38,0.36,0.65,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2392883723666,pastry deodorant,EXACT,27,5,3.7,0,0,0.7857142857142857,0.17857142857142858,0.5357142857142857,0.74,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,389253186942,body cream vitamin c,EXACT,22,1,2.99,0,0,0.0999,0.9001,0.0999,2.99,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,297094871220,vitamin c body cream,EXACT,9,1,2.94,0,0,0.0999,0.9001,0.0999,2.94,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Anti-Pigment Deodorant,2228337498864,anti pigmentation deodorant,EXACT,45,1,2.9,0,0,0.21195652173913043,0.7880434782608695,0.0999,2.9,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Hyaluronic Body Lotion,311330391036,hyaluronic acid body lotion,EXACT,18,1,2.9,0,0,0.14516129032258066,0.8467741935483871,0.0999,2.9,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Niacinamide SPF50,2496399595080,niacinamide spf50 sunscreen,EXACT,3,1,2.79,0,0,0.0999,0.9001,0.0999,2.79,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | BHA Body Gel,2461126520841,bha body gel,EXACT,6,1,2.76,0,0,0.5555555555555556,0.4444444444444444,0.2222222222222222,2.76,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2505932562157,pastry skincare sandton,EXACT,25,5,2.67,0,0,0.375,0.35,0.275,0.53,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2380721621905,pastry lotion,PHRASE,30,8,2.56,0,0,0.7096774193548387,0.1935483870967742,0.5806451612903226,0.32,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2427295708773,where to buy pastry skincare,EXACT,25,4,2.517433,0,0,0.4,0.475,0.225,0.63,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1967166843036,pastry body butter,EXACT,28,3,2.470078,0,0,0.7407407407407407,0.14814814814814814,0.6666666666666666,0.82,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1957864511694,pastry serum,EXACT,27,4,2.44,0,0,0.8461538461538461,0.11538461538461539,0.6538461538461539,0.61,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2443233429839,pastry body scrub,EXACT,9,3,1.83,0,0,0.8,0,0.6,0.61,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2396130021311,pastry body wash,PHRASE,42,4,1.806285,0,0,0.6346153846153846,0.2692307692307692,0.46153846153846156,0.45,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2477225261493,buy pastry skincare,EXACT,19,2,1.67,0,0,0.5172413793103449,0.3448275862068966,0.4482758620689655,0.83,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2381603969206,pastry skincare menlyn,EXACT,26,3,0.88,0,0,0.5666666666666667,0.26666666666666666,0.3333333333333333,0.29,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1485175412794,pastry hand cream,PHRASE,11,1,0.74,0,0,0.34782608695652173,0.6521739130434783,0.30434782608695654,0.74,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2461126544081,pastry skincare canal walk,EXACT,3,1,0.66,0,0,0.6,0.4,0.6,0.66,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2477225261653,pastry skincare fourways,EXACT,7,1,0.53,0,0,0.2857142857142857,0.5714285714285714,0.21428571428571427,0.53,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2360568238247,pastry skincare mall of africa,EXACT,17,1,0.44,0,0,0.4,0.4,0.3,0.44,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1236657515495,pastry face mask,EXACT,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,1436994860338,pastry skincare,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2230304811520,pastry skin care,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2465383782416,pastry skincare products,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2470311166770,pastry body lotion,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2470311166970,buy pastry skincare,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry_Brand_Search,Ad group 1,2477225261693,pastry body oil,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Evening Pigment Corrector,2497277879713,evening pigment corrector,EXACT,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,297978192905,best glycolic acid body wash,EXACT,2,0,0.0,0,0,0.25,0.75,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,318824990571,glycolic acid shower gel,EXACT,12,0,0.0,0,0,0.36,0.64,0.16,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,319939800708,glycolic acid body wash,PHRASE,1,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,326014178808,best glycolic acid body wash,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,352323267298,best glycolic body wash,EXACT,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,381119285452,shower gel with glycolic acid,EXACT,11,0,0.0,0,0,0.45,0.55,0.1,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,459197089428,glycolic shower gel,EXACT,3,0,0.0,0,0,0.3333333333333333,0.6666666666666666,0.1111111111111111,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,549519226752,glycolic acid shower gel,PHRASE,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,834647332497,best glycolic body wash,PHRASE,2,0,0.0,0,0,0.125,0.875,0.125,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,2437952766146,shower gel with glycolic acid,PHRASE,1,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Body Wash,2497277872553,glycolic shower gel,PHRASE,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Bundle,2518019423514,glycolic acid niacinamide bundle,EXACT,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Glycolic Mini Kit,2501071277452,glycolic acid niacinamide mini kit,EXACT,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Lactic Body Wash,641382309736,best lactic acid body wash,PHRASE,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Lactic Body Wash,643096102069,best lactic acid body wash,EXACT,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Niacinamide Body Butter,2174453468798,niacinamide body butter,EXACT,16,0,0.0,0,0,0.8235294117647058,0.17647058823529413,0.47058823529411764,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Pigmentation Serum,2282505460309,pigmentation correction serum,EXACT,50,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Salicylic Mini Kit,2501068842932,salicylic acid niacinamide mini kit,EXACT,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,414296496141,best vitamin c body cream,EXACT,0,0,0.0,0,0,0.0999,0.9001,0.0999,0.0,raw/47_keyword_view_28d_enabled.json
+Pastry | Search | Product High Intent | 2026-08-14,Product | Vitamin C Body Cream,789425498125,best vitamin c body cream,PHRASE,0,0,0.0,0,0,,,,0.0,raw/47_keyword_view_28d_enabled.json
