@@ -42,7 +42,10 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        
+        backgroundColor: Colors.white,
         title: Text(
           widget.title,
           style: const TextStyle(fontWeight: FontWeight.bold),
@@ -66,6 +69,7 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
               itemBuilder: (context, index) {
                 final chip = filterChips[index];
                 return FilterChip(
+                  backgroundColor: Colors.white,
                   label: Text(chip["label"] as String),
                   avatar: Icon(chip["icon"] as IconData, size: 18),
                   onSelected: (_) {},
@@ -85,7 +89,7 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
                   icon: const Icon(Icons.filter_list, color: Colors.black),
                   label: const Text("Filters", style: TextStyle(color: Colors.black)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[200],
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   ),
                 ),
@@ -106,7 +110,13 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
               future: _future,
               builder: (context, snap) {
                 if (snap.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
+                  return Center(
+                    child: Image.asset(
+                      'assets/images/flow.gif',
+                      width: 100,
+                      height: 100,
+                    ),
+                  );
                 }
                 if (snap.hasError) {
                   return Center(
@@ -122,6 +132,7 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: GridView.builder(
+                  
                     itemCount: products.length,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -132,6 +143,7 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
                     itemBuilder: (context, index) {
                       final p = products[index];
                       return Card(
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -148,6 +160,16 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
                                         p.imageUrl,
                                         fit: BoxFit.cover,
                                         width: double.infinity,
+                                        loadingBuilder: (context, child, progress) {
+                                          if (progress == null) return child;
+                                          return Center(
+                                            child: Image.asset(
+                                              'assets/images/flow.gif',
+                                              width: 50,
+                                              height: 50,
+                                            ),
+                                          );
+                                        },
                                         errorBuilder: (_, __, ___) => const Icon(
                                           Icons.broken_image,
                                           size: 60,
@@ -239,6 +261,7 @@ class _FeaturedCatalogScreenState extends State<FeaturedCatalogScreen> {
 
   void _openFilterSheet() {
     showModalBottomSheet(
+      backgroundColor: Colors.white,
       context: context,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(

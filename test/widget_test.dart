@@ -1,30 +1,30 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Smoke test: the splash screen must render with no network dependency.
+// (We pump SplashScreen directly rather than MyApp because AppRoot mounts
+// the store WebView from frame one, and the WebView platform implementation
+// does not exist in the test environment.)
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:beautyontapp/main.dart';
+import 'package:beautyontapp/splash_screen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Splash screen boots and animates', (WidgetTester tester) async {
+    var finished = false;
+    await tester.pumpWidget(
+      MaterialApp(home: SplashScreen(onFinished: () => finished = true)),
+    );
+    expect(find.byType(SplashScreen), findsOneWidget);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Let the tagline typing animation run a few frames.
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(find.byType(SplashScreen), findsOneWidget);
+    expect(find.textContaining('BEAUT'), findsOneWidget);
+    expect(finished, isFalse);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Tear down before the splash hands over, then flush any pending
+    // splash timers so none leak from the test.
+    await tester.pumpWidget(const SizedBox());
+    await tester.pump(const Duration(seconds: 7));
   });
 }

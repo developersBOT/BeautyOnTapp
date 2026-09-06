@@ -209,7 +209,13 @@ class _CatalogScreenState extends State<CatalogScreen> {
         future: _futureProducts,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: Image.asset(
+                'assets/images/flow.gif',
+                width: 100,
+                height: 100,
+              ),
+            );
           }
           if (snapshot.hasError) {
             return Center(
@@ -285,6 +291,30 @@ class _CatalogScreenState extends State<CatalogScreen> {
                                       width: tileW,
                                       height: imgH,
                                       fit: BoxFit.contain,
+                                      loadingBuilder: (context, child, progress) {
+                                        if (progress == null) return child;
+                                        return SizedBox(
+                                          width: tileW,
+                                          height: imgH,
+                                          child: Center(
+                                            child: Image.asset(
+                                              'assets/images/flow.gif',
+                                              width: 50,
+                                              height: 50,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      errorBuilder: (context, error, stackTrace) {
+                                        return SizedBox(
+                                          width: tileW,
+                                          height: imgH,
+                                          child: const Center(
+                                            child: Icon(Icons.broken_image,
+                                                size: 50, color: Colors.grey),
+                                          ),
+                                        );
+                                      },
                                     )
                                   : Image.asset(
                                       p.imageAsset,

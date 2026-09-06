@@ -1,0 +1,12 @@
+event,emq_composite,key_coverage_pct,data_freshness,source
+Purchase,9.1,"email 83.9, phone 100, fn/ln 100, zip 100, fbc 61.3",daily,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+NewCustomerPurchase,8.9,"email 72.2, phone 100, fbc 55.6",daily,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+ReturningCustomerPurchase,9.3,"email 100, phone 100, fbc 69.2",real_time,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+AddPaymentInfo,9.0,"email 82.7, phone 96.2, fbc 73.1",real_time,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+Lead,8.3,"email 100, fbc 50",NOT IN SOURCE,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+InitiateCheckout,7.4,"email 24.8, phone 27, fbc 61.7",hourly,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+AddToCart,6.8,"email 3.5, fbc 62.5",hourly,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+PageView,6.8,"email 2.5, fbc 58.9",hourly,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+ViewContent,6.7,"email 1.4, fbc 66.9",hourly,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+Search,6.7,"email 2, fbc 58",real_time,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+AddContactInfo/AddAddressInfo/AddShippingInfo/ViewCart/ViewCollection/ViewHome,NOT IN SOURCE (no EMQ returned),,,ads_get_dataset_quality dataset 203047029058550; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)

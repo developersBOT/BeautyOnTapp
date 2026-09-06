@@ -25,19 +25,26 @@ class _BrandProductsScreenState extends State<BrandProductsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         title: Text(
+          
           widget.brandName,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
         centerTitle: true,
       ),
       body: FutureBuilder<List<BrandProduct>>(
         future: _futureProducts,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: Image.asset(
+                'assets/images/flow.gif',
+                width: 100,
+                height: 100,
+              ),
+            );
           } else if (snapshot.hasError) {
             return Center(
               child: Text(
@@ -90,6 +97,16 @@ class _BrandProductsScreenState extends State<BrandProductsScreen> {
                         child: Image.network(
                           imageUrl,
                           fit: BoxFit.cover,
+                          loadingBuilder: (context, child, progress) {
+                            if (progress == null) return child;
+                            return Center(
+                              child: Image.asset(
+                                'assets/images/flow.gif',
+                                width: 50,
+                                height: 50,
+                              ),
+                            );
+                          },
                           errorBuilder: (_, __, ___) =>
                               const Icon(Icons.image_not_supported, size: 50),
                         ),

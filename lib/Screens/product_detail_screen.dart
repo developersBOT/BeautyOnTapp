@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/Get.dart';
 import '../models/product.dart';
 import '../controllers/cart_controller.dart';
 import '../widgets/home_header.dart';
@@ -42,7 +42,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             onCart: () => Get.toNamed('/cart'),
           ),
 
-          CategoryChips(categories: topCategories, margin: const EdgeInsets.only(top: 10)),
+          CategoryChips(
+            categories: topCategories,
+            margin: const EdgeInsets.only(top: 10),
+          ),
           const SizedBox(height: 10),
 
           // --- Hero image + share ---
@@ -96,7 +99,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               children: [
                 Text(
                   p.title,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
                 const SizedBox(height: 6),
                 Row(
@@ -105,14 +111,20 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     const SizedBox(width: 6),
                     Text(
                       '(${p.reviews} reviews)',
-                      style: const TextStyle(fontSize: 12.5, color: Colors.black54),
+                      style: const TextStyle(
+                        fontSize: 12.5,
+                        color: Colors.black54,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'R ${p.price.toStringAsFixed(2)}',
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
               ],
             ),
@@ -138,7 +150,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     fontWeight: FontWeight.w700,
                   ),
                   shape: StadiumBorder(
-                    side: BorderSide(color: selected ? Colors.black : const Color(0xFFE0E0E0)),
+                    side: BorderSide(
+                      color: selected ? Colors.black : const Color(0xFFE0E0E0),
+                    ),
                   ),
                 );
               }),
@@ -154,7 +168,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               children: [
                 _QtyStepper(
                   qty: _qty,
-                  onMinus: () => setState(() => _qty = (_qty > 1) ? _qty - 1 : 1),
+                  onMinus: () =>
+                      setState(() => _qty = (_qty > 1) ? _qty - 1 : 1),
                   onPlus: () => setState(() => _qty++),
                 ),
                 const SizedBox(width: 12),
@@ -163,20 +178,38 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                      ),
                       minimumSize: const Size.fromHeight(44),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       try {
-                        CartController.to.add(p, qty: _qty);
-                        Get.snackbar('Cart', 'Added ${p.title}',
-                            snackPosition: SnackPosition.BOTTOM);
+                        final variantId = _variants[_variantIndex]; // Use demo variant as ID (adjust if real IDs available)
+                        final variantTitle = _variants[_variantIndex];
+                        await CartController.to.addToCart(
+                          variantId,
+                          _qty,
+                          p,
+                          variantTitle: variantTitle,
+                        );
+                        Get.snackbar(
+                          'Cart',
+                          'Added ${p.title} to cart',
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
                       } catch (_) {
-                        Get.snackbar('Cart', 'Controller not found',
-                            snackPosition: SnackPosition.BOTTOM);
+                        Get.snackbar(
+                          'Cart',
+                          'Failed to add to cart',
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
                       }
                     },
-                    child: const Text('ADD TO CART', style: TextStyle(fontWeight: FontWeight.w700)),
+                    child: const Text(
+                      'ADD TO CART',
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
                   ),
                 ),
               ],
@@ -191,15 +224,29 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.black,
                   side: const BorderSide(color: Colors.black, width: 1.2),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                 ),
                 onPressed: () {
                   try {
-                    CartController.to.add(p, qty: _qty);
-                  } catch (_) {}
-                  Get.toNamed('/cart');
+                    final variantId = _variants[_variantIndex]; // Use demo variant as ID
+                    final variantTitle = _variants[_variantIndex];
+                    CartController.to.addToCart(
+                      variantId,
+                      _qty,
+                      p,
+                      variantTitle: variantTitle,
+                    );
+                  } catch (_) {
+                    // Handle any errors if needed
+                  }
+                  Get.toNamed('/cart'); // Navigate to the cart screen
                 },
-                child: const Text('BUY IT NOW', style: TextStyle(fontWeight: FontWeight.w800)),
+                child: const Text(
+                  'BUY IT NOW',
+                  style: TextStyle(fontWeight: FontWeight.w800),
+                ),
               ),
             ),
           ),
@@ -212,8 +259,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('Description',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+                Text(
+                  'Description',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                ),
                 SizedBox(height: 8),
                 Text(
                   'Glow, Dew & That Butter Treat for Dry, Dull Skin.\n\n'
@@ -232,8 +281,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Customer Reviews',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+                const Text(
+                  'Customer Reviews',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
@@ -241,7 +292,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     const SizedBox(width: 6),
                     Text(
                       '${p.rating.toStringAsFixed(1)} average',
-                      style: const TextStyle(fontSize: 12.5, color: Colors.black54),
+                      style: const TextStyle(
+                        fontSize: 12.5,
+                        color: Colors.black54,
+                      ),
                     ),
                   ],
                 ),
@@ -254,8 +308,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           // --- You may also like ---
           Padding(
             padding: EdgeInsets.symmetric(horizontal: pad),
-            child: const Text('You may also like',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+            child: const Text(
+              'You may also like',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+            ),
           ),
           const SizedBox(height: 8),
           _MiniScroller(list: productsChosenForYou),
@@ -265,8 +321,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           // --- Recently viewed ---
           Padding(
             padding: EdgeInsets.symmetric(horizontal: pad),
-            child: const Text('Recently viewed products',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+            child: const Text(
+              'Recently viewed products',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+            ),
           ),
           const SizedBox(height: 8),
           _MiniScroller(list: productsNewArrivals),
@@ -284,7 +342,11 @@ class _QtyStepper extends StatelessWidget {
   final int qty;
   final VoidCallback onMinus;
   final VoidCallback onPlus;
-  const _QtyStepper({required this.qty, required this.onMinus, required this.onPlus});
+  const _QtyStepper({
+    required this.qty,
+    required this.onMinus,
+    required this.onPlus,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -297,9 +359,20 @@ class _QtyStepper extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          IconButton(onPressed: onMinus, icon: const Icon(Icons.remove), splashRadius: 20),
-          Text('$qty', style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
-          IconButton(onPressed: onPlus, icon: const Icon(Icons.add), splashRadius: 20),
+          IconButton(
+            onPressed: onMinus,
+            icon: const Icon(Icons.remove),
+            splashRadius: 20,
+          ),
+          Text(
+            '$qty',
+            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+          ),
+          IconButton(
+            onPressed: onPlus,
+            icon: const Icon(Icons.add),
+            splashRadius: 20,
+          ),
         ],
       ),
     );
@@ -370,12 +443,18 @@ class _MiniScroller extends StatelessWidget {
                     p.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'R ${p.price.toStringAsFixed(2)}',
-                    style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ],
               ),

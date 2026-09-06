@@ -1,0 +1,5 @@
+period,device_platform,spend_zar,impressions,reach,outbound_clicks,landing_page_views,add_to_cart,initiate_checkout,website_purchases,purchase_value_zar,source
+L28 2026-08-09..2026-09-05,desktop,72.53,1526,625,26,20,16,7,1,545.0,ads_get_ad_entities breakdowns=[device_platform]; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+L28 2026-08-09..2026-09-05,mobile_app,46786.61,1002765,167347,23649,21366,4946,2228,564,473879.0,ads_get_ad_entities breakdowns=[device_platform]; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+L28 2026-08-09..2026-09-05,mobile_web,195.28,7418,2019,214,67,26,13,3,1467.25,ads_get_ad_entities breakdowns=[device_platform]; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
+L28 2026-08-09..2026-09-05,unknown,0,0,0,0,26,1,1,0,0,ads_get_ad_entities breakdowns=[device_platform]; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)

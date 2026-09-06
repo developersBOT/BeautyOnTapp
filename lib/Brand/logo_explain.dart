@@ -52,11 +52,18 @@ class _LogoExplainScreenState extends State<LogoExplainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(brandName),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
       ),
       body: isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? Center(
+              child: Image.asset(
+                'assets/images/flow.gif',
+                width: 100,
+                height: 100,
+              ),
+            )
           : hasError
               ? Center(child: Text("No products found for $brandName"))
               : GridView.builder(
@@ -115,6 +122,22 @@ class _LogoExplainScreenState extends State<LogoExplainScreen> {
                                         imageUrl,
                                         fit: BoxFit.cover,
                                         width: double.infinity,
+                                        loadingBuilder: (context, child, progress) {
+                                          if (progress == null) return child;
+                                          return Center(
+                                            child: Image.asset(
+                                              'assets/images/flow.gif',
+                                              width: 50,
+                                              height: 50,
+                                            ),
+                                          );
+                                        },
+                                        errorBuilder: (context, error, stackTrace) {
+                                          return const Center(
+                                            child: Icon(Icons.image_not_supported,
+                                                size: 40),
+                                          );
+                                        },
                                       ),
                                     )
                                   : const Center(

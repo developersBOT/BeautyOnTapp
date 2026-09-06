@@ -21,16 +21,13 @@ class ProductService {
     return v.containsKey('id') && (v.containsKey('title') || v.containsKey('vendor') || v.containsKey('handle'));
   }
 
-  /// Try to find a List of product maps in common places.
   static List<Map<String, dynamic>> _extractProductMaps(Map<String, dynamic> root) {
-    // 1) Direct list at 'data'
     final data = root['data'];
     if (data is List) {
       _log('📦 using root["data"] as List (${data.length})');
       return data.whereType<Map<String, dynamic>>().toList();
     }
 
-    // 2) Look for known list keys at root and at data (if data is Map)
     List<Map<String, dynamic>> pickFrom(dynamic obj, String key) {
       if (obj is Map && obj[key] is List) {
         final list = (obj[key] as List).whereType<Map<String, dynamic>>().toList();
@@ -52,33 +49,20 @@ class ProductService {
         final fromData = pickFrom(data, key);
         if (fromData.isNotEmpty) return fromData;
       }
-
-      // 3) One-level deep scan inside data map values
       for (final entry in data.entries) {
         final v = entry.value;
         if (v is List && v.isNotEmpty && v.first is Map) {
           final list = v.whereType<Map<String, dynamic>>().toList();
-          // sanity check: first element looks like product?
           if (list.isNotEmpty && _looksLikeProduct(list.first)) {
             _log('🔎 found list in data["${entry.key}"] (${list.length})');
             return list;
           }
         }
       }
-
-      // 4) Single product object?
-      if (_looksLikeProduct(data)) {
-        _log('📦 single product object at data (wrapping to list)');
-        return [data];
-      }
+      if (_looksLikeProduct(data)) return [data];
     }
 
-    // 5) Fallback: maybe root itself is the product or has nested single product
-    if (_looksLikeProduct(root)) {
-      _log('📦 single product object at root (wrapping to list)');
-      return [root];
-    }
-
+    if (_looksLikeProduct(root)) return [root];
     _log('⚠️ could not locate products list in JSON');
     return const [];
   }
@@ -91,7 +75,6 @@ class ProductService {
 
   /* -------------------- endpoints -------------------- */
 
-  /// Single product detail
   static Future<Map<String, dynamic>> fetchProductDetail(String productId) async {
     final uri = Uri.https('beautyontapp.net', '/api/product/$productId');
     _log('GET $uri');
@@ -112,16 +95,12 @@ class ProductService {
     }
   }
 
-  /// New Arrivals
   static Future<List<Product>> fetchNewArrivals({int limit = 20}) async {
     final uri = Uri.https('beautyontapp.net', '/api/products/New Arrivals', {'limit': '$limit'});
     _log('GET $uri');
     try {
       final res = await http.get(uri).timeout(const Duration(seconds: 20));
-      _log('↩️ ${res.statusCode}  len=${res.body.length}');
-      if (res.statusCode == 200) {
-        return _mapToProducts(_decode(res.body));
-      }
+      if (res.statusCode == 200) return _mapToProducts(_decode(res.body));
       throw Exception('HTTP ${res.statusCode}');
     } on TimeoutException {
       _log('⏳ timeout for $uri');
@@ -132,16 +111,12 @@ class ProductService {
     }
   }
 
-  /// Skincare (Chosen For You)
   static Future<List<Product>> fetchSkincareProducts({int limit = 100}) async {
     final uri = Uri.https('beautyontapp.net', '/api/products/Skincare', {'limit': '$limit'});
     _log('GET $uri');
     try {
       final res = await http.get(uri).timeout(const Duration(seconds: 20));
-      _log('↩️ ${res.statusCode}  len=${res.body.length}');
-      if (res.statusCode == 200) {
-        return _mapToProducts(_decode(res.body));
-      }
+      if (res.statusCode == 200) return _mapToProducts(_decode(res.body));
       throw Exception('HTTP ${res.statusCode}');
     } on TimeoutException {
       _log('⏳ timeout for $uri');
@@ -152,13 +127,11 @@ class ProductService {
     }
   }
 
-  /// Any full URL
   static Future<List<Product>> fetchProductsFromUrl(String apiUrl) async {
     final uri = Uri.parse(apiUrl);
     _log('GET $uri');
     try {
       final res = await http.get(uri).timeout(const Duration(seconds: 20));
-      _log('↩️ ${res.statusCode}  len=${res.body.length}');
       if (res.statusCode != 200) throw Exception('HTTP ${res.statusCode}');
       return _mapToProducts(_decode(res.body));
     } on TimeoutException {
@@ -170,22 +143,261 @@ class ProductService {
     }
   }
 
-  /// Brand products — now tolerant to `data: { products: [...] }` shapes
   static Future<List<Product>> fetchBrandProducts(String brand, {int limit = 20}) async {
     final uri = Uri.https('beautyontapp.net', '/api/brands/$brand', {'limit': '$limit'});
     _log('GET $uri   (brand="$brand")');
     try {
       final res = await http.get(uri).timeout(const Duration(seconds: 20));
-      _log('↩️ ${res.statusCode}  len=${res.body.length}');
-      if (res.statusCode == 200) {
-        return _mapToProducts(_decode(res.body));
-      }
+      if (res.statusCode == 200) return _mapToProducts(_decode(res.body));
       throw Exception('HTTP ${res.statusCode}');
     } on TimeoutException {
       _log('⏳ timeout for $uri');
       rethrow;
     } catch (e) {
       _log('❌ fetchBrandProducts("$brand") error: $e');
+      rethrow;
+    }
+  }
+
+  /// -------------------- Add to Cart API --------------------
+  /// Adds to existing cart (assumes cartId exists)
+  static Future<Map<String, dynamic>?> addToCart({
+    required String cartId,
+    required String variantId, // GID format: "gid://shopify/ProductVariant/..."
+    required int qty,
+  }) async {
+    try {
+      final url = Uri.parse('https://beautyontapp.net/api/cart/add');
+    
+      // Build request body
+      final Map<String, dynamic> requestBody = {
+        'cart_id': cartId, // Removed split to keep full ID (including ?key if present)
+        'variant_id': variantId, // GID
+        'quantity': qty,
+      };
+
+      final body = json.encode(requestBody);
+      
+      _log('🛒 POST $url');
+      _log('📦 Body: $body');
+
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: body,
+      ).timeout(const Duration(seconds: 20));
+
+      _log('↩️ Status: ${response.statusCode}');
+      _log('📥 Response: ${response.body.substring(0, response.body.length > 500 ? 500 : response.body.length)}');
+
+      if (response.statusCode == 200) {
+        final responseData = _decode(response.body);
+        
+        // Parse GraphQL response for add (assuming similar to create)
+        final data = responseData['data'];
+        if (data != null && data['cartLinesAdd'] != null) {
+          final cartData = data['cartLinesAdd'];
+          final cart = cartData['cart'];
+          final userErrors = cartData['userErrors'] as List?;
+          
+          if (userErrors == null || userErrors.isEmpty) {
+            final cartIdResp = cart?['id']?.toString(); // Removed split to keep full ID
+            String? lineItemId;
+            final lines = cart?['lines'];
+            if (lines != null && lines['edges'] is List && (lines['edges'] as List).isNotEmpty) {
+              final edges = lines['edges'] as List;
+              lineItemId = edges.last['node']?['id']?.toString(); // Removed split to keep full ID
+            }
+            
+            return {
+              'success': true,
+              'cart_id': cartIdResp,
+              'line_item_id': lineItemId,
+              'errors': null,
+            };
+          } else {
+            _log('❌ User errors: $userErrors');
+            return {'success': false, 'errors': userErrors};
+          }
+        } else {
+          _log('⚠️ Unexpected response structure');
+          return null;
+        }
+      } else {
+        _log('❌ Failed with status ${response.statusCode}');
+        return null;
+      }
+    } on TimeoutException {
+      _log('⏳ Request timeout');
+      return null;
+    } catch (e) {
+      _log('❌ Error adding to cart: $e');
+      return null;
+    }
+  }
+
+  /// -------------------- Create Cart API --------------------
+  /// Creates a new cart with initial item and returns cart_id (GID) and line_item_id
+  static Future<Map<String, dynamic>?> createCart({
+    required String variantId, // GID format: "gid://shopify/ProductVariant/..."
+    required int qty,
+  }) async {
+    try {
+      final url = Uri.parse('https://beautyontapp.net/api/cart/create');
+    
+      // Build request body with required fields
+      final Map<String, dynamic> requestBody = {
+        'variant_id': variantId, // GID
+        'quantity': qty,
+      };
+
+      final body = json.encode(requestBody);
+      
+      _log('🆕 POST $url - Creating new cart with initial item');
+      _log('📦 Body: $body');
+
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: body,
+      ).timeout(const Duration(seconds: 20));
+
+      _log('↩️ Status: ${response.statusCode}');
+      _log('📥 Response: ${response.body.substring(0, response.body.length > 500 ? 500 : response.body.length)}');
+
+      if (response.statusCode == 200) {
+        final responseData = _decode(response.body);
+        
+        // Parse GraphQL response
+        final data = responseData['data'];
+        if (data != null && data['cartCreate'] != null) {
+          final cartData = data['cartCreate'];
+          final cart = cartData['cart'];
+          final userErrors = cartData['userErrors'] as List?;
+          
+          if (userErrors == null || userErrors.isEmpty) {
+            final cartIdResp = cart?['id']?.toString(); // Removed split to keep full ID
+            String? lineItemId;
+            final lines = cart?['lines'];
+            if (lines != null && lines['edges'] is List && (lines['edges'] as List).isNotEmpty) {
+              final edges = lines['edges'] as List;
+              lineItemId = edges[0]['node']?['id']?.toString(); // Removed split to keep full ID
+            }
+            
+            if (cartIdResp != null) {
+              _log('✅ Cart created: $cartIdResp');
+              return {
+                'success': true,
+                'cart_id': cartIdResp,
+                'line_item_id': lineItemId,
+                'errors': null,
+              };
+            }
+          } else {
+            _log('❌ User errors: $userErrors');
+            return {'success': false, 'errors': userErrors};
+          }
+        } else {
+          _log('⚠️ Unexpected response structure');
+          return null;
+        }
+      } else {
+        _log('❌ Failed with status ${response.statusCode}');
+        return null;
+      }
+    } on TimeoutException {
+      _log('⏳ Request timeout');
+      return null;
+    } catch (e) {
+      _log('❌ Error creating cart: $e');
+      return null;
+    }
+  }
+
+  static Future<Map<String, dynamic>?> fetchCart(String cartId) async {
+    try {
+      final url = Uri.parse('https://beautyontapp.net/api/cart/show');
+    
+      // Build request body
+      final Map<String, dynamic> requestBody = {
+        'cartId': cartId, // Removed split to keep full ID
+      };
+
+      final body = json.encode(requestBody);
+      
+      _log('📥 POST $url - Fetching cart');
+      _log('📦 Body: $body');
+
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: body,
+      ).timeout(const Duration(seconds: 20));
+
+      _log('↩️ Status: ${response.statusCode}');
+      _log('📥 Response: ${response.body.substring(0, response.body.length > 500 ? 500 : response.body.length)}');
+
+      if (response.statusCode == 200) {
+        final responseData = _decode(response.body);
+        
+        // Parse GraphQL response
+        final cart = responseData['data']?['cart'];
+        if (cart != null) {
+          List<Map<String, dynamic>> cartItems = [];
+          final lines = cart['lines']?['edges'] as List? ?? [];
+          for (final edge in lines) {
+            final node = edge['node'] as Map<String, dynamic>?;
+            if (node != null) {
+              final merchandise = node['merchandise'] as Map<String, dynamic>?;
+              final productJson = merchandise?['product'] as Map<String, dynamic>? ?? {};
+              
+              // Extract unit price from totalAmount / quantity (fixed parse logic)
+              double price = 0.0;
+              final cost = node['cost'] as Map<String, dynamic>?;
+              final totalAmount = cost?['totalAmount'] as Map<String, dynamic>?;
+              double total = double.tryParse(totalAmount?['amount']?.toString() ?? '0.0') ?? 0.0;
+              int qty = node['quantity'] ?? 1;
+              price = qty > 0 ? total / qty : 0.0;
+
+              cartItems.add({
+                'product': {
+                  ...productJson,
+                  'id': productJson['id']?.toString() ?? 'unknown',
+                  'title': productJson['title'] ?? 'Unknown Product',
+                  'price': price,
+                  // Add imageUrl if available in response, e.g., productJson['featuredImage']?['url']
+                  'imageUrl': productJson['featuredImage']?['url']?.toString() ?? '',
+                  // Add other fields as needed
+                },
+                'variant': merchandise?['id']?.toString() ?? '',
+                'variant_title': merchandise?['title']?.toString() ?? '',
+                'qty': node['quantity'] ?? 1,
+                'line_id': node['id']?.toString() ?? '',
+              });
+            }
+          }
+
+          final checkoutUrl = cart['checkoutUrl']?.toString() ?? '';
+
+          return {
+            'success': true,
+            'data': {
+              'cart_items': cartItems,
+              'checkout_url': checkoutUrl,
+            }
+          };
+        } else {
+          _log('❌ No cart data in response');
+          return null;
+        }
+      } else {
+        throw Exception('HTTP ${response.statusCode}');
+      }
+    } on TimeoutException {
+      _log('⏳ Request timeout');
+      rethrow;
+    } catch (e) {
+      _log('❌ Error fetching cart: $e');
       rethrow;
     }
   }

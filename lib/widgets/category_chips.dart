@@ -9,7 +9,7 @@ class CategoryChips extends StatelessWidget {
     super.key,
     required this.categories,
     this.onTap,
-    this.margin = const EdgeInsets.only(top: 10), // ↓ 10px from header
+    this.margin = const EdgeInsets.only(top: 10),
   });
 
   @override
@@ -32,13 +32,14 @@ class CategoryChips extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 14),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(18),
-                border: Border.all(color: const Color(0xFFE6E6E6), width: 1), // figma-ish
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: const Color(0xFFE6E6E6), width: 1),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
-                    blurRadius: 6,
-                    offset: const Offset(0, 2),
+                    color: Colors.black.withOpacity(0.15), // thoda strong
+                    blurRadius: 8,  // soft edge
+                    spreadRadius: 1, // halka spread all sides
+                    offset: const Offset(0, 0), // center me shadow
                   ),
                 ],
               ),

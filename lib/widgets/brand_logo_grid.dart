@@ -15,7 +15,7 @@ class BrandLogoGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.sizeOf(context).width;
     final pad = w * 0.04;
-    const gap = 18.0;
+    const gap = 8.0; // Reduced from 18.0 to 8.0
     final itemW = (w - pad * 2 - gap * 2) / 3;
 
     Widget _logo(String asset) {
@@ -26,17 +26,17 @@ class BrandLogoGrid extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(pad, 8, pad, 0),
+      padding: EdgeInsets.fromLTRB(pad, 0, pad, 0),
       child: Wrap(
         spacing: gap,
-        runSpacing: 16,
+        runSpacing: -20.0, // Reduced from 16.0 to 8.0
         children: logos.map((logo) {
           final brandName = logo['name'] ?? "Unknown";
           final asset = logo['asset'] ?? "";
           return SizedBox(
             width: itemW,
             child: AspectRatio(
-              aspectRatio: 2.1,
+              aspectRatio: 1.0,
               child: InkWell(
                 onTap: () {
                   print("🟢 tapped brand: $brandName");
@@ -51,4 +51,3 @@ class BrandLogoGrid extends StatelessWidget {
     );
   }
 }
-

@@ -5,8 +5,8 @@ class ProductScroller extends StatelessWidget {
   final List<Product> products;
   final void Function(Product p)? onTap;
 
-  static const double _cardW = 130;
-  static const double _cardH = 192;
+  static const double _cardW = 150;
+  static const double _cardH = 210;
 
   const ProductScroller({
     super.key,
@@ -53,15 +53,15 @@ class ProductScroller extends StatelessWidget {
                 children: [
                   // ✅ Show network image if available
                   SizedBox(
-                    height: 92,
+                    height: 115,
                     width: double.infinity,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF7F7F7),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(6),
+                        padding: const EdgeInsets.all(2),
                         child: p.imageUrl.isNotEmpty
                             ? Image.network(
                                 p.imageUrl,
