@@ -1,0 +1,16 @@
+product_group,in_stock_items,price_range_zar,max_cpc_zar,note
+"product_type = ""body wash""",13,310-545,3.00,
+"product_type = ""gift set""",10,380-1055,2.50,
+"product_type = ""body lotion""",3,290-335,3.00,
+"product_type = ""face serum""",3,250-295,2.00,
+"product_type = ""deodorant""",2,250-250,2.50,
+"product_type = ""body butter""",2,205-210,2.00,
+"product_type = ""body cream""",2,285-295,2.50,
+"product_type = ""body balm""",2,385-385,2.00,
+"product_type = ""body oil""",1,385-385,2.00,
+"product_type = ""serum""",1,320-320,2.00,
+"product_type = ""hand cream""",1,205-205,1.50,hand cream: only Hyaluronic Acid Hand Cream grapefruit is in stock; Anti-Pigment Hand Cream SPF30 is OUT_OF_STOCK and excluded automatically
+"product_type = ""body mist""",1,385-385,1.50,
+"product_type = ""body serum""",1,210-210,2.00,
+"product_type = ""sunscreen""",1,465-465,1.50,
+Everything else,0,,EXCLUDED,exclude so new feed items are reviewed before serving

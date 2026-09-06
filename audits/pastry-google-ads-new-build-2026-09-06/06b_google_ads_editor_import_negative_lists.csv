@@ -1,0 +1,105 @@
+Shared list name,Keyword,Criterion Type
+Pastry | NEG | Brand routing,pastry,Negative Phrase
+Pastry | NEG | Brand routing,pastry skincare,Negative Phrase
+Pastry | NEG | Brand routing,pastryskincare,Negative Phrase
+Pastry | NEG | Brand routing,pasty skincare,Negative Phrase
+Pastry | NEG | Brand routing,pantry skincare,Negative Phrase
+Pastry | NEG | Brand routing,pastry skin,Negative Phrase
+Pastry | NEG | Competitor brands,dove,Negative Phrase
+Pastry | NEG | Competitor brands,nivea,Negative Phrase
+Pastry | NEG | Competitor brands,sanex,Negative Phrase
+Pastry | NEG | Competitor brands,lux,Negative Phrase
+Pastry | NEG | Competitor brands,radox,Negative Phrase
+Pastry | NEG | Competitor brands,dettol,Negative Phrase
+Pastry | NEG | Competitor brands,sorbet,Negative Phrase
+Pastry | NEG | Competitor brands,epimax,Negative Phrase
+Pastry | NEG | Competitor brands,satiskin,Negative Phrase
+Pastry | NEG | Competitor brands,lifebuoy,Negative Phrase
+Pastry | NEG | Competitor brands,oh so heavenly,Negative Phrase
+Pastry | NEG | Competitor brands,palmers,Negative Phrase
+Pastry | NEG | Competitor brands,cerave,Negative Phrase
+Pastry | NEG | Competitor brands,the ordinary,Negative Phrase
+Pastry | NEG | Competitor brands,standard beauty,Negative Phrase
+Pastry | NEG | Competitor brands,medicube,Negative Phrase
+Pastry | NEG | Competitor brands,aplb,Negative Phrase
+Pastry | NEG | Competitor brands,neutrogena,Negative Phrase
+Pastry | NEG | Competitor brands,eucerin,Negative Phrase
+Pastry | NEG | Competitor brands,la roche posay,Negative Phrase
+Pastry | NEG | Competitor brands,bio oil,Negative Phrase
+Pastry | NEG | Competitor brands,vaseline,Negative Phrase
+Pastry | NEG | Competitor brands,clere,Negative Phrase
+Pastry | NEG | Competitor brands,portia m,Negative Phrase
+Pastry | NEG | Competitor brands,good stuff,Negative Phrase
+Pastry | NEG | Competitor brands,dr teals,Negative Phrase
+Pastry | NEG | Competitor brands,olay,Negative Phrase
+Pastry | NEG | Competitor brands,aveeno,Negative Phrase
+Pastry | NEG | Competitor brands,shower to shower,Negative Phrase
+Pastry | NEG | Competitor brands,kiehls,Negative Phrase
+Pastry | NEG | Competitor brands,loccitane,Negative Phrase
+Pastry | NEG | Competitor brands,minimalist,Negative Phrase
+Pastry | NEG | Competitor brands,veerox,Negative Phrase
+Pastry | NEG | Competitor brands,avon,Negative Phrase
+Pastry | NEG | Competitor brands,justine,Negative Phrase
+Pastry | NEG | Retailers,dischem,Negative Phrase
+Pastry | NEG | Retailers,dis-chem,Negative Phrase
+Pastry | NEG | Retailers,clicks,Negative Phrase
+Pastry | NEG | Retailers,woolworths,Negative Phrase
+Pastry | NEG | Retailers,takealot,Negative Phrase
+Pastry | NEG | Retailers,shoprite,Negative Phrase
+Pastry | NEG | Retailers,checkers,Negative Phrase
+Pastry | NEG | Retailers,pick n pay,Negative Phrase
+Pastry | NEG | Retailers,amazon,Negative Phrase
+Pastry | NEG | Retailers,superbalist,Negative Phrase
+Pastry | NEG | Retailers,faithful to nature,Negative Phrase
+Pastry | NEG | Informational and off-target,recipe,Negative Phrase
+Pastry | NEG | Informational and off-target,recipes,Negative Phrase
+Pastry | NEG | Informational and off-target,cake,Negative Phrase
+Pastry | NEG | Informational and off-target,cakes,Negative Phrase
+Pastry | NEG | Informational and off-target,bakery,Negative Phrase
+Pastry | NEG | Informational and off-target,baking,Negative Phrase
+Pastry | NEG | Informational and off-target,pie,Negative Phrase
+Pastry | NEG | Informational and off-target,croissant,Negative Phrase
+Pastry | NEG | Informational and off-target,how to make,Negative Phrase
+Pastry | NEG | Informational and off-target,diy,Negative Phrase
+Pastry | NEG | Informational and off-target,homemade,Negative Phrase
+Pastry | NEG | Informational and off-target,home remedies,Negative Phrase
+Pastry | NEG | Informational and off-target,meaning,Negative Phrase
+Pastry | NEG | Informational and off-target,causes,Negative Phrase
+Pastry | NEG | Informational and off-target,what is,Negative Phrase
+Pastry | NEG | Informational and off-target,side effects,Negative Phrase
+Pastry | NEG | Informational and off-target,laser,Negative Phrase
+Pastry | NEG | Informational and off-target,chemical peel,Negative Phrase
+Pastry | NEG | Informational and off-target,dermatologist,Negative Phrase
+Pastry | NEG | Informational and off-target,doctor,Negative Phrase
+Pastry | NEG | Informational and off-target,clinic,Negative Phrase
+Pastry | NEG | Informational and off-target,wholesale,Negative Phrase
+Pastry | NEG | Informational and off-target,bulk,Negative Phrase
+Pastry | NEG | Informational and off-target,supplier,Negative Phrase
+Pastry | NEG | Informational and off-target,distributor,Negative Phrase
+Pastry | NEG | Informational and off-target,private label,Negative Phrase
+Pastry | NEG | Informational and off-target,job,Negative Phrase
+Pastry | NEG | Informational and off-target,jobs,Negative Phrase
+Pastry | NEG | Informational and off-target,vacancies,Negative Phrase
+Pastry | NEG | Informational and off-target,salary,Negative Phrase
+Pastry | NEG | Informational and off-target,course,Negative Phrase
+Pastry | NEG | Informational and off-target,free,Negative Phrase
+Pastry | NEG | Informational and off-target,cheap,Negative Phrase
+Pastry | NEG | Informational and off-target,review,Negative Phrase
+Pastry | NEG | Informational and off-target,reviews,Negative Phrase
+Pastry | NEG | Informational and off-target,vs,Negative Phrase
+Pastry | NEG | Informational and off-target,before and after,Negative Phrase
+Pastry | NEG | Informational and off-target,pregnancy,Negative Phrase
+Pastry | NEG | Informational and off-target,boy or girl,Negative Phrase
+Pastry | NEG | Informational and off-target,penis,Negative Phrase
+Pastry | NEG | Informational and off-target,men,Negative Phrase
+Pastry | NEG | Informational and off-target,mens,Negative Phrase
+Pastry | NEG | Informational and off-target,baby,Negative Phrase
+Pastry | NEG | Informational and off-target,kids,Negative Phrase
+Pastry | NEG | Informational and off-target,child,Negative Phrase
+Pastry | NEG | Positioning and stock,whitening,Negative Phrase
+Pastry | NEG | Positioning and stock,lightening,Negative Phrase
+Pastry | NEG | Positioning and stock,bleach,Negative Phrase
+Pastry | NEG | Positioning and stock,bleaching,Negative Phrase
+Pastry | NEG | Positioning and stock,skin lightening,Negative Phrase
+Pastry | NEG | Positioning and stock,hand cream,Negative Phrase
+Pastry | NEG | Positioning and stock,hand lotion,Negative Phrase

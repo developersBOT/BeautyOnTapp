@@ -1,0 +1,2906 @@
+{
+ "meta": {
+  "account": "customers/8510842703 (Pastry Skincare, ZAR, Africa/Johannesburg)",
+  "prepared": "2026-09-06",
+  "prepared_by": "read-only investigation session; nothing applied",
+  "status": "READY FOR EXECUTION BY AUTHORISED OPERATOR",
+  "conversion_action_primary": "Pastry Skincare (web) purchase 7514901304 (GA4 property 525948625)",
+  "merchant_center": "5692060761 feed ZAR_29152772337",
+  "auto_tagging": true,
+  "existing_campaign_to_pause_after_launch": "Pastry | Search | Product High Intent | 2026-08-14 (24142894204)",
+  "existing_brand_campaign_keep": "Pastry_Brand_Search (23660059123)"
+ },
+ "campaigns": [
+  {
+   "build_id": "C1",
+   "name": "Pastry | Search | Body Wash | ZA | 2026-09",
+   "type": "Search",
+   "import_status": "PAUSED",
+   "daily_budget_zar": 150.0,
+   "bidding": "Manual CPC (no enhanced CPC), keyword-level bids below; switch rule in runbook",
+   "networks": "Google Search only (no search partners, no Display)",
+   "locations": "South Africa (presence only); exclude China, Hong Kong, Singapore (mirror of Pastry_Brand_Search)",
+   "language": "English",
+   "conversion_goal": "Pastry Skincare (web) purchase 7514901304 only (campaign-level goal, PURCHASE biddable) - same as Pastry_Brand_Search",
+   "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}",
+   "ad_groups": [
+    {
+     "name": "Glycolic Acid Body Wash",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "product": "Glycolic Acid Body Wash",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "glycolic acid body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 720/mo, CPC $0.28, KD 17",
+        "live_bid": "first-page est R4.08, top R5.12, QS 8",
+        "serving_28d": "28d: 571 impr, 37 clicks, R107.17, 1 GA4 purchases R622.25",
+        "rationale": "proven: 1 purchase 28d + Shopping purchases; bid to first-page est"
+       }
+      },
+      {
+       "text": "glycolic acid body wash",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 720/mo, CPC $0.28, KD 17",
+        "live_bid": "first-page est R7.56, top R20.46, QS 8",
+        "serving_28d": "28d: 1 impr, 0 clicks, R0.00, 0 GA4 purchases R0.00",
+        "rationale": "catches long-tail; brand negatives keep pastry queries out"
+       }
+      },
+      {
+       "text": "glycolic body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 140/mo, CPC $0.62, KD 14",
+        "live_bid": "first-page est R4.08, top R5.69, QS 8",
+        "serving_28d": "28d: 127 impr, 14 clicks, R40.81, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "glycolic acid body cleanser",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R6.47, top R9.09, QS -",
+        "serving_28d": "28d: 8 impr, 2 clicks, R5.99, 0 GA4 purchases R0.00",
+        "rationale": "phrase variant produced 1 purchase R1,202 in 28d"
+       }
+      },
+      {
+       "text": "glycolic acid shower gel",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R3.72, top R6.47, QS 7",
+        "serving_28d": "28d: 12 impr, 0 clicks, R0.00, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "aha body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test; no ZA volume row"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+       "path1": "glycolic",
+       "path2": "body-wash",
+       "headlines": [
+        "Glycolic Acid Body Wash",
+        "Shop Glycolic Acid Body Wash",
+        "SLS-Free Glycolic Body Wash",
+        "Glycolic Body Wash From R330",
+        "For Dark Marks & Uneven Tone",
+        "Smoother, Brighter-Looking",
+        "Exfoliating Body Wash 500ml",
+        "Pastry Glycolic Acid Wash",
+        "Pair With Niacinamide Lotion",
+        "Fragrance-Free Option",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "SLS-free glycolic acid body wash for uneven-looking, dark-mark-prone skin. 500ml, R330.",
+        "Gentle daily exfoliation for smoother, brighter-looking skin. Fragrance-free option.",
+        "Pair with Niacinamide Body Lotion for the full even-tone routine. Shop online.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Salicylic Acid Body Wash",
+     "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+     "product": "Salicylic Acid Body Wash",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "salicylic acid body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 1000/mo, CPC $0.38, KD 17",
+        "live_bid": "first-page est R6.47, top R7.56, QS 7",
+        "serving_28d": "28d: 428 impr, 15 clicks, R43.48, 0 GA4 purchases R0.00",
+        "rationale": "highest-volume product term; 0 purchases in 28d at R3 bid with 26% IS, so step to R5.00 not the R6.47 estimate; stop rule applies"
+       }
+      },
+      {
+       "text": "salicylic acid body wash",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 1000/mo, CPC $0.38, KD 17",
+        "live_bid": "first-page est R11.35, top R14.86, QS 7",
+        "serving_28d": "28d: 289 impr, 43 clicks, R123.73, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "salicylic body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body acne wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 210/mo, CPC $0.32, KD 18",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping history: body acne wash clicks"
+       }
+      },
+      {
+       "text": "acne body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 210/mo, CPC $0.32, KD 18",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body wash for body acne",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "back acne body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "salicylic acid shower gel",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+       "path1": "salicylic",
+       "path2": "body-wash",
+       "headlines": [
+        "Salicylic Acid Body Wash",
+        "Shop Salicylic Acid Body Wash",
+        "SLS-Free Salicylic Body Wash",
+        "Salicylic Body Wash From R330",
+        "For Body Acne & Rough Bumps",
+        "For Bumpy, Textured Skin",
+        "Body Acne Body Wash 500ml",
+        "Pastry Salicylic Wash",
+        "Fragrance-Free Option",
+        "Pair With Niacinamide Lotion",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "SLS-free salicylic acid body wash for body acne, bumps and textured skin. 500ml from R330.",
+        "Helps keep pores clear and skin smoother-looking with daily use. Fragrance-free option.",
+        "Complete the routine with Niacinamide Body Lotion. Shop Pastry Skincare online.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Lactic Acid Body Wash",
+     "final_url": "https://pastryskincare.co.za/products/lactic-acid-body-wash",
+     "product": "Lactic Acid Body Wash",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "lactic acid body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 40/mo, CPC $0.18, KD 0",
+        "live_bid": "first-page est R3.59, top R5.12, QS 7",
+        "serving_28d": "28d: 49 impr, 3 clicks, R8.78, 0 GA4 purchases R0.00",
+        "rationale": "phrase variant produced 1 purchase R1,270 in 28d"
+       }
+      },
+      {
+       "text": "lactic acid body wash",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 40/mo, CPC $0.18, KD 0",
+        "live_bid": "first-page est R9.09, top R11.35, QS 7",
+        "serving_28d": "28d: 26 impr, 4 clicks, R11.88, 1 GA4 purchases R1270.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body wash for sensitive skin",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "Semrush ZA 170/mo, CPC $0.73, KD 13",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test: product copy already positions lactic as gentle/sensitive"
+       }
+      },
+      {
+       "text": "body wash for keratosis pilaris",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "Semrush ZA 30/mo, CPC $0, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/lactic-acid-body-wash",
+       "path1": "lactic",
+       "path2": "body-wash",
+       "headlines": [
+        "Lactic Acid Body Wash",
+        "Shop Lactic Acid Body Wash",
+        "Gentle Lactic Body Wash",
+        "Lactic Body Wash R310",
+        "For Sensitive, Dry Body Skin",
+        "Gentle Daily Exfoliation",
+        "SLS-Free & Fragrance-Free",
+        "Pastry Lactic Acid Wash",
+        "Softer, Smoother-Looking Skin",
+        "500ml Pump Bottle",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Gentle lactic acid body wash for sensitive, dry or rough-feeling skin. SLS-free. R310.",
+        "Mild daily exfoliation that leaves skin softer and smoother-looking. 500ml pump bottle.",
+        "Shop Lactic Acid Body Wash online at Pastry Skincare. Made in South Africa.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Mandelic Acid Body Wash",
+     "final_url": "https://pastryskincare.co.za/products/mandelic-acid-body-wash",
+     "product": "Mandelic Acid Body Wash",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "mandelic acid body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R2.50, top R2.90, QS 8",
+        "serving_28d": "28d: 275 impr, 40 clicks, R116.57, 0 GA4 purchases R0.00",
+        "rationale": "40 clicks 0 purchases 28d; only R545 fragrance-free variant in stock; low bid + stop rule"
+       }
+      },
+      {
+       "text": "mandelic acid body wash",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/mandelic-acid-body-wash",
+       "path1": "mandelic",
+       "path2": "body-wash",
+       "headlines": [
+        "Mandelic Acid Body Wash",
+        "Shop Mandelic Acid Body Wash",
+        "Mandelic, Kojic & Licorice",
+        "For Dark-Mark-Prone Skin",
+        "SLS-Free Body Wash",
+        "Gentle AHA For Dark Marks",
+        "Pastry Mandelic Body Wash",
+        "Fragrance-Free 500ml",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "SLS-free body wash with mandelic acid, kojic acid and licorice root. Fragrance-free.",
+        "A gentler AHA for dark-mark-prone, uneven-looking body skin. Shop Pastry Skincare online.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free formula.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Brightening Body Wash (concern)",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "product": "Glycolic Acid Body Wash",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "body wash for hyperpigmentation",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.41, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "brightening body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "seen as brand-campaign query"
+       }
+      },
+      {
+       "text": "body wash for dark marks",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body wash for dark inner thighs",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping term \"how to remove dark inner thighs\" produced a purchase"
+       }
+      },
+      {
+       "text": "exfoliating body wash",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "Semrush ZA 210/mo, CPC $0.28, KD 20",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping history: 9 clicks"
+       }
+      },
+      {
+       "text": "body wash for strawberry legs",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "existing description copy mentions strawberry skin"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+       "path1": "brightening",
+       "path2": "body-wash",
+       "headlines": [
+        "Body Wash For Dark Marks",
+        "Brightening Body Wash",
+        "Glycolic Acid Body Wash",
+        "SLS-Free Exfoliating Wash",
+        "For Uneven-Looking Body Skin",
+        "Inner Thighs, Knees & Elbows",
+        "Smoother, Brighter-Looking",
+        "Body Wash From R330",
+        "No Bleaching. No Burning.",
+        "Pastry Skincare Body Care",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Glycolic acid body wash for dark marks and uneven tone on inner thighs, knees and elbows.",
+        "No bleaching, no burning. SLS-free exfoliating body wash for melanin-rich skin. From R330.",
+        "Pair with Niacinamide Body Lotion for the full even-tone routine. Shop online.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    }
+   ],
+   "campaign_negatives": [
+    {
+     "text": "face",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "facial",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face serum",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face wash",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face cream",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "eye",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lip",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lips",
+     "match_type": "PHRASE"
+    }
+   ],
+   "ad_group_negatives": [],
+   "shared_negative_lists_to_attach": [
+    "Pastry | NEG | Brand routing",
+    "Pastry | NEG | Competitor brands",
+    "Pastry | NEG | Retailers",
+    "Pastry | NEG | Informational and off-target",
+    "Pastry | NEG | Positioning and stock"
+   ],
+   "assets": [
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Acid Body Wash",
+     "line1": "SLS-free exfoliating wash",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "apply_to": "C1-C4 (campaign level)"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Niacinamide Body Lotion",
+     "line1": "Niacinamide and panthenol",
+     "line2": "From R325, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Mini Kit",
+     "line1": "Body wash + lotion + loofah",
+     "line2": "From R380",
+     "final_url": "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Salicylic Acid Body Wash",
+     "line1": "For body acne and bumps",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "SLS-Free Formulas",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Fragrance-Free Options",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Made In South Africa",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "For Melanin-Rich Skin",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Structured snippet",
+     "text": "Types: Body Wash, Body Lotion, Body Butter, Body Oil, Face Serum, Deodorant, Sunscreen",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    }
+   ]
+  },
+  {
+   "build_id": "C2",
+   "name": "Pastry | Search | Body Lotion & Treatment | ZA | 2026-09",
+   "type": "Search",
+   "import_status": "PAUSED",
+   "daily_budget_zar": 120.0,
+   "bidding": "Manual CPC (no enhanced CPC), keyword-level bids below; switch rule in runbook",
+   "networks": "Google Search only (no search partners, no Display)",
+   "locations": "South Africa (presence only); exclude China, Hong Kong, Singapore (mirror of Pastry_Brand_Search)",
+   "language": "English",
+   "conversion_goal": "Pastry Skincare (web) purchase 7514901304 only (campaign-level goal, PURCHASE biddable) - same as Pastry_Brand_Search",
+   "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}",
+   "ad_groups": [
+    {
+     "name": "Niacinamide Body Lotion",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "product": "Niacinamide Body Lotion",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "niacinamide body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 6.5,
+       "evidence": {
+        "demand": "Semrush ZA 320/mo, CPC $0.29, KD 13",
+        "live_bid": "first-page est R6.47, top R7.56, QS 7",
+        "serving_28d": "28d: 122 impr, 8 clicks, R23.64, 0 GA4 purchases R0.00",
+        "rationale": "phrase variant: 4 purchases R2,785 in 28d at 18% IS; exact IS 24%; bid to first-page est"
+       }
+      },
+      {
+       "text": "niacinamide body lotion",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 6.5,
+       "evidence": {
+        "demand": "Semrush ZA 320/mo, CPC $0.29, KD 13",
+        "live_bid": "first-page est R11.35, top R14.86, QS 7",
+        "serving_28d": "28d: 242 impr, 54 clicks, R152.34, 4 GA4 purchases R2785.25",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "niacinamide lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping purchase history"
+       }
+      },
+      {
+       "text": "niacinamide body moisturiser",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+       "path1": "niacinamide",
+       "path2": "body-lotion",
+       "headlines": [
+        "Niacinamide Body Lotion",
+        "Shop Niacinamide Body Lotion",
+        "Niacinamide & Panthenol Lotion",
+        "Body Lotion From R325",
+        "For Dark Marks & Uneven Tone",
+        "Pastry Niacinamide Lotion",
+        "Lightweight Daily Body Lotion",
+        "Fragrance-Free Option",
+        "Pair With Glycolic Body Wash",
+        "500ml Pump Bottle",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Niacinamide and panthenol body lotion for uneven-looking, dark-mark-prone skin. R325.",
+        "Lightweight daily lotion that hydrates and supports a more even-looking tone.",
+        "Pair with Glycolic Acid Body Wash for the full routine. Shop Pastry Skincare online.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Brightening Body Lotion (concern)",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "product": "Niacinamide Body Lotion",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "brightening body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 390/mo, CPC $0.3, KD 10",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "skin brightening body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 260/mo, CPC $0.34, KD 15",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body lotion for hyperpigmentation",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 30/mo, CPC $0.87, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body lotion for glowing skin",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 260/mo, CPC $0.49, KD 13",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body lotion for dark spots",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test; no ZA row"
+       }
+      },
+      {
+       "text": "even tone body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+       "path1": "brightening",
+       "path2": "body-lotion",
+       "headlines": [
+        "Brightening Body Lotion",
+        "Niacinamide Body Lotion",
+        "Body Lotion For Dark Marks",
+        "Even Tone Body Lotion",
+        "For Melanin-Rich Skin",
+        "Glowing, Even-Looking Skin",
+        "No Bleaching. No Burning.",
+        "Body Lotion From R325",
+        "Fragrance-Free Option",
+        "Pastry Skincare Body Care",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Niacinamide body lotion for dark marks and uneven-looking tone. No bleaching. From R325.",
+        "Daily hydration that supports glowing, even-looking skin. Made for melanin-rich skin.",
+        "Shop Niacinamide Body Lotion online at Pastry Skincare. Fragrance-free option.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Vitamin C Body Cream",
+     "final_url": "https://pastryskincare.co.za/products/vitamin-c-body-cream",
+     "product": "Vitamin C Body Cream",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "vitamin c body cream",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.3, KD 0",
+        "live_bid": "first-page est R9.09, top R9.09, QS 4",
+        "serving_28d": "28d: 9 impr, 1 clicks, R2.94, 0 GA4 purchases R0.00",
+        "rationale": "QS 4 in current build (ad relevance); new dedicated RSA should lift it"
+       }
+      },
+      {
+       "text": "vitamin c body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 390/mo, CPC $0.28, KD 16",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "vitamin c body cream",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.3, KD 0",
+        "live_bid": "first-page est R29.99, top R29.99, QS 4",
+        "serving_28d": "28d: 19 impr, 4 clicks, R11.94, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/vitamin-c-body-cream",
+       "path1": "vitamin-c",
+       "path2": "body-cream",
+       "headlines": [
+        "Vitamin C Body Cream",
+        "Shop Vitamin C Body Cream",
+        "Vitamin C & Vitamin E Cream",
+        "Body Cream From R285",
+        "For Dull, Uneven-Looking Skin",
+        "Rich Daily Body Cream 250ml",
+        "Mandarin Or Fragrance-Free",
+        "Pastry Vitamin C Body Cream",
+        "Brighter-Looking Body Skin",
+        "Made In South Africa",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Vitamin C and vitamin E body cream for dull, uneven-looking skin. 250ml from R285.",
+        "Rich daily body cream that hydrates and supports brighter-looking skin. Shop online.",
+        "Mandarin or fragrance-free. Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Niacinamide Body Butter",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-butter",
+     "product": "Niacinamide Body Butter",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "niacinamide body butter",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R0.99, top R0.00, QS 10",
+        "serving_28d": "28d: 16 impr, 0 clicks, R0.00, 0 GA4 purchases R0.00",
+        "rationale": "QS 10, first-page est R0.99; Shopping purchase history"
+       }
+      },
+      {
+       "text": "body butter for dark marks",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/niacinamide-body-butter",
+       "path1": "niacinamide",
+       "path2": "body-butter",
+       "headlines": [
+        "Niacinamide Body Butter",
+        "Shop Niacinamide Body Butter",
+        "Rich Body Butter From R205",
+        "Deep Hydration & Even Tone",
+        "For Dry, Uneven-Looking Skin",
+        "Pastry Niacinamide Butter",
+        "Fragrance-Free Option",
+        "250ml Body Butter",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Rich niacinamide body butter for deep hydration and a more even-looking tone. From R205.",
+        "For dry, rough or uneven-looking body skin. Fragrance-free or grapefruit. Shop online.",
+        "Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Hyaluronic Acid Body Lotion",
+     "final_url": "https://pastryskincare.co.za/products/hyaluronic-acid-body-lotion",
+     "product": "Hyaluronic Acid Body Lotion",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "hyaluronic acid body lotion",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 90/mo, CPC $0.54, KD 9",
+        "live_bid": "first-page est R9.09, top R11.35, QS 7",
+        "serving_28d": "28d: 18 impr, 1 clicks, R2.90, 0 GA4 purchases R0.00",
+        "rationale": "first-page est R9.09; test at R5 with stop rule"
+       }
+      },
+      {
+       "text": "body lotion for dry skin",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "Semrush ZA 480/mo, CPC $0.24, KD 16",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/hyaluronic-acid-body-lotion",
+       "path1": "hyaluronic",
+       "path2": "body-lotion",
+       "headlines": [
+        "Hyaluronic Acid Body Lotion",
+        "Shop Hyaluronic Body Lotion",
+        "Hydrating Body Lotion R290",
+        "Hyaluronic Acid & Panthenol",
+        "For Dry, Dehydrated Body Skin",
+        "Lightweight Daily Hydration",
+        "Fragrance-Free 500ml",
+        "Pastry Hyaluronic Lotion",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Body lotion with hyaluronic acid and panthenol for dry, dehydrated skin. 500ml, R290.",
+        "Lightweight daily hydration that leaves skin softer and smoother-feeling. Shop online.",
+        "Fragrance-free. Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Overnight Body Treatment (BHA)",
+     "final_url": "https://pastryskincare.co.za/products/bha-overnight-body-balm",
+     "product": "BHA Overnight Body Balm",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "bha overnight body balm",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R1.39, top R0.00, QS -",
+        "serving_28d": "28d: 10 impr, 4 clicks, R11.64, 0 GA4 purchases R0.00",
+        "rationale": "first-page est R1.39"
+       }
+      },
+      {
+       "text": "overnight body balm",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "bha body balm",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/bha-overnight-body-balm",
+       "path1": "bha",
+       "path2": "body-balm",
+       "headlines": [
+        "BHA Overnight Body Balm",
+        "Shop BHA Overnight Body Balm",
+        "Overnight Body Balm R385",
+        "Salicylic & Azelaic Acid Balm",
+        "For Bumps & Dark Marks",
+        "Overnight Smoothing Body Balm",
+        "Pastry BHA Body Balm",
+        "Fragrance-Free Or Rose",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Overnight body balm with salicylic acid, niacinamide, azelaic acid and squalane. R385.",
+        "For rough bumps and dark marks on the body. Apply at night for smoother-feeling skin.",
+        "Shop BHA Overnight Body Balm online at Pastry Skincare. Fragrance-free or rose.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "BHA Body Gel Serum",
+     "final_url": "https://pastryskincare.co.za/products/bha-body-gel",
+     "product": "BHA Body Gel Serum",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "bha body gel",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R3.88, top R3.88, QS 10",
+        "serving_28d": "28d: 6 impr, 1 clicks, R2.76, 0 GA4 purchases R0.00",
+        "rationale": "QS 10"
+       }
+      },
+      {
+       "text": "bha body serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "salicylic acid body serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/bha-body-gel",
+       "path1": "bha",
+       "path2": "body-gel",
+       "headlines": [
+        "BHA Body Gel Serum",
+        "Shop BHA Body Gel Serum",
+        "Salicylic Acid Body Serum",
+        "Body Gel Serum R210",
+        "For Bumpy, Congested Skin",
+        "Water-Based BHA Body Gel",
+        "Pastry BHA Body Gel",
+        "Targets Bumps & Rough Texture",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Water-based BHA body gel with salicylic and citric acid for bumpy, congested skin. R210.",
+        "A targeted body serum for rough texture on backs, arms and legs. Shop online.",
+        "Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Brightening Body Oil",
+     "final_url": "https://pastryskincare.co.za/products/brightening-body-oil-vitamin-c",
+     "product": "Brightening Body Oil",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "brightening body oil",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "Semrush ZA 70/mo, CPC $0.31, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "vitamin c body oil",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "body oil for dark marks",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/brightening-body-oil-vitamin-c",
+       "path1": "brightening",
+       "path2": "body-oil",
+       "headlines": [
+        "Brightening Body Oil",
+        "Shop Brightening Body Oil",
+        "Vitamin C Body Oil R385",
+        "Vitamin C & Vitamin E Oil",
+        "For Dull, Uneven-Looking Skin",
+        "Glow-Boosting Body Oil",
+        "Pastry Brightening Body Oil",
+        "Vanilla Nut 100ml",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Brightening body oil with vitamin C and vitamin E for dull, uneven-looking skin. R385.",
+        "A glow-boosting body oil for melanin-rich skin. Shop Pastry Skincare online.",
+        "Layer over Niacinamide Body Lotion for extra nourishment. Made in South Africa.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    }
+   ],
+   "campaign_negatives": [
+    {
+     "text": "face",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "facial",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face serum",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face wash",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face cream",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "eye",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lip",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lips",
+     "match_type": "PHRASE"
+    }
+   ],
+   "ad_group_negatives": [],
+   "shared_negative_lists_to_attach": [
+    "Pastry | NEG | Brand routing",
+    "Pastry | NEG | Competitor brands",
+    "Pastry | NEG | Retailers",
+    "Pastry | NEG | Informational and off-target",
+    "Pastry | NEG | Positioning and stock"
+   ],
+   "assets": [
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Acid Body Wash",
+     "line1": "SLS-free exfoliating wash",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "apply_to": "C1-C4 (campaign level)"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Niacinamide Body Lotion",
+     "line1": "Niacinamide and panthenol",
+     "line2": "From R325, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Mini Kit",
+     "line1": "Body wash + lotion + loofah",
+     "line2": "From R380",
+     "final_url": "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Salicylic Acid Body Wash",
+     "line1": "For body acne and bumps",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "SLS-Free Formulas",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Fragrance-Free Options",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Made In South Africa",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "For Melanin-Rich Skin",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Structured snippet",
+     "text": "Types: Body Wash, Body Lotion, Body Butter, Body Oil, Face Serum, Deodorant, Sunscreen",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    }
+   ]
+  },
+  {
+   "build_id": "C3",
+   "name": "Pastry | Search | Concern Intent | ZA | 2026-09",
+   "type": "Search",
+   "import_status": "PAUSED",
+   "daily_budget_zar": 120.0,
+   "bidding": "Manual CPC (no enhanced CPC), keyword-level bids below; switch rule in runbook",
+   "networks": "Google Search only (no search partners, no Display)",
+   "locations": "South Africa (presence only); exclude China, Hong Kong, Singapore (mirror of Pastry_Brand_Search)",
+   "language": "English",
+   "conversion_goal": "Pastry Skincare (web) purchase 7514901304 only (campaign-level goal, PURCHASE biddable) - same as Pastry_Brand_Search",
+   "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}",
+   "ad_groups": [
+    {
+     "name": "Dark Underarms (deodorant)",
+     "final_url": "https://pastryskincare.co.za/products/anti-pigmentation-deodorant-linen-fresh-fragrance",
+     "product": "Anti Pigmentation Deodorant",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "anti pigmentation deodorant",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R9.09, top R14.86, QS 8",
+        "serving_28d": "28d: 45 impr, 1 clicks, R2.90, 0 GA4 purchases R0.00",
+        "rationale": "first-page est R9.09, QS 8; step to R5.00"
+       }
+      },
+      {
+       "text": "deodorant for dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.39, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "deodorant for dark underarms",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.39, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "best deodorant for dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "best roll on for dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 20/mo, CPC $0.66, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "roll on for dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "seen as query in current build"
+       }
+      },
+      {
+       "text": "dark underarms treatment",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 170/mo, CPC $0.43, KD 24",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "what to use for dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 110/mo, CPC $0.29, KD 24",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "dark underarms",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 260/mo, CPC $0.4, KD 26",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "head term 260/mo; monitor CTR"
+       }
+      },
+      {
+       "text": "underarm dark spots",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 110/mo, CPC $0, KD 28",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "brightening deodorant",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "seen as query in current build"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/anti-pigmentation-deodorant-linen-fresh-fragrance",
+       "path1": "deodorant",
+       "path2": "dark-underarms",
+       "headlines": [
+        "Anti Pigmentation Deodorant",
+        "Deodorant For Dark Underarms",
+        "Roll-On For Dark Underarms",
+        "Salicylic Acid Deodorant R250",
+        "Odour Protection & Even Tone",
+        "For Dark, Uneven Underarms",
+        "Daily Underarm Roll-On",
+        "Pastry Anti-Pigment Deodorant",
+        "Fresh Linen Or Fragrance-Free",
+        "Made In South Africa",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Salicylic acid deodorant: odour protection plus care for dark underarms. 50ml, R250.",
+        "A daily roll-on for dark, uneven-looking underarms. Fresh linen or fragrance-free.",
+        "Made in South Africa for melanin-rich skin. Pair with Glycolic Acid Body Wash.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Hyperpigmentation Body Care (concern)",
+     "final_url": "https://pastryskincare.co.za/collections/hyperpigmentation",
+     "product": "Hyperpigmentation collection",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "hyperpigmentation products",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 480/mo, CPC $0.3, KD 11",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "hyperpigmentation cream",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 480/mo, CPC $0.41, KD 23",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "best products for hyperpigmentation",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 210/mo, CPC $0.43, KD 22",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "hyperpigmentation treatment for dark skin",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 110/mo, CPC $0.35, KD 29",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "keyword only; ad copy avoids treatment claims"
+       }
+      },
+      {
+       "text": "hyperpigmentation treatment for body",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping purchase history (experiment campaign)"
+       }
+      },
+      {
+       "text": "products for hyperpigmentation black skin",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "dark inner thighs",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "Shopping purchase history"
+       }
+      },
+      {
+       "text": "dark knees and elbows",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      },
+      {
+       "text": "body care for hyperpigmentation",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/collections/hyperpigmentation",
+       "path1": "even-tone",
+       "path2": "body-care",
+       "headlines": [
+        "Body Care For Dark Marks",
+        "Hyperpigmentation Body Care",
+        "Even Tone Body Care Range",
+        "Body Wash, Lotion & Serum",
+        "For Melanin-Rich Skin",
+        "No Bleaching. No Burning.",
+        "Niacinamide & Glycolic Acid",
+        "Inner Thighs, Knees & Elbows",
+        "Body Care From R205",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options",
+        "Shop Online Today"
+       ],
+       "descriptions": [
+        "Body washes, lotions and serums for dark marks and uneven-looking tone. No bleaching.",
+        "Niacinamide, glycolic acid and vitamin C body care made in SA for melanin-rich skin.",
+        "Inner thighs, underarms, knees and elbows. Shop the even-tone body care range from R205.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    }
+   ],
+   "campaign_negatives": [
+    {
+     "text": "face",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "facial",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face serum",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face wash",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "face cream",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "eye",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lip",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lips",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "how to get rid of",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "how to remove",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "how to lighten",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "baking soda",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "colgate",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "coconut oil",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "aloe vera",
+     "match_type": "PHRASE"
+    }
+   ],
+   "ad_group_negatives": [
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "how to get rid of",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "how to remove",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "how to lighten",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "baking soda",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "colgate",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "coconut oil",
+     "match_type": "PHRASE"
+    },
+    {
+     "ad_group": "Dark Underarms (deodorant)",
+     "text": "aloe vera",
+     "match_type": "PHRASE"
+    }
+   ],
+   "shared_negative_lists_to_attach": [
+    "Pastry | NEG | Brand routing",
+    "Pastry | NEG | Competitor brands",
+    "Pastry | NEG | Retailers",
+    "Pastry | NEG | Informational and off-target",
+    "Pastry | NEG | Positioning and stock"
+   ],
+   "assets": [
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Acid Body Wash",
+     "line1": "SLS-free exfoliating wash",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "apply_to": "C1-C4 (campaign level)"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Niacinamide Body Lotion",
+     "line1": "Niacinamide and panthenol",
+     "line2": "From R325, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Mini Kit",
+     "line1": "Body wash + lotion + loofah",
+     "line2": "From R380",
+     "final_url": "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Salicylic Acid Body Wash",
+     "line1": "For body acne and bumps",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "SLS-Free Formulas",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Fragrance-Free Options",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Made In South Africa",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "For Melanin-Rich Skin",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Structured snippet",
+     "text": "Types: Body Wash, Body Lotion, Body Butter, Body Oil, Face Serum, Deodorant, Sunscreen",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    }
+   ]
+  },
+  {
+   "build_id": "C4",
+   "name": "Pastry | Search | Face Serums | ZA | 2026-09",
+   "type": "Search",
+   "import_status": "PAUSED",
+   "daily_budget_zar": 80.0,
+   "bidding": "Manual CPC (no enhanced CPC), keyword-level bids below; switch rule in runbook",
+   "networks": "Google Search only (no search partners, no Display)",
+   "locations": "South Africa (presence only); exclude China, Hong Kong, Singapore (mirror of Pastry_Brand_Search)",
+   "language": "English",
+   "conversion_goal": "Pastry Skincare (web) purchase 7514901304 only (campaign-level goal, PURCHASE biddable) - same as Pastry_Brand_Search",
+   "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}",
+   "ad_groups": [
+    {
+     "name": "Niacinamide Serum",
+     "final_url": "https://pastryskincare.co.za/products/pigmentation-correction-serum",
+     "product": "Pigmentation Correction Serum",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "niacinamide serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 6600/mo, CPC $0.34, KD 16",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "6,600/mo, KD 16; product is 5% niacinamide face serum R250; start below CPC benchmark and read CVR"
+       }
+      },
+      {
+       "text": "niacinamide serum",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "Semrush ZA 6600/mo, CPC $0.34, KD 16",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "pigmentation correction serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R11.35, top R14.86, QS -",
+        "serving_28d": "28d: 50 impr, 0 clicks, R0.00, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "hyperpigmentation serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 390/mo, CPC $0.37, KD 15",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "best serum for hyperpigmentation",
+       "match_type": "EXACT",
+       "max_cpc_zar": 5.0,
+       "evidence": {
+        "demand": "Semrush ZA 210/mo, CPC $0.43, KD 13",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "serum for dark marks",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/pigmentation-correction-serum",
+       "path1": "niacinamide",
+       "path2": "serum",
+       "headlines": [
+        "Niacinamide Serum 5%",
+        "Shop Niacinamide Face Serum",
+        "Pigmentation Correction Serum",
+        "Niacinamide Serum R250",
+        "Niacinamide & Alpha Arbutin",
+        "For Dark Marks On The Face",
+        "Hyaluronic Acid Hydration",
+        "Pastry Niacinamide Serum",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Face serum with 5% niacinamide, alpha arbutin and hyaluronic acid for dark marks. R250.",
+        "Pigmentation Correction Serum: a lightweight daily serum for dark-mark-prone facial skin.",
+        "Shop Pastry Skincare face serums online. Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Dark Spot Corrector",
+     "final_url": "https://pastryskincare.co.za/products/evening-pigment-corrector",
+     "product": "Evening Pigment Corrector",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "dark spot corrector",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.5,
+       "evidence": {
+        "demand": "Semrush ZA 1600/mo, CPC $0.28, KD 18",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "1,600/mo"
+       }
+      },
+      {
+       "text": "dark spot corrector",
+       "match_type": "PHRASE",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 1600/mo, CPC $0.28, KD 18",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "evening pigment corrector",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R5.69, top R11.35, QS -",
+        "serving_28d": "28d: 0 impr, 0 clicks, R0.00, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "dark mark corrector",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/evening-pigment-corrector",
+       "path1": "pigment",
+       "path2": "corrector",
+       "headlines": [
+        "Evening Pigment Corrector",
+        "Dark Spot Corrector R295",
+        "Overnight Dark Mark Corrector",
+        "For Stubborn Dark Marks",
+        "Targeted Night Face Serum",
+        "Shop Evening Pigment Corrector",
+        "Pastry Pigment Corrector",
+        "For Melanin-Rich Skin",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Evening Pigment Corrector: an overnight corrector for stubborn dark marks. 30ml, R295.",
+        "Apply at night to targeted spots. Pair with Niacinamide Serum by day. Shop online.",
+        "Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Ceramide Serum",
+     "final_url": "https://pastryskincare.co.za/products/barrier-repair-serum-ceramide",
+     "product": "Barrier Repair Serum",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "ceramide serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 320/mo, CPC $0.35, KD 8",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "320/mo, KD 8"
+       }
+      },
+      {
+       "text": "barrier repair serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R9.09, top R11.35, QS 7",
+        "serving_28d": "28d: 28 impr, 2 clicks, R5.93, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "skin barrier serum",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.5,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/barrier-repair-serum-ceramide",
+       "path1": "ceramide",
+       "path2": "serum",
+       "headlines": [
+        "Barrier Repair Serum",
+        "Ceramide Serum 1.5%",
+        "Shop Barrier Repair Serum",
+        "Ceramide Face Serum R280",
+        "For Sensitive, Stressed Skin",
+        "Supports The Skin Barrier",
+        "Pastry Ceramide Serum",
+        "Calm, Comfortable Skin",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Barrier Repair Serum with 1.5% ceramide for sensitive or over-exfoliated skin. R280.",
+        "A daily face serum that supports the skin barrier. Shop Pastry Skincare online.",
+        "Made in South Africa for melanin-rich skin.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    },
+    {
+     "name": "Niacinamide Sunscreen",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-spf50-sunscreen",
+     "product": "Niacinamide SPF50 Sunscreen",
+     "default_max_cpc_zar": 3.0,
+     "keywords": [
+      {
+       "text": "niacinamide sunscreen",
+       "match_type": "EXACT",
+       "max_cpc_zar": 4.0,
+       "evidence": {
+        "demand": "Semrush ZA 50/mo, CPC $0.32, KD 0",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "niacinamide spf50 sunscreen",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "first-page est R11.35, top R14.86, QS -",
+        "serving_28d": "28d: 3 impr, 1 clicks, R2.79, 0 GA4 purchases R0.00",
+        "rationale": ""
+       }
+      },
+      {
+       "text": "spf50 gel sunscreen",
+       "match_type": "EXACT",
+       "max_cpc_zar": 3.0,
+       "evidence": {
+        "demand": "no Semrush ZA row",
+        "live_bid": "no live bid estimate (keyword not in account)",
+        "serving_28d": "no 28d serving history",
+        "rationale": "test"
+       }
+      }
+     ],
+     "ads": [
+      {
+       "type": "RESPONSIVE_SEARCH_AD",
+       "final_url": "https://pastryskincare.co.za/products/niacinamide-spf50-sunscreen",
+       "path1": "niacinamide",
+       "path2": "sunscreen",
+       "headlines": [
+        "Niacinamide SPF50 Sunscreen",
+        "Shop Niacinamide Sunscreen",
+        "SPF50 Gel Sunscreen R465",
+        "Lightweight Daily SPF50",
+        "Niacinamide & Hyaluronic Acid",
+        "For Dark-Mark-Prone Skin",
+        "Pastry SPF50 Sunscreen",
+        "Gel Texture For Daily Wear",
+        "Made In South Africa",
+        "Shop Online Today",
+        "Pastry Skincare Official Store",
+        "Proudly South African Brand",
+        "Made For Melanin-Rich Skin",
+        "Fragrance-Free Options"
+       ],
+       "descriptions": [
+        "Lightweight SPF50 gel sunscreen with niacinamide and hyaluronic acid. 80ml, R465.",
+        "Daily sun protection for dark-mark-prone, melanin-rich skin. Shop Pastry Skincare online.",
+        "Made in South Africa. Pair with Niacinamide Serum for your morning routine.",
+        "Made in South Africa for melanin-rich skin. Fragrance-free options available."
+       ],
+       "pinning": "none"
+      }
+     ]
+    }
+   ],
+   "campaign_negatives": [
+    {
+     "text": "body",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "body wash",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "body lotion",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "underarm",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "underarms",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "inner thigh",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "inner thighs",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "knees",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "elbows",
+     "match_type": "PHRASE"
+    }
+   ],
+   "ad_group_negatives": [],
+   "shared_negative_lists_to_attach": [
+    "Pastry | NEG | Brand routing",
+    "Pastry | NEG | Competitor brands",
+    "Pastry | NEG | Retailers",
+    "Pastry | NEG | Informational and off-target",
+    "Pastry | NEG | Positioning and stock"
+   ],
+   "assets": [
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Acid Body Wash",
+     "line1": "SLS-free exfoliating wash",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/glycolic-acid-body-wash",
+     "apply_to": "C1-C4 (campaign level)"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Niacinamide Body Lotion",
+     "line1": "Niacinamide and panthenol",
+     "line2": "From R325, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/niacinamide-body-lotion",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Glycolic Mini Kit",
+     "line1": "Body wash + lotion + loofah",
+     "line2": "From R380",
+     "final_url": "https://pastryskincare.co.za/products/pastry-skincare-glycolic-acid-niacinamide-mini-kit",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Salicylic Acid Body Wash",
+     "line1": "For body acne and bumps",
+     "line2": "From R330, 500ml",
+     "final_url": "https://pastryskincare.co.za/products/salicylic-acid-body-wash",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Sitelink",
+     "text": "Niacinamide Serum",
+     "line1": "5% niacinamide face serum",
+     "line2": "R250, 30ml",
+     "final_url": "https://pastryskincare.co.za/products/pigmentation-correction-serum",
+     "apply_to": "C4 only"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "SLS-Free Formulas",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Fragrance-Free Options",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "Made In South Africa",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Callout",
+     "text": "For Melanin-Rich Skin",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    },
+    {
+     "asset_type": "Structured snippet",
+     "text": "Types: Body Wash, Body Lotion, Body Butter, Body Oil, Face Serum, Deodorant, Sunscreen",
+     "line1": "",
+     "line2": "",
+     "final_url": "",
+     "apply_to": "C1-C4"
+    }
+   ]
+  },
+  {
+   "build_id": "C5",
+   "name": "Pastry | Shopping | All In-Stock | ZA | 2026-09",
+   "type": "Standard Shopping",
+   "import_status": "PAUSED",
+   "daily_budget_zar": 150.0,
+   "bidding": "Manual CPC by product group (below); tROAS only after 30 purchases",
+   "networks": "Google Search (Shopping)",
+   "locations": "South Africa (presence only)",
+   "language": "n/a",
+   "conversion_goal": "Pastry Skincare (web) purchase 7514901304",
+   "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={creative}",
+   "ad_groups": [],
+   "product_groups": [
+    {
+     "product_group": "product_type = \"body wash\"",
+     "in_stock_items": "13",
+     "price_range_zar": "310-545",
+     "max_cpc_zar": "3.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"gift set\"",
+     "in_stock_items": "10",
+     "price_range_zar": "380-1055",
+     "max_cpc_zar": "2.50",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body lotion\"",
+     "in_stock_items": "3",
+     "price_range_zar": "290-335",
+     "max_cpc_zar": "3.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"face serum\"",
+     "in_stock_items": "3",
+     "price_range_zar": "250-295",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"deodorant\"",
+     "in_stock_items": "2",
+     "price_range_zar": "250-250",
+     "max_cpc_zar": "2.50",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body butter\"",
+     "in_stock_items": "2",
+     "price_range_zar": "205-210",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body cream\"",
+     "in_stock_items": "2",
+     "price_range_zar": "285-295",
+     "max_cpc_zar": "2.50",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body balm\"",
+     "in_stock_items": "2",
+     "price_range_zar": "385-385",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body oil\"",
+     "in_stock_items": "1",
+     "price_range_zar": "385-385",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"serum\"",
+     "in_stock_items": "1",
+     "price_range_zar": "320-320",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"hand cream\"",
+     "in_stock_items": "1",
+     "price_range_zar": "205-205",
+     "max_cpc_zar": "1.50",
+     "note": "hand cream: only Hyaluronic Acid Hand Cream grapefruit is in stock; Anti-Pigment Hand Cream SPF30 is OUT_OF_STOCK and excluded automatically"
+    },
+    {
+     "product_group": "product_type = \"body mist\"",
+     "in_stock_items": "1",
+     "price_range_zar": "385-385",
+     "max_cpc_zar": "1.50",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"body serum\"",
+     "in_stock_items": "1",
+     "price_range_zar": "210-210",
+     "max_cpc_zar": "2.00",
+     "note": ""
+    },
+    {
+     "product_group": "product_type = \"sunscreen\"",
+     "in_stock_items": "1",
+     "price_range_zar": "465-465",
+     "max_cpc_zar": "1.50",
+     "note": ""
+    },
+    {
+     "product_group": "Everything else",
+     "in_stock_items": "0",
+     "price_range_zar": "",
+     "max_cpc_zar": "EXCLUDED",
+     "note": "exclude so new feed items are reviewed before serving"
+    }
+   ],
+   "prerequisites": [
+    "Merchant feed: fix image_unwanted_overlays on shopify_ZZ_9322841997553_46993404330225 (Brightening Body Oil) and shopify_ZZ_8818191630577_46989386907889 (Anti-Pigment Hand Cream SPF30, also OUT_OF_STOCK)",
+    "Confirm 43 IN_STOCK offers show as eligible once the campaign exists",
+    "Do not enable Performance Max alongside this campaign (brand overlap: ~40% of Pastry_PMax search clicks were brand queries)"
+   ]
+  }
+ ],
+ "shared_negative_lists": {
+  "Pastry | NEG | Brand routing": {
+   "apply_to": "shared list (apply to C1-C4, NOT to Pastry_Brand_Search, NOT to C5 Shopping)",
+   "rationale": "Route brand queries to Pastry_Brand_Search; in the current product campaign 20 of 60 top queries were \"pastry ...\" (search_terms_active_campaigns 28d)",
+   "keywords": [
+    {
+     "text": "pastry",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pastry skincare",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pastryskincare",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pasty skincare",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pantry skincare",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pastry skin",
+     "match_type": "PHRASE"
+    }
+   ]
+  },
+  "Pastry | NEG | Competitor brands": {
+   "apply_to": "shared list (apply to C1-C5)",
+   "rationale": "Competitor brand queries seen in Shopping/Search terms (dove, nivea, standard beauty, the ordinary, medicube, aplb, palmers, neutrogena, kiehls, loccitane, minimalist) and Semrush body wash/lotion lists",
+   "keywords": [
+    {
+     "text": "dove",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "nivea",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "sanex",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lux",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "radox",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "dettol",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "sorbet",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "epimax",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "satiskin",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lifebuoy",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "oh so heavenly",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "palmers",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "cerave",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "the ordinary",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "standard beauty",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "medicube",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "aplb",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "neutrogena",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "eucerin",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "la roche posay",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "bio oil",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "vaseline",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "clere",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "portia m",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "good stuff",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "dr teals",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "olay",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "aveeno",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "shower to shower",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "kiehls",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "loccitane",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "minimalist",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "veerox",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "avon",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "justine",
+     "match_type": "PHRASE"
+    }
+   ]
+  },
+  "Pastry | NEG | Retailers": {
+   "apply_to": "shared list (apply to C1-C5)",
+   "rationale": "Retailer-intent queries (dischem, clicks, woolworths) in Semrush lists; note Pastry_Brand_Search keeps them (it converted on \"pastry skincare clicks\")",
+   "keywords": [
+    {
+     "text": "dischem",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "dis-chem",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "clicks",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "woolworths",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "takealot",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "shoprite",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "checkers",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pick n pay",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "amazon",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "superbalist",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "faithful to nature",
+     "match_type": "PHRASE"
+    }
+   ]
+  },
+  "Pastry | NEG | Informational and off-target": {
+   "apply_to": "shared list (apply to C1-C4)",
+   "rationale": "Pastry as a food word (recipe/cake/bakery), informational modifiers (meaning/causes/how to make), clinical/procedure intent, B2B, jobs, comparison; \"men\"/\"kids\"/\"pregnancy\" excluded because copy and pages are not positioned for them",
+   "keywords": [
+    {
+     "text": "recipe",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "recipes",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "cake",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "cakes",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "bakery",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "baking",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pie",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "croissant",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "how to make",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "diy",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "homemade",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "home remedies",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "meaning",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "causes",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "what is",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "side effects",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "laser",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "chemical peel",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "dermatologist",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "doctor",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "clinic",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "wholesale",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "bulk",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "supplier",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "distributor",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "private label",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "job",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "jobs",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "vacancies",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "salary",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "course",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "free",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "cheap",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "review",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "reviews",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "vs",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "before and after",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "pregnancy",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "boy or girl",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "penis",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "men",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "mens",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "baby",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "kids",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "child",
+     "match_type": "PHRASE"
+    }
+   ]
+  },
+  "Pastry | NEG | Positioning and stock": {
+   "apply_to": "shared list (apply to C1-C5)",
+   "rationale": "Brand copy says \"No bleaching\"; whitening/lightening queries conflict with positioning and policy risk. Hand cream negated while Anti-Pigment Hand Cream SPF30 is OUT_OF_STOCK in the feed (2026-09-06)",
+   "keywords": [
+    {
+     "text": "whitening",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "lightening",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "bleach",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "bleaching",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "skin lightening",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "hand cream",
+     "match_type": "PHRASE"
+    },
+    {
+     "text": "hand lotion",
+     "match_type": "PHRASE"
+    }
+   ]
+  }
+ }
+}
