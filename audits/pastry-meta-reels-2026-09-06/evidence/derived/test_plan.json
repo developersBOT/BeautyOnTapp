@@ -21,17 +21,17 @@
   "type": "REPAIR (evidence-needed)",
   "priority": 2,
   "source_assets": "Ad 120247999501100393 (creative 1542319103969645, IG media 17892363399551598); catalogue item 26251588507861804",
-  "evidence": "F02, F13: top-spend video ad, CPA ZAR139.51, ROAS 4.50, ATC/LPV 0.145; product out of stock in catalogue",
-  "hypothesis": "If the Anti-Pigment Hand Cream SPF30 is out of stock on the store, the ad is buying clicks that cannot convert; restoring stock (or pointing the ad at an in-stock hand-care product page) will lift ATC/LPV toward the account level.",
+  "evidence": "F02 (verified): product 8818191630577 inventory 0 since 2026-08-25; ad ATC/LPV 0.219 before vs 0.100 after; ZAR3,090 spent on the ad while out of stock (Aug 25-Sep 5)",
+  "hypothesis": "Restoring stock (or, until then, pointing this single ad at the in-stock Hyaluronic Acid Hand Cream Grapefruit page or the Hyperpigmentation collection) returns ATC/LPV to the pre-stock-out level of about 0.22 and CPA to about ZAR100.",
   "audience_problem": "Broad ZA (A1 ad set); problem: destination availability",
   "product_destination": "Anti-Pigment Hand Cream SPF30 75ml (product 8818191630577) or, if unavailable, Hyaluronic Acid Hand Cream Grapefruit (in stock) collection page. Destination URL NOT VERIFIED from this environment",
   "proposed_hook_and_sequence": "No creative change in step one; step one is a stock and landing-page check. If stock is confirmed, keep the existing testimonial hook (\"the hand cream everyone needs\")",
   "cta": "SHOP_NOW",
   "one_variable": "Destination availability (stock) with creative held constant",
   "success_guardrails": "ATC/LPV returns to at least the account median (0.23 in L28) and CPA falls below the A1 ad set average (ZAR120 in L28); guardrail: comment sentiment",
-  "minimum_decision_evidence": "Stock confirmation from Shopify plus 7 complete days after the fix with at least 30 purchases",
-  "dependencies": "Shopify access (NOT VERIFIED); comment text review",
-  "status": "DRAFT / EVIDENCE-NEEDED"
+  "minimum_decision_evidence": "7 complete days after restock or destination change with at least 30 purchases; compare with the Aug 15-24 baseline in hand_cream_stockout_daily.csv",
+  "dependencies": "Restock date from Pastry; the destination-swap variant is a proposal only",
+  "status": "DRAFT / READY (stock verified)"
  },
  {
   "id": "T03",

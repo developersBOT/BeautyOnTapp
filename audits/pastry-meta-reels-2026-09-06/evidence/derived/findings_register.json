@@ -12,12 +12,12 @@
  {
   "id": "F02",
   "asset": "Ad 120247999501100393 PASTRY_A1_ZA_BROAD_NEW_EXCL_SIGNALS__ANTI_PIGMENT_HAND_CREAM (creative 1542319103969645, IG media 17892363399551598)",
-  "current_state": "Highest-spend video ad in L28: ZAR5,022.82, 36 purchases, CPA ZAR139.51, ROAS 4.50, CPM ZAR70.33, outbound CTR 2.86%, ATC/LPV 0.145 vs account 0.232, 20 comments (most of any ad). Catalogue item 26251588507861804 Anti-Pigment Hand Cream SPF30 75ml availability = out of stock at capture",
-  "evidence": "ad_scorecard_periods.csv L28 row; catalog_products_2555447634850889.csv retailer_id 46989386907889; creative 1006687488994923 link_url https://pastryskincare.co.za/products/anti-pigment-spf30-hand-cream",
-  "mechanism": "Strong attention and click intent but weak add-to-cart per landing view; the promoted hero product is flagged out of stock in the catalogue, which is consistent with clicks not converting. On-site state NOT VERIFIED (storefront blocked from this environment).",
+  "current_state": "Highest-spend video ad in L28: ZAR5,022.82, 36 purchases, CPA ZAR139.51. Shopify confirms product 8818191630577 Anti-Pigment Hand Cream SPF30: inventory 0, availableForSale false, policy DENY. Shopify sold 138 units-orders Aug 9-24 (top-4 product by net sales) and 0 from Aug 25. Ad daily split: Aug 15-24 ATC/LPV 0.219, CPA ZAR101.7; Aug 25-Sep 5 ATC/LPV 0.100, CPA ZAR181.8, spend ZAR3,090 while out of stock",
+  "evidence": "hand_cream_stockout_daily.csv; shopify_stock_check_ad_products.csv; shopify_product_sales_L28.csv",
+  "mechanism": "The ad kept buying clicks at the same CTR (2.8%) after the product sold out on 2026-08-25; add-to-cart per landing view halved and cost per purchase nearly doubled. The 17 post-stock-out attributed purchases are other products or 7-day-click lag.",
   "severity": "High",
-  "confidence": "Medium-High",
-  "dependency": "Shopify stock check for product 8818191630577; comment review in Business Suite"
+  "confidence": "High",
+  "dependency": "Restock date (commercial)"
  },
  {
   "id": "F03",
@@ -32,12 +32,12 @@
  {
   "id": "F04",
   "asset": "Account 2972238613000896 attribution vs pixel volume",
-  "current_state": "Meta-attributed website purchases 568 in L28 vs about 1,025 pixel Purchase events in the same calendar span (Pacific-bucketed daily stats Aug 9-Sep 5): attributed share about 55% under 7-day click / 1-day view",
-  "evidence": "account_baseline_periods.csv; pixel_events_daily.csv",
-  "mechanism": "More than half of all store purchases are claimed by Meta. With Shopify unavailable and Google Ads out of scope, blended efficiency and incremental contribution cannot be established; Meta ROAS of 9-13 must not be read as profit.",
+  "current_state": "L28: Shopify 1,010 orders / ZAR819,509 net sales; Meta attributed 568 purchases / ZAR475,891 (56% of orders, 58% of net sales). Shopify last-touch referrer credits Instagram+Facebook with 439 orders (43%). Blended Meta+Google spend ZAR56,436 (Meta 83%); MER = net sales / blended spend = 14.5 in L28 vs 11.7 in P28, 11.8 in L90. Google Ads cost fell from ZAR20,104 (P28) to ZAR9,381 (L28) while net sales fell 6%",
+  "evidence": "shopify_vs_meta_reconciliation.csv; shopify_orders_by_referrer.csv",
+  "mechanism": "Meta 7-day-click / 1-day-view attribution claims about 30% more orders than Shopify last-touch assigns to Meta referrers; both are attribution views, not incrementality. MER rose as Google spend halved and net sales held, which is consistent with channel overlap but does not prove it. Meta ROAS still must not be read as profit: margin inputs are NOT VERIFIED.",
   "severity": "Medium (decision risk)",
   "confidence": "High on the numbers / Low on incrementality",
-  "dependency": "Shopify re-authorisation; a holdout or geo test"
+  "dependency": "Holdout or geo test for incrementality"
  },
  {
   "id": "F05",
@@ -102,9 +102,9 @@
  {
   "id": "F11",
   "asset": "Business 3929095220517711 catalogues",
-  "current_state": "Three commerce catalogues: 2555447634850889 Pastry Skincare Products (47 items, used by ads, pixel connected, batch_api source \"App 2125102444404598\", no partner integration record); 875733698715725 Shopify Product Catalog (4iqvgt-rc.myshopify.com) System User (26 products, 39 sets); 1514822569170254 Products from pastryskincare.co.za (52 products, created 2024)",
+  "current_state": "Three commerce catalogues: 2555447634850889 Pastry Skincare Products (47 items, used by ads, pixel connected, batch_api source \"App 2125102444404598\", no partner integration record); 875733698715725 Shopify Product Catalog (4iqvgt-rc.myshopify.com) System User (26 products, 39 sets); 1514822569170254 Products from pastryskincare.co.za (52 products, created 2024). Shopify shows a \"Facebook & Instagram\" sales-channel publication (gid://shopify/Publication/170135290097) and installed apps Analyzify (GA4 & Ads Tracking), Simprosys Google Shopping Feed and DHL Express Commerce",
   "evidence": "report section 5 (ads_catalog_list_catalogs, ads_catalog_get_data_sources, ads_catalog_list_partner_integrations outputs)",
-  "mechanism": "Duplicate catalogues with different item counts create ambiguity about the source of truth and feed owner; the identity of app 2125102444404598 is NOT VERIFIED.",
+  "mechanism": "The Facebook & Instagram channel publication is the most likely writer of catalogue 2555447634850889 via batch API; app 2125102444404598 identity still NOT VERIFIED. Simprosys is present (Google feed) and Analyzify is present (tracking), consistent with current instructions.",
   "severity": "Low-Medium",
   "confidence": "High on existence / Low on ownership",
   "dependency": "Commerce Manager and app settings inspection"
@@ -212,19 +212,19 @@
  {
   "id": "F22",
   "asset": "Shopify store pastryskincare.co.za",
-  "current_state": "Shopify MCP token expired; storefront blocked by egress policy",
+  "current_state": "Shopify connector re-authorised during the session: store 4iqvgt-rc.myshopify.com = pastryskincare.co.za (Advanced, ZAR, SAST) verified; orders, net sales, referrers, sessions, product sales, stock and apps captured. Storefront pages themselves remain blocked (egress policy)",
   "evidence": "source_access_register.csv",
-  "mechanism": "Order and revenue truth, stock, checkout path and destination consistency are NOT VERIFIED; Meta attribution is the only sales signal in this report.",
-  "severity": "Coverage gap",
+  "mechanism": "Order and revenue truth are now verified; on-page checkout path, redirects and offer consistency remain NOT VERIFIED.",
+  "severity": "Partial coverage gap",
   "confidence": "High",
   "dependency": "Re-authorise the Shopify connector; run from an environment with web access"
  },
  {
   "id": "F23",
   "asset": "INTL ad copy (15 creatives, e.g. 1256482663222241)",
-  "current_state": "Primary text: \"DHL Express international delivery is available. Delivery fees are calculated at checkout; duties and import fees may apply.\"",
+  "current_state": "Primary text: \"DHL Express international delivery is available. Delivery fees are calculated at checkout; duties and import fees may apply.\"; Shopify has the DHL Express Commerce app installed (gid://shopify/App/3816751)",
   "evidence": "creative_inventory.csv",
-  "mechanism": "Existing copy states delivery terms that are NOT VERIFIED against store settings; PNCapital drafting rules for new copy exclude delivery claims.",
+  "mechanism": "App presence supports that DHL shipping exists; rates, zones and the stated \"duties may apply\" wording are NOT VERIFIED.",
   "severity": "Low",
   "confidence": "Medium",
   "dependency": "Store shipping settings"
@@ -235,6 +235,46 @@
   "current_state": "L28 vs P28: spend -13.8% (ZAR47,054 vs 54,590), purchases -3.1% (568 vs 586), CPA -11.1% (ZAR82.84 vs 93.16), outbound CTR 2.36% vs 1.90%, frequency 5.97 vs 7.63, reach +9.6%. L90 vs P90: spend +125%, purchases +96%, CPM ZAR47.54 vs 33.82, CPA ZAR92.37 vs 80.20, ROAS 9.24 vs 11.49",
   "evidence": "account_baseline_periods.csv",
   "mechanism": "Recent structure (broad DPA plus new Reels concepts) is more efficient per purchase than the July mix, while the 90-day scale-up raised CPM and CPA versus March-June. Scaling cost, not fatigue, explains the 90-day CPA drift; no single-creative fatigue is evidenced.",
+  "severity": "Info",
+  "confidence": "High",
+  "dependency": "None"
+ },
+ {
+  "id": "F25",
+  "asset": "Facebook-referred sessions (Shopify referrer_source=social, referrer_name=facebook) vs Instagram-referred",
+  "current_state": "L28: Facebook 9,811 sessions, 134 completed checkouts (1.37%); Instagram 11,277 sessions, 307 (2.72%); Google 10,278 sessions, 309 (3.01%); direct 10,841, 208 (1.92%). Meta L28 delivery: Facebook placements ZAR21,228 spend / 236 purchases; Instagram placements ZAR24,614 / 320",
+  "evidence": "shopify_sessions_by_referrer_L28.csv; placement_breakdown.csv",
+  "mechanism": "Traffic arriving from Facebook converts at half the rate of Instagram traffic on the same store; Facebook Feed is the account's largest placement by spend (ZAR15,434). This is consistent with lower-intent Facebook Feed/Reels clicks or with attribution differences (in-app browser handoff); cause not established.",
+  "severity": "Medium",
+  "confidence": "Medium",
+  "dependency": "Ad-level placement split; landing-page speed in the Facebook in-app browser NOT VERIFIED"
+ },
+ {
+  "id": "F26",
+  "asset": "Shopify daily sales 2026-06-26 and Meta week 15",
+  "current_state": "492 orders / ZAR437,633 net sales on 2026-06-26 (vs 20-70 per day around it); Meta attributed 489 purchases in the week of 2026-06-23 (ROAS 17.1) on ZAR25,123 spend",
+  "evidence": "shopify_daily_sales.csv; evidence/raw/account_daily.json",
+  "mechanism": "A one-day sale event (context NOT IN SOURCE, coincides with the 5th-birthday creatives) inflates L90 and week-15 results; period comparisons that include 26 June are event-driven, not run-rate.",
+  "severity": "Info",
+  "confidence": "High",
+  "dependency": "Event details from Pastry"
+ },
+ {
+  "id": "F27",
+  "asset": "Creative 2504456496703261 (ad 120248284938000393, inner-thigh combos) and shelf card visible in 2412338129276655 / 996050220134487",
+  "current_state": "On-screen text \"THESE 3 COMBOS WILL CLEAR YOUR DARK INNER THIGHS\"; in-store shelf card in frame reads \"Clears hyperpigmentation\"",
+  "evidence": "reel_frame_reviews.csv",
+  "mechanism": "Absolute efficacy wording (\"will clear\", \"clears\") is a substantiation exposure under Meta and ASA rules; low spend today (ZAR252 L28) but the phrasing appears in the paid version of a routine concept flagged for expansion.",
+  "severity": "Low-Medium",
+  "confidence": "Medium (frame only)",
+  "dependency": "Compliance review"
+ },
+ {
+  "id": "F28",
+  "asset": "Destinations for T05 (stretch-mark and hyperpigmentation collections)",
+  "current_state": "Shopify collections verified: Hyperpigmentation (handle hyperpigmentation, 25 products), Stretchmarks (handle stretchmarks, 12 products), Acne (handle acne, 10 products); all updated 2026-09-05",
+  "evidence": "Shopify search_collections; captured 2026-09-06 10:59 UTC",
+  "mechanism": "Collection destinations exist for the expansion tests; the ads' actual link targets remain NOT IN SOURCE because they are post-native.",
   "severity": "Info",
   "confidence": "High",
   "dependency": "None"

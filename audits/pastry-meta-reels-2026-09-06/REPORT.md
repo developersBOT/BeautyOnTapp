@@ -1,18 +1,20 @@
 # Pastry Skincare – Meta Ads and Reels investigation
 
-Prepared for PNCapital. Investigation only: **no account, campaign, budget, targeting, placement, Pixel, catalogue, tracking, website or social-profile change was made.** Capture window 2026-09-06 10:26–10:45 UTC (12:26–12:45 Africa/Johannesburg). Reporting periods use complete account days in Africa/Johannesburg; today (2026-09-06) is shown separately as partial.
+Prepared for PNCapital. Second pass added 2026-09-06 10:53–11:05 UTC after the Shopify connector was re-authorised: order truth, stock, referrers, sessions, apps and Google Ads cost are now verified (section 3b). Investigation only: **no account, campaign, budget, targeting, placement, Pixel, catalogue, tracking, website or social-profile change was made.** Capture window 2026-09-06 10:26–10:45 UTC (12:26–12:45 Africa/Johannesburg). Reporting periods use complete account days in Africa/Johannesburg; today (2026-09-06) is shown separately as partial.
 
 ## 1. Commercial verdict and the three strongest opportunities
 
-**Verdict.** The account is buying purchases efficiently on Meta's own attribution and got more efficient in the last 28 days (CPA ZAR82.84 vs ZAR93.16 in the prior 28 days, attributed ROAS 10.1 vs 9.1), but the growth structure is fragile: the best campaign is three catalogue ads running retargeting copy to cold audiences, the highest-spend video ad points at a product the catalogue marks out of stock, the international test cannot deliver because its geography excludes the only country it includes, and more than half of all pixel purchases are being credited to Meta with no Shopify or incrementality cross-check. Meta ROAS in this report is diagnostic, never profit.
+**Verdict.** The account is buying purchases efficiently on Meta's own attribution and got more efficient in the last 28 days (CPA ZAR82.84 vs ZAR93.16 in the prior 28 days, attributed ROAS 10.1 vs 9.1). Shopify confirms the store did ZAR819,509 net sales on 1,010 orders in the same 28 days, and blended Meta plus Google spend of ZAR56,436 gives a marketing efficiency ratio of 14.5 (11.7 in the prior 28 days). The growth structure is nevertheless fragile: the best campaign is three catalogue ads running retargeting copy to cold audiences; the highest-spend video ad has been sending clicks to a product that sold out on 25 August (ZAR3,090 spent since, with add-to-cart per landing view halved); the international test cannot deliver because its geography excludes the only country it includes; Facebook-referred sessions convert at half the rate of Instagram-referred sessions; and Meta claims 56% of all orders where Shopify's last-touch view gives Meta 43%. Meta ROAS in this report is diagnostic, never profit: margin inputs are NOT VERIFIED.
 
 Three strongest evidence-backed opportunities (details in sections 6–8):
 
-1. **Fix availability behind the top video ad (F02/F13, T02).** Ad 120247999501100393 spent ZAR5,023 in 28 days at CPA ZAR139.51 and add-to-cart per landing view 0.145 (account 0.232). Its product, Anti-Pigment Hand Cream SPF30, is `out of stock` in catalogue 2555447634850889. Confirm stock in Shopify; the ad is otherwise the account's best attention-getter (outbound CTR 2.86%).
+1. **Fix availability behind the top video ad (F02/F13, T02).** Ad 120247999501100393 spent ZAR5,023 in 28 days at CPA ZAR139.51. Shopify verifies its product, Anti-Pigment Hand Cream SPF30 (product 8818191630577), at inventory 0 and not available for sale; it sold in 138 orders between 9 and 24 August (fourth-largest product by net sales) and nothing since. Before the stock-out the ad ran at ATC/LPV 0.219 and CPA ZAR101.7; after it, 0.100 and ZAR181.8, with click-through unchanged at 2.8%. The ad is otherwise the account's best attention-getter.
 2. **Expand the efficient routine Reels into broad (F19, T04/T05).** Body-acne POV (CPA ZAR74, 27 purchases), dry brushing (ZAR87, 22) and the stretch-mark recut (ZAR84, 11, outbound CTR 3.74%) sit only in the social-signals ad set. Adding them, unchanged, to the broad A1 ad set is the lowest-risk additive test available.
 3. **Make the DPA copy true for cold audiences (F03, T01).** The three catalogue ads (ZAR22,384, 341 purchases, CPA ZAR65.64 in 28 days) still say "Ready to restock?", "Complete your order" and "Come back" while targeting broad South Africa excluding purchasers. An acquisition-true text variant, run alongside, protects the account's best cost per purchase and removes an untrue claim.
 
 Configuration repair with no spend at risk: the INTL ad sets (F01) include ZA and exclude ZA, so they have delivered 0 impressions since 2026-08-28.
+
+Second-pass additions worth reading first: F25 (Facebook traffic converts at 1.37% vs Instagram 2.72% on Shopify sessions), F26 (a 492-order sale day on 26 June inflates the 90-day comparison), F27 ("will clear" and "clears hyperpigmentation" wording in two frames).
 
 ## 2. Source, access and coverage register
 
@@ -28,11 +30,12 @@ Full register: `evidence/derived/source_access_register.csv`.
 | Change history Jun 1–Sep 6 | 1,205 unique events across three windows. |
 | Ad Library, Page 116534118031737 | 28 active ads, all Pastry Page; no partnership ads detectable. |
 | Meta Help Center (definitions) | Retrieved via connector: 3-second plays (help/743427195703387), video metric calculation (help/1868286323447328), safe zone (help/980593475366490), learning phase (help/112167992830700, help/269269737396981). |
-| Shopify MCP | **Token expired; NOT ACCESSIBLE.** Orders, revenue, stock and checkout are NOT VERIFIED. |
+| Shopify MCP (second pass) | Re-authorised at 10:53 UTC. Store 4iqvgt-rc.myshopify.com = pastryskincare.co.za (Advanced, ZAR, SAST) verified. Daily sales, referrers, sessions, product sales, stock for the 10 advertised products, collections, apps and sales channels captured. Web pixel configuration denied (read_pixels scope). |
+| Google Ads MCP, customer 8510842703 Pastry Skincare | Daily cost only (for blended spend); campaigns out of scope. |
 | pastryskincare.co.za, instagram.com, facebook.com, developers.facebook.com, fbcdn video CDN | **Blocked by the environment's network egress policy (CONNECT 403).** No destination page, Reel permalink or video file could be opened. |
 | PNCapital/Pastry instructions, Business Facts, prior Pastry Meta audits | NOT IN SOURCE in this repository or synced skills; margins, budgets and affordability are NOT VERIFIED. Skills `beautyontapp-research-mode` and `beautyontapp-anti-fabrication` were read and applied. |
 
-**Videos watched: 0 of 62 video creatives.** Nine ads were inspected as a single static preview frame each (Instagram Reels format) via the connector; two catalogue-ad previews returned no image. Every creative judgement below that goes beyond caption text, the preview frame and delivery metrics is marked as such. Timestamped hook/demonstration/audio reviews were not possible and are not claimed.
+**Videos watched: 0 of 62 video creatives.** 31 ads covering 29 distinct creatives were inspected as a single static preview frame each (Instagram Reels format) via the connector; the two catalogue ads and the Brightening Oil ad returned no image. Frame-by-frame observations, product visibility, text position against Meta's safe-zone guidance and claim flags are in `evidence/derived/reel_frame_reviews.csv`. Every creative judgement below that goes beyond caption text, the preview frame and delivery metrics is marked as such. Timestamped hook/demonstration/audio reviews were not possible and are not claimed.
 
 ## 3. Account baseline (Meta attribution)
 
@@ -56,7 +59,21 @@ Funnel ratios (diagnostic only, not a proven journey): L28 LPV per outbound clic
 
 **Trend reading.** L28 improved on P28 on every efficiency measure while spend fell 14% and frequency fell from 7.6 to 6.0. The 90-day scale-up (spend +125% vs P90) came with CPM rising from ZAR33.82 to ZAR47.54 and CPA from ZAR80 to ZAR92; that is auction cost at scale, not evidence of creative fatigue. Weekly series (`evidence/raw/account_daily.json`) shows one anomaly: ZAR0 spend on 2026-08-12 between a manual pause on 08-11 and re-enable on 08-13 of the DPA campaign.
 
-**Attribution share.** Pixel Purchase events in the same span number roughly 1,025 (Pacific-bucketed daily stats), so Meta claims about 55% of all store purchases. Without Shopify, MER and incrementality are NOT VERIFIED (F04).
+**Attribution share.** Pixel Purchase events in the same span number roughly 1,025 (Pacific-bucketed daily stats) and Shopify records 1,010 orders, so Meta claims about 56% of all store purchases. See section 3b for the Shopify reconciliation and blended efficiency.
+
+### 3b. Shopify order truth and blended efficiency (second pass)
+
+Sources: `shopify_vs_meta_reconciliation.csv`, `shopify_daily_sales.csv`, `shopify_orders_by_referrer.csv`, `shopify_sessions_by_referrer_L28.csv`, `shopify_product_sales_L28.csv`. Net sales exclude shipping and tax. Google Ads cost is the account total for customer 8510842703; no other paid channel was checked (NOT VERIFIED whether any exists).
+
+| Period | Shopify orders | Net sales ZAR | AOV | Meta attributed purchases (share) | Meta attributed value (share) | Meta spend | Google spend | MER (net sales ÷ blended spend) |
+|---|---|---|---|---|---|---|---|---|
+| L7 Aug 30–Sep 5 | 297 | 239,996 | 808 | 175 (59%) | 143,237 (60%) | 15,725 | 2,858 | 12.9 |
+| P7 Aug 23–29 | 284 | 233,919 | 824 | 157 (55%) | 133,533 (57%) | 11,657 | 1,947 | 17.2 |
+| L28 Aug 9–Sep 5 | 1,010 | 819,509 | 811 | 568 (56%) | 475,891 (58%) | 47,054 | 9,381 | 14.5 |
+| P28 Jul 12–Aug 8 | 1,066 | 874,686 | 821 | 586 (55%) | 494,150 (57%) | 54,590 | 20,104 | 11.7 |
+| L90 Jun 8–Sep 5 | 3,574 | 2,951,435 | 826 | 2,085 (58%) | 1,780,392 (60%) | 192,591 | 57,275 | 11.8 |
+
+Shopify's own last-touch referrer gives Instagram plus Facebook 439 of 1,010 L28 orders (43%) against Meta's 568 (56%); Google search referred 295. Sessions: Instagram 11,277 sessions converted at 2.72%, Google 3.01%, direct 1.92%, Facebook 1.37% (F25). Store-wide session conversion 2.3% on 42,970 sessions, 93% mobile. The 26 June spike (492 orders, ZAR437,633) is a one-day event that sits inside L90 (F26). Meta attributed AOV (ZAR838) is close to Shopify AOV (ZAR811), so purchase values are not obviously mis-sent. Attributed share, last-touch share and MER are three different views; none is an incrementality measurement.
 
 ## 4. Current account structure
 
@@ -81,7 +98,8 @@ Bid strategy is "Highest volume" (lowest cost, no cap) everywhere a value is exp
 
 - **Pixel 203047029058550** is active, first-party cookies enabled, browser last fired 2026-09-06 03:19 PDT, server 03:10 PDT. Aug 6–Sep 6 volumes: PageView 238,961; ViewContent 102,373; AddToCart 29,265; InitiateCheckout 12,945; Purchase 1,104; NewCustomerPurchase 796; ReturningCustomerPurchase 306; Lead 95; Contact 143. Source split: browser 283,403 vs server 178,276 (all events). Purchase EMQ 9.1 (phone, name, zip 100% coverage; fbc 61%). Match quality for AddToCart/ViewContent 6.7–6.8. Event ID deduplication, value/currency payloads and the app writing the events (Analyzify per current instructions) are **NOT VERIFIED**: the connector exposes no event-level detail.
 - **Catalogue 2555447634850889** (47 items, 50 sets) is the one linked to the pixel and used by the DPA ads. Data source: `batch_api` "App 2125102444404598" (identity NOT VERIFIED; no partner-integration record, no file/URL feeds). `retailer_id` is the Shopify **variant** ID and `retailer_product_group_id` the Shopify **product** ID; pixel content IDs match this catalogue at 100% for AddToCart, Purchase and ViewContent over 28 days. This is internally consistent but deviates from the stated governance (product ID). Two other catalogues exist in the business (26 and 52 products) and are unused by ads.
-- **Item eligibility:** 4 items out of stock (Anti-Pigment Hand Cream SPF30, Mandelic Body Wash Blackcurrant, HA Body Lotion Vanilla, HA Hand Cream coconut) are excluded from dynamic ads; 47 items have a single image. Prices ZAR205–999, no sale prices, all `published`.
+- **Item eligibility:** 4 items out of stock (Anti-Pigment Hand Cream SPF30, Mandelic Body Wash Blackcurrant, HA Body Lotion Vanilla, HA Hand Cream coconut) are excluded from dynamic ads; 47 items have a single image. Prices ZAR205–999, no sale prices, all `published`. **Shopify stock check (second pass, `shopify_stock_check_ad_products.csv`):** the 10 advertised products are all `ACTIVE`; Anti-Pigment Hand Cream SPF30 inventory 0 (policy DENY, last sale 24 August); Mandelic Blackcurrant 0 (Fragrance Free 26); HA Hand Cream coconut 0 (Grapefruit 7); everything else in stock. Catalogue availability and Shopify agree.
+- **Store apps and channels (`shopify_apps_and_channels.csv`):** Analyzify (GA4 & Ads Tracking), Simprosys Google Shopping Feed, DHL Express Commerce, Judge.me, Bob Go, Stitch Express Checkout, Toki Loyalty, GetSale Discounts, Xero Bridge; sales channels Online Store, Point of Sale, Facebook & Instagram, TikTok. The Facebook & Instagram channel is the likeliest writer of the ad catalogue; the connector's app ID 2125102444404598 is still NOT VERIFIED against it.
 - **Destinations:** catalogue URLs use `?variant=<id>&utm_medium=cpc&utm_source=facebook&utm_campaign=Facebook%20Shopping&country=ZA`. Video ads are "use existing post" Reels; their link, redirects, mobile buying path and offer consistency are **NOT VERIFIED** (storefront blocked). Conversion domain on the August ads is `pastryskincare.co.za`.
 
 Tracking does not lead the action list: no proven defect materially changes the decisions above.
@@ -93,9 +111,9 @@ Tracking does not lead the action list: no proven defect materially changes the 
 | ID | Finding | Severity | Confidence |
 |---|---|---|---|
 | F01 | INTL ad sets include and exclude ZA; 0 delivery, learning FAIL | High (test) / Low (spend) | High |
-| F02 | Top video ad promotes out-of-stock hero product; ATC/LPV 0.145; CPA ZAR139.51 | High | Medium-High |
+| F02 | Top video ad kept spending (ZAR3,090) after its product sold out on 25 Aug; ATC/LPV halved | High | High |
 | F03 | DPA ads run retargeting copy to broad audiences | Medium | High |
-| F04 | Meta claims ~55% of pixel purchases; no Shopify/incrementality check | Medium | High/Low |
+| F04 | Meta claims 56% of Shopify orders vs 43% last-touch; MER 14.5 (L28) vs 11.7 (P28); no incrementality read | Medium | High/Low |
 | F05 | Historic top ad set broken by deleted Instagram media | Medium | High |
 | F07 | Burn-mark before/after + "bleach" screenshot in best acquisition recut | Medium | Medium |
 | F09 | Reels placements convert worse per rand than feed (mix-confounded) | Medium | Medium |
@@ -111,8 +129,10 @@ Tracking does not lead the action list: no proven defect materially changes the 
 | F17 | Reels text overlays in lower third of frame | Low | Low-Medium |
 | F20 | Underarm/sweat ad clicks well, converts poorly (n=9) | Low | Low-Medium |
 | F23 | INTL copy states DHL delivery terms, unverified | Low | Medium |
-| F18, F19, F24 | Opportunities and trend context (info) | Info | Medium/High |
-| F21, F22 | Coverage gaps: organic Instagram, Shopify/website | Gap | High |
+| F25 | Facebook-referred sessions convert at 1.37% vs Instagram 2.72% | Medium | Medium |
+| F27 | "Will clear" / "clears hyperpigmentation" wording in frames | Low-Medium | Medium |
+| F18, F19, F24, F26, F28 | Opportunities, trend and event context, verified destinations (info) | Info | Medium/High |
+| F21, F22 | Coverage gaps: organic Instagram; storefront pages (Shopify data now verified) | Gap | High |
 
 ## 7. Reels and creative inventory and scorecard
 
@@ -140,6 +160,8 @@ Scorecard of the delivering video concepts (L28 unless stated; measured results 
 
 Historic concepts in L90 (`concept_aggregation_L90.csv`): "new… Pastry Premium" 258 purchases at ROAS 10.3 (now broken, F05); festive duo kits 138 at ROAS 6.7; Premium body wash in-store first impressions 113 at ROAS 7.1; Salicylic + Vitamin C original post 64 at ROAS 4.2 (CPA ZAR197, mostly in the retargeting-heavy AS1 set, so not comparable with the recut). Very high ROAS rows in the "AS2 test." ad set (e.g. 48.3 on 13 purchases) came from a union of website and purchaser custom audiences and are not creative evidence.
 
+Frame review (31 ads, `reel_frame_reviews.csv`): 12 frames show the product clearly in hand or on shelf; 8 have no product in the opening frame (title cards, skin close-ups, the green claim card); 13 place the key text line in the lower third of the frame (approximately 70–85% height) where Reels caption and CTA elements sit, 11 place it in the top or centre safe area. Claim flags: the Salicylic + Vitamin C green card (three ads) with before/after scar image and "iBleach" screenshot; "REDUCED UNDERARM PIGMENTATION IN JUST 4 WEEKS REVIEW"; "THESE 3 COMBOS WILL CLEAR YOUR DARK INNER THIGHS"; an in-store shelf card reading "Clears hyperpigmentation" visible in two Premium body wash frames; "work faster" in the inner-thigh routine caption. Customer photo and creator rights are NOT VERIFIED for every testimonial frame.
+
 Comments: counts only (hand cream 20, dark underarm 5, body serum 6 in L28). Comment text, customer questions and objections are NOT ACCESSIBLE and were not reviewed.
 
 Rights and claims: creator attributions (e.g. "@zinzilejiyane") and music are NOT VERIFIED for usage rights or partnership-ad eligibility; no partnership ads were found in the Ad Library query.
@@ -152,7 +174,7 @@ Rights and claims: creator attributions (e.g. "@zinzilejiyane") and music are NO
 
 **Test / grow:** body-acne POV, dry brushing and stretch-mark recut into A1 broad (T04, T05); Reels-native 9:16 cut with safe-zone subtitles (T08).
 
-**Evidence needed before acting:** organic Reels performance (T06), Shopify order truth and stock (F22), Events Manager dedup detail (F14), comment text review (F02), feed app identity (F11), affordability and contribution inputs (NOT VERIFIED throughout).
+**Evidence needed before acting:** organic Reels performance (T06), Events Manager dedup detail (F14), comment text review (F02), feed app identity (F11), restock date for the hand cream (T02), affordability and contribution inputs (NOT VERIFIED throughout). Shopify order truth and stock are now verified (section 3b).
 
 No ad is labelled a winner or loser on fewer than 30 purchases.
 
@@ -164,12 +186,12 @@ Account improvement proposals with current and proposed settings, evidence, vali
 
 ## 10. Validation summary, unresolved limits and next measurement
 
-Audit 1 (evidence, coverage, calculations, scope): every metric in sections 3, 6 and 7 traces to a file in `evidence/` with the query and capture time; ad-level L28 sums reconcile to the account row; reach and frequency are taken from period-level API rows only; purchase type is single and documented; breakdown queries are reported separately and never added together; no Google or Shopify figures are combined with Meta; scope is Pastry only (BeautyOnTApp account 1615943869585748 and its catalogue were not queried beyond discovery).
+Audit 1 (evidence, coverage, calculations, scope): every metric in sections 3, 3b, 6 and 7 traces to a file in `evidence/` with the query and capture time; ad-level L28 sums reconcile to the account row; Shopify period sums are built from the daily series and match the ShopifyQL period totals (L28 net sales 819,508.75); Google cost is converted from micros; MER uses Shopify net sales over Meta plus Google cost only; reach and frequency are taken from period-level API rows only; purchase type is single and documented; breakdown queries are reported separately and never added together; no Google or Shopify figures are combined with Meta; scope is Pastry only (BeautyOnTApp account 1615943869585748 and its catalogue were not queried beyond discovery).
 
 Audit 2 (identifiers, dates, URLs, formatting): IDs were copied from connector output; dates are inclusive Johannesburg days; pixel daily buckets are the connector's Pacific-time rows and are labelled as such; the only URLs cited are catalogue product URLs and Meta Help Center article IDs; currency is ZAR throughout.
 
-Unresolved limits: no video was played (durations, audio, pacing, subtitles and end cards NOT VERIFIED); organic Reel metrics NOT ACCESSIBLE; destination pages, checkout path and stock NOT VERIFIED; Shopify NOT ACCESSIBLE; event deduplication NOT VERIFIED; affordability, margin and contribution inputs NOT VERIFIED; prior Pastry audits NOT IN SOURCE.
+Unresolved limits: no video was played (durations, audio, pacing, subtitles over time and end cards NOT VERIFIED; 31 static frames inspected); organic Reel metrics NOT ACCESSIBLE; storefront pages, redirects and checkout path NOT VERIFIED (Shopify data verified, pages blocked); event deduplication NOT VERIFIED (web pixel scope denied); affordability, margin and contribution inputs NOT VERIFIED; prior Pastry audits and the 26 June event details NOT IN SOURCE.
 
-Next measurement to establish purchase and contribution impact: (1) re-authorise Shopify and reconcile L28 orders and revenue against the 568 attributed purchases and ~1,025 pixel purchases; (2) export Instagram insights for Reels published Jun 8–Sep 5 (lifetime and period values kept separate); (3) run T01 and T04 as concurrent single-variable tests to at least 50 and 30 purchases respectively; (4) decide on a holdout or geo-based incrementality read before any budget scaling.
+Next measurement to establish purchase and contribution impact: (1) obtain the hand-cream restock date and re-read T02 against the Aug 15–24 baseline; (2) export Instagram insights for Reels published Jun 8–Sep 5 (lifetime and period values kept separate); (3) run T01 and T04 as concurrent single-variable tests to at least 50 and 30 purchases respectively; (4) decide on a holdout or geo-based incrementality read before any budget scaling, using Shopify net sales and blended spend (now available) as the outcome series.
 
 **Record: no live changes were made during this investigation.**
