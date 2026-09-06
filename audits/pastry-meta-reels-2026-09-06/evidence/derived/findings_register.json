@@ -1,0 +1,242 @@
+[
+ {
+  "id": "F01",
+  "asset": "Ad sets 120248284921000393, 120248284920020393, 120248284918900393 (campaign 120248284912210393 PASTRY_TEST_REELS_INTL_W4_W6_WORLDWIDE_EXCL_ZA_ABO_20260828)",
+  "current_state": "geo_locations.countries=[ZA] and excluded_geo_locations.countries=[ZA,CN]; delivery=warning learning_exit_unsuccessfully; learning_stage_info.status=FAIL, conversions=0; ZAR250/day each; 0 impressions since 2026-08-28",
+  "evidence": "evidence/raw/adsets_full.json (targeting); adset_inventory.csv; change_history_significant.csv 2026-08-28 MarketingAgent targeting updates",
+  "mechanism": "The only included country is also excluded, so the audience is empty; the worldwide-excluding-ZA test cannot deliver and all 15 INTL ads are inert. Budgets are configured but unspent, so no money is lost but the test yields no learning.",
+  "severity": "High (test integrity) / Low (spend)",
+  "confidence": "High",
+  "dependency": "Owner decision on whether the international test should run at all"
+ },
+ {
+  "id": "F02",
+  "asset": "Ad 120247999501100393 PASTRY_A1_ZA_BROAD_NEW_EXCL_SIGNALS__ANTI_PIGMENT_HAND_CREAM (creative 1542319103969645, IG media 17892363399551598)",
+  "current_state": "Highest-spend video ad in L28: ZAR5,022.82, 36 purchases, CPA ZAR139.51, ROAS 4.50, CPM ZAR70.33, outbound CTR 2.86%, ATC/LPV 0.145 vs account 0.232, 20 comments (most of any ad). Catalogue item 26251588507861804 Anti-Pigment Hand Cream SPF30 75ml availability = out of stock at capture",
+  "evidence": "ad_scorecard_periods.csv L28 row; catalog_products_2555447634850889.csv retailer_id 46989386907889; creative 1006687488994923 link_url https://pastryskincare.co.za/products/anti-pigment-spf30-hand-cream",
+  "mechanism": "Strong attention and click intent but weak add-to-cart per landing view; the promoted hero product is flagged out of stock in the catalogue, which is consistent with clicks not converting. On-site state NOT VERIFIED (storefront blocked from this environment).",
+  "severity": "High",
+  "confidence": "Medium-High",
+  "dependency": "Shopify stock check for product 8818191630577; comment review in Business Suite"
+ },
+ {
+  "id": "F03",
+  "asset": "Ad sets 120239423593800393 / 120239424374890393 / 120239424374900393 (PASTRY_DPA_Broad_Acq_1/2/3) and ads 120239423593790393 / 120239424374910393 / 120239424374880393",
+  "current_state": "Renamed 2026-08-05 from RT_Cart_Abandoners / RT_Product_Viewers / RT_Past_Purchasers; targeting is now broad ZA 18-65, Advantage+ audience, only \"Pastry | Purchasers | 180d | REBUILD_20260805\" excluded; creatives still carry retargeting copy (\"Ready to restock? Your skin loved it the first time\", \"Still thinking about it? Complete your order\", \"You were looking at something good... Come back\")",
+  "evidence": "adset_inventory.csv; change_history_significant.csv 2026-08-05 rows (Ads Automation Pastry); creative_inventory.csv creatives 1630677048061128, 2310973609402332, 26206822805650383",
+  "mechanism": "Copy written for prior visitors and buyers is served to people who have never visited, to whom \"restock\" or \"complete your order\" is untrue. The three ad sets are nevertheless the most efficient in the account (L28 CPA ZAR61.57-72.75, ROAS 11.8-13.3), so this is a message-truthfulness and headroom issue, not a delivery defect.",
+  "severity": "Medium",
+  "confidence": "High",
+  "dependency": "None for an additive creative repair"
+ },
+ {
+  "id": "F04",
+  "asset": "Account 2972238613000896 attribution vs pixel volume",
+  "current_state": "Meta-attributed website purchases 568 in L28 vs about 1,025 pixel Purchase events in the same calendar span (Pacific-bucketed daily stats Aug 9-Sep 5): attributed share about 55% under 7-day click / 1-day view",
+  "evidence": "account_baseline_periods.csv; pixel_events_daily.csv",
+  "mechanism": "More than half of all store purchases are claimed by Meta. With Shopify unavailable and Google Ads out of scope, blended efficiency and incremental contribution cannot be established; Meta ROAS of 9-13 must not be read as profit.",
+  "severity": "Medium (decision risk)",
+  "confidence": "High on the numbers / Low on incrementality",
+  "dependency": "Shopify re-authorisation; a holdout or geo test"
+ },
+ {
+  "id": "F05",
+  "asset": "Ad set 120239422422230393 AS1_Hyperpigmentation (campaign PASTRY_Main_Revenue, paused); ads 120239422780760393, 120239422422240393, 120239422499600393",
+  "current_state": "delivery=error all_ads_in_error: \"Instagram media 17947556741721787 / 18435405853187644 does not correspond to any existing media\" and \"No Valid Formats\"; the ad set produced 634 purchases and ZAR563,256 attributed value lifetime",
+  "evidence": "ads_get_errors output quoted in report section 4; ad_inventory.csv effective_status WITH_ISSUES",
+  "mechanism": "Organic posts used as ad creative were deleted, permanently breaking the ads and their social-proof history; the historic top concept (\"new... Pastry Premium\", 258 purchases) cannot be reused as-is.",
+  "severity": "Medium",
+  "confidence": "High",
+  "dependency": "Re-upload of the source video as an ad-account asset if the file exists"
+ },
+ {
+  "id": "F06",
+  "asset": "Campaigns 120245549293410393, 120245548997690393, 120245548921010393, 120245548839430393 (Instagram boosts 2026-06-16 to 06-30)",
+  "current_state": "Objective LINK_CLICKS optimised for Instagram profile visits; ZAR10,629 total; conversion fields null; landing page views 139-386 per ZAR2,655 (LPV per link click 0.10-0.17)",
+  "evidence": "campaign_inventory.csv; ad_scorecard_periods.csv L90 rows",
+  "mechanism": "Boosts bought profile visits, not sessions or purchases; they are not comparable with sales campaigns and produced no measurable purchase evidence.",
+  "severity": "Low (historic)",
+  "confidence": "High",
+  "dependency": "None"
+ },
+ {
+  "id": "F07",
+  "asset": "Creative 2141198163103531 / ad 120247999500050393 (Salicylic + Vitamin C EXACT) and creatives 1487817019559391 / 2050311515844483 (original post)",
+  "current_state": "Preview frame shows on-screen text \"FADE YOUR BURN MARK WITH THIS COMBO\", a before/after scar image and a screenshot of a customer message containing the word \"iBleach\"; caption claims the combo helps \"visibly fade blemishes and burn marks\"",
+  "evidence": "ads_get_ad_preview INSTAGRAM_REELS ad 120247999500050393 (frame inspected 2026-09-06); creative_inventory.csv body text",
+  "mechanism": "Before/after imagery, scar-fading claims and any bleaching association are evidence-dependent claims under Meta personal-health policy and South African advertising rules; a rejection or complaint would remove the best-performing acquisition recut (ROAS 13.5 on 24 purchases).",
+  "severity": "Medium",
+  "confidence": "Medium (single frame; full video not watched)",
+  "dependency": "Substantiation file for the testimonial; compliance review"
+ },
+ {
+  "id": "F08",
+  "asset": "Creatives 1019293427658617 (Deodorant 1-month review), 2851210671894413 (Customer results 2 weeks apart), preview of ad 120248284964440393 (\"REDUCED UNDERARM PIGMENTATION IN JUST 4 WEEKS REVIEW\")",
+  "current_state": "Before/after underarm images with a time-bound result claim; used in the non-delivering INTL ad set and the paused W6 test",
+  "evidence": "ads_get_ad_preview ad 120248284964440393; creative_inventory.csv",
+  "mechanism": "Same claim-substantiation exposure as F07; low commercial impact today because the ads are not delivering.",
+  "severity": "Low-Medium",
+  "confidence": "Medium",
+  "dependency": "Substantiation file"
+ },
+ {
+  "id": "F09",
+  "asset": "Reels placements (facebook_reels, instagram_reels) vs feed and stories, account level",
+  "current_state": "L28: FB Reels ZAR4,621 / 31 purchases / CPA ZAR149 / ROAS 4.8; IG Reels ZAR4,123 / 43 / CPA ZAR96 / ROAS 7.7; IG Feed ZAR13,947 / 183 / ROAS 11.6; FB Feed ZAR15,434 / 187 / ROAS 10.4; IG Stories ZAR6,434 / 90 / ROAS 11.1. L90: FB Reels ROAS 7.5, IG Reels 7.9, IG Feed 10.3, FB Feed 8.4, IG Stories 9.4",
+  "evidence": "placement_breakdown.csv",
+  "mechanism": "Reels placements carry 19% of L28 spend and 13% of purchases. Part of the gap is mix (catalogue DPA ads serve mainly in feed and stories), so this is not proof that Reels creative is weak; it shows that current Reels-format exposure converts less per rand than feed exposure in this account.",
+  "severity": "Medium",
+  "confidence": "Medium (mix-confounded)",
+  "dependency": "Ad-level placement split before any placement change"
+ },
+ {
+  "id": "F10",
+  "asset": "Ad set 120239423593800393 PASTRY_DPA_Broad_Acq_1",
+  "current_state": "Manual placements: Instagram only (stream, story, reels, explore_home, profile_feed, ig_search), mobile only; sibling DPA ad sets use Advantage+ placements",
+  "evidence": "adset_inventory.csv; raw targeting publisher_platforms",
+  "mechanism": "Inconsistent placement policy within one campaign; Acq_1 has the highest CPM (ZAR56.71 vs 39.33 and 43.65) and highest CPA (ZAR72.75 vs 61.57 and 65.81) of the three in L28. Not proven causal.",
+  "severity": "Low",
+  "confidence": "Medium",
+  "dependency": "None"
+ },
+ {
+  "id": "F11",
+  "asset": "Business 3929095220517711 catalogues",
+  "current_state": "Three commerce catalogues: 2555447634850889 Pastry Skincare Products (47 items, used by ads, pixel connected, batch_api source \"App 2125102444404598\", no partner integration record); 875733698715725 Shopify Product Catalog (4iqvgt-rc.myshopify.com) System User (26 products, 39 sets); 1514822569170254 Products from pastryskincare.co.za (52 products, created 2024)",
+  "evidence": "report section 5 (ads_catalog_list_catalogs, ads_catalog_get_data_sources, ads_catalog_list_partner_integrations outputs)",
+  "mechanism": "Duplicate catalogues with different item counts create ambiguity about the source of truth and feed owner; the identity of app 2125102444404598 is NOT VERIFIED.",
+  "severity": "Low-Medium",
+  "confidence": "High on existence / Low on ownership",
+  "dependency": "Commerce Manager and app settings inspection"
+ },
+ {
+  "id": "F12",
+  "asset": "Catalogue 2555447634850889 identifiers vs pixel content_ids",
+  "current_state": "retailer_id = Shopify variant ID (e.g. 46989386907889); retailer_product_group_id = Shopify product ID (e.g. 8818191630577); pixel content_ids match the catalogue at 100% over 28 days with 0 IDs matched to other catalogues",
+  "evidence": "catalog_products_2555447634850889.csv; ads_catalog_event_source_get_health output",
+  "mechanism": "Pixel events are keyed on variant IDs, which deviates from the stated PNCapital governance (Shopify product ID) but is internally consistent inside Meta; not a delivery defect.",
+  "severity": "Low",
+  "confidence": "High",
+  "dependency": "Analyzify configuration review (not accessible here)"
+ },
+ {
+  "id": "F13",
+  "asset": "Catalogue 2555447634850889 product set 1689686838523869 All Products (used by all three DPA ads)",
+  "current_state": "4 items out of stock and excluded from dynamic ads (Mandelic Blackcurrant 26767364529595138, Anti-Pigment Hand Cream 26251588507861804, HA Body Lotion Vanilla 35100388522893525, HA Hand Cream coconut 26293201886982385); diagnostics: PRODUCT_OUT_OF_STOCK must_fix (4), not_enough_images opportunity (47)",
+  "evidence": "ads_catalog_get_diagnostics; catalog_products csv",
+  "mechanism": "Hero SKUs are missing from DPA rotation and from the main video ad destination (F02); single-image items limit Shops and DPA presentation.",
+  "severity": "Medium",
+  "confidence": "High",
+  "dependency": "Stock replenishment; image assets"
+ },
+ {
+  "id": "F14",
+  "asset": "Pixel 203047029058550",
+  "current_state": "Active; browser 283,403 vs server 178,276 events (Aug 6-Sep 6); Purchase EMQ 9.1, AddToCart 6.8, ViewContent 6.7; custom events NewCustomerPurchase (796) and ReturningCustomerPurchase (306) fire alongside Purchase (1,104); 0 event rules, 0 custom conversions; Lead 95 and Contact 143 events present",
+  "evidence": "pixel_event_match_quality.csv; pixel_events_daily.csv; pixel_events_by_source_daily.csv",
+  "mechanism": "Purchase signal quality is strong. Browser/server deduplication, event_id presence and the sender of the custom events are NOT VERIFIED (Events Manager detail not exposed). No proven defect materially changes the commercial decisions in this report.",
+  "severity": "Low",
+  "confidence": "Medium",
+  "dependency": "Events Manager / Test Events access"
+ },
+ {
+  "id": "F15",
+  "asset": "Ad sets 120248284913190393 / 120248284914700393 / 120248284917990393 (TEST_REELS_ZA W1-W3), 15 ads, ZAR250/day each",
+  "current_state": "In learning phase 9 days after creation with 14-23 attributed conversions each; W3 ZAR2,135 / 16 purchases / ROAS 6.7; W2 ZAR2,132 / 23 / ROAS 9.0; W1 ZAR2,138 / 14 / ROAS 4.7; spend concentrated in one or two of the five ads per set",
+  "evidence": "adset_inventory.csv; ad_scorecard_periods.csv L28 and L7",
+  "mechanism": "Meta guidance: an ad set exits learning at about 50 optimisation events in the week after its last significant edit. At 14-23 per 9 days these sets are unlikely to exit, and per-ad results (0-21 purchases) are too small to call winners or losers.",
+  "severity": "Low-Medium",
+  "confidence": "High",
+  "dependency": "Decision on test duration or consolidation"
+ },
+ {
+  "id": "F16",
+  "asset": "Change history: \"Ads Automation Pastry\" (MarketingAgent) plus manual Power Editor and iOS-app edits",
+  "current_state": "1,205 change events Jun 1-Sep 6; 503 by MarketingAgent; campaign renames, targeting rewrites (2026-08-05, 08-14, 08-28) and repeated status toggles (8-10 per INTL ad on 2026-08-28); PASTRY_DPA_Broad_Acquisition paused 2026-08-11 and re-enabled 2026-08-13 from the iOS app; account spend was ZAR0 on 2026-08-12",
+  "evidence": "change_history_significant.csv; evidence/raw/account_daily.json",
+  "mechanism": "Automation and manual edits overlap without a visible single owner; the 2026-08-11 to 08-13 pause created a delivery gap and a learning reset on the best campaign.",
+  "severity": "Low-Medium",
+  "confidence": "High",
+  "dependency": "Operating agreement on account edits"
+ },
+ {
+  "id": "F17",
+  "asset": "Text overlays in Reels-format previews (ads 120248284932400393 inner thigh, 120248284925050393 underarm/sweat, 120248284944650393 body serum, 120247999501100393 hand cream)",
+  "current_state": "Preview frames show the key text line in the lower third (about 70-85% of frame height) of a 9:16 frame",
+  "evidence": "ads_get_ad_preview INSTAGRAM_REELS frames inspected 2026-09-06; Meta help article 980593475366490",
+  "mechanism": "Text in the lower band can be covered by the Reels caption and CTA interface, reducing sound-off comprehension; inferred from one frame per ad, not from playback.",
+  "severity": "Low",
+  "confidence": "Low-Medium",
+  "dependency": "Playback review with the Ads Manager safe-zone guardrail"
+ },
+ {
+  "id": "F18",
+  "asset": "Concept 18089893955557030 (Salicylic + Vitamin C EXACT recut, Aug 14) vs 18088093730346995 (original post, May)",
+  "current_state": "Original post: ZAR12,638 / 64 purchases / CPA ZAR197 / ROAS 4.2 (L90, retargeting-heavy AS1 ad set). Recut with exact-product page and product-pair headline: ZAR1,975 / 24 purchases / CPA ZAR82 / ROAS 13.5 (L28, broad)",
+  "evidence": "concept_aggregation_L90.csv; ad_scorecard_periods.csv",
+  "mechanism": "Same core video, different headline, destination and audience; direction favours the exact-product recut but audiences differ and n=24, so it is a hypothesis to confirm, not a proven creative effect.",
+  "severity": "Info",
+  "confidence": "Medium",
+  "dependency": "Controlled test on one variable"
+ },
+ {
+  "id": "F19",
+  "asset": "Concepts 17894570910595157 (body acne POV), 18007465448764457 (dry brushing), 18111724246804433 (stretch-mark recut), 18362479630212526 (inner thigh)",
+  "current_state": "L90 CPA ZAR74-87 and ROAS 10.7-12.4 with 11-27 purchases each; ThruPlay per play 0.13-0.17; 22-37 saves per ad in L28; each lives in one or two ad sets only",
+  "evidence": "concept_aggregation_L90.csv; ad_scorecard_periods.csv",
+  "mechanism": "Efficient but under-exposed concepts; expansion into the broad A1 ad set is the lowest-risk additive test in the account.",
+  "severity": "Info (opportunity)",
+  "confidence": "Medium (small n)",
+  "dependency": "Budget headroom NOT VERIFIED"
+ },
+ {
+  "id": "F20",
+  "asset": "Ad 120248284925050393 W1__02__UNDERARM_PIGMENTATION_AND_SWEAT (IG media 18348472762247625)",
+  "current_state": "L28 ZAR1,570 / 9 purchases / CPA ZAR174 / ROAS 3.7; outbound CTR 1.9%, LPV per click 0.94, ATC/LPV 0.19, purchase per checkout 0.26",
+  "evidence": "ad_scorecard_periods.csv",
+  "mechanism": "Clicks arrive and pages load, but add-to-cart per landing view is below account; the \"hack\" framing may attract curiosity rather than purchase intent. Small n.",
+  "severity": "Low",
+  "confidence": "Low-Medium",
+  "dependency": "More data or a destination check"
+ },
+ {
+  "id": "F21",
+  "asset": "Organic Instagram and Facebook Reels (all)",
+  "current_state": "No Instagram professional account is exposed to the connector (ads_get_ig_accounts returned an empty list); instagram.com and facebook.com are blocked by egress policy",
+  "evidence": "source_access_register.csv",
+  "mechanism": "Organic plays, reach, watch time, retention, shares, saves, comments and follows are NOT ACCESSIBLE; every organic-to-paid recommendation is therefore evidence-needed.",
+  "severity": "Coverage gap",
+  "confidence": "High",
+  "dependency": "Business Suite export or Instagram Graph API access"
+ },
+ {
+  "id": "F22",
+  "asset": "Shopify store pastryskincare.co.za",
+  "current_state": "Shopify MCP token expired; storefront blocked by egress policy",
+  "evidence": "source_access_register.csv",
+  "mechanism": "Order and revenue truth, stock, checkout path and destination consistency are NOT VERIFIED; Meta attribution is the only sales signal in this report.",
+  "severity": "Coverage gap",
+  "confidence": "High",
+  "dependency": "Re-authorise the Shopify connector; run from an environment with web access"
+ },
+ {
+  "id": "F23",
+  "asset": "INTL ad copy (15 creatives, e.g. 1256482663222241)",
+  "current_state": "Primary text: \"DHL Express international delivery is available. Delivery fees are calculated at checkout; duties and import fees may apply.\"",
+  "evidence": "creative_inventory.csv",
+  "mechanism": "Existing copy states delivery terms that are NOT VERIFIED against store settings; PNCapital drafting rules for new copy exclude delivery claims.",
+  "severity": "Low",
+  "confidence": "Medium",
+  "dependency": "Store shipping settings"
+ },
+ {
+  "id": "F24",
+  "asset": "Account 2972238613000896 period trend",
+  "current_state": "L28 vs P28: spend -13.8% (ZAR47,054 vs 54,590), purchases -3.1% (568 vs 586), CPA -11.1% (ZAR82.84 vs 93.16), outbound CTR 2.36% vs 1.90%, frequency 5.97 vs 7.63, reach +9.6%. L90 vs P90: spend +125%, purchases +96%, CPM ZAR47.54 vs 33.82, CPA ZAR92.37 vs 80.20, ROAS 9.24 vs 11.49",
+  "evidence": "account_baseline_periods.csv",
+  "mechanism": "Recent structure (broad DPA plus new Reels concepts) is more efficient per purchase than the July mix, while the 90-day scale-up raised CPM and CPA versus March-June. Scaling cost, not fatigue, explains the 90-day CPA drift; no single-creative fatigue is evidenced.",
+  "severity": "Info",
+  "confidence": "High",
+  "dependency": "None"
+ }
+]

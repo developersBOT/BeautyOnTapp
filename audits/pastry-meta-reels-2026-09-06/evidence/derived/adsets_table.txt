@@ -1,0 +1,380 @@
+
+== 120248284921000393 PASTRY_W6_INTL_WORLDWIDE_SKINCARE_INTENT_TEST | camp 120248284912210393
+ status ACTIVE ACTIVE {'status': 'warning', 'substatuses': ['learning_exit_unsuccessfully']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 0, 'last_sig_edit_ts': 1787909404, 'status': 'FAIL'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR250.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:32+0200 end None created 2026-08-28T09:58:32+0200 upd 2026-08-28T11:30:21+0200
+ age 20 65 gender {'0': 2} | geo countries:ZA | xgeo countries:ZA,CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248284920020393 PASTRY_W5_INTL_WORLDWIDE_SHOPPING_INTENT_TEST | camp 120248284912210393
+ status ACTIVE ACTIVE {'status': 'warning', 'substatuses': ['learning_exit_unsuccessfully']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 0, 'last_sig_edit_ts': 1787909405, 'status': 'FAIL'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR250.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:29+0200 end None created 2026-08-28T09:58:29+0200 upd 2026-08-28T11:30:22+0200
+ age 20 65 gender {'0': 2} | geo countries:ZA | xgeo countries:ZA,CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Shopping,Online shopping,Shopping malls', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248284918900393 PASTRY_W4_INTL_WORLDWIDE_FULL_SIGNAL_TEST | camp 120248284912210393
+ status ACTIVE ACTIVE {'status': 'warning', 'substatuses': ['learning_exit_unsuccessfully']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 0, 'last_sig_edit_ts': 1787909406, 'status': 'FAIL'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR250.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:26+0200 end None created 2026-08-28T09:58:26+0200 upd 2026-08-28T11:30:24+0200
+ age 20 65 gender {'0': 2} | geo countries:ZA | xgeo countries:ZA,CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248284917990393 PASTRY_W3_ZA_SHOPPING_INTENT_TEST | camp 120248284911800393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['in_learning_phase']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 16, 'status': 'LEARNING'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR203.49 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:23+0200 end None created 2026-08-28T09:58:23+0200 upd 2026-08-28T09:58:42+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Shopping,Online shopping,Shopping malls', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR2,135.08 imp 47040 reach 29865 freq 1.575088 lc 970 ob 969 lpv 853 atc 187 ic 68 pur 16 val ZAR14,321.25
+
+== 120248284914700393 PASTRY_W2_ZA_SOCIAL30_TEST | camp 120248284911800393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['in_learning_phase']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 23, 'status': 'LEARNING'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR203.14 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:20+0200 end None created 2026-08-28T09:58:20+0200 upd 2026-08-28T09:58:37+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days'] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR2,132.31 imp 34519 reach 15354 freq 2.248209 lc 709 ob 709 lpv 607 atc 175 ic 73 pur 23 val ZAR19,216.75
+
+== 120248284913190393 PASTRY_W1_ZA_FULL_SIGNAL_TEST | camp 120248284911800393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['in_learning_phase']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'conversions': 15, 'last_sig_edit_ts': 1787903925, 'status': 'LEARNING'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR250.00 l ZAR0.00 rem ZAR198.34 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-28T09:58:17+0200 end None created 2026-08-28T09:58:16+0200 upd 2026-08-28T09:58:45+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR2,137.72 imp 42968 reach 29279 freq 1.467536 lc 967 ob 967 lpv 877 atc 154 ic 52 pur 14 val ZAR10,079.50
+
+== 120247983150600393 PASTRY_A2_ZA_SOCIAL_SIGNALS_UNION | camp 120247983147880393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['active']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1786918785, 'status': 'SUCCESS'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR350.00 l ZAR0.00 rem ZAR232.16 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-14T07:04:16+0200 end None created 2026-08-14T07:04:16+0200 upd 2026-08-17T00:19:45+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days'] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'messenger', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR7,927.87 imp 169054 reach 55209 freq 3.062073 lc 3814 ob 3814 lpv 3302 atc 883 ic 333 pur 89 val ZAR82,312.25
+
+== 120247983149820393 PASTRY_A1_ZA_BROAD_NEW_EXCL_SIGNALS | camp 120247983147880393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['active']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1786918767, 'status': 'SUCCESS'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR350.00 l ZAR0.00 rem ZAR220.06 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-14T07:04:13+0200 end None created 2026-08-14T07:04:12+0200 upd 2026-08-17T00:19:44+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'messenger', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR7,916.76 imp 148687 reach 82279 freq 1.807108 lc 3754 ob 3754 lpv 3214 atc 539 ic 245 pur 66 val ZAR55,416.25
+
+== 120239424374900393 PASTRY_DPA_Broad_Acq_3 | camp 120239423593780393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['active']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959304, 'status': 'SUCCESS'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d ZAR300.00 l ZAR0.00 rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:09:37+0200 end None created 2026-03-11T13:09:37+0200 upd 2026-08-05T21:48:41+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR32,727.85 imp 829617 reach 144686 freq 5.733913 lc 19988 ob 19002 lpv 17053 atc 4197 ic 1857 pur 527 val ZAR446,334.67
+
+== 120239424374890393 PASTRY_DPA_Broad_Acq_2 | camp 120239423593780393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['active']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959301, 'status': 'SUCCESS'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d ZAR250.00 l ZAR0.00 rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:09:35+0200 end None created 2026-03-11T13:09:35+0200 upd 2026-08-05T21:48:39+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR34,293.74 imp 778892 reach 131462 freq 5.924845 lc 18799 ob 17681 lpv 16103 atc 4144 ic 1807 pur 465 val ZAR409,321.22
+
+== 120239423593800393 PASTRY_DPA_Broad_Acq_1 | camp 120239423593780393
+ status ACTIVE ACTIVE {'status': 'active', 'substatuses': ['active']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959299, 'status': 'SUCCESS'}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d ZAR250.00 l ZAR0.00 rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:10:00+0200 end None created 2026-03-11T13:10:00+0200 upd 2026-08-05T21:48:35+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile'] | explicit_pos True
+ METRICS spend ZAR29,332.04 imp 593989 reach 102793 freq 5.778497 lc 14878 ob 13706 lpv 12579 atc 3435 ic 1483 pur 426 val ZAR367,230.12
+
+== 120248161496390393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS_V6 | camp 120248161495070393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T12:42:31+0200 end None created 2026-08-21T12:42:31+0200 upd 2026-08-21T12:42:49+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248160925920393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS_V5 | camp 120248160924870393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T12:07:31+0200 end None created 2026-08-21T12:07:31+0200 upd 2026-08-21T12:07:49+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248160498080393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS_V4 | camp 120248160496510393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T11:44:06+0200 end None created 2026-08-21T11:44:06+0200 upd 2026-08-21T11:44:22+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248159885030393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS_V3 | camp 120248159883870393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T11:21:00+0200 end None created 2026-08-21T11:20:59+0200 upd 2026-08-21T11:21:18+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248159647740393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS_V2 | camp 120248159647460393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T11:08:37+0200 end None created 2026-08-21T11:08:37+0200 upd 2026-08-21T11:08:54+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Shopping malls,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120248159157570393 ZA_R1_ADVPLUS_BROAD_EXCL_SIGNALS | camp 120248159155880393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS Highest volume None | budget d ZAR600.00 l ZAR0.00 rem ZAR600.00 | dest WEBSITE | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-21T10:44:12+0200 end None created 2026-08-21T10:44:12+0200 upd 2026-08-21T10:44:30+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Instagram | Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Personal care,Shopping,Online shopping,Natural skin care,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247751713780393 PASTRY_W1_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959157}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:33+0200 end None created 2026-08-05T19:31:33+0200 upd 2026-08-05T21:46:14+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR1,669.74 imp 35483 reach 19940 freq 1.779488 lc 1156 ob 1156 lpv 1011 atc 174 ic 62 pur 15 val ZAR12,758.75
+
+== 120246229373450393 AS2 test. | camp 120243641897420393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1782365006}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest WEBSITE | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-06-25T07:23:01+0200 end None created 2026-06-25T07:23:00+0200 upd 2026-06-25T07:23:20+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile'] | explicit_pos True
+ METRICS spend ZAR5,944.07 imp 82108 reach 30363 freq 2.704212 lc 2581 ob 2471 lpv 2301 atc 1298 ic 518 pur 164 val ZAR140,253.50
+
+== 120245549294630393 Instagram post: The Pastry Premium Body Wash  has... | camp 120245549293410393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['1d_click']}
+ opt VISIT_INSTAGRAM_PROFILE IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest INSTAGRAM_PROFILE | attr 1d_view_7d_click
+ promoted None
+ start 2026-06-16T06:26:12+0200 end 2026-06-30T06:26:12+0200 created 2026-06-16T06:25:44+0200 upd 2026-06-16T06:26:01+0200
+ age 18 65 gender None | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180'] | xCA [] | flex [] | adv+ None | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos True
+ METRICS spend ZAR2,654.28 imp 59997 reach 11379 freq 5.272607 lc 1195 ob None lpv 139 atc None ic None pur None val None
+
+== 120245548998560393 Instagram post: She said it best ✨ Lightweight,... | camp 120245548997690393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['1d_click']}
+ opt VISIT_INSTAGRAM_PROFILE IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest INSTAGRAM_PROFILE | attr 1d_view_7d_click
+ promoted None
+ start 2026-06-16T06:24:38+0200 end 2026-06-30T06:24:38+0200 created 2026-06-16T06:24:09+0200 upd 2026-06-16T06:24:27+0200
+ age 18 65 gender {'0': 0} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA [] | flex [] | adv+ None | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos True
+ METRICS spend ZAR2,657.07 imp 62073 reach 47092 freq 1.318122 lc 2163 ob None lpv 366 atc None ic None pur None val None
+
+== 120245548921590393 Instagram post: We are turning 5 this year and we... | camp 120245548921010393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['1d_click']}
+ opt VISIT_INSTAGRAM_PROFILE IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest INSTAGRAM_PROFILE | attr 1d_view_7d_click
+ promoted None
+ start 2026-06-16T06:23:39+0200 end 2026-06-30T06:23:39+0200 created 2026-06-16T06:23:11+0200 upd 2026-06-16T06:23:28+0200
+ age 18 65 gender {'0': 0} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA [] | flex [] | adv+ None | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos True
+ METRICS spend ZAR2,659.39 imp 71339 reach 54060 freq 1.319626 lc 1795 ob None lpv 203 atc None ic None pur None val None
+
+== 120245548840520393 Instagram post: A power ingredient combo that... | camp 120245548839430393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['1d_click']}
+ opt VISIT_INSTAGRAM_PROFILE IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest INSTAGRAM_PROFILE | attr 1d_view_7d_click
+ promoted None
+ start 2026-06-16T06:22:32+0200 end 2026-06-30T06:22:32+0200 created 2026-06-16T06:22:03+0200 upd 2026-06-16T06:22:21+0200
+ age 18 65 gender {'0': 0} | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA [] | flex [] | adv+ None | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos True
+ METRICS spend ZAR2,658.38 imp 113866 reach 89586 freq 1.271024 lc 2630 ob 1 lpv 386 atc None ic None pur None val None
+
+== 120243915657530393 CT_All_Creatives | camp 120243915657570393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt VALUE IMPRESSIONS None None | budget d ZAR300.00 l ZAR0.00 rem ZAR0.00 | dest UNDEFINED | attr 1d_view_1d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-06-06T09:37:07+0200 end None created 2026-06-06T09:37:07+0200 upd 2026-06-06T09:37:24+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'messenger', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120243641897430393 AS1_Hyperpigmentation | camp 120243641897420393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1781845303}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest WEBSITE | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-05-21T19:32:50+0200 end None created 2026-05-21T19:32:50+0200 upd 2026-06-19T07:01:57+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile'] | explicit_pos True
+ METRICS spend ZAR34,952.77 imp 666568 reach 158956 freq 4.193412 lc 12342 ob 11080 lpv 9083 atc 2823 ic 991 pur 252 val ZAR235,910.25
+
+== 120243587895130393 AS1_Hyperpigmentation | camp 120243587895050393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None ZAR2,000.00 | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None, 'product_set_id': '1689686838523869'}
+ start 2026-06-06T09:37:08+0200 end None created 2026-06-06T09:37:07+0200 upd 2026-06-06T09:37:25+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'messenger', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120243587895120393 AS2_Body_Care_Broad | camp 120243587895050393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1780731451}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None ZAR30.00 | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None, 'product_set_id': '1689686838523869'}
+ start 2026-06-06T09:37:07+0200 end None created 2026-06-06T09:37:07+0200 upd 2026-06-06T09:37:24+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos True
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120242903364070393 AS1_Hyperpigmentation | camp 120242903364050393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-05-11T07:28:04+0200 end None created 2026-05-11T07:28:03+0200 upd 2026-05-21T18:31:08+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'messenger', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120242903364040393 AS2_Body_Care_Broad | camp 120242903364050393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1779381068}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-05-11T07:27:06+0200 end None created 2026-05-11T07:27:06+0200 upd 2026-05-21T18:31:08+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA [] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'messenger', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120239424940600393 CT_All_Creatives | camp 120239424940590393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1780789424}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:09:35+0200 end None created 2026-03-11T13:09:35+0200 upd 2026-04-10T09:27:42+0200
+ age 18 65 gender None | geo countries:ZA | xgeo countries:CN
+ CA [] | xCA [] | flex [] | adv+ {'advantage_audience': 1, 'individual_setting': {'age': 1, 'gender': 1}} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'messenger', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search', 'profile_reels'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR4,899.15 imp 139653 reach 43171 freq 3.23488 lc 2579 ob 2487 lpv 2188 atc 294 ic 98 pur 70 val ZAR61,988.50
+
+== 120239422623010393 AS2_Body_Care_Broad | camp 120239422422250393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'inactive', 'substatuses': ['campaign_off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959314}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:09:36+0200 end None created 2026-03-11T13:09:35+0200 upd 2026-08-05T21:48:34+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'buyers180d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'whatsapp', 'threads'] | fb ['feed', 'instream_video', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR44,583.50 imp 1158207 reach 203216 freq 5.699389 lc 18403 ob 16592 lpv 13081 atc 3292 ic 1387 pur 385 val ZAR340,945.00
+
+== 120239422422230393 AS1_Hyperpigmentation | camp 120239422422250393
+ status ACTIVE CAMPAIGN_PAUSED {'status': 'error', 'substatuses': ['all_ads_in_error']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959276}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click_1d_ev
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-03-11T13:09:35+0200 end None created 2026-03-11T13:09:35+0200 upd 2026-08-05T21:47:47+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo countries:CN
+ CA ['All website visitors 180', 'WEB-ATC-30d', 'InitiateCheckout30d', 'ReturningCustomerPurchase180d', 'Pastry | Website | All Visitors | 30 Days', 'Pastry | Website | All Visitors | 90 Days', 'Pastry | Website | All Visitors | 7 Days', 'Pastry | Website | Viewed Content | 30 Days', 'Pastry | Website | Viewed Content | 90 Days', 'Pastry | Website | Add to Cart | 7 Days', 'Pastry | Website | Add to Cart | 90 Days', 'Pastry | Website | Initiated Checkout | 7 Days', 'Pastry | Website | Initiated Checkout | 90 Days', 'Pastry | Website | Product Page Viewers | 30 Days', 'Pastry | Instagram | Engagers | 365 Days', 'Pastry | Instagram | Engagers | 30 Days', 'Pastry | Instagram | Engagers | 90 Days', 'Pastry | Facebook | Page Engagers | 30 Days', 'Pastry | Facebook | Page Engagers | 90 Days', 'Pastry | Website | Initiated Checkout | 30 Days', 'Pastry | Website | Add to Cart | 30 Days', 'Pastry | Website | All Visitors | 180 Days', 'People who viewed products/180', 'People who viewed Shops page180', 'People who viewed products and navigated to websit', 'AddToCart / 180', 'AddToCart / 180', 'People who saved products 180', 'website purchase 180', 'All website visitors 180', 'AddToCart 180'] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex ['interests:Cosmetics,Shopping,Online shopping,Shopping malls,Skin care', 'behaviors:Engaged Shoppers'] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['instagram'] | fb [] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile'] | explicit_pos True
+ METRICS spend ZAR56,424.44 imp 1534211 reach 287339 freq 5.339376 lc 29736 ob 25953 lpv 22546 atc 4844 ic 1725 pur 634 val ZAR563,256.03
+
+== 120247751723950393 PASTRY_W6_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959145}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:44+0200 end None created 2026-08-05T19:31:44+0200 upd 2026-08-05T21:46:01+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247751722120393 PASTRY_W5_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959147}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:42+0200 end None created 2026-08-05T19:31:42+0200 upd 2026-08-05T21:46:04+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247751720360393 PASTRY_W4_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959149}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:40+0200 end None created 2026-08-05T19:31:40+0200 upd 2026-08-05T21:46:07+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247751718430393 PASTRY_W3_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959152}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:38+0200 end None created 2026-08-05T19:31:38+0200 upd 2026-08-05T21:46:09+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247751716700393 PASTRY_W2_Broad_Creative_Test_5Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI {'attribution_windows': ['7d_click', '1d_view'], 'last_sig_edit_ts': 1785959154}
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T19:31:35+0200 end None created 2026-08-05T19:31:35+0200 upd 2026-08-05T21:46:11+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA ['Pastry | Purchasers | 180d | REBUILD_20260805'] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None
+
+== 120247750791720393 ARCHIVE_DO_NOT_USE_PASTRY_Original_43Ads | camp 120247750787550393
+ status PAUSED PAUSED {'status': 'off', 'substatuses': ['off']} | LSI None
+ opt OFFSITE_CONVERSIONS IMPRESSIONS None None | budget d None l None rem ZAR0.00 | dest UNDEFINED | attr 1d_view_7d_click
+ promoted {'pixel_id': '203047029058550', 'custom_event_type': 'PURCHASE', 'pixel_rule': None}
+ start 2026-08-05T18:40:58+0200 end None created 2026-08-05T18:40:58+0200 upd 2026-08-05T19:31:46+0200
+ age 18 65 gender {'0': 2} | geo countries:ZA | xgeo 
+ CA [] | xCA [] | flex [] | adv+ {'advantage_audience': 1} | excl None
+ platforms ['facebook', 'instagram', 'audience_network', 'whatsapp', 'threads'] | fb ['feed', 'right_hand_column', 'instream_video', 'marketplace', 'story', 'search', 'biz_disco_feed', 'facebook_reels', 'facebook_reels_overlay', 'profile_feed', 'notification'] | ig ['stream', 'story', 'reels', 'explore_home', 'profile_feed', 'ig_search'] | dev ['mobile', 'desktop'] | explicit_pos False
+ METRICS spend ZAR0.00 imp 0 reach 0 freq 0 lc None ob None lpv None atc None ic None pur None val None

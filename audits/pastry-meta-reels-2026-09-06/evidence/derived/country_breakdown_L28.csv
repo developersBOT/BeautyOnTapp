@@ -1,0 +1,2 @@
+period,country,spend_zar,impressions,reach,outbound_clicks,landing_page_views,add_to_cart,initiate_checkout,website_purchases,purchase_value_zar,note,source
+L28 2026-08-09..2026-09-05,ZA,47054.41,1011709,169593,23889,21479,4989,2249,568,475891.25,Only ZA row returned: 100% of L28 delivery was South Africa; INTL campaign delivered 0 impressions,ads_get_ad_entities breakdowns=[country]; captured 2026-09-06 ~10:26-10:45 UTC (12:26-12:45 Africa/Johannesburg)
