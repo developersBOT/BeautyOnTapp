@@ -1,0 +1,26 @@
+{
+  "product": "Niacinamide Body Mist",
+  "brand": "Pastry Skincare",
+  "handle": "niacinamide-body-mist",
+  "shopify_product_id": "gid://shopify/Product/8772642242801",
+  "image": "https://cdn.shopify.com/s/files/1/0734/3616/8433/files/Website_pictures_-_2025-12-04T232155.250.png?v=1764883559",
+  "layout": "ref5",
+  "layout_reason": "Body mist -> REF5 (all-caps centred headline, three stacked benefits, wet surface).",
+  "text": {
+    "headline": "HYDRATE AND GLOW",
+    "subheader": "Niacinamide Body Mist · 200ml",
+    "benefits": [
+      "Niacinamide helps even skin tone",
+      "Hyaluronic Acid keeps skin hydrated",
+      "Lightweight, for face and body"
+    ]
+  },
+  "sources": {
+    "HYDRATE AND GLOW": "Shopify listing description, first sentence: 'Hydrate and glow with this brightening Niacinamide Body Mist.'",
+    "Niacinamide Body Mist · 200ml": "Shopify product title + variant title '200ml' (SKU PAS012).",
+    "Niacinamide helps even skin tone": "Shopify listing description: 'Niacinamide helps even out your skin tone and smooth it'.",
+    "Hyaluronic Acid keeps skin hydrated": "Shopify listing description: 'Hyaluronic Acid keeps it hydrated'.",
+    "Lightweight, for face and body": "Shopify listing 'Best for': 'A lightweight hydrating layer before lotion' and 'Face and body use'."
+  },
+  "unverified": "Label text on the packshot could not be read in the authoring session (cdn.shopify.com blocked); cross-check the printed label before publishing."
+}
