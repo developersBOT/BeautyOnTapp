@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# infographic renderer scratch
+tool/infographic/out/
+tool/infographic/fonts/
